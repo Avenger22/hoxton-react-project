@@ -22,8 +22,8 @@ section.blog-item-container-1 main.main {
 
 section.blog-item-container-1 main.main .main-post {
     display: grid;
-    grid-template-rows: 0.4fr 0.6fr;
-    grid-gap: 20px;
+    grid-template-rows: 0.8fr auto;
+    grid-gap: 70px;
 }
 
 section.blog-item-container-1 main.main .main-post .image-box {
@@ -34,8 +34,9 @@ section.blog-item-container-1 main.main .main-post .image-box {
 
 section.blog-item-container-1 main.main .main-post .text {
     display: grid;
-    grid-template-rows: repeat(10, 0.1fr);
-    grid-gap: 10px;
+    grid-template-rows: repeat(1, 1fr);
+    grid-gap: 20px;
+    padding-bottom: 50px;
 }
 
 section.blog-item-container-1 main.main .main-post .text h3 {

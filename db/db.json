@@ -316,18 +316,11 @@
       "id": "jurgenhasmeta@email.com",
       "password": "jurgen",
       "bag": []
-    },
-    {
-      "firstName": "Desintila",
-      "lastName": "Luzi",
-      "id": "desintila@email.com",
-      "password": "desintila",
-      "bag": []
     }
   ],
   "subscribe": [
     {
-      "email": "desintila@email.com",
+      "email": "jurgen@email.com",
       "id": 1
     }
   ],
