@@ -1,3 +1,5 @@
+import "../Footer/ProductsFooter.css"
+
 function ProductsFooter() {
 
     return (

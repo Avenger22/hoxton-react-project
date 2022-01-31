@@ -1,0 +1,86 @@
+/* #region 'HEADER-MENU' */
+section.container-menus header.products-header-menu {
+    display: grid;
+    grid-template-rows: 0.5fr 0.5fr;
+    background-color: #022335;
+    align-items: center;
+    align-content: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+section.container-menus .header-sub-1 {
+    grid-template-rows: 1fr;
+    place-items: center;
+}
+
+section.container-menus .header-sub-2 {
+    grid-template-rows: 1fr;
+    place-items: center;
+}
+
+section.container-menus .ul-sub-1 {
+    display: grid;
+    grid-template-columns: 0.2fr 0.6fr 0.1fr 0.1fr;
+    grid-gap: 50px;
+    place-items: center;
+    place-content: center;
+    padding-top: 20px;
+}
+
+section.container-menus #special-button {
+    border-left: 3px solid #000;
+}
+
+section.container-menus button.button-image {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+section.container-menus .ul-sub-2 {
+    display: grid;
+    grid-template-columns: repeat(6, 150px);
+    grid-gap: 20px;
+    place-items: center;
+    place-content: center;
+    padding-top: 20px;
+
+    border-top: 2px solid #fff;
+}
+
+section.container-menus span.span-bag-stock {
+    display: none;
+}
+
+section.container-menus span.span-bag-stock.show {
+    display: grid;
+    place-self: center;
+    color: #c22048;
+    font-size: 20px;
+    font-weight: 900;
+}
+
+section.container-menus span.span-user-login {
+    display: none;
+}
+
+section.container-menus span.span-user-login.show {
+    display: grid;
+    place-self: center;
+    color: #f7f8fb;
+    font-size: 20px;
+}
+
+section.container-menus #logo {
+    color: #d40a0a;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+/* #endregion */

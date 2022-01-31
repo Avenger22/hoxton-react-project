@@ -330,5 +330,120 @@
       "email": "desintila@email.com",
       "id": 1
     }
+  ],
+  "articles" : [
+
+    {
+        "id": 1, 
+        "image": "/assets/images/pages-images/blog-images/blog-enlarged-1.jpg", 
+        "title": "The right time to take Supplements",
+        "desc": "The best time to take creatine Whenever you find it easiest to take creatine is probably good enough. There’s not a lot of research indicating that taking it at one particular time is significantly better than any other. Personally, I like to…",
+        "user": "admin",
+        "category": "Supplements",
+        "date": "02/03/2021",
+        "paragraph" : "Whenever you find it easiest to take creatine is probably good enough. There’s not a lot of research indicating that taking it at one particular time is significantly better than any other. Personally, I like to take a blend of creatine, carbs (in the form of juice), and protein about half an hour before training, and the same blend after training. \n This is also the basic approach that Dr. Jim Stoppani advocates in the article “Ask the Supplement Guru: When Should I Take Creatine?” This “bracketing” technique helps set up an anabolic (muscle-building) state for your muscles and helps prevent muscle breakdown from a workout (catabolism). \n You’ll be well stocked with anabolic amino acids when you’re most receptive to them, you’re topped off with carbs both during and after training, and you’re always full of creatine. \n If the before-and-after technique is too complicated for you, just taking 5 grams post-workout is also very effective at producing strength and size gains, according to a 2013 study.1 Third place would be 5 grams whenever works for you. \n \n When you first start taking creatine, it’s common to load with 20-25 grams per day in 5 gram servings for five days. \n \n This is effective, but not totally necessary. Just 3-5 grams a day will get you to the same place soon enough, writes Ciaran Fairman in “Do I Need to Load With Creatine. \n The best time to take glutamine \n \n The standard protocol for glutamine is to take 2-3 servings of 5 grams a day, with one of them right before bed. This is what I recommend as well, and in my book, the dose before bed is the most important! \n Sleep is already the time when you experience the greatest releases of growth hormone, and not coincidentally, it’s the time when you turn all that hard work you’ve been doing into physical results. \n \n Glutamine is also thought to be able to help combat symptoms of overtraining, so pairing it with deep, recuperative rest is a no-brainer.2Aside from that, 5 grams in the morning and 5 grams during a workout remain tried-and-true recommendations.”",
+        "header1": "The best time to take Creatine"
+    },
+
+    {
+        "id": 2, 
+        "image": "/assets/images/pages-images/blog-images/blog-enlarged-2.jpg", 
+        "title": "3 Main Reasons You Need To Use BCAA-S",
+        "desc": "If you’ve made the commitment to start a weightlifting workout program, the next step that you must take is getting your nutrition and supplement protocol in line!  If you’ve made the commitment to start investing time regularly in a weightlifting workout…",
+        "user": "admin",
+        "category": "Supplements",
+        "date": "10/05/2021",
+        "paragraph" : "If you’ve made the commitment to start a weightlifting workout program, the next step that you must take is getting your nutrition and supplement protocol in line! \n If you’ve made the commitment to start investing time regularly in a weightlifting workout program, the next step that you must take is getting your nutrition and supplement protocol in line so that you are able to maximize the results you get from your workouts. \n Failing to take into account this portion of the equation is a critical mistake. Not only will you not be as effective at changing your body composition, but you likely won’t have the energy you otherwise would to put into those workouts. \n Getting a full spectrum of amino acids tops the list of important “musts” that need to be covered, so that’s where you should start off when planning your supplement program. \n The following are some of the top reasons why investing in a BCAA supplement is a smart move. The first thing you’ll experience if you choose to supplement your diet with branched-chain amino acids (BCAAs) is immune system support. Every time you go into the gym and lift weights, you are placing an enormous amount of stress on the body. If the body is not able to fully tolerate this stress level, you’re going to see problems develop regarding muscle recovery, and possibly an increased likelihood of illness. \n \n Because the essential amino acids cannot be produced by the body and must be consumed directly, if you fail to get these in your body, it will not have everything it needs to maintain a normal, healthy immune system. \n \n Further, one study performed by the Laboratory of Human Nutrition for Athletes suggested that taking branched-chain amino acids around exercise also decreased the immune system response that is demonstrated.",
+        "header1": "BCAAS And The Immune System:"
+      },
+
+    {
+        "id": 3, 
+        "image": "/assets/images/pages-images/blog-images/blog-enlarged-3.jpg", 
+        "title": "What is Creatine Monohydrate",
+        "desc": "Creatine Monohydrate is a natural acid found mainly in red meat, especially beef and fish. However, although we can take it from natural sources of food,to see increased performance we have to consume it in larger doses and that is…",
+        "user": "admin",
+        "category": "Supplements",
+        "date": "13/12/2021",
+        "paragraph" : "Creatine Monohydrate is a natural acid found mainly in red meat, especially beef and fish. However, although we can take it from natural sources of food,to see increased performance we have to consume it in larger doses and that is why Creatine is a popular food supplement and effective among athletes, both male or female. Creatine is obtained from a combination of three amino acids: arginine, glycine and methionine and is therefore nitrogen. It is important to maintain a positive nitrogen balance to promote muscle growth and development through regular sources of protein which can then be broken down into amino acids needed for repair, recovery and growth. \n \n How Does Creatine Work \n \n Creatine monohydrate is used as an additional source to significantly increase the concentration of creatine in skeletal muscles where it is stored as creatine phosphate, to drive issued phosphate anaerobic activity (movement with the high intensity and powerful such as sprinting, circuits, etc.), the co-molecule  Adenosine Tri Phosphate (ATP) uses this phosphate to meet some cellular and metabolic functions. \n ATP is broken down into Adenosine Di – Phosphate (ADP), when it loses one of its phosphate molecules, it provides the energy in your cell. When ATP’s stores are reduced, levels of performance and intensity of exercise will fall. Creatine phosphate helps to restore ATP which is why increasing the performance and intensity, strength and power. And athletes and regular gym clients who are looking to increase the force and their training intensity have many benefits from creatine. Athletes like Linford Christie, Sally Gunnell and Colin Jackson were the first athletes in the early 1990s that saw concrete results from the use of creatine and since then athletes increasingly have used it as a supplement food safe and legal (it is considered 100% legal by the World Anti Doping Agency).Studies by Becqueetal (2000) showed a 20% increase in muscle strength of biceps achieved after 6 weeks of regular use of creatine compared with an increase of 10% of those who did not take creatine.",
+        "header1": "How Does creatine work ?"
+      },
+
+    {
+        "id": 4, 
+        "image": "/assets/images/pages-images/blog-images/blog-enlarged-4.jpg", 
+        "title": "Ronnie Coleman – Was he the best ever ?",
+        "desc": "When we talk about Mr. Olympia champions it’s all about “gold and glitter”. They are the best of the best, the finest sons of bodybuilding who reigned supreme during their eras. There is one with the nickname “The King”, and…",
+        "user": "admin",
+        "category": "BodyBuilding",
+        "date": "17/12/2021",
+        "paragraph" : "When we talk about Mr. Olympia champions it’s all about “gold and glitter”. They are the best of the best, the finest sons of bodybuilding who reigned supreme during their eras. There is one with the nickname “The King”, and it fits him well. \n Longevity is the name of the game in our sport. You don’t want to be a one hit wonder, go all guns blazing for a show or two and then drown in anonymity. Everybody wants to rule the world for as long as they can. So it’s no wonder that, during it’s 50+ years of existence, Olympia Sandows crowned only 13 guys. That solidified the point that, if you nail it in bodybuilding once, it just might be good enough to work twice, three or even eight times. \n The first long-lasting champion was Arnold. His charms were as powerful as his muscles and it showed on the stage – where it mattered most! After his absence there was somewhat of a turbulence in bodybuilding with quite a few guys exchanging Sandows. \n And so came Lee Haney. Truer gentleman was never found in bodybuilding, and his intimidating physique sported classical lines as well as formidable mass. He broke the mold, and when on to break the record! 8 Olympias straight he was undefeated and it was never a case of “well this guys could have won it” or “he’s just loved by the judges”. \n Yates was the man to come after Lee and the Brit showed his grit as good as he could! So good that he ensured himself 6 wins straight at the Olympia stage. Known for taking the bodybuilding sport into the next era, Dorian had the mass as well as being razor sharp on stage. He was not what you would call a pretty boy, but he had so much going on that beating him was out of the question for everyone. \n Then there is this Texan guy who ate Pizzas and joined the gym with no bodybuilding dreams. Ronnie Coleman was not always the towering giant we all know him to be. He was in fact just a guy who agreed to compete because Metroflex offered him free gym membership. Who knows, maybe if there were more gyms offering free memberships we would have more world class bodybuilders? \n Joking aside, Ronnie was a late bloomer. Sure, he was a good national level athlete and it was obvious that he could have a career as a pro. But I’ll bet you no one ever told him that he would be the greatest bodybuilder of all time. Even if someone told him that, he wouldn’t believe it to be true. \n Yet he became just that, but boy, was it a bumpy ride! He was te only Mr.Olympia ever to be dead last in his first Olympia showing. The judges ranked him so low that he wasn’t even compared to the other guys. If you think last callout sounds bad – try imagining no callouts, just standing there in tiny trunks getting ready for some shaming to kick in. \n He erupted to greatness in 1998. Falling to his knees, Ronnie didn’t believe that he actually did it. In fact, neither did Flex Wheeler who came in second! When Yates retired everyone knew that a new champion would be crowned, but hell, who would’ve guessed that it would be Ronnie? He was a good pro up until that point, but not the best. \n His reign of terror was as long as Haney’s but with one major thing going to his credit. He had the strongest, toughest competitors ever as his competition. I mean Levrone, Wheeler, Ray, Ruhl, Gunter, Cutler – you name it, he faced them and beat them. Impressive feat for a guy that was not even compared during his first Olympia. \n The thing that makes him probably the greatest of all time is his body (what else?). His package could still be the winning one even after he competed against all these modern era bodybuilders. The Big Nasty never gave up, and that’s why he’s the King.",
+        "header1" : "Ronnie Coleman story and history"
+      },
+    {
+        "id": 5, 
+        "image": "/assets/images/pages-images/blog-images/blog-enlarged-5.jpg", 
+        "title": "Why do we call it – “Classic Bodybuilding ?",
+        "desc": "There’s a new division in our sport and it has a lovely ring to it’s name! Classic physique , or classic bodybuilding as we know it in Europe. To us it’s not a new thing but the guys from the…",
+        "user": "admin",
+        "category": "BodyBuilding",
+        "date": "19/12/2021",
+        "paragraph" : "The judge should first assess the overall male athletic appearance of the physique. This assessment should begin at the head and extend downwards, taking the whole physique into account. The assessment, beginning with the general impression of the physique, should take into consideration the hair and facial features; the overall athletic development of the musculature; the presentation of a balanced, symmetrically developed physique; the condition of the skin and the skin tone; and the athlete’s ability to present onstage with confidence. \n \n So now that we know what it is, we can get ready for the new part of our sport! Bodybuilding is just starting to expand and so far it’s doing a pretty good job. Both Women and men have a lot of divisions to choose from making it easier for any particular body to fit in somewhere. Who knows, maybe this new Classic look will be a big hit!",
+        "header1" : "Classic bodybuilding term"
+      },
+    {
+        "id": 6, 
+        "image": "/assets/images/pages-images/blog-images/blog-enlarged-6.jpg", 
+        "title": "What is L-Glutamin and benefits",
+        "desc": "Have you heard about the incredible health benefits of L-glutamine?  First used in powder form by people in the fitness industry who were looking to preserve muscle tissue, L-glutamine is an amino acid that is a building block of protein. L-glutamine is…",
+        "user": "admin",
+        "category": "Supplements",
+        "date": "20/12/2021",
+        "paragraph" : "One of L-glutamine’s main roles in the body is to support detoxification by cleansing the body from high levels of ammonia. It acts as a buffer and converts excess ammonia into other amino acids, amino sugars and urea. \n Doing approximately one hour of exercise can cause a 40 percent reduction of glutamine in the body. It can also cause suppressed immune function. This has a negative impact on your resistance training and may lead to overtraining syndrome. \n L-glutamine benefits long distance athletes as well by boosting the immune system (T-helper cells). Animal studies have indicated that this increase in T-helper cells may reduce the ‘stresses’ associated with overtraining syndrome. ",
+        "header1" : "L-Glutamine Improves Energy and Athleticism"
+      },
+    {
+        "id": 7, 
+        "image": "/assets/images/pages-images/blog-images/blog-enlarged-7.jpg", 
+        "title": "Lee Haney – A Gentleman’s Champion",
+        "user": "admin",
+        "category": "BodyBuilding",
+        "desc": "13 men in the world won the Mr. Olympia title since the competition started. It’s an elusive trophy that was given to the very best competitors in our sport and the quickly became legends. We all know some famous stories…",
+        "date": "22/12/2021",
+        "paragraph" : "13 men in the world won the Mr. Olympia title since the competition started. It’s an elusive trophy that was given to the very best competitors in our sport and the quickly became legends. We all know some famous stories about Arnold, Ronnie, Dorian or Cutler, but we rarely mention Lee Haney. Well…let’s change that \n Lee Haney was born in 1959. He’s an IFBB professional bodybuilder with a great reputation and an amazing body. Haney is the joint record holder, along with Ronnie Coleman, for winning the most Mr. Olympia titles, with eight Sandow trophies in his house. That record is the most coveted one in whole of bodybuilding and there are those who doubt that it will ever be broken. \n One of his most famous quotes is that we should “train to stimulate, not annihilate.” That philosophy ensured his longevity and health during a long and prestigious bodybuilding career. In his time there were no instagram bodybuilder or facebook champions, if you wanted something, you had to do it with your body without any help from social networks. Sounds hard to imagine but that was the world he lived, competed and won in! \n He started competing as a teenager only to become one of the greatest bodybuilders of all time. His potential was very visible even at an early age so it became clear that Lee is going to have a fruitful career in front of him. Teen mister America was his first big title and there he was wondering could he really reach the professional heights of the iron sport. As it turned out, he reached new heights! \n Before him nobody was even close to winning 8 consecutive Mr.Olympia contests. Arnold got 6 under his belt only to return a few years later to get to 7 before hanging his trunks for good. Lee never broke his streak and after winning 7 he asked his wife if he should go after the record and get that one, last Sandow so he could be the record holder. She was adamant that he should go and so he did. At that show he was able to Eclipse the mighty Dorian Yates. \n Lee was big, but never huge or bulky. At his best he was about 250 on stage but with a wasp-like waist that ensured his reign for a long period. Big arms, full chest, massive back and detailed legs. It was all there for Haney to exploit through hard work and strong mindset. He always was a man of God and said that it helped him a lot in his sessions during the hardest years in the gym. \n So when you think about great bodybuilders always remember that Lee should probably be in your top 3. He was the first man ever to set the bar as high as it stands today, and the last Mr.Olympia with trully classical lines. A gentleman that never talked trash or held grudges against others. Marvelous poser, Lee was, and still is the pride of bodybuilding, More than just a competitor – he is a true male role model!",
+        "header1" : "Lee Haney story and bodybuilding"
+      },
+    {
+        "id": 8, 
+        "image": "/assets/images/pages-images/blog-images/blog-enlarged-8.jpg", 
+        "title": "A Simple Yet Powerful Method to Motivate Yourself to Exercise Consistently",
+        "user": "admin",
+        "category": "Health & Fitness",
+        "desc": "Learn how to take a mental victory lap each day while shifting your mood and mental state to a better one with this simple, yet powerful, technique.",
+        "date": "12/01/2022",
+        "paragraph" : "When it comes to health behaviors, motivation seems hard because we often take the path of most resistance, particularly when it comes to exercise. Too many mistakenly believe that exercise must be awful to be effective, which is often enough to stop them before they even get started. \n Yet rarely has anyone ever regretted exercising or even just going for a brisk walk. \n Here is a simple technique that you can use to capture the shift in mood and energy level that your next workout has provided for you. If you use this for a few workouts in a row you can, in effect, teach your brain to get the immediate “reward” of exercise or physical activity. \n Here’s how to do it: \n Use the “Voice Memos” app on your smartphone. \n Immediately before exercising, record a very short statement describing how you feel physically, mentally and/or emotionally. \n Immediately after exercise, repeat step 2. \n Playback the recording from steps 2 and 3 right after each other. \n You will notice the effect immediately from both the words you use and the tone and energy or enthusiasm in your voice. \n A few notes: \n If you do not use a smartphone, write down the before-and-after statements on a sticky note or a calendar. This approach misses the opportunity to hear your own tone of voice, but it can still be effective. \n \n This works even if you decide to use the same words in both statements. I once had a client who was skeptical of this technique and claimed that using more positive words by itself would create the shift in tone. I told him to use “I feel sluggish” (his “before” statement) as his after statement, too. He was surprised that his tone sounded so much more energetic and positive in the “after” utterance. \n \n Take note of what effect this action has, no matter how small. Too often, people exercise because they “should” and, as a result, it strips away much of the perceived benefit from the positive behavior because the context of a chore or obligation removes much of the enjoyment around it. This technique changes that.",
+        "header1" : "Healthy habits and lifestyle"
+      }
+
+  ],
+  "companies" : [
+    {
+      "id" : 1,
+      "name" : "BodyBuilder Gym",
+      "desc" : "We are very happy with AlbVitaFitness products we use them all the time and ecourage all to do it",
+      "image" : "/assets/images/logos/company-1.png"
+    },
+    {
+      "id" : 2,
+      "name" : "LocalTirana Gym",
+      "desc" : "We found AlbVitaFitness very accidentally but now we love it its the best all in one package for fitness be it products, services, their team is amazing, really good",
+      "image" : "/assets/images/logos/company-2.png"
+    },
+    {
+      "id" : 3,
+      "name" : "Tirana MMA Center",
+      "desc" : "We knew they were  the best in products section but what blew our mind was their MMA speciality too, in terms of team and classes really all in one package",
+      "image" : "/assets/images/logos/transparent.png"
+    }
   ]
 }

@@ -1,14 +1,17 @@
 // #region 'Importing'
 import {Routes, Route, Navigate} from 'react-router-dom'
 
-import Home from './Pages/Home/Home'
-import Contact from './Pages/Contact/Contact'
-import Blog from './Pages/Blog/Blog'
-import Products from "./Pages/Products/Products"
-import BlogItem from './Pages/BlogItem/BlogItem'
-import Error404 from './Pages/Error404/Error404'
+import './App.css'
+
+import HomePage from './pages/Home/HomePage'
+import ContactPage from './pages/Contact/ContactPage'
+import BlogPage from './pages/Blog/BlogPage'
+import ProductsPage from "./pages/Products/ProductsPage"
+import BlogItemPage from './pages/BlogItem/BlogItemPage'
+import Error404Page from './pages/Error404/Error404Page'
 // #endregion
 
+// #region 'App'
 function App() {
 
   // #region 'Return Html'
@@ -29,32 +32,32 @@ function App() {
 
         <Route 
           path = "/home" 
-          element = {<Home />}>
+          element = {<HomePage />}>
         </Route>
 
         <Route 
           path = "/contact" 
-          element = {<Contact />}>
+          element = {<ContactPage />}>
         </Route>
 
         <Route 
           path = "/blog" 
-          element = {<Blog />}>
+          element = {<BlogPage />}>
         </Route>
 
         <Route 
           path = "/blog/:id" 
-          element = {<BlogItem />}>
+          element = {<BlogItemPage />}>
         </Route>
 
         <Route 
           path = "/products" 
-          element = {<Products />}>
+          element = {<ProductsPage />}>
         </Route>
 
         <Route 
           path = "*" 
-          element = {<Error404 />}>
+          element = {<Error404Page />}>
         </Route>
         
       </Routes>
@@ -69,5 +72,6 @@ function App() {
   //#endregion
 
 }
+// #endregion
 
 export default App

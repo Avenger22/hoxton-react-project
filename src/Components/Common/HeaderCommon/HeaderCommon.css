@@ -1,0 +1,155 @@
+header.header {
+    grid-area: header;
+    display: grid;
+    grid-template: 
+    "header-group-1 void header-group-2" 1fr /
+    0.6fr 0.1fr 0.3fr;
+
+    background-color: #ffa500;
+    z-index: 1;
+    width: 100%;
+    position: fixed;
+    height: 70px;
+}
+
+header.header #special-logo {
+    color: #060208;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 14px;
+}
+
+header.header #special-logo a {
+    color: #060208;
+}
+
+header.header .void {
+    grid-area: void;
+}
+
+header.header .header-group-1 {
+    grid-area: header-group-1;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    place-content: center;
+   
+}
+
+header.header .header-group-2 {
+    grid-area: header-group-2;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+}
+
+header.header .header-group-1 .ul-header-1 {
+    display: grid;
+    grid-template-columns: 160px 80px 80px 80px 80px;
+    grid-gap: 10px;
+}
+
+header.header .header-group-1 .ul-header-1 li {
+    color: #fff;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 600;
+    letter-spacing: normal;
+}
+
+header.header .header-group-2 .ul-header-2 li {
+    color: #fff;
+    font-size: 14px;
+    font-family: sans-serif;
+    font-weight: 600;
+    letter-spacing: normal;
+}
+
+header.header .header-group-2 .ul-header-2 li a:hover {
+    color: #a9bad1;
+    transition: 1s;
+    border-bottom: 1px solid #679ce6;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+
+header.header .header-group-1 .ul-header-1 li a:hover {
+    color: #a9bad1;
+    transition: 1s;
+    border-bottom: 1px solid #679ce6;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+
+header.header .header-group-2 .ul-header-2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    place-items: center;
+}
+
+header.header .header-group-2 .ul-header-2 li button{
+    border: 2px solid #fff;
+    padding: 10px 10px;
+    background-color: #a9bad1;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+header.header .header-group-2 .ul-header-2 li button:hover{
+    background-color: #111111;
+    color: #ffa800;
+    transition: 1s;
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
+}
+
+@media screen and (max-width: 1200px) {
+    header.header .header-group-1 .ul-header-1 {
+        display: grid;
+        grid-template-columns: repeat(6, 0.15fr);
+        grid-gap: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header.header .header-group-1 li {
+        font-size: 12px;
+    }
+
+    header.header .header-group-2 li {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    header.header .header-group-2 {
+        display: none;
+    }
+
+    header.header .void {
+        display: none;
+    }
+    
+    header.header .header-group-1 li {
+        font-size: 10px;
+    }
+
+    header.header .header-group-2 li {
+        font-size: 10px;
+    }
+}
