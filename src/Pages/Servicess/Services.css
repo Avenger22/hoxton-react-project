@@ -9,18 +9,21 @@ section.boxes-wrapper {
     grid-gap: 20px;
 }
 
-.services-wrapper {
+section.boxes-wrapper .services-wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 15px;
+    grid-gap: 25px;
+
+    padding-left: 25px;
 }
 
-.services-wrapper .box {
+section.boxes-wrapper .services-wrapper .box {
     display: grid;
     grid-template-rows: 1fr;
     place-items: center;
 
     height: 320px;
+    width: 400px;
     cursor: pointer;
     border: 0.5px solid rgb(197, 188, 188);
 }
@@ -30,12 +33,12 @@ section.boxes-wrapper .box img {
     width: 100%;
 }
 
-.box span {
-    color: blue;
-    font-size: 16px;
+section.boxes-wrapper .box span {
+    color: #000;
+    font-size: 22px;
 }
 
-.header-service h2 {
+section.boxes-wrapper  .header-service h2 {
     display: grid;
     place-items: center;
     font-size: 28px;

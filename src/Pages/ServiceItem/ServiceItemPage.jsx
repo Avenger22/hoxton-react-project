@@ -39,7 +39,7 @@ export default function ServiceItemPage() {
                 </div>
 
                 <div className="span-box">
-                    <span>{serviceItem.longDesc}</span>
+                    <span>{serviceItem.desc}</span>
                 </div>
 
             </section>

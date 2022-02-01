@@ -1,12 +1,19 @@
+import { useNavigate } from "react-router"
 import "../StoreItem/StoreItem.css"
 
 function StoreItem({item}) {
+
+    const navigate = useNavigate()
+
+    function handleLiClickItem() {
+        navigate(`/products/${item.id}`)
+    }
 
     return (
 
         <>
         
-            <li className="store-item">
+            <li className="store-item" onClick={handleLiClickItem}>
 
                 <span className="new-item-date">New Item</span>
                 <img src={item.image} alt=""/>

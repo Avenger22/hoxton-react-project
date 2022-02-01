@@ -22,18 +22,26 @@ export default function TeamsPage() {
 
             <section className="coaches-wrapper">
 
-                {
+                <div className="header-team">
+                    <h2>Our Team</h2>
+                </div>
 
-                    coaches.map(coach =>
-                        
-                        <Coach
-                            key = {coach.id}
-                            coach = {coach}
-                        />
+                <div className="team-wrapper">
 
-                    )
+                    {
 
-                }
+                        coaches.map(coach =>
+                            
+                            <Coach
+                                key = {coach.id}
+                                coach = {coach}
+                            />
+
+                        )
+
+                    }
+
+                </div>
 
             </section>
 

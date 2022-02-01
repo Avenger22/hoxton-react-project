@@ -14,6 +14,7 @@ import ServicesPage from './Pages/Servicess/ServicesPage'
 import ServiceItemPage from "./Pages/ServiceItem/ServiceItemPage"
 import TeamsPage from "./Pages/Teams/TeamsPage"
 import TeamItemPage from "./Pages/TeamItem/TeamItemPage"
+import ProductItemPage from './Pages/ProductItem/ProductItemPage'
 // #endregion
 
 // #region 'App'
@@ -66,6 +67,11 @@ function App() {
         <Route 
           path = "/products" 
           element = {<ProductsPage />}>
+        </Route>
+
+        <Route 
+          path = "/products/:id" 
+          element = {<ProductItemPage />}>
         </Route>
 
 
