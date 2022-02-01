@@ -5,8 +5,9 @@ section.coaches-wrapper {
     padding-bottom: 100px;
 
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 15px;
+    grid-template-columns: repeat(3, 0.33fr);
+    grid-gap: 25px;
+    padding-left: 15px;
 }
 
 section.coaches-wrapper .box {
@@ -14,13 +15,20 @@ section.coaches-wrapper .box {
     grid-template-rows: 1fr;
     place-items: center;
 
-    height: 200px;
+    height: 450px;
+    width: 400px;
     cursor: pointer;
-
-    background-color: green;
+    border: 1px solid rgb(212, 200, 200);
 }
 
-.box span {
-    color: blue;
-    font-size: 16px;
+section.coaches-wrapper .box img {
+    height: 330px;
+    width: 350px;
+}
+
+section.coaches-wrapper .box span {
+    color: #000;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: normal;
 }

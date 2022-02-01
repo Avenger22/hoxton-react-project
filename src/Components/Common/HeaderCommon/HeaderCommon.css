@@ -88,9 +88,9 @@ header.header .header-group-2 .ul-header-2 li a:hover {
 }
 
 header.header .header-group-1 .ul-header-1 li a:hover {
-    color: #a9bad1;
+    color: #3684f1;
     transition: 1s;
-    border-bottom: 1px solid #679ce6;
+    border-bottom: 1px solid #ec8251;
     -webkit-transition: 1s;
     -moz-transition: 1s;
     -ms-transition: 1s;
@@ -120,7 +120,7 @@ header.header .header-group-2 .ul-header-2 li button{
 }
 
 header.header .header-group-2 .ul-header-2 li button:hover{
-    background-color: #111111;
+    background-color: #b61e1e;
     color: #ffa800;
     transition: 1s;
     -webkit-transition: 1s;
@@ -138,6 +138,13 @@ header.header .header-group-2 .ul-header-2 li button:hover{
     font-weight: 600;
     letter-spacing: normal;
     border: none;
+    cursor: pointer;
+  }
+
+  .dropbtn:hover {
+    color: #3684f1;
+    transition: 1s;
+    border-bottom: 1px solid #ec8251;
   }
   
   .dropdown {

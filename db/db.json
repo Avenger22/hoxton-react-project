@@ -453,43 +453,50 @@
       "id":1,
       "image":"/assets/images/pages-images/team-images/coach-1.jpg",
       "name":"Dyah Ali Davis",
-      "desc":"Yoga coach"
+      "desc":"Yoga coach",
+      "longDesc": "I am Dyah Ali Davis and i do yoga classes in AlbVitaFitness"
     },
     {
       "id":2,
       "image":"/assets/images/pages-images/team-images/coach-2.jpg",
       "name":"Everton Bittar Oliveira",
-      "desc":"BJJ coach"
+      "desc":"BJJ coach",
+      "longDesc": "I am Everton Bittar Oliveira and i do bjj classes in AlbVitaFitness"
     },
     {
       "id":3,
       "image":"/assets/images/pages-images/team-images/coach-3.jpg",
       "name":"Vitelmo Katel Kubis",
-      "desc":"Bodybuilding coach"
+      "desc":"Bodybuilding coach",
+      "longDesc": "I am Vitelmo Katel Kubis and i do bodybuilding classes in AlbVitaFitness"
     },
     {
       "id":4,
       "image":"/assets/images/pages-images/team-images/coach-4.jpg",
       "name":"Marcos DaMatta",
-      "desc":"Conditioning coach"
+      "desc":"Conditioning coach",
+      "longDesc": "I am Marcos DaMatta and i do conditioning classes in AlbVitaFitness"
     },
     {
       "id":5,
       "image":"/assets/images/pages-images/team-images/coach-5.jpg",
       "name":"Conan Silveira",
-      "desc":"Crossfit coach"
+      "desc":"Crossfit coach",
+      "longDesc": "I am Conan Silveira and i do crossfit classes in AlbVitaFitness"
     },
     {
       "id":6,
       "image":"/assets/images/pages-images/team-images/coach-6.jpg",
       "name":"Steve Mocco",
-      "desc":"Boxing coach"
+      "desc":"Boxing coach",
+      "longDesc": "I am Steve Mocco and i do boxing classes in AlbVitaFitness"
     },
     {
       "id":7,
       "image":"/assets/images/pages-images/team-images/coach-7.jpg",
       "name":"Thiago Alves",
-      "desc":"Striking coach"
+      "desc":"Striking coach",
+      "longDesc": "I am Thiago Alves and i do striking classes in AlbVitaFitness"
     }
   ]
 }
