@@ -1,5 +1,6 @@
 import HomeContainer4Card from "./HomeContainer4Card"
 import './HomeContainer4.css'
+
 import { useNavigate } from "react-router"
 import { useEffect, useState } from "react"
 
@@ -21,31 +22,6 @@ export default function HomeContainer4() {
 
     const newServices = services.slice(0,4)
 
-    const cards = [
-
-        {
-            id: 1, 
-            image: "/assets/images/main/foto-5.jpg", 
-            name: 'Basic Crossfit',
-            desc: 'We do Crossfit'
-        },
-
-        {
-            id: 2, 
-            image: "/assets/images/main/foto-6.jpg", 
-            name: 'Basic Fitness',
-            desc: 'We do Fitness'
-        },
-
-        {
-            id: 3, 
-            image: "/assets/images/main/foto-2.jpg", 
-            name: 'Basic Yoga',
-            desc: 'We do Yoga'
-        }
-
-    ]
-
     return (
 
         <>
@@ -61,11 +37,11 @@ export default function HomeContainer4() {
 
                     {
 
-                        cards.map(card =>
+                        newServices.map(service =>
                             
                             <HomeContainer4Card 
-                                key={card.id}
-                                card = {card}
+                                key = {service.id}
+                                service = {service}
                             />
                             
                         )

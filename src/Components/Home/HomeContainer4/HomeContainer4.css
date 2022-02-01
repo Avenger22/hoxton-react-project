@@ -12,15 +12,15 @@ section.home-container-4 {
 
 section.home-container-4 .cards {
     display: grid;
-    grid-template-columns: 0.33fr 0.33fr 0.33fr;
-    grid-gap: 10px;
+    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
+    grid-gap: 20px;
     place-items: center;
 }
 
 section.home-container-4 .cards .card {
     display: grid;
     grid-template-rows: 250px 30px 30px 50px;
-    grid-gap: 30px;
+    grid-gap: 20px;
     place-items: center;
     background-color: #e3e7eb;
     height: auto;
@@ -32,11 +32,15 @@ section.home-container-4 .cards .card:hover {
     box-shadow: -1px 5px 6px 8px rgba(0,0,0,0.23);
     -webkit-box-shadow: -1px 5px 6px 8px rgba(0,0,0,0.23);
     -moz-box-shadow: -1px 5px 6px 8px rgba(0,0,0,0.23);
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    -ms-transition: 1s;
+    -o-transition: 1s;
 }
 
 section.home-container-4 .cards .card img{
     height: 250px;
-    width: 100%;
+    width: 300px;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;

@@ -13,6 +13,7 @@ export default function Service({service}) {
         <>
 
             <div className="box" onClick={handleDivClick}>
+                <img src = {service.image}></img>               
                 <span>{service.name}</span>
             </div>
         

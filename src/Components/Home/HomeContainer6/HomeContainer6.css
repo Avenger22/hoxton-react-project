@@ -3,7 +3,7 @@ section.home-container-6 {
     width: 100%;
     display: grid;
     grid-template-rows: 0.1fr 0.8fr 100px;
-    grid-gap: 40px;
+    grid-gap: 30px;
     background-image: url(/assets/images/main/testimonial-bg-fullwidth.webp);
     background-position: center;
     background-repeat: no-repeat;
@@ -39,6 +39,8 @@ section.home-container-6 .cards-2 {
     grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
     grid-gap: 20px;
     place-items: center;
+    place-content: center;
+    width: auto;
 }
 
 section.home-container-6 .cards-2 .card-2 {
@@ -48,6 +50,7 @@ section.home-container-6 .cards-2 .card-2 {
     place-items: center;
     background-color: #e3e7eb;
     height: auto;
+    width: 300px;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
@@ -64,8 +67,8 @@ section.home-container-6 .cards-2 .card-2:hover {
 }
 
 section.home-container-6 .cards-2 .card-2 img {
-    height: 250px;
-    width: 300px;
+    height: 200px;
+    width: 240px;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;

@@ -1,11 +1,11 @@
 import {useNavigate } from "react-router"
 
-export default function HomeContainer4Card({card}) {
+export default function HomeContainer4Card({service}) {
 
     const navigate = useNavigate()
 
     function handleClickServices() {
-        navigate(`/services/${card.id}`)
+        navigate(`/services/${service.id}`)
     }
 
     return (
@@ -14,10 +14,13 @@ export default function HomeContainer4Card({card}) {
 
             <div className="card">
 
-                <img src={card.image} alt=""/>
-                <h5>{card.name}</h5>
-                <p>{card.desc}</p>
-                <button onClick={handleClickServices}>More Details</button>
+                <img src={service.image} alt=""/>
+                <h5>{service.name}</h5>
+                <p>{service.desc}</p>
+
+                <button onClick={handleClickServices}>
+                    More Details
+                </button>
 
             </div>
 

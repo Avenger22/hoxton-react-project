@@ -1,7 +1,11 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import { useParams } from "react-router-dom"
+
 import "./ServiceItem.css"
+
+import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon"
+import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
 
 export default function ServiceItemPage() {
 
@@ -26,7 +30,21 @@ export default function ServiceItemPage() {
 
         <>
 
-            
+            <HeaderCommon />
+
+            <section className="service-bio-wrapper">
+
+                <div className="img-box">
+                    <img src = {serviceItem.image}></img>
+                </div>
+
+                <div className="span-box">
+                    <span>{serviceItem.longDesc}</span>
+                </div>
+
+            </section>
+
+            <FooterCommon />
         
         </>
 

@@ -440,13 +440,13 @@
     }
   ],
   "services" : [
-    {"id" : 1, "name" : "Yoga"},
-    {"id" : 2, "name" :"Fitness"},
-    {"id" : 3, "name" :"Crossfit"},
-    {"id" : 4, "name" :"Bodybuilding"},
-    {"id" : 5, "name" :"Martial arts"},
-    {"id" : 6, "name" :"Cardio"},
-    {"id" : 7, "name" :"Resistance"}
+    {"id" : 1, "name" : "Yoga", "image": "/assets/images/pages-images/services-images/services-1.jpg", "desc" : "We do Crossfit"},
+    {"id" : 2, "name" :"Fitness", "image": "/assets/images/pages-images/services-images/services-2.jpg", "desc" : "We do Fitness"},
+    {"id" : 3, "name" :"Crossfit", "image": "/assets/images/pages-images/services-images/services-3.jpg", "desc" : "We do Crossfit"},
+    {"id" : 4, "name" :"Bodybuilding", "image": "/assets/images/pages-images/services-images/services-4.jpg", "desc" : "We do Bodybuilding"},
+    {"id" : 5, "name" :"Martial arts", "image": "/assets/images/pages-images/services-images/services-5.jpg", "desc" : "We do MMA"},
+    {"id" : 6, "name" :"Cardio", "image": "/assets/images/pages-images/services-images/services-6.jpg", "desc" : "We do Cardio"},
+    {"id" : 7, "name" :"Resistance", "image": "/assets/images/pages-images/services-images/services-7.jpg", "desc" : "We do Conditioning"}
   ],
   "coaches": [
     {
