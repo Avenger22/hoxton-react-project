@@ -6,6 +6,7 @@ export default function RelatedItem({item}) {
 
     function handleDivRedirectRelated() {
         navigate(`/products/${item.id}`)
+        window.location.reload()
     }
 
     return (

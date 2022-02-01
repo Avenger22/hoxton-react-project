@@ -1,16 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function BlogItemRelatedImg({post}) {
+
+    const navigate = useNavigate()
+    
+    function handleRedirectLink() {
+        navigate(`/blog/${post.id}`)
+        window.location.reload()
+    }
 
     return (
 
         <>
-        
-            <Link to={`/blog/${post.id}`}>
-                <img src = {post.image} alt=""/>
-            </Link>
-
+            <img src = {post.image} alt="" onClick = {handleRedirectLink}/>
         </>
+
     )
 
 }

@@ -124,10 +124,6 @@ export default function ProductItemPage() {
 
             <section className='product-related-wrapper'>
 
-                {/* <div className='product-related-header'>
-                    <h4>Related Products</h4>
-                </div> */}
-
                 <div className='product-related-images'>
 
                     <div className='product-related-header'>
