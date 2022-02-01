@@ -37,9 +37,8 @@ export default function HeaderCommon() {
 
                     <ul className="ul-header-2">
 
-                        <li><Link to = "/home">Sign In</Link></li>
-                        <li><Link to = "/home">Sign Up</Link></li>
-                        <li><button>Chose a plan</button></li>
+                        <li className = "sign-links"><Link to = "/home">Sign In</Link></li>
+                        <li className = "sign-links"><Link to = "/home">Sign Up</Link></li>
 
                     </ul>
 

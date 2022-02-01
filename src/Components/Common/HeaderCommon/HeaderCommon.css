@@ -50,6 +50,17 @@ header.header .header-group-1 .ul-header-1 {
     grid-gap: 10px;
 }
 
+header.header .sign-links {
+    border: 1px solid #ffffff;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    padding: 10px 15px;
+    background-color: #679ce6;
+}
+
 header.header .header-group-1 .ul-header-1 li {
     color: #fff;
     font-size: 14px;
@@ -88,8 +99,8 @@ header.header .header-group-1 .ul-header-1 li a:hover {
 
 header.header .header-group-2 .ul-header-2 {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 5px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
     place-items: center;
 }
 

@@ -1,7 +1,14 @@
 import HeaderCommon from "../../Common/HeaderCommon/HeaderCommon"
 import '../HomeContainer1/HomeContainer1.css'
+import { Navigate, useNavigate } from "react-router"
 
 export default function HomeContainer1() {
+
+    const navigate = useNavigate()
+
+    function handleGetInTouch() {
+        navigate('/contact')
+    }
 
     return (
 
@@ -22,8 +29,8 @@ export default function HomeContainer1() {
                             Sweat in the gym is the guarantee stamp for your health.
                         </p>
                         
-                        <button>
-                            get in touch
+                        <button onClick={handleGetInTouch}>
+                            Contact Us
                         </button>
                         
                     </div>

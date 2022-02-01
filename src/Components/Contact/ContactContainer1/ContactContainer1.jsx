@@ -17,11 +17,7 @@ export default function ContactContainer1() {
 
                         <h1>Contact</h1>
                         <h2>Us</h2>
-                        <p>Lorem Ipsum dolor sit amet, cosnectneur</p>
-
-                        <button>
-                            get in touch
-                        </button>
+                        <p>If you have any question please free to contact us</p>
 
                     </div>
 

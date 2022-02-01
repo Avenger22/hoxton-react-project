@@ -1,6 +1,13 @@
+import { useNavigate } from 'react-router-dom'
 import './HomeContainer3.css'
 
 export default function HomeContainer3() {
+
+    const navigate = useNavigate()
+
+    function handleAboutUs() {
+        navigate('/about-us')
+    }
 
     return (
 
@@ -30,7 +37,7 @@ export default function HomeContainer3() {
                         </p>
                         
                         <div className="btn-box">
-                            <button>Contact Us</button>
+                            <button onClick={handleAboutUs}>More about us</button>
                         </div>
                         
                     </div>
