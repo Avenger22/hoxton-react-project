@@ -1,8 +1,15 @@
 import HomeContainer6Card from "./HomeContainer6Card"
 import './HomeContainer6.css'
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router"
 
 export default function HomeContainer6() {
+
+    const navigate = useNavigate()
+
+    function handleOurTeam() {
+        navigate(`/teams`)
+    }
 
     const [coaches, setCoaches] = useState([])
 
@@ -12,7 +19,7 @@ export default function HomeContainer6() {
             .then(coachesFromServer => setCoaches(coachesFromServer))
     }, [])
 
-    const newCoaches = coaches.slice(0,3)
+    const newCoaches = coaches.slice(0,4)
 
     return (
         
@@ -40,6 +47,12 @@ export default function HomeContainer6() {
 
                     }
 
+                </div>
+
+                <div className="btn-all-wrapper">
+                    <button onClick={handleOurTeam} className="all-team-btn">
+                        <span>All our team</span>
+                    </button>
                 </div>
 
             </section>

@@ -1,7 +1,25 @@
 import HomeContainer4Card from "./HomeContainer4Card"
 import './HomeContainer4.css'
+import { useNavigate } from "react-router"
+import { useEffect, useState } from "react"
 
 export default function HomeContainer4() {
+
+    const navigate = useNavigate()
+
+    function handleOurServices() {
+        navigate(`/services`)
+    }
+    
+    const [services, setServices] = useState([])
+
+    useEffect(() => {
+        fetch(`http://localhost:8000/services`)
+            .then(resp => resp.json())
+            .then(servicesFromServer => setServices(servicesFromServer))
+    }, [])
+
+    const newServices = services.slice(0,4)
 
     const cards = [
 
@@ -54,6 +72,12 @@ export default function HomeContainer4() {
 
                     }
 
+                </div>
+
+                <div className="btn-all-wrapper">
+                    <button onClick={handleOurServices} className="all-services-btn">
+                        <span>All our services</span>
+                    </button>
                 </div>
 
             </section>

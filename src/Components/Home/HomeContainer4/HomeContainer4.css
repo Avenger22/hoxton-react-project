@@ -1,8 +1,8 @@
 section.home-container-4 {
-    height: 120vh;
+    height: auto;
     width: 100%;
     display: grid;
-    grid-template-rows: 0.1fr 0.9fr;
+    grid-template-rows: 0.1fr 0.8fr 0.1fr;
     grid-gap: 30px;
     background-image: url(/assets/images/main/testimonial-bg-fullwidth.webp);
     background-position: center;
@@ -61,7 +61,7 @@ section.home-container-4 .text-box-2 h4 {
 
 section.home-container-4 .text-box-2 p {
     font-size: 18px;
-    font-weight: 800;
+    font-weight: 500;
     letter-spacing: normal;
     font-family: sans-serif;
     color: #fff;
@@ -75,11 +75,11 @@ section.home-container-4 .card h5 {
 }
 
 section.home-container-4 .card p {
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 14px;
+    font-weight: 400;
     font-family: sans-serif;
     width: 45ch;
-    padding: 0px 10px;
+    padding: 0px 120px;
     display: grid;
     place-self: center;
 }
@@ -90,7 +90,7 @@ section.home-container-4 .cards .card img:hover {
 }
 
 section.home-container-4 .card button {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     letter-spacing: normal;
     font-family: sans-serif;
@@ -101,5 +101,36 @@ section.home-container-4 .card button {
     cursor: pointer;
     border-radius: 20px;
     margin-bottom: 20px;
-    border: 5px solid #b1b8c2;
+    border: 1px solid #b1b8c2;
+}
+
+section.home-container-4 .card button:hover {
+    color: #37393b;
+    background-color: #e3e7eb;
+}
+
+section.home-container-4 .btn-all-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    place-content: center;
+
+    padding-bottom: 40px;
+}
+
+section.home-container-4 .all-services-btn {
+    font-size: 14px;
+    color: #fff;
+    background-color: #679ce6;
+    padding: 15px 25px;
+    border: none;
+    cursor: pointer;
+
+    display: grid;
+    place-self: center;
+}
+
+section.home-container-4 .all-services-btn:hover {
+    color: #1f2c3f;
+    background-color: #d6c981;
 }

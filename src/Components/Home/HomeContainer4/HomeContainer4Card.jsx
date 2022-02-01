@@ -1,4 +1,12 @@
+import {useNavigate } from "react-router"
+
 export default function HomeContainer4Card({card}) {
+
+    const navigate = useNavigate()
+
+    function handleClickServices() {
+        navigate(`/services/${card.id}`)
+    }
 
     return (
 
@@ -9,7 +17,7 @@ export default function HomeContainer4Card({card}) {
                 <img src={card.image} alt=""/>
                 <h5>{card.name}</h5>
                 <p>{card.desc}</p>
-                <button>See more</button>
+                <button onClick={handleClickServices}>More Details</button>
 
             </div>
 
