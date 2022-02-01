@@ -1,42 +1,21 @@
 import HomeContainer6Card from "./HomeContainer6Card"
 import './HomeContainer6.css'
+import { useEffect, useState } from "react"
 
 export default function HomeContainer6() {
 
-    const cards = [
+    const [coaches, setCoaches] = useState([])
 
-        {
-            id: 1, 
-            image: "/assets/images/main/foto-1.jpg", 
-            name: 'Ana Gonzalez',
-            desc: 'My name is Ana Gonzalez'
-        },
+    useEffect(() => {
+        fetch(`http://localhost:8000/coaches`)
+            .then(resp => resp.json())
+            .then(coachesFromServer => setCoaches(coachesFromServer))
+    }, [])
 
-        {
-            id: 2, 
-            image: "/assets/images/main/foto-3.jpg", 
-            name: 'John Mitt',
-            desc: 'My name is John Mitt'
-        },
-
-        {
-            id: 3, 
-            image: "/assets/images/main/foto-4.jpg", 
-            name: 'Billy Froster',
-            desc: 'My name is Billy Froster'
-        },
-
-        {
-            id: 4, 
-            image: "/assets/images/main/foto-5.jpg", 
-            name: 'Artan Shehu',
-            desc: 'My name is Artan Shehu'
-        }
-
-    ]
+    const newCoaches = coaches.slice(0,3)
 
     return (
-
+        
         <>
         
             <section className="home-container-6" id="home-container-6">
@@ -50,7 +29,7 @@ export default function HomeContainer6() {
 
                     {
 
-                        cards.map(card =>
+                        newCoaches.map(card =>
                             
                             <HomeContainer6Card 
                                 key = {card.id}

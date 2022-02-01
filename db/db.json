@@ -438,5 +438,58 @@
       "desc" : "We knew they were  the best in products section but what blew our mind was their MMA speciality too, in terms of team and classes really all in one package",
       "image" : "/assets/images/logos/transparent.png"
     }
+  ],
+  "services" : [
+    {"id" : 1, "name" : "Yoga"},
+    {"id" : 2, "name" :"Fitness"},
+    {"id" : 3, "name" :"Crossfit"},
+    {"id" : 4, "name" :"Bodybuilding"},
+    {"id" : 5, "name" :"Martial arts"},
+    {"id" : 6, "name" :"Cardio"},
+    {"id" : 7, "name" :"Resistance"}
+  ],
+  "coaches": [
+    {
+      "id":1,
+      "image":"/assets/images/pages-images/team-images/coach-1.jpg",
+      "name":"Dyah Ali Davis",
+      "desc":"Yoga coach"
+    },
+    {
+      "id":2,
+      "image":"/assets/images/pages-images/team-images/coach-2.jpg",
+      "name":"Everton Bittar Oliveira",
+      "desc":"BJJ coach"
+    },
+    {
+      "id":3,
+      "image":"/assets/images/pages-images/team-images/coach-3.jpg",
+      "name":"Vitelmo Katel Kubis",
+      "desc":"Bodybuilding coach"
+    },
+    {
+      "id":4,
+      "image":"/assets/images/pages-images/team-images/coach-4.jpg",
+      "name":"Marcos DaMatta",
+      "desc":"Conditioning coach"
+    },
+    {
+      "id":5,
+      "image":"/assets/images/pages-images/team-images/coach-5.jpg",
+      "name":"Conan Silveira",
+      "desc":"Crossfit coach"
+    },
+    {
+      "id":6,
+      "image":"/assets/images/pages-images/team-images/coach-6.jpg",
+      "name":"Steve Mocco",
+      "desc":"Boxing coach"
+    },
+    {
+      "id":7,
+      "image":"/assets/images/pages-images/team-images/coach-7.jpg",
+      "name":"Thiago Alves",
+      "desc":"Striking coach"
+    }
   ]
 }

@@ -1,0 +1,26 @@
+section.boxes-wrapper {
+    padding-top: 100px;
+    height: auto;
+    width: 100%;
+    padding-bottom: 100px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+}
+
+section.boxes-wrapper .box {
+    display: grid;
+    grid-template-rows: 1fr;
+    place-items: center;
+
+    height: 200px;
+    cursor: pointer;
+
+    background-color: green;
+}
+
+.box span {
+    color: blue;
+    font-size: 16px;
+}

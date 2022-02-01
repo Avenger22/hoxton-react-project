@@ -1,8 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../HeaderCommon/HeaderCommon.css'
 
 export default function HeaderCommon() {
 
+    const navigate = useNavigate()
+
+    function handleServicesClick() {
+        navigate("/services")
+    }
+    
     return (
 
         <>
@@ -23,6 +29,24 @@ export default function HeaderCommon() {
                         
                         <li><Link to = "/home">Home</Link></li>
                         <li><Link to = "/about-us">About Us</Link></li>
+
+                        <div className="dropdown">
+
+                            <button className="dropbtn" onClick={handleServicesClick}>Services</button>
+
+                            <div className="dropdown-content">
+                                <Link to ="/services/1">Yoga</Link>
+                                <Link to ="/services/2">Fitness</Link>
+                                <Link to ="/services/3">Crossfit</Link>
+                                <Link to ="/services/4">Bodybuilding</Link>
+                                <Link to ="/services/5">Martial arts</Link>
+                                <Link to ="/services/6">Cardio</Link>
+                                <Link to ="/services/7">Resistance</Link>
+                            </div>
+
+                        </div>
+                        
+                        <li><Link to = "/teams">Our Team</Link></li>
                         <li><Link to = "/blog">Blog</Link></li>
                         <li><Link to = "/products">Products</Link></li>
                         <li><Link to = "/contact">Contact</Link></li>
