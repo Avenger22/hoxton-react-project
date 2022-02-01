@@ -11,7 +11,7 @@ function ProductsHeader(props) {
     setSearchOnCategory, userName, setUserName, userCatcher, 
     setUserCatcher, selectType, setSelectType} = props
 
-    const ulSub2 = ['Home', 'Products', 'Offers', 'About Us', 'Blog', 'Contact']
+    const ulSub2 = ['Home', 'Products', 'Offers', 'About-Us', 'Blog', 'Contact']
 
     return (
 

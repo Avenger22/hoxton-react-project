@@ -3,7 +3,7 @@ import "../UlSubLi/UlSub2Li.css"
 
 export default function UlSub2li({item}) {
 
-    const urlPath = `/${item}`
+    const urlPath = `/${item.toLowerCase()}`
 
     return (
 

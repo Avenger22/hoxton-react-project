@@ -3,12 +3,13 @@ import {Routes, Route, Navigate} from 'react-router-dom'
 
 import './App.css'
 
-import HomePage from './pages/Home/HomePage'
-import ContactPage from './pages/Contact/ContactPage'
-import BlogPage from './pages/Blog/BlogPage'
-import ProductsPage from "./pages/Products/ProductsPage"
-import BlogItemPage from './pages/BlogItem/BlogItemPage'
-import Error404Page from './pages/Error404/Error404Page'
+import HomePage from './Pages/Home/HomePage'
+import ContactPage from './Pages/Contact/ContactPage'
+import BlogPage from './Pages/Blog/BlogPage'
+import ProductsPage from "./Pages/Products/ProductsPage"
+import BlogItemPage from './Pages/BlogItem/BlogItemPage'
+import Error404Page from './Pages/Error404/Error404Page'
+import AboutUsPage from "./Pages/AboutUs/AboutUsPage"
 // #endregion
 
 // #region 'App'
@@ -43,6 +44,11 @@ function App() {
         <Route 
           path = "/blog" 
           element = {<BlogPage />}>
+        </Route>
+
+        <Route 
+          path = "/about-us" 
+          element = {<AboutUsPage />}>
         </Route>
 
         <Route 
