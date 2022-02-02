@@ -1,4 +1,4 @@
-export default function FavouritesPage() {
+export default function FavoriteItem(props) {
 
     return (
 

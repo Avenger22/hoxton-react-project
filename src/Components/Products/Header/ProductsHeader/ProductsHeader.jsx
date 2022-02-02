@@ -19,6 +19,10 @@ function ProductsHeader(props) {
         navigate(`/bag`)
     }
 
+    function handleRedirectToFavorite() {
+        navigate('/favorites')
+    }
+
     return (
 
         <>
@@ -58,6 +62,11 @@ function ProductsHeader(props) {
 
                             </div>
    
+                            <button className="button-image" onClick={handleRedirectToFavorite}>
+                                <img src="/assets/icons/favorite.png" alt=""/>
+                                <span className="span-fav-number null"></span>
+                            </button>
+
                             <button className="button-image" onClick={handleRedirectToBag}>
                                 <img src="/assets/icons/shopping-bag.png" alt=""/>
                                 <span className="span-bag-stock null"></span>

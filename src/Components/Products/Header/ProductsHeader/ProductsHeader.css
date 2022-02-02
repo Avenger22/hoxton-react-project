@@ -69,7 +69,7 @@ section.container-menus .header-sub-2 {
 
 section.container-menus .ul-sub-1 {
     display: grid;
-    grid-template-columns: 0.2fr 0.6fr 0.1fr 0.1fr;
+    grid-template-columns: 0.2fr 0.5fr 0.1fr 0.1fr 0.1fr;
     grid-gap: 50px;
     place-items: center;
     place-content: center;

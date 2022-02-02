@@ -18,7 +18,7 @@ import ProductItemPage from './Pages/ProductItem/ProductItemPage'
 import SignInPage from './Pages/SignIn/SignInPage'
 import SignUpPage from './Pages/SignUp/SignUpPage'
 import BagPage from './Pages/Bag/BagPage'
-import FavouritesPage from './Pages/Favourites/FavouritesPage'
+import FavoritesPage from './Pages/Favorites/FavoritesPage'
 import { useEffect, useState } from 'react/cjs/react.development'
 // #endregion
 
@@ -69,8 +69,8 @@ function App() {
         </Route>
 
         <Route 
-          path = "/favourites" 
-          element = {<FavouritesPage />}>
+          path = "/favorites" 
+          element = {<FavoritesPage />}>
         </Route>
 
         <Route 
@@ -82,6 +82,13 @@ function App() {
         <Route 
           path = "/blog" 
           element = {<BlogPage />}>
+        </Route>
+
+        <Route 
+          path = "/favorites" 
+          element = {<FavoritesPage 
+            items = {items}
+          />}>
         </Route>
 
         <Route 
