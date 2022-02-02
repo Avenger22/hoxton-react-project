@@ -19,10 +19,14 @@ section.home-container-7 .newsletter-wrapper {
     grid-gap: 40px;
   }
 
+  section.home-container-7 form {
+      display: grid;
+      grid-template-columns: 0.8fr 0.2fr;
+  }
+
 section.home-container-7 .newsletter-search {
     display: grid;
-    /* outline: 0.5px solid #a9bad1; */
-    grid-template-columns: 0.8fr 0.2fr;
+    grid-template-columns: 1fr;
 }
 
 section.home-container-7 .newsletter-wrapper input {
@@ -30,7 +34,7 @@ section.home-container-7 .newsletter-wrapper input {
     width: 550px;
     font-size: 16px;
     font-weight: 700;
-    color: #a9bad1;
+    color: #111213;
     background-color: #fff;
     border: none;
 }
@@ -46,6 +50,8 @@ section.home-container-7 .newsletter-wrapper button {
     place-items: center;
     grid-gap: 5px;
     cursor: pointer;
+    color: #060607;
+    background-color: #d8531e;
 }
 
 section.home-container-7 .newsletter-wrapper button:hover {

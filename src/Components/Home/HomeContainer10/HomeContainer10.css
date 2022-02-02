@@ -81,6 +81,7 @@ section.home-container-10 .offer button {
     grid-template-columns: 1fr 1fr;
     background-color: #060208;
     border: none;
+    cursor: pointer;
 }
 
 section.home-container-10 .offer button:hover {

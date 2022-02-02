@@ -3,6 +3,7 @@ import './HomeContainer10.css'
 
 import { useState } from "react"
 import { useEffect } from "react"
+import { useNavigate } from "react-router"
 
 export default function HomeContainer10() {
 
@@ -14,6 +15,12 @@ export default function HomeContainer10() {
             .then(companiesFromServer => setCompanies(companiesFromServer))
     }, [])
 
+    const navigate = useNavigate()
+
+    function handleMoreOffersClick() {
+        navigate('/products')
+    }
+    
     return (
 
         <>
@@ -45,7 +52,7 @@ export default function HomeContainer10() {
 
                     <h4>This month we offer 20% discount offer for those who register in our gym in these month, so hurry up and register !</h4>
                     
-                    <button>
+                    <button onClick={handleMoreOffersClick}>
                         <span>More</span>
                         <span>Offers</span>
                     </button>

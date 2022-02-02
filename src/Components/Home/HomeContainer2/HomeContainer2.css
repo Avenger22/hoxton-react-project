@@ -9,17 +9,16 @@ section.home-container-2 {
 section.home-container-2  .box {
     display: grid;
     grid-template:     
-    "box-image box-header" 0.3fr    
-    "box-image box-form" 0.4fr    
-    "box-image box-button" 0.3fr /     
-    0.3fr 0.7fr;
+    "box-image box-header" 0.1fr    
+    "box-image box-form" 0.9fr /     
+    0.2fr 0.8fr;
 
     background-image: url(/assets/images/main/vector-JUL-2020-132.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     height: 90vh;
-    width: 100%;
+    width: 90%;
     border-radius: 20px;
 }
 
@@ -72,15 +71,23 @@ section.home-container-2  .box .box-button button:hover {
     transition: 1s;
 }
 
+section.home-container-2  .box .box-form {
+    display: grid;
+    grid-template-rows: 0.7fr 0.3fr;
+    grid-gap: 20px;
+    place-content: center;
+}
+
 section.home-container-2  .box .box-form input {
     padding: 20px 10px;
     border: none;
     border-bottom: 10px solid #e52b50;
     width: 80%;
     outline: none;
+    width: 150px;
 }
 
-section.home-container-2  .box .box-form input:focus {
+section.home-container-2  .box .box-form .input-holders input:focus {
     border: none;
     outline: none;
 }
@@ -91,13 +98,13 @@ section.home-container-2 .box-header {
 
 section.home-container-2  .box-button {
     grid-area: box-button;
+    padding-top: 150px;
 }
 
-section.home-container-2  .box-form {
+section.home-container-2  .box-form .input-holders {
     grid-area: box-form;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 10px;
-    place-items: center;
+    grid-template-columns: 0.33fr 0.33fr 0.34fr;
+    grid-gap: 40px;
+    padding-bottom: 150px;
 }

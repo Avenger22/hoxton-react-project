@@ -1,6 +1,14 @@
+import { useState } from 'react/cjs/react.development'
 import './HomeContainer7.css'
 
 export default function HomeContainer7() {
+
+    const [newsLetterEmail, setNewsLetterEmail] = useState('')
+
+    function handleFormNewsletter(e) {
+        const valueForm = e.target.newsLetter.value
+        setNewsLetterEmail(valueForm)
+    }
 
     return (
 
@@ -16,12 +24,21 @@ export default function HomeContainer7() {
 
                     <div className="newsletter-search">
 
-                        <input type="email" placeholder="abcd@example.com"/>
-                        
-                        <button>
-                            <span>Sign</span>
-                            <span>Up</span>
-                        </button>
+                        <form action="" className='form-newsletter-wrapper'
+                            onSubmit={function (e) {
+                                e.preventDefault()
+                                handleFormNewsletter(e)
+                            }}
+                        >
+
+                            <input name = "newsLetter" type="email" placeholder="abcd@example.com"/>
+                            
+                            <button>
+                                <span>Sign</span>
+                                <span>Up</span>
+                            </button>
+
+                        </form>
                         
                     </div>
 
