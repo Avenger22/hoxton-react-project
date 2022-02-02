@@ -154,6 +154,14 @@ section.container-product-item .main-container .product-ribbon span {
     border: 1px solid #bdb5b5;
   }
 
+  .related-box span {
+    font-size: 16px;
+    color: #f61f17;
+    font-weight: 700;
+    display: grid;
+    place-self: center;
+  }
+
   .related-box img {
     height: 220px;
     width: 260px;

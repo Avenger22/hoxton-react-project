@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import '../HeaderCommon/HeaderCommon.css'
 
 export default function HeaderCommon() {
@@ -27,8 +27,8 @@ export default function HeaderCommon() {
 
                         </li>
                         
-                        <li><Link to = "/home">Home</Link></li>
-                        <li><Link to = "/about-us">About Us</Link></li>
+                        <li><NavLink to = "/home">Home</NavLink></li>
+                        <li><NavLink to = "/about-us">About Us</NavLink></li>
 
                         <div className="dropdown">
 
@@ -46,10 +46,10 @@ export default function HeaderCommon() {
 
                         </div>
                         
-                        <li><Link to = "/teams">Our Team</Link></li>
-                        <li><Link to = "/blog">Blog</Link></li>
-                        <li><Link to = "/products">Products</Link></li>
-                        <li><Link to = "/contact">Contact</Link></li>
+                        <li><NavLink to = "/teams">Our Team</NavLink></li>
+                        <li><NavLink to = "/blog">Blog</NavLink></li>
+                        <li><NavLink to = "/products">Products</NavLink></li>
+                        <li><NavLink to = "/contact">Contact</NavLink></li>
                     
                     </ul>
 

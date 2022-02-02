@@ -41,6 +41,26 @@
   .basket-container__item {
     display: grid;
     align-items: center;
-    grid-template-columns: auto 3fr 1fr 1fr;
-    column-gap: 2rem;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+    column-gap: 0.5rem;
   }
+
+  .basket-container__item button {
+    font-size: 14px;
+    color: rgb(15, 14, 14);
+    background-color: rgb(235, 54, 54);
+    padding: 5px 30px;
+    border: none;
+    font-weight: 700;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    cursor: pointer;
+}
+
+.basket-container__item p {
+  font-size: 14px;
+  font-weight: 600;
+}

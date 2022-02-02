@@ -1,9 +1,16 @@
 import { useState } from "react"
+import { useNavigate } from "react-router"
 
 function BagItem(props) {
 
     const {product, calculateTotalBasket, filterTotalIndividual, handleOnChangeSelect} = props 
     const totalIndividualArray = filterTotalIndividual(product.id)
+
+    const navigate = useNavigate()
+
+    function handleRedirectBack() {
+        navigate(`/products/${product.id}`)
+    }
 
     return (
 
@@ -47,6 +54,7 @@ function BagItem(props) {
                 </p>
                 
                 <p>Item total: {calculateTotalBasket(totalIndividualArray)}</p>
+                <button onClick={handleRedirectBack}>Go to product</button>
 
             </article>
 

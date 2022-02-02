@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../UlSubLi/UlSub2Li.css"
 
 export default function UlSub2li({item}) {
@@ -10,7 +10,7 @@ export default function UlSub2li({item}) {
         <>
 
             <li>
-                <Link to={urlPath}>{item}</Link>
+                <NavLink to={urlPath}>{item}</NavLink>
             </li>
             
         </>

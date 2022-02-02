@@ -40,6 +40,12 @@ section.container-menus .ul-aside li a {
     font-weight: 700;
     letter-spacing: 1px;
     font-family:'Courier New', Courier, monospace;
+    cursor: pointer;
+}
+
+section.container-menus .ul-aside li a.active {
+    color: #d40a0a;
+    border-bottom: 3px solid #0d2335;
 }
 
 section.container-menus .ul-aside li a:hover {

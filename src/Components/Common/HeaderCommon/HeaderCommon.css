@@ -12,12 +12,18 @@ header.header {
     height: 70px;
 }
 
+header.header .active {
+    color: #ffa800;
+    border-bottom: 3px solid #b61e1e;
+}
+
 header.header #special-logo {
     color: #c9c1ce;
     text-transform: uppercase;
     font-weight: 700;
     font-style: italic;
     font-size: 14px;
+    padding-left: 20px;
 }
 
 header.header #special-logo a {
@@ -34,7 +40,6 @@ header.header .header-group-1 {
     grid-template-columns: 1fr;
     place-items: center;
     place-content: center;
-   
 }
 
 header.header .header-group-2 {
@@ -46,7 +51,7 @@ header.header .header-group-2 {
 
 header.header .header-group-1 .ul-header-1 {
     display: grid;
-    grid-template-columns: 160px 80px 80px 80px 80px 80px 80px 80px;
+    grid-template-columns: 160px 70px 70px 70px 70px 70px 70px 70px;
     grid-gap: 10px;
 }
 
@@ -102,6 +107,7 @@ header.header .header-group-2 .ul-header-2 {
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
     place-items: center;
+    padding-left: 60px;
 }
 
 header.header .header-group-2 .ul-header-2 li button{
