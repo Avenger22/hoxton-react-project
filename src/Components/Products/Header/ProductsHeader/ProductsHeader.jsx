@@ -38,13 +38,22 @@ function ProductsHeader(props) {
                                 setSelectType = {setSelectType}
                             />
 
+                            <div className="dropdown">
+
+                                <button className="button-image">
+                                    <img src="/assets/icons/user.png" alt=""/>
+                                    <span className="span-user-login null"></span>
+                                </button>
+
+                                <div className="dropdown-content">
+                                    <Link to ="/sign-in">Sign In</Link>
+                                    <Link to ="/sign-up">Sign Up</Link>
+                                </div>
+
+                            </div>
+   
                             <button className="button-image">
-                                <img src="./assets/icons/user.png" alt=""/>
-                                <span className="span-user-login null"></span>
-                            </button>
-                                        
-                            <button className="button-image">
-                                <img src="./assets/icons/shopping-bag.png" alt=""/>
+                                <img src="/assets/icons/shopping-bag.png" alt=""/>
                                 <span className="span-bag-stock null"></span>
                             </button>
                             
