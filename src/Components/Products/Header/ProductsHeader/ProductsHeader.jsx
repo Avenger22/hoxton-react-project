@@ -9,14 +9,18 @@ function ProductsHeader(props) {
     const {selectedModal,
     setSelectedModal, searchTerm, setSearchTerm, searchOnCategory,
     setSearchOnCategory, userName, setUserName, userCatcher, 
-    setUserCatcher, selectType, setSelectType} = props
+    setUserCatcher, setCategory} = props
 
-    const ulSub2 = ['Home', 'Products', 'Offers', 'About-Us', 'Blog', 'Contact']
+    const ulSub2 = ['Home', 'Products', 'About-Us', 'Blog', 'Contact']
 
     const navigate = useNavigate()
     
     function handleRedirectToBag() {
         navigate(`/bag`)
+    }
+
+    function handleOffersEvent() {
+        setCategory('offers')
     }
 
     function handleRedirectToFavorite() {
@@ -89,6 +93,10 @@ function ProductsHeader(props) {
                                 )
 
                             }
+
+                            <button className = "special-offers" onClick={function () {
+                                handleOffersEvent()
+                            }}>Offers</button>
                             
                         </ul>
                         

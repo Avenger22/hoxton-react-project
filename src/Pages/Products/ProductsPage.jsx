@@ -866,50 +866,51 @@ function Products() {
         }
         // #endregion
     
+
         // #region 'CONDITIONALS FOR ---OFFERS---  AND THEIR SORTING OPTIONS
-        else if ( category === 'Offers' &&  selectType === 'Default') {
+        else if ( category === 'offers' &&  selectType === 'Default') {
             itemsToDisplay = initialFilteredItems
             globalItemsToDisplay = itemsToDisplay
     
             itemToDisplaySorted = getOffersFromState()
         }
     
-        else if ( category === 'Offers' &&  selectType === 'price-asc') {
+        else if ( category === 'offers' &&  selectType === 'price-asc') {
             itemsToDisplay = getOffersFromState()
             globalItemsToDisplay = itemsToDisplay
     
             itemToDisplaySorted = getSortedByPriceAsc()
         }
     
-        else if ( category === 'Offers' &&  selectType === 'price-desc') {
+        else if ( category === 'offers' &&  selectType === 'price-desc') {
             itemsToDisplay = getOffersFromState()
             globalItemsToDisplay = itemsToDisplay
     
             itemToDisplaySorted = getSortedByPriceDesc()
         }
     
-        else if ( category === 'Offers' &&  selectType === 'name-asc') {
+        else if ( category === 'offers' &&  selectType === 'name-asc') {
             itemsToDisplay = getOffersFromState()
             globalItemsToDisplay = itemsToDisplay
     
             itemToDisplaySorted = getSortedByNameAsc()
         }
     
-        else if ( category === 'Offers' &&  selectType === 'name-desc') {
+        else if ( category === 'offers' &&  selectType === 'name-desc') {
             itemsToDisplay = getOffersFromState()
             globalItemsToDisplay = itemsToDisplay
     
             itemToDisplaySorted = getSortedByNameDesc()
         }
     
-        else if ( category === 'Offers' &&  selectType === 'date-asc') {
+        else if ( category === 'offers' &&  selectType === 'date-asc') {
             itemsToDisplay = getOffersFromState()
             globalItemsToDisplay = itemsToDisplay
     
             itemToDisplaySorted = getSortedByDateAsc()
         }
     
-        else if ( category === 'Offers' &&  selectType === 'date-desc') {
+        else if ( category === 'offers' &&  selectType === 'date-desc') {
             itemsToDisplay = getOffersFromState()
             globalItemsToDisplay = itemsToDisplay
     
@@ -917,6 +918,7 @@ function Products() {
         }
         // #endregion
     
+
         // #region 'CONDITIONALS FOR ---PROTEINS--- AND THEIR SORTING OPTIONS
         else if ( category === 'Proteins' &&  selectType === 'Default') {
             itemToDisplaySorted = getProteinProducts()
@@ -1323,7 +1325,7 @@ function Products() {
     }
     // #endregion
 
-    
+
     // #region 'Returning Html of the page'
     return (
 
@@ -1347,8 +1349,7 @@ function Products() {
                     userCatcher = {userCatcher}
                     setUserCatcher = {setUserCatcher}
 
-                    selectType = {selectType}
-                    setSelectType = {setSelectType}
+                    setCategory = {setCategory}
                 />
                 
                 <ProductsMain 
