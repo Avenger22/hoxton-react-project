@@ -17,10 +17,27 @@ import TeamItemPage from "./Pages/TeamItem/TeamItemPage"
 import ProductItemPage from './Pages/ProductItem/ProductItemPage'
 import SignInPage from './Pages/SignIn/SignInPage'
 import SignUpPage from './Pages/SignUp/SignUpPage'
+import BagPage from './Pages/Bag/BagPage'
+import FavouritesPage from './Pages/Favourites/FavouritesPage'
+import { useEffect, useState } from 'react/cjs/react.development'
 // #endregion
 
 // #region 'App'
 function App() {
+
+  const [items, setItems] = useState([])
+
+  function getItemsFromServer() {
+
+    fetch('http://localhost:8000/items')
+      .then(resp => resp.json())
+      .then(itemsFromServer1 => {
+      setItems(itemsFromServer1)
+    })
+
+  }
+
+  useEffect(getItemsFromServer, [])
 
   // #region 'Return Html'
   return (
@@ -41,6 +58,19 @@ function App() {
         <Route 
           path = "/home" 
           element = {<HomePage />}>
+        </Route>
+
+        <Route 
+          path = "/bag" 
+          element = {<BagPage 
+            items = {items.filter(item => item?.quantity > 0)}
+            setItems = {setItems}
+          />}>
+        </Route>
+
+        <Route 
+          path = "/favourites" 
+          element = {<FavouritesPage />}>
         </Route>
 
         <Route 

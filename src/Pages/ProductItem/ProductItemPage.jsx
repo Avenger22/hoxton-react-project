@@ -1,5 +1,5 @@
 // #region 'Importing'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 
 import "./ProductItem.css"
@@ -17,8 +17,35 @@ export default function ProductItemPage() {
 
     const params = useParams()
     const [item, setItem] = useState(null) //important for fetching only 1 item
+    
     // const [itemsByCategory, setItemsByCategory] = useState(null) //important for related posts
+    
     const [items, setItems] = useState([])
+    const navigate = useNavigate()
+    
+    // function handleRedirectToBag() {
+    //     navigate(`/bag`)
+    // }
+
+    function handleButtonAddBasket(product) {
+
+        // handleRedirectToBag()
+
+        let itemsCopy = JSON.parse(JSON.stringify(items))
+        const index = itemsCopy.findIndex(target => target.id === product.id)
+
+        const item = itemsCopy[index]
+        const newItem = {
+            ...item,
+            quantity: item?.quantity ? item.quantity + 1 : 1
+        }
+
+        itemsCopy[index] = newItem
+        setItems(itemsCopy)
+
+        navigate('/bag')
+
+    }
 
     function filterCategory() {
         return items.filter(item => item.type === type && item.name !== name)
@@ -111,12 +138,11 @@ export default function ProductItemPage() {
                             </span> : {item.stock}
                         </p>
 
-
-                        <Link to={"/bag"}>
-                            <button>
-                                Add to bag
-                            </button>
-                        </Link>
+                        <button onClick={function () {
+                            handleButtonAddBasket(item)
+                        }}>
+                            Add to bag
+                        </button>
 
                     </div>
 

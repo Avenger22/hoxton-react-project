@@ -1,5 +1,5 @@
 import Form from '../Form/Form'
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import UlSub2li from '../UlSubLi/UlSub2Li'
 
 import "../ProductsHeader/ProductsHeader.css"
@@ -12,6 +12,12 @@ function ProductsHeader(props) {
     setUserCatcher, selectType, setSelectType} = props
 
     const ulSub2 = ['Home', 'Products', 'Offers', 'About-Us', 'Blog', 'Contact']
+
+    const navigate = useNavigate()
+    
+    function handleRedirectToBag() {
+        navigate(`/bag`)
+    }
 
     return (
 
@@ -52,7 +58,7 @@ function ProductsHeader(props) {
 
                             </div>
    
-                            <button className="button-image">
+                            <button className="button-image" onClick={handleRedirectToBag}>
                                 <img src="/assets/icons/shopping-bag.png" alt=""/>
                                 <span className="span-bag-stock null"></span>
                             </button>
