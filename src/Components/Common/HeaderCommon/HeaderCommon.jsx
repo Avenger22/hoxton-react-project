@@ -32,7 +32,7 @@ export default function HeaderCommon() {
 
                         <div className="dropdown">
 
-                            <button className="dropbtn" onClick={handleServicesClick}>Services</button>
+                            <NavLink to = {`/services`} className="dropbtn">Services</NavLink>
 
                             <div className="dropdown-content">
                                 <Link to ="/services/1">Yoga</Link>

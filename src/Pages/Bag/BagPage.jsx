@@ -22,6 +22,12 @@ export default function BagPage(props) {
 
     }
 
+    const navigate = useNavigate()
+
+    function handlePaymentRedirect() {
+        navigate('/payment')
+    }
+
     function handleOnChangeSelect(value, objectBasket) {
 
         let basketCopy = JSON.parse(JSON.stringify(bagItemsFiltered))
@@ -78,6 +84,7 @@ export default function BagPage(props) {
                 </ul>
 
                 <h3>Your total: {calculateTotalBasket(bagItemsFiltered)}</h3>
+                <button onClick={handlePaymentRedirect}>Proceed to payment</button>
 
             </section>
 

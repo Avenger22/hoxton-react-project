@@ -19,6 +19,7 @@ import SignInPage from './Pages/SignIn/SignInPage'
 import SignUpPage from './Pages/SignUp/SignUpPage'
 import BagPage from './Pages/Bag/BagPage'
 import FavoritesPage from './Pages/Favorites/FavoritesPage'
+import PaymentPage from "./Pages/Payment/PaymentPage"
 import { useEffect, useState } from 'react/cjs/react.development'
 // #endregion
 
@@ -136,6 +137,11 @@ function App() {
         <Route 
           path = "/sign-up" 
           element = {<SignUpPage />}>
+        </Route>
+
+        <Route 
+          path = "/payment" 
+          element = {<PaymentPage />}>
         </Route>
 
 
