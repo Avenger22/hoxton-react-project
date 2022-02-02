@@ -12,7 +12,7 @@ section.home-container-4 {
 
 section.home-container-4 .cards {
     display: grid;
-    grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
+    grid-template-columns: 0.33fr 0.33fr 0.33fr;
     grid-gap: 20px;
     place-items: center;
 }

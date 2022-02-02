@@ -25,7 +25,7 @@ export default function FavoritesPage(props) {
 
                 <ul>
 
-                    {
+                    {/* {
 
                         items.map(product =>
 
@@ -38,7 +38,7 @@ export default function FavoritesPage(props) {
 
                         )
 
-                    }
+                    } */}
 
                 </ul>
 

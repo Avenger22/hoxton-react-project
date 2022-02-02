@@ -20,7 +20,7 @@ export default function HomeContainer4() {
             .then(servicesFromServer => setServices(servicesFromServer))
     }, [])
 
-    const newServices = services.slice(0,4)
+    const newServices = services.slice(0,3)
 
     return (
 

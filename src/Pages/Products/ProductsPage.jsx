@@ -27,7 +27,6 @@ function Products() {
     
     const [selectType, setSelectType] = useState('Default')
     const [category, setCategory] = useState('Default')
-    
     const [searchTerm, setSearchTerm] = useState('')
     
     const [searchOnCategory, setSearchOnCategory] = useState('Default')
@@ -1309,7 +1308,6 @@ function Products() {
 
                     category = {category}
                     setCategory = {setCategory}
-
                     showItems = {showItems}
                 />
                     
