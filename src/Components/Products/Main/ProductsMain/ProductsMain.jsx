@@ -1,18 +1,20 @@
 // #region 'Importing'
 import Aside from "../Aside/Aside"
-import Pagination from "../Pagination/Pagination"
 import StoreItem from "../StoreItem/StoreItem"
+
 import Ribbon1 from '../Ribbon1/Ribbon1'
 import Ribbon2 from '../Ribbon2/Ribbon2'
+import ReactPaginate from 'react-paginate'
 
 import "../ProductsMain/ProductsMain.css"
-
+import "../Pagination/Pagination.css"
 // #endregion
 
 function ProductsMain(props) {
 
     const {items, setItems, initialItems, setInitialItems,
-        selectType, setSelectType, category, setCategory, showItems} = props
+        selectType, setSelectType, category, setCategory, showItems, 
+        changePage, pageCount, pagesVisited, itemsPerPage} = props
 
     // #region 'Returning Html'
     return (
@@ -35,7 +37,7 @@ function ProductsMain(props) {
 
                             {
                                 
-                                showItems().map(item => 
+                                showItems().slice(pagesVisited, pagesVisited + itemsPerPage).map(item => 
                                     
                                     <StoreItem 
                                         key = {item.id}
@@ -50,7 +52,18 @@ function ProductsMain(props) {
                         
                 </div>
                     
-                <Pagination />
+                {/* React paginate custom components from npm, also has hooks and props custom*/}
+                <ReactPaginate
+                    previousLabel={"Previous"}
+                    nextLabel={"Next"}
+                    pageCount={pageCount}
+                    onPageChange={changePage}
+                    containerClassName={"paginationBttns"}
+                    previousLinkClassName={"previousBttn"}
+                    nextLinkClassName={"nextBttn"}
+                    disabledClassName={"paginationDisabled"}
+                    activeClassName={"paginationActive"}
+                />
                     
                 <div className="aside-wrapper">
                         

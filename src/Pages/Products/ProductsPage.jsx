@@ -7,6 +7,7 @@ import ProductsFooter from '../../Components/Products/Footer/ProductsFooter'
 
 import { useState } from "react"
 import { useEffect } from "react"
+import ReactPaginate from 'react-paginate'
 // #endregion
 
 
@@ -92,7 +93,7 @@ function Products() {
     }
 
     function getSortedByPriceDesc() {
-        return getSortedByPriceAsc().reverse()
+        return globalItemsToDisplay.sort((a, b) => (a.price < b.price) ? 1 : (a.price === b.price) ? ((a.name < b.name) ? 1 : -1) : -1)
     }
 
     function getSortedByNameAsc() {
@@ -100,7 +101,7 @@ function Products() {
     }
 
     function getSortedByNameDesc() {
-        return getSortedByNameAsc().reverse()
+        return globalItemsToDisplay.sort((a, b) => (a.name < b.name) ? 1 : (a.name === b.name) ? ((a.price < b.price) ? 1 : -1) : -1)
     }
 
     function getSortedByDateAsc() {
@@ -108,7 +109,7 @@ function Products() {
     }
 
     function getSortedByDateDesc() {
-        return getSortedByDateAsc().reverse()
+        return globalItemsToDisplay.sort((a, b) => (Date.parse(a.date) < Date.parse(b.date)) ? 1 : (Date.parse(a.date) === Date.parse(b.date)) ? ((a.name < b.name) ? 1 : -1) : -1)
     }
     // #endregion
     
@@ -164,7 +165,6 @@ function Products() {
     function getOffersFromState() {
         return items.filter((item) => item.hasOwnProperty('discountPrice'))
     }
-
     // #endregion
 
     // #region 'Filtering Display Function'
@@ -979,6 +979,8 @@ function Products() {
     
         else if ( category === 'Multivitamins' &&  selectType === 'price-desc') {
             itemsToDisplay = getMultivitaminsProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByPriceDesc()
         }
     
@@ -991,6 +993,8 @@ function Products() {
     
         else if ( category === 'Multivitamins' &&  selectType === 'name-desc') {
             itemsToDisplay = getMultivitaminsProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByNameDesc()
         }
     
@@ -1003,6 +1007,8 @@ function Products() {
     
         else if ( category === 'Multivitamins' &&  selectType === 'date-desc') {
             itemsToDisplay = getMultivitaminsProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByDateDesc()
         }
         // #endregion
@@ -1021,6 +1027,8 @@ function Products() {
     
         else if ( category === 'Pre-Workouts' &&  selectType === 'price-desc') {
             itemsToDisplay = getPreWorkoutProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByPriceDesc()
         }
     
@@ -1033,6 +1041,8 @@ function Products() {
     
         else if ( category === 'Pre-Workouts' &&  selectType === 'name-desc') {
             itemsToDisplay = getPreWorkoutProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByNameDesc()
         }
     
@@ -1045,6 +1055,8 @@ function Products() {
     
         else if ( category === 'Pre-Workouts' &&  selectType === 'date-desc') {
             itemsToDisplay = getPreWorkoutProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByDateDesc()
         }
         // #endregion
@@ -1063,6 +1075,8 @@ function Products() {
     
         else if ( category === 'Weight-Gainers' || category === 'weight-Gainers' &&  selectType === 'price-desc') {
             itemsToDisplay = getWeightGainersProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByPriceDesc()
         }
     
@@ -1075,6 +1089,8 @@ function Products() {
     
         else if ( category === 'Weight-Gainers' || category === 'weight-Gainers' &&  selectType === 'name-desc') {
             itemsToDisplay = getWeightGainersProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByNameDesc()
         }
     
@@ -1087,6 +1103,8 @@ function Products() {
     
         else if ( category === 'Weight-Gainers' || category === 'weight-Gainers' &&  selectType === 'date-desc') {
             itemsToDisplay = getWeightGainersProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByDateDesc()
         }
         // #endregion
@@ -1105,6 +1123,8 @@ function Products() {
     
         else if ( category === 'Creatine' &&  selectType === 'price-desc') {
             itemsToDisplay = getCreatineProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByPriceDesc()
         }
     
@@ -1117,6 +1137,8 @@ function Products() {
     
         else if ( category === 'Creatine' &&  selectType === 'name-desc') {
             itemsToDisplay = getCreatineProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByNameDesc()
         }
     
@@ -1129,6 +1151,8 @@ function Products() {
     
         else if ( category === 'Creatine' &&  selectType === 'date-desc') {
             itemsToDisplay = getCreatineProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByDateDesc()
         }
         // #endregion
@@ -1147,6 +1171,8 @@ function Products() {
     
         else if ( category === 'Aminoacids' &&  selectType === 'price-desc') {
             itemsToDisplay = getAminoacidsProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByPriceDesc()
         }
     
@@ -1159,6 +1185,8 @@ function Products() {
     
         else if ( category === 'Aminoacids' &&  selectType === 'name-desc') {
             itemsToDisplay = getAminoacidsProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByNameDesc()
         }
     
@@ -1171,6 +1199,8 @@ function Products() {
     
         else if ( category === 'Aminoacids' &&  selectType === 'date-desc') {
             itemsToDisplay = getAminoacidsProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByDateDesc()
         }
         // #endregion
@@ -1189,6 +1219,8 @@ function Products() {
     
         else if ( category === 'Weight-Burner' &&  selectType === 'price-desc') {
             itemsToDisplay = getWeightBurnerProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByPriceDesc()
         }
     
@@ -1201,6 +1233,8 @@ function Products() {
     
         else if ( category === 'Weight-Burner' &&  selectType === 'name-desc') {
             itemsToDisplay = getWeightBurnerProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByNameDesc()
         }
     
@@ -1213,6 +1247,8 @@ function Products() {
     
         else if ( category === 'Weight-Burner' &&  selectType === 'date-desc') {
             itemsToDisplay = getWeightBurnerProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByDateDesc()
         }
         // #endregion
@@ -1231,6 +1267,8 @@ function Products() {
     
         else if ( category === 'Testosterone-Boosters' &&  selectType === 'price-desc') {
             itemsToDisplay = getTestosteroneBoostersProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByPriceDesc()
         }
     
@@ -1243,6 +1281,8 @@ function Products() {
     
         else if ( category === 'Testosterone-Boosters' &&  selectType === 'name-desc') {
             itemsToDisplay = getTestosteroneBoostersProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByNameDesc()
         }
     
@@ -1255,10 +1295,12 @@ function Products() {
     
         else if ( category === 'Testosterone-Boosters' &&  selectType === 'date-desc') {
             itemsToDisplay = getTestosteroneBoostersProducts()
+            globalItemsToDisplay = itemsToDisplay
+
             itemToDisplaySorted = getSortedByDateDesc()
         }
         // #endregion
-    
+            
         return itemToDisplaySorted
     
     }
@@ -1268,6 +1310,18 @@ function Products() {
     
     // #endregion
 
+
+    // #region 'Pagination feature'
+    const [pageNumber, setPageNumber] = useState(0)
+    const itemsPerPage = 10
+
+    const pagesVisited = pageNumber * itemsPerPage
+    const pageCount = Math.ceil(showItems().length / itemsPerPage)
+
+    const changePage = ({ selected }) => {
+        setPageNumber(selected)
+    }
+    // #endregion
 
     // #region 'Returning Html of the page'
     return (
@@ -1309,6 +1363,11 @@ function Products() {
                     category = {category}
                     setCategory = {setCategory}
                     showItems = {showItems}
+
+                    changePage = {changePage}
+                    pageCount = {pageCount}
+                    pagesVisited = {pagesVisited}
+                    itemsPerPage = {itemsPerPage}
                 />
                     
                 <ProductsFooter />
