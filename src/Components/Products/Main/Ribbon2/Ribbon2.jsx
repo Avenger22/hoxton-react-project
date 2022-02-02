@@ -25,7 +25,8 @@ function Ribbon2({selectType, setSelectType, showItems}) {
                         <h3>Sorting Options:</h3>
                     </label>
                     
-                    <select name="filter-by-sort" id="filter-by-sort" onChange={function (e) {
+                    <select name="filter-by-sort" id="filter-by-sort" 
+                    onChange={function (e) {
                         handleOnChangeSelect(e.target.value)
                     }}>
 

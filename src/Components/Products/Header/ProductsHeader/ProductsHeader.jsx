@@ -42,10 +42,7 @@ function ProductsHeader(props) {
                                 setSearchTerm = {setSearchTerm}
 
                                 searchOnCategory = {searchOnCategory}
-                                setSearrchOnCategory = {setSearchOnCategory}
-                            
-                                selectType = {selectType}
-                                setSelectType = {setSelectType}
+                                setSearchOnCategory = {setSearchOnCategory}
                             />
 
                             <div className="dropdown-product">

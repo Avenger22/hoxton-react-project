@@ -14,7 +14,6 @@ export default function Category({item, handleOnClickCategory}) {
         <>
 
             <li onClick={function (e) {
-                e.preventDefault()
                 handleOnClickCategory(item)
             }}>
                 

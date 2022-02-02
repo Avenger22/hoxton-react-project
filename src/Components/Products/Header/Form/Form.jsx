@@ -3,37 +3,45 @@ import "../Form/Form.css"
 function Form(props) {
 
     const {searchTerm, setSearchTerm, searchOnCategory, 
-    setSearchOnCategory, selectType, setSelectType} = props
+    setSearchOnCategory} = props
 
-    function handleOnChangeSearchSelect(selectValue) {
+    function handleOnChangeSearchSelect(e) {
 
         if (searchTerm === '') {
             alert('you cant select based on categories without a search string')
-            setSearchOnCategory('Default')
+            const value = 'Default'
+            setSearchOnCategory(value)
         }
 
         else {
-            setSearchOnCategory(selectValue)
+            setSearchOnCategory(e.target.value)
         }
 
     }
 
-    function handleOnSubmitForm(formInputValue) {
-        setSearchTerm(formInputValue) 
+    function handleOnSubmitForm(formValue) {
+        setSearchTerm(formValue) 
+    }
+
+    function handleOnChangeSearchTerm(e) {
+        setSearchTerm(e.target.value)
     }
 
     return (
 
         <>
 
-            <form className="products-form-wrapper" onSubmit={function (e) {
+            <form className="products-form-wrapper" 
+            onSubmit={function (e) {
                 e.preventDefault()
-                handleOnSubmitForm(e.target.search-product.value)
+                handleOnSubmitForm(e.target.searchProduct.value)
             }}>
                                 
-                 <select name="filter-by-categories" id="filter-by-categories" onChange={function (e) {
-                    handleOnChangeSearchSelect(e.target.value)
-                 }}>
+                 <select defaultValue = {searchOnCategory} name="filter-by-categories" id="filter-by-categories" 
+                 onChange={function (e) {
+                        console.log(e.target.value)
+                        handleOnChangeSearchSelect(e)
+                    }}>
 
                     <option value="Default">Categories</option>
                     <option value="MultiVitamins">MultiVitamins and essentials minerals</option>
@@ -47,8 +55,14 @@ function Form(props) {
 
                 </select>
                                 
-                <input type="text" name="search-product" defaultValue = {searchTerm} placeholder="Search for products."/>
-                <button id="special-button">Search</button>
+                <input defaultValue = {searchTerm} type="text" name="searchProduct" placeholder="Search for products." 
+                onChange={function (e) {
+                    handleOnChangeSearchTerm(e)
+                }}/>
+
+                <button id="special-button">
+                    Search
+                </button>
                             
             </form>
         
