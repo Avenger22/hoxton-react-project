@@ -1,10 +1,10 @@
-section.container-menus .ul-sub-2 li {
+header.products-header-menu .ul-products-sub-2 li {
     font-size: 14px;
     font-weight: 900;
     letter-spacing: 1px;
 }
 
-section.container-menus .ul-sub-2 li a:hover {
+header.products-header-menu .ul-products-sub-2 li a:hover {
     color: #d40a0a;
     transition: 1s;
     -webkit-transition: 1s;

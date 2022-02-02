@@ -5,7 +5,7 @@ header.header {
     "header-group-1 void header-group-2" 1fr /
     0.6fr 0.1fr 0.3fr;
 
-    background-color: #ffa500;
+    background-color: #0d2335;
     z-index: 1;
     width: 100%;
     position: fixed;
@@ -13,7 +13,7 @@ header.header {
 }
 
 header.header #special-logo {
-    color: #060208;
+    color: #c9c1ce;
     text-transform: uppercase;
     font-weight: 700;
     font-style: italic;
@@ -21,7 +21,7 @@ header.header #special-logo {
 }
 
 header.header #special-logo a {
-    color: #060208;
+    color: #c8bfcc;
 }
 
 header.header .void {

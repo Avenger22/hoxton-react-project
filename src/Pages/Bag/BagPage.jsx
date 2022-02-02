@@ -7,6 +7,7 @@ import "./Bag.css"
 export default function BagPage(props) {
 
     const { items, setItems } = props
+    const bagItemsFiltered = items.filter(item => item?.quantity > 0)
 
     function calculateTotalBasket(baskedProductsParam) {
 
@@ -22,11 +23,11 @@ export default function BagPage(props) {
 
     function handleOnChangeSelect(value, objectBasket) {
 
-        let basketCopy = JSON.parse(JSON.stringify(items))
+        let basketCopy = JSON.parse(JSON.stringify(bagItemsFiltered))
         const index = basketCopy.findIndex(target => target.id === objectBasket.id)
         
         const item = basketCopy[index]
-        const newItem = { ...item, quantity: parseInt(value) }
+        const newItem = { ...item, quantity: parseInt(value)}
 
         basketCopy[index] = newItem
         setItems(basketCopy)
@@ -34,9 +35,14 @@ export default function BagPage(props) {
     }
 
     function filterTotalIndividual(productId) {
-        const array = items.filter(item => item.id === productId)
+
+        const array = bagItemsFiltered.filter(item => item.id === productId)
         return array
+        
     }
+
+    console.log("Items", items)
+    console.log("BagItems:", bagItemsFiltered)
 
     return (
 
@@ -52,7 +58,7 @@ export default function BagPage(props) {
 
                     {
 
-                        items.map(product =>
+                        bagItemsFiltered.map(product =>
 
                             <BagItem
                                 key={product.id}
@@ -70,7 +76,7 @@ export default function BagPage(props) {
 
                 </ul>
 
-                <h3>Your total: {calculateTotalBasket(items)}</h3>
+                <h3>Your total: {calculateTotalBasket(bagItemsFiltered)}</h3>
 
             </section>
 

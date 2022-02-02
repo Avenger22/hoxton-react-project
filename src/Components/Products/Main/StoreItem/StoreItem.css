@@ -9,7 +9,7 @@ section.container-menus .store-item {
 section.container-menus .store-item-no-date {
     display: grid;
     grid-template-rows: 0.6fr 0.1fr 0.2fr 40px;
-    grid-gap: 10px 15px;
+    grid-gap: 15px 15px;
     cursor: pointer;
     padding: 15px 15px;
 }
@@ -63,7 +63,7 @@ section.container-menus .store-item-no-date h2 {
 }
 
 section.container-menus .store-item img {
-    height: 170px;
+    height: 180px;
     width: 190px;
 }
 

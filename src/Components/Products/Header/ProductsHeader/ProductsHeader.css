@@ -1,5 +1,5 @@
 /* #region 'HEADER-MENU' */
-section.container-menus header.products-header-menu {
+header.products-header-menu {
     display: grid;
     grid-template-rows: 0.5fr 0.5fr;
     background-color: #022335;
@@ -11,13 +11,13 @@ section.container-menus header.products-header-menu {
     z-index: 1;
 }
 
-section.container-menus .header-sub-1 {
+header.products-header-menu .header-products-sub-1 {
     grid-template-rows: 1fr;
     place-items: center;
 }
 
 /* Dropdown Button */
-.dropbtn {
+header.products-header-menu .dropdown-product .dropbtn {
     background-color: transparent;
     color: white;
     font-size: 14px;
@@ -28,18 +28,18 @@ section.container-menus .header-sub-1 {
     cursor: pointer;
   }
 
-  .dropbtn:hover {
+  header.products-header-menu .dropdown-product .dropbtn:hover {
     color: #3684f1;
     transition: 1s;
     border-bottom: 1px solid #ec8251;
   }
   
-  .dropdown {
+  header.products-header-menu .dropdown-product {
     position: relative;
     display: inline-block;
   }
   
-  .dropdown-content {
+  header.products-header-menu .dropdown-product .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
@@ -49,7 +49,7 @@ section.container-menus .header-sub-1 {
   }
   
   /* Links inside the dropdown */
-  .dropdown-content a {
+  header.products-header-menu .dropdown-product .dropdown-content a {
     color: black;
     padding: 12px 15px;
     text-decoration: none;
@@ -57,17 +57,17 @@ section.container-menus .header-sub-1 {
   }
   
   /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd;}
+  header.products-header-menu .dropdown-product .dropdown-content a:hover {background-color: #ddd;}
   
   /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {display: block;}
+  header.products-header-menu.dropdown-product .dropdown-product:hover .dropdown-content {display: block;}
 
-section.container-menus .header-sub-2 {
+  header.products-header-menu .header-products-sub-2 {
     grid-template-rows: 1fr;
     place-items: center;
 }
 
-section.container-menus .ul-sub-1 {
+header.products-header-menu .ul-products-sub-1 {
     display: grid;
     grid-template-columns: 0.2fr 0.5fr 0.1fr 0.1fr 0.1fr;
     grid-gap: 50px;
@@ -76,18 +76,18 @@ section.container-menus .ul-sub-1 {
     padding-top: 20px;
 }
 
-section.container-menus #special-button {
+header.products-header-menu #special-button-products {
     border-left: 3px solid #000;
 }
 
-section.container-menus button.button-image {
+header.products-header-menu button.button-image {
     cursor: pointer;
     background-color: transparent;
     border: none;
     outline: none;
 }
 
-section.container-menus .ul-sub-2 {
+header.products-header-menu .ul-products-sub-2 {
     display: grid;
     grid-template-columns: repeat(6, 150px);
     grid-gap: 20px;
@@ -98,11 +98,11 @@ section.container-menus .ul-sub-2 {
     border-top: 2px solid #fff;
 }
 
-section.container-menus span.span-bag-stock {
+header.products-header-menu span.span-bag-stock {
     display: none;
 }
 
-section.container-menus span.span-bag-stock.show {
+header.products-header-menu span.span-bag-stock.show {
     display: grid;
     place-self: center;
     color: #c22048;
@@ -110,18 +110,18 @@ section.container-menus span.span-bag-stock.show {
     font-weight: 900;
 }
 
-section.container-menus span.span-user-login {
+header.products-header-menu span.span-user-login {
     display: none;
 }
 
-section.container-menus span.span-user-login.show {
+header.products-header-menu span.span-user-login.show {
     display: grid;
     place-self: center;
     color: #f7f8fb;
     font-size: 20px;
 }
 
-section.container-menus #logo {
+header.products-header-menu #logo-products {
     color: #d40a0a;
     font-size: 32px;
     font-weight: 900;

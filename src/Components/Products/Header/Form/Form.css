@@ -1,17 +1,17 @@
-form.products-form-wrapper {
+header.products-header-menu form.products-form-wrapper {
     display: grid;
     grid-template-columns: 0.3fr 0.6fr 0.1fr;
     align-items: center;
 }
 
-form.products-form-wrapper input {
+header.products-header-menu form.products-form-wrapper input {
     height: 50px;
     outline: none;
     border: none;
     padding: 20px 40px;
 }
 
-form.products-form-wrapper button {
+header.products-header-menu form.products-form-wrapper button {
     height: 50px;
     font-size: 18px;
     font-weight: 700;
@@ -23,12 +23,11 @@ form.products-form-wrapper button {
     padding: 0px 10px;
 }
 
-
-form #special-button {
+header.products-header-menu form #special-button {
     border-left: 3px solid #000;
 }
 
-form.products-form-wrapper button:hover {
+header.products-header-menu form.products-form-wrapper button:hover {
     color: #d40a0a;
     background-color: #f1f1f1;
     transition: 1s;

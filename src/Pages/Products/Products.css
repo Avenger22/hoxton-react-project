@@ -3,8 +3,24 @@ section.container-menus {
     width: 100%;
 
     display: grid;
-    grid-template-rows: 160px 0.95fr 120px;
+    grid-template: 
+    "header-products" 160px 
+    "main-products" 0.95fr 
+    "footer-products" 120px /
+    1fr;
     grid-gap: 20px;
+}
+
+section.container-menus header.header-menu {
+    grid-area: header-products;
+}
+
+section.container-menus footer {
+    grid-area: footer-products;
+}
+
+section.container-menus main {
+    grid-area: main-products;
 }
 
 /* #region 'MEDIA QUERIES' */

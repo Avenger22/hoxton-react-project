@@ -29,11 +29,11 @@ function ProductsHeader(props) {
 
             <header className="products-header-menu">
                     
-                    <div className="header-sub-1">
+                    <div className="header-products-sub-1">
                         
-                        <ul className="ul-sub-1">
+                        <ul className="ul-products-sub-1">
                             
-                            <li id="logo">
+                            <li id="logo-products">
                                 <Link to="/products">AlbVitaFitness</Link>
                             </li>
                             
@@ -48,7 +48,7 @@ function ProductsHeader(props) {
                                 setSelectType = {setSelectType}
                             />
 
-                            <div className="dropdown">
+                            <div className="dropdown-product">
 
                                 <button className="button-image">
                                     <img src="/assets/icons/user.png" alt=""/>
@@ -76,9 +76,9 @@ function ProductsHeader(props) {
                             
                     </div>
                         
-                    <div className="header-sub-2">
+                    <div className="header-products-sub-2">
                                     
-                        <ul className="ul-sub-2">
+                        <ul className="ul-products-sub-2">
                             
                             {
 

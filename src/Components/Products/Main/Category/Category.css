@@ -1,4 +1,4 @@
-section.container-menus #filter-by-categories {
+ #filter-by-categories {
     height: 50px;
     border: none;
     outline: 1px solid #0066cc;
@@ -10,7 +10,7 @@ section.container-menus #filter-by-categories {
     color: #022335;
 }
 
-section.container-menus option {
+#filter-by-categories option {
     font-size: 14px;
     font-weight: 600;
     padding-left: 10px;

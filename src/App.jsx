@@ -63,7 +63,7 @@ function App() {
         <Route 
           path = "/bag" 
           element = {<BagPage 
-            items = {items.filter(item => item?.quantity > 0)}
+            items = {items}
             setItems = {setItems}
           />}>
         </Route>
@@ -110,7 +110,10 @@ function App() {
 
         <Route 
           path = "/products/:id" 
-          element = {<ProductItemPage />}>
+          element = {<ProductItemPage 
+            items = {items}
+            setItems = {setItems}
+          />}>
         </Route>
 
 
