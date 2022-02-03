@@ -7,13 +7,8 @@ export default function AboutUsPage() {
     return (
 
         <>
-
             <AboutUsContainer1 />
-
             <AboutUsContainer2 />
-
-            <FooterCommon />
-
         </>
 
     )

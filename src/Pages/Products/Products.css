@@ -1,25 +1,37 @@
-section.container-menus {
+div#root {
+    display: grid;
     height: auto;
     width: 100%;
 
     display: grid;
     grid-template: 
-    "header-products" 160px 
+    "header-products" 160px
     "main-products" 0.95fr 
     "footer-products" 120px /
     1fr;
     grid-gap: 20px;
 }
 
-section.container-menus header.header-menu {
+section.container-menus {
+    height: auto;
+    width: 100%;
+
+    display: grid;
+    grid-template: 
+    "main-products" 0.95fr /
+    1fr;
+    grid-gap: 20px;
+}
+
+div#root header.products-header-menu {
     grid-area: header-products;
 }
 
-section.container-menus footer {
+div#root footer.footer-menu {
     grid-area: footer-products;
 }
 
-section.container-menus main {
+div#root section.container-menus main {
     grid-area: main-products;
 }
 

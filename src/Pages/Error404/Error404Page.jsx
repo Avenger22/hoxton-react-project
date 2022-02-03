@@ -9,13 +9,7 @@ function Error404() {
     return (
 
         <>
-
-            <ButtonTop />
-            
             <Error404Container1 />
-
-            <FooterCommon />
-            
         </>
 
     )

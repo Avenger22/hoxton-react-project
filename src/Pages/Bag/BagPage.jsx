@@ -55,8 +55,6 @@ export default function BagPage(props) {
 
         <>
 
-            <HeaderCommon />
-
             <section className="basket-container">
 
                 <h2>Your Shopping Bag</h2>
@@ -87,8 +85,6 @@ export default function BagPage(props) {
                 <button onClick={handlePaymentRedirect}>Proceed to payment</button>
 
             </section>
-
-            <FooterCommon />
       
         </>
 

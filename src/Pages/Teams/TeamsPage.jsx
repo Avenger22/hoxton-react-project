@@ -18,8 +18,6 @@ export default function TeamsPage() {
 
         <>
 
-            <HeaderCommon />
-
             <section className="coaches-wrapper">
 
                 <div className="header-team">
@@ -44,8 +42,6 @@ export default function TeamsPage() {
                 </div>
 
             </section>
-
-            <FooterCommon />
 
         </>
 

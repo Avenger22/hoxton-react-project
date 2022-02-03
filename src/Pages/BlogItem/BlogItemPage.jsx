@@ -31,8 +31,6 @@ function BlogItem(props) {
 
         <>
 
-            <ButtonTop />
-
             <BlogItemContainer1 
                 blogItem = {blogItem}
                 setBlogItem = {setBlogItem}
@@ -40,8 +38,6 @@ function BlogItem(props) {
 
             <BlogItemContainer2 />
         
-            <FooterCommon />
-
         </>
 
     )

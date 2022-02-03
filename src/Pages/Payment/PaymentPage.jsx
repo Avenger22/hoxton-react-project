@@ -48,8 +48,6 @@ export default function PaymentPage({paymentData, setPaymentData, paymentStatus,
     return (
 
         <>
-
-            <HeaderCommon />
         
             <section className="container-payment">
 
@@ -134,8 +132,6 @@ export default function PaymentPage({paymentData, setPaymentData, paymentStatus,
                 </form>
 
             </section>
-
-            <FooterCommon />
             
         </>
 

@@ -48,8 +48,6 @@ export default function SignUpPage({signUpData, setSignUpData, signUpStatus, set
     return (
 
         <>
-
-            <HeaderCommon />
         
             <section className="container-register">
 
@@ -136,8 +134,6 @@ export default function SignUpPage({signUpData, setSignUpData, signUpStatus, set
                 </form>
 
             </section>
-
-            <FooterCommon />
             
         </>
 
