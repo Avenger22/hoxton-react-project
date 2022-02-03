@@ -28,6 +28,15 @@ function App() {
 
   const [items, setItems] = useState([])
 
+  const [signInStatus, setSignInStatus] = useState(false)
+  const [signInData, setSignInData] = useState([])
+
+  const [signUpStatus, setSignUpStatus] = useState(false)
+  const [signUpData, setSignUpData] = useState([])
+
+  const [paymentStatus, setPaymentStatus] = useState(false)
+  const [paymentData, setPaymentData] = useState([])
+
   function getItemsFromServer() {
 
     fetch('http://localhost:8000/items')
@@ -131,17 +140,32 @@ function App() {
 
         <Route 
           path = "/sign-in" 
-          element = {<SignInPage />}>
+          element = {<SignInPage 
+            signInData = {signInData}
+            setSignInData = {setSignInData}
+            setSignInStatus = {setSignInStatus}
+            signInStatus = {signInStatus}
+          />}>
         </Route>
 
         <Route 
           path = "/sign-up" 
-          element = {<SignUpPage />}>
+          element = {<SignUpPage 
+            signUpData = {signUpData}
+            setSignUpData = {setSignUpData}
+            setSignUpStatus = {setSignUpStatus}
+            signUpStatus = {signUpStatus}
+          />}>
         </Route>
 
         <Route 
           path = "/payment" 
-          element = {<PaymentPage />}>
+          element = {<PaymentPage 
+            paymentData = {paymentData}
+            setPaymentData = {setPaymentData}
+            setPaymentStatus = {setPaymentStatus}
+            paymentStatus = {paymentStatus}
+          />}>
         </Route>
 
 

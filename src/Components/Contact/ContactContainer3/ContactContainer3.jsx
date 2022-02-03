@@ -33,7 +33,16 @@ export default function ContactContainer3() {
 
     function handleContactSubmit(e) {
 
-        const array = [name, email, subject, phone, textArea]
+        const array = [
+            {
+                email: email, 
+                subject: subject,
+                textArea: textArea,
+                fullName: name,
+                phone: phone
+            }
+        ]
+
         const newArray = [...contact, array]
 
         e.target.reset()
