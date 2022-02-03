@@ -4,7 +4,8 @@ import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon";
 import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon";
 import "./SignUp.css"
 
-export default function SignUpPage({signUpData, setSignUpData, signUpStatus, setSignUpStatus}) {
+export default function SignUpPage({signUpData, setSignUpData, signUpStatus, setSignUpStatus, 
+    setSignInStatus, signInStatus, signInUserName}) {
 
     const [userName, setUserName] = useState('')
     const [fullName, setFullName] = useState('')
@@ -49,7 +50,11 @@ export default function SignUpPage({signUpData, setSignUpData, signUpStatus, set
 
         <>
 
-            <HeaderCommon />
+            <HeaderCommon 
+                signInStatus={signInStatus}
+                setSignInStatus={setSignInStatus}
+                signInUserName={signInUserName}
+            />
         
             <section className="container-register">
 

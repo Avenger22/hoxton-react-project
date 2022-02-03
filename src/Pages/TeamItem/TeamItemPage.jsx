@@ -6,7 +6,7 @@ import "./TeamItem.css"
 import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon"
 import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
 
-export default function TeamItemPage() {
+export default function TeamItemPage({signInStatus, setSignInStatus, signInUserName}) {
 
     const params = useParams()
     const [teamItem, setTeamItem] = useState(null)
@@ -29,7 +29,11 @@ export default function TeamItemPage() {
 
         <>
 
-            <HeaderCommon />
+            <HeaderCommon 
+                signInStatus={signInStatus}
+                setSignInStatus={setSignInStatus}
+                signInUserName={signInUserName}
+            />
 
             <section className="coach-bio-wrapper">
 

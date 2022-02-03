@@ -4,7 +4,7 @@ import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon";
 import Coach from "../../Components/Teams/Coach";
 import "./Teams.css"
 
-export default function TeamsPage() {
+export default function TeamsPage({signInStatus, setSignInStatus, signInUserName}) {
 
     const [coaches, setCoaches] = useState([])
 
@@ -18,7 +18,11 @@ export default function TeamsPage() {
 
         <>
 
-            <HeaderCommon />
+            <HeaderCommon 
+                signInStatus={signInStatus}
+                setSignInStatus={setSignInStatus}
+                signInUserName={signInUserName}
+            />
 
             <section className="coaches-wrapper">
 

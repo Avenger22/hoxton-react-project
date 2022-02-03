@@ -5,7 +5,7 @@ import BlogContainer1 from "../../Components/Blog/BlogContainer1/BlogContainer1"
 import BlogContainer2 from "../../Components/Blog/BlogContainer2/BlogContainer2"
 import ButtonTop from '../../Components/Common/ButtonTop/ButtonTop'
 
-function Blog() {
+function Blog({signInStatus, setSignInStatus, signInUserName}) {
 
     return (
 
@@ -13,7 +13,11 @@ function Blog() {
 
             <ButtonTop />
             
-            <BlogContainer1 />
+            <BlogContainer1 
+                signInStatus={signInStatus}
+                signInUserName={signInUserName}
+                setSignInStatus={setSignInStatus}
+            />
 
             <BlogContainer2 />
 

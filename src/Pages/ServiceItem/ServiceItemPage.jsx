@@ -7,7 +7,7 @@ import "./ServiceItem.css"
 import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon"
 import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
 
-export default function ServiceItemPage() {
+export default function ServiceItemPage({signInStatus, setSignInStatus, signInUserName}) {
 
     const params = useParams()
     const [serviceItem, setServiceItem] = useState(null)
@@ -30,7 +30,11 @@ export default function ServiceItemPage() {
 
         <>
 
-            <HeaderCommon />
+            <HeaderCommon 
+                signInStatus={signInStatus}
+                setSignInStatus={setSignInStatus}
+                signInUserName={signInUserName}
+            />
 
             <section className="service-bio-wrapper">
 

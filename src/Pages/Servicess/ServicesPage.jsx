@@ -7,7 +7,7 @@ import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
 
 import { useEffect, useState } from "react"
 
-export default function ServicesPage() {
+export default function ServicesPage({signInStatus, setSignInStatus, signInUserName}) {
 
     const [services, setServices] = useState([])
 
@@ -21,7 +21,11 @@ export default function ServicesPage() {
 
         <>
 
-            <HeaderCommon />
+            <HeaderCommon 
+                signInStatus={signInStatus}
+                setSignInStatus={setSignInStatus}
+                signInUserName={signInUserName}
+            />
                 
             <section className="boxes-wrapper">
 

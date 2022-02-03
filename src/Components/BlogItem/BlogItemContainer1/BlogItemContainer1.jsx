@@ -12,7 +12,11 @@ export default function BlogItemContainer1({blogItem, setBlogItem}) {
 
             <section className="blog-item-container-1" id="blog-item-container-1">
 
-                <HeaderCommon />
+                <HeaderCommon 
+                    signInStatus={signInStatus}
+                    setSignInStatus={setSignInStatus}
+                    signInUserName={signInUsername}
+                />
 
                 <div className="ribbon-blog">
 

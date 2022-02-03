@@ -8,7 +8,7 @@ import BlogItemContainer2 from '../../Components/BlogItem/BlogItemContainer2/Blo
 
 import { useParams } from "react-router-dom"
 
-function BlogItem(props) {
+function BlogItem({signInStatus, setSignInStatus, signInUserName}) {
 
     const params = useParams()
     const [blogItem, setBlogItem] = useState(null)

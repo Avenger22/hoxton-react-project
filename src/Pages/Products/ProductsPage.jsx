@@ -11,7 +11,7 @@ import ReactPaginate from 'react-paginate'
 // #endregion
 
 
-function Products() {
+function Products({signInUserName, signInStatus, setSignInStatus}) {
 
     let globalItemsToDisplay = []
 
@@ -1350,6 +1350,10 @@ function Products() {
                     setUserCatcher = {setUserCatcher}
 
                     setCategory = {setCategory}
+
+                    signInUserName = {signInUserName}
+                    signInStatus = {signInStatus}
+                    setSignInStatus = {setSignInStatus}
                 />
                 
                 <ProductsMain 

@@ -8,7 +8,11 @@ export default function Error404Container1() {
         
             <section className="error-container-1" id="error-container-1">
 
-                <HeaderCommon />
+                <HeaderCommon 
+                    signInStatus={signInStatus}
+                    setSignInStatus={setSignInStatus}
+                    signInUserName={signInUsername}
+                />
 
                 <main className="main">
 

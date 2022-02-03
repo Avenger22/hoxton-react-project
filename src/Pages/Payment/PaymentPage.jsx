@@ -4,7 +4,10 @@ import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
 import "./Payment.css"
 import { useState } from "react";
 
-export default function PaymentPage({paymentData, setPaymentData, paymentStatus, setPaymentStatus}) {
+export default function PaymentPage(
+    {paymentData, setPaymentData, paymentStatus, setPaymentStatus,
+        signInStatus, setSignInStatus, signInUserName}
+    ) {
 
     const [address, setAddress] = useState('')
     const [fullName, setFullName] = useState('')
@@ -49,7 +52,11 @@ export default function PaymentPage({paymentData, setPaymentData, paymentStatus,
 
         <>
 
-            <HeaderCommon />
+        <HeaderCommon 
+                signInStatus={signInStatus}
+                signInUserName={signInUserName}
+                setSignInStatus={setSignInStatus}
+        />
         
             <section className="container-payment">
 

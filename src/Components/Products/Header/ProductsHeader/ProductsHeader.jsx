@@ -9,7 +9,7 @@ function ProductsHeader(props) {
     const {selectedModal,
     setSelectedModal, searchTerm, setSearchTerm, searchOnCategory,
     setSearchOnCategory, userName, setUserName, userCatcher, 
-    setUserCatcher, setCategory} = props
+    setUserCatcher, setCategory, signInStatus, setSignInStatus, signInUserName} = props
 
     const ulSub2 = ['Home', 'Products', 'About-Us', 'Blog', 'Contact']
 
@@ -49,20 +49,55 @@ function ProductsHeader(props) {
                                 setSearchOnCategory = {setSearchOnCategory}
                             />
 
-                            <div className="dropdown-product">
+                            <>
 
-                                <button className="button-image">
-                                    <img src="/assets/icons/user.png" alt=""/>
-                                    <span className="span-user-login null"></span>
-                                </button>
+                                {signInStatus === false ? (
 
-                                <div className="dropdown-content">
-                                    <Link to ="/sign-in">Sign In</Link>
-                                    <Link to ="/sign-up">Sign Up</Link>
-                                </div>
+                                    <div className="dropdown">
 
-                            </div>
-   
+                                        <button className="button-image">
+                                            <img src="/assets/icons/user.png" alt=""/>
+                                            <span className="span-user-login null"></span>
+                                        </button>
+
+                                        <div className="dropdown-content">
+                                            <Link to ="/sign-in">Sign In</Link>
+                                            <Link to ="/sign-up">Sign Up</Link>
+                                        </div>
+
+                                    </div>
+
+                                ) :
+
+                                (
+
+                                    <>
+
+                                        <div className="dropdown">
+
+                                            <li className="dropbtn">{signInUserName}</li>
+
+                                            <div className="dropdown-content">
+
+                                                <button className="log-out" onClick={function () {
+                                                    setSignInStatus(!signInStatus)
+                                                }}>
+
+                                                    <i className="fas fa-user"></i>
+                                                    <span>Log Out</span>
+                                                    
+                                                </button>
+
+                                            </div>
+
+                                        </div>
+
+                                    </>
+
+                                )}
+
+                            </>
+
                             <button className="button-image" onClick={handleRedirectToFavorite}>
                                 <img src="/assets/icons/favorite.png" alt=""/>
                                 <span className="span-fav-number null"></span>
@@ -71,7 +106,7 @@ function ProductsHeader(props) {
                             <button className="button-image" onClick={handleRedirectToBag}>
                                 <img src="/assets/icons/shopping-bag.png" alt=""/>
                                 <span className="span-bag-stock null"></span>
-                            </button>
+                            </button>   
                             
                         </ul>
                             

@@ -74,7 +74,10 @@ export default function HeaderCommon({signInStatus, setSignInStatus, signInUserN
 
                                     <div className="dropdown">
 
-                                        <li className="dropbtn">{signInUserName}</li>
+                                        <li className="dropbtn">
+                                            <i className="fas fa-user"></i>
+                                            {signInUserName}
+                                        </li>
 
                                         <div className="dropdown-content">
 
@@ -82,7 +85,6 @@ export default function HeaderCommon({signInStatus, setSignInStatus, signInUserN
                                                 setSignInStatus(!signInStatus)
                                             }}>
 
-                                                <i className="fas fa-user"></i>
                                                 <span>Log Out</span>
                                                 
                                             </button>

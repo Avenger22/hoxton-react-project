@@ -1,7 +1,7 @@
 import HeaderCommon from "../../Common/HeaderCommon/HeaderCommon"
 import "../ContactContainer1/ContactContainer1.css"
 
-export default function ContactContainer1() {
+export default function ContactContainer1({signInStatus, setSignInStatus, signInUserName}) {
 
     return (
 
@@ -9,7 +9,11 @@ export default function ContactContainer1() {
         
             <section className="contact-container-1" id="contact-container-1">
 
-                <HeaderCommon />
+                <HeaderCommon 
+                    signInStatus={signInStatus}
+                    setSignInStatus={setSignInStatus}
+                    signInUserName={signInUserName}
+                />
 
                 <main className="main">
 

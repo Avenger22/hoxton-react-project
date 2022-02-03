@@ -59,12 +59,6 @@ function App() {
       { 
         //#region 'Routes' 
       }
-  
-      <HeaderCommon 
-        signInStatus={signInStatus}
-        signInUserName={signInUserName}
-        setSignInStatus={setSignInStatus}
-      />
 
       <Routes>
 
@@ -78,7 +72,6 @@ function App() {
           element = {<HomePage 
             signInStatus = {signInStatus}
             setSignInStatus = {setSignInStatus}
-
             signInUserName = {signInUserName}
           />}>
         </Route>
@@ -88,47 +81,78 @@ function App() {
           element = {<BagPage 
             items = {items}
             setItems = {setItems}
+
+            signInStatus={signInStatus}
+            setSignInStatus={setSignInStatus}
+            signInUserName={signInUserName}
           />}>
         </Route>
 
         <Route 
           path = "/favorites" 
-          element = {<FavoritesPage />}>
+          element = {<FavoritesPage 
+            signInStatus={signInStatus}
+            setSignInStatus={setSignInStatus}
+            signInUserName={signInUserName}
+          />}>
         </Route>
 
         <Route 
           path = "/contact" 
-          element = {<ContactPage />}>
+          element = {<ContactPage
+            signInStatus={signInStatus}
+            setSignInStatus={setSignInStatus}
+            signInUserName={signInUserName} 
+          />}>
         </Route>
 
 
         <Route 
           path = "/blog" 
-          element = {<BlogPage />}>
+          element = {<BlogPage 
+            signInStatus={signInStatus}
+            setSignInStatus={setSignInStatus}
+            signInUserName={signInUserName}
+          />}>
         </Route>
 
         <Route 
           path = "/favorites" 
           element = {<FavoritesPage 
             items = {items}
+            signInStatus={signInStatus}
+            setSignInStatus={setSignInStatus}
+            signInUserName={signInUserName}
           />}>
         </Route>
 
         <Route 
           path = "/blog/:id" 
-          element = {<BlogItemPage />}>
+          element = {<BlogItemPage 
+            signInStatus={signInStatus}
+            setSignInStatus={setSignInStatus}
+            signInUserName={signInUserName}
+          />}>
         </Route>
 
 
         <Route 
           path = "/about-us" 
-          element = {<AboutUsPage />}>
+          element = {<AboutUsPage 
+            signInStatus={signInStatus}
+            setSignInStatus={setSignInStatus}
+            signInUserName={signInUserName}
+          />}>
         </Route>
 
 
         <Route 
           path = "/products" 
-          element = {<ProductsPage />}>
+          element = {<ProductsPage 
+            signInStatus={signInStatus}
+            setSignInStatus={setSignInStatus}
+            signInUserName={signInUserName}
+          />}>
         </Route>
 
         <Route 
@@ -136,18 +160,30 @@ function App() {
           element = {<ProductItemPage 
             items = {items}
             setItems = {setItems}
+
+            signInStatus={signInStatus}
+            setSignInStatus={setSignInStatus}
+            signInUserName={signInUserName}
           />}>
         </Route>
 
 
         <Route 
           path = "/services" 
-          element = {<ServicesPage />}>
+          element = {<ServicesPage 
+            signInStatus={signInStatus}
+            setSignInStatus={setSignInStatus}
+            signInUserName={signInUserName}
+          />}>
         </Route>
 
         <Route 
           path = "/services/:id" 
-          element = {<ServiceItemPage />}>
+          element = {<ServiceItemPage 
+            signInStatus={signInStatus}
+            setSignInStatus={setSignInStatus}
+            signInUserName={signInUserName}
+          />}>
         </Route>
 
 
@@ -173,6 +209,9 @@ function App() {
 
             setSignUpStatus = {setSignUpStatus}
             signUpStatus = {signUpStatus}
+
+            setSignInStatus={setSignInStatus}
+            signInUserName={signInUserName}
           />}>
         </Route>
 
@@ -183,24 +222,40 @@ function App() {
             setPaymentData = {setPaymentData}
             setPaymentStatus = {setPaymentStatus}
             paymentStatus = {paymentStatus}
+
+            signInStatus={signInStatus}
+            setSignInStatus={setSignInStatus}
+            signInUserName={signInUserName}
           />}>
         </Route>
 
 
         <Route 
           path = "/teams" 
-          element = {<TeamsPage />}>
+          element = {<TeamsPage 
+            signInStatus={signInStatus}
+            setSignInStatus={setSignInStatus}
+            signInUserName={signInUserName}
+          />}>
         </Route>
 
         <Route 
           path = "/teams/:id" 
-          element = {<TeamItemPage />}>
+          element = {<TeamItemPage 
+            signInStatus={signInStatus}
+            setSignInStatus={setSignInStatus}
+            signInUserName={signInUserName}
+          />}>
         </Route>
 
 
         <Route 
           path = "*" 
-          element = {<Error404Page />}>
+          element = {<Error404Page 
+            signInStatus={signInStatus}
+            setSignInStatus={setSignInStatus}
+            signInUserName={signInUserName}
+          />}>
         </Route>
         
       </Routes>

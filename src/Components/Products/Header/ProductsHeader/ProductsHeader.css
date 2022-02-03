@@ -17,7 +17,7 @@ header.products-header-menu .header-products-sub-1 {
 }
 
 /* Dropdown Button */
-header.products-header-menu .dropdown-product .dropbtn {
+header.products-header-menu .dropbtn {
     background-color: transparent;
     color: white;
     font-size: 14px;
@@ -28,18 +28,18 @@ header.products-header-menu .dropdown-product .dropbtn {
     cursor: pointer;
   }
 
-  header.products-header-menu .dropdown-product .dropbtn:hover {
+  header.products-header-menu .dropbtn:hover {
     color: #3684f1;
     transition: 1s;
     border-bottom: 1px solid #ec8251;
   }
   
-  header.products-header-menu .dropdown-product {
+  header.products-header-menu .dropdown {
     position: relative;
     display: inline-block;
   }
   
-  header.products-header-menu .dropdown-product .dropdown-content {
+  header.products-header-menu .dropdown-content {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
@@ -49,7 +49,7 @@ header.products-header-menu .dropdown-product .dropbtn {
   }
   
   /* Links inside the dropdown */
-  header.products-header-menu .dropdown-product .dropdown-content a {
+  header.products-header-menu .dropdown-content a {
     color: black;
     padding: 12px 15px;
     text-decoration: none;
@@ -57,10 +57,10 @@ header.products-header-menu .dropdown-product .dropbtn {
   }
   
   /* Change color of dropdown links on hover */
-  header.products-header-menu .dropdown-product .dropdown-content a:hover {background-color: #ddd;}
+  header.products-header-menu .dropdown-content a:hover {background-color: #ddd;}
   
   /* Show the dropdown menu on hover */
-  header.products-header-menu.dropdown-product .dropdown-product:hover .dropdown-content {display: block;}
+  header.products-header-menu .dropdown:hover .dropdown-content {display: block;}
 
   header.products-header-menu .header-products-sub-2 {
     grid-template-rows: 1fr;

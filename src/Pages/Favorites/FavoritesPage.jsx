@@ -6,7 +6,7 @@ import "./Favourites.css"
 
 export default function FavoritesPage(props) {
 
-    const { items, setItems } = props
+    const { items, setItems, signInStatus, signInUserName, setSignInStatus} = props
 
     function filterTotalIndividual(productId) {
         const array = items.filter(item => item.id === productId)
@@ -17,7 +17,11 @@ export default function FavoritesPage(props) {
 
         <>
 
-            <HeaderCommon />
+            <HeaderCommon 
+                signInStatus={signInStatus}
+                signInUserName={signInUserName}
+                setSignInStatus={setSignInStatus}
+            />
 
             <section className="basket-container">
 
