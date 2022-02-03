@@ -29,15 +29,15 @@ export default function BagPage(props) {
     }
 
     function handleOnChangeSelect(value, objectBasket) {
-
-        let basketCopy = JSON.parse(JSON.stringify(bagItemsFiltered))
-        const index = basketCopy.findIndex(target => target.id === objectBasket.id)
         
-        const item = basketCopy[index]
-        const newItem = { ...item, quantity: parseInt(value)}
+        let productsCopy = JSON.parse(JSON.stringify(items))
+        const index = productsCopy.findIndex(target => target.id === objectBasket.id)
 
-        basketCopy[index] = newItem
-        setItems(basketCopy)
+        const item = productsCopy[index]
+        const newItem = { ...item, quantity: parseInt(value) }
+
+        productsCopy[index] = newItem
+        setItems(productsCopy)
 
     }
 

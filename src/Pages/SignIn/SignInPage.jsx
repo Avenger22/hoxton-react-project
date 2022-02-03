@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+
 import FooterCommon from '../../Components/Common/FooterCommon/FooterCommon'
 import HeaderCommon from '../../Components/Common/HeaderCommon/HeaderCommon'
 
@@ -10,10 +11,6 @@ export default function SignInPage({signInData, setSignInData, signInStatus,
     
     const [password, setPassword] = useState('')
     const [userName, setUserName] = useState('')
-
-    // function checkUserRegistered(object) {
-    //     return users.filter(user => user.includes(object.userName))
-    // } 
 
     function getUser(userNameParam, passwordParam) {
         return users.find(user => user.userName === userNameParam && user.password === passwordParam)
@@ -46,6 +43,7 @@ export default function SignInPage({signInData, setSignInData, signInStatus,
             })
 
             setSignInStatus(true)
+            setSignInUserName(gettingUser.userName)
 
         }
 
