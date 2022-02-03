@@ -17,7 +17,6 @@ function Products({signInUserName, signInStatus, setSignInStatus}) {
 
     // #region 'State Object'
     const [items, setItems] = useState([])
-    const [users, setUsers] = useState([])
     const [initialItems, setInitialItems] = useState([])
     
     const [bagItems, setBagItems] = useState([])
@@ -57,19 +56,8 @@ function Products({signInUserName, signInStatus, setSignInStatus}) {
 
     }
 
-    function getUsersFromServer() {
-
-        fetch('http://localhost:8000/users')
-            .then(resp => resp.json())
-            .then(usersFromServer => {
-            setUsers(usersFromServer)
-        })
-
-    }
-
     useEffect(getInitialItemsFromServer, [])
     useEffect(getItemsFromServer, [])
-    useEffect(getUsersFromServer, [])
     // #endregion
 
     

@@ -76,7 +76,7 @@ export default function HeaderCommon({signInStatus, setSignInStatus, signInUserN
 
                                         <li className="dropbtn">
                                             <i className="fas fa-user"></i>
-                                            {signInUserName}
+                                            {signInUserName.name}
                                         </li>
 
                                         <div className="dropdown-content">

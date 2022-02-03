@@ -15,7 +15,7 @@ const randColour = ["green", "red", "blue", "yellow"][
     Math.floor(Math.random() * 4)
 ];
 
-export default function ProductItemPage({items, setItems}) {
+export default function ProductItemPage({items, setItems, signInUserName, setSignInStatus, signInStatus}) {
 
     const params = useParams()
     const [item, setItem] = useState(null) //important for fetching only 1 item
@@ -78,7 +78,11 @@ export default function ProductItemPage({items, setItems}) {
 
             <section className='container-product-item'>
 
-                <ProductsHeader />
+                <ProductsHeader 
+                    signInStatus={signInStatus}
+                    setSignInStatus={setSignInStatus}
+                    signInUserName={signInUserName}
+                />
 
                 <main className='main-container'>
 

@@ -5,7 +5,7 @@ import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon";
 import "./SignUp.css"
 
 export default function SignUpPage({signUpData, setSignUpData, signUpStatus, setSignUpStatus, 
-    setSignInStatus, signInStatus, signInUserName}) {
+    setSignInStatus, signInStatus, signInUserName, users, setUsers}) {
 
     const [userName, setUserName] = useState('')
     const [fullName, setFullName] = useState('')
@@ -30,16 +30,29 @@ export default function SignUpPage({signUpData, setSignUpData, signUpStatus, set
 
     function handleFormSubmit(e) {
 
-        const array = [
-            {
-                email: email, 
-                password: password,
-                userName: userName,
-                fullName: fullName
-            }
-        ]
+        const object = {
+            email: email, 
+            password: password,
+            userName: userName,
+            fullName: fullName,
+            signedIn: false
+        }
 
-        const newArray = [...signUpData, array]
+        const newArray = {...signUpData, object}
+
+        fetch(`http://localhost:8000/users/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(object)
+        }).then(responseItem => responseItem.json()).then(responseJsonArray => {
+
+            const updatedUsers = [...users, responseJsonArray]
+            setUsers(updatedUsers)
+      
+          })
+      
 
         setSignUpStatus(!signUpStatus)
         setSignUpData(newArray)
@@ -134,7 +147,7 @@ export default function SignUpPage({signUpData, setSignUpData, signUpStatus, set
                             Sign Up
                         </button>
 
-                        <p>Already have an account, <Link to = "/signIn">sign in here</Link> !</p>
+                        <p>Already have an account, <Link to = "/sign-in">sign in here</Link> !</p>
 
                     </div>
 

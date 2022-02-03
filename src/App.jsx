@@ -27,7 +27,9 @@ import HeaderCommon from './Components/Common/HeaderCommon/HeaderCommon'
 // #region 'App'
 function App() {
 
+  // #region 'State Object'
   const [items, setItems] = useState([])
+  const [users, setUsers] = useState([])
 
   const [signInStatus, setSignInStatus] = useState(false)
   const [signInData, setSignInData] = useState([])
@@ -38,7 +40,9 @@ function App() {
 
   const [paymentStatus, setPaymentStatus] = useState(false)
   const [paymentData, setPaymentData] = useState([])
+  // #endregion
 
+  // #region 'Server Functions'
   function getItemsFromServer() {
 
     fetch('http://localhost:8000/items')
@@ -49,7 +53,19 @@ function App() {
 
   }
 
+  function getUsersFromServer() {
+
+    fetch('http://localhost:8000/users')
+        .then(resp => resp.json())
+        .then(usersFromServer => {
+        setUsers(usersFromServer)
+    })
+
+  }
+
+  useEffect(getUsersFromServer, [])
   useEffect(getItemsFromServer, [])
+  // #endregion
 
   // #region 'Return Html'
   return (
@@ -210,8 +226,12 @@ function App() {
             setSignUpStatus = {setSignUpStatus}
             signUpStatus = {signUpStatus}
 
+            signInStatus={signInStatus}
             setSignInStatus={setSignInStatus}
             signInUserName={signInUserName}
+
+            users={users}
+            setUsers={users}
           />}>
         </Route>
 

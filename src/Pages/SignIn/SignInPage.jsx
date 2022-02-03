@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import FooterCommon from '../../Components/Common/FooterCommon/FooterCommon'
 import HeaderCommon from '../../Components/Common/HeaderCommon/HeaderCommon'
 
@@ -10,8 +11,11 @@ export default function SignInPage({signInData, setSignInData, signInStatus, set
     const [userName, setUserName] = useState('')
 
     function handleUserNameChange(e) {
+
+        const newObject = {name: e.target.value}
         setUserName(e.target.value)
-        setSignInUserName(e.target.value)
+        setSignInUserName(newObject)
+        
     }
 
     function handlePasswordChange(e) {
@@ -28,6 +32,15 @@ export default function SignInPage({signInData, setSignInData, signInStatus, set
         ]
         
         const newArray = [...signInData, array]
+
+        // update the server
+        fetch(`http://localhost:8000/users/${signInUserName.id}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ signedIn: !signInStatus })
+        })
 
         setSignInStatus(!signInStatus)
         setSignInData(newArray)
@@ -59,7 +72,7 @@ export default function SignInPage({signInData, setSignInData, signInStatus, set
 
                         <label>
 
-                            <span>Email : </span>
+                            <span>UserName : </span>
                             <input 
                                 defaultValue = {userName} 
                                 required 
@@ -93,7 +106,7 @@ export default function SignInPage({signInData, setSignInData, signInStatus, set
                             Sign In
                         </button>
 
-                        <p>If you don't have an account, sign up here !</p>
+                        <p>If you don't have an account, <Link to = {'/sign-up'}>sign up here</Link> !</p>
 
                     </div>
 
