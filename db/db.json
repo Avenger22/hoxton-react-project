@@ -318,14 +318,14 @@
     },
     {
       "id": 29,
-      "name": "Scitec 100% Plant Protein",
+      "name": "Scitec  100% Peanut Butter",
       "price": "22",
-      "image": "/assets/images/plant-protein.jpg",
+      "image": "/assets/images/scitec-100-peanut-butter.jpg",
       "stock": 5,
       "type": "proteins",
       "date": "2021/03/21",
       "quantity": 0,
-      "description": "Pea protein is among the highest plant proteins in terms of nutritional value. According to scientific data the main amino acid profile makes it ideal for human consumption. The emergence of special amino acids that positively affect nutrition make it ideal for athletes."
+      "description": "100% PEANUT BUTTER is made from blanched, clean and healthy argentinian arachid peanuts and it is a natural source of protein, carbs and fats. The mono and polyunsaturated fats within 100% PEANUT BUTTER make it great for athletes concerned with maintaining a heart healthy and balanced diet. Replacing saturated fats with unsaturated fats in the diet contributes to the maintenance of normal blood cholesterol levels. R"
     },
     {
       "id": 30,
@@ -337,6 +337,226 @@
       "date": "2021/07/29",
       "quantity": 0,
       "description": "100% Whey Isolate is an excellent quality whey protein isolated and fortified with the fastest absorption hydrolysis of whey. This formula is lower in carbohydrates than ever before!"
+    },
+    {
+      "id": 31,
+      "name": "Scitec Super Hero",
+      "price": "40",
+      "image": "/assets/images/scitec-super-hero.jpg",
+      "stock": 15,
+      "type": "pre-workouts",
+      "date": "2020/05/22",
+      "quantity": 0,
+      "description": "SUPERHERO është një produkt i ri pre-workout revulucionar nga SCITEC në linjën e saj professional! Me përbërës të pa-përdorur më parë, duke përfshirë aktive me cilësi të lartë, SUPERHERO është formula më e lartë që duhet të provoni!"
+    },
+    {
+      "id": 32,
+      "name": "Scitec Taurine",
+      "price": "10",
+      "image": "/assets/images/scitec-taurine.jpg",
+      "stock": 10,
+      "type": "aminoacids",
+      "date": "2020/12/12",
+      "quantity": 0,
+      "description": "Taurina gjendet natyrshëm në ushqimet me origjinë shtazore, por praktikisht mungon në ushqimet me origjinë bimore. Prandaj nivelet e Taurinës mund të jenë më të ulëta në një individ vegjetarian sesa tek një grup individësh me një dietë standarde të balancuar."
+    },
+    {
+      "id": 33,
+      "name": "Scitec T-360",
+      "price": "32",
+      "image": "/assets/images/scitec-t-360.jpg",
+      "stock": 5,
+      "type": "testosterone-boosters",
+      "date": "2021/10/11",
+      "quantity": 0,
+      "description": "Arginina është pararendësi i oksidit nitrik (ON). Formula jonë T-360 përmban gjithashtu L-Karnitinë, AçetiI L-Karnitine si dhe L-Karnitinë L-Tartrate. Zinku kontribuon në ruajtjen e niveleve normale të testosteronit, fertilitetit normal, riprodhimit, si dhe sintezës normale të proteinave *. Ky kombinim përbërësish e bën T-360-n shumë popullor, sidomos në mesin e meshkujve dhe në mesin e atyre që stërviten fortë.* Këto deklarata janë vërtetuar shkencërisht nga Autoriteti Evropian i Sigurisë Ushqimore (EFSA) dhe i autorizuar nga Komisioni Evropian (KE)."
+    },
+    {
+      "id": 34,
+      "name": "Scitec Shredex",
+      "price": "35",
+      "image": "/assets/images/scitec-shredex.jpg",
+      "stock": 18,
+      "type": "weight-burner",
+      "date": "2022/01/17",
+      "quantity": 0,
+      "description": "SHREDEX është një stimulues, Sinefirine për rënie dhe menaxhimi të peshës së trupit. Ai siguron 16 përbërës, duke përfshirë L-Karnitinë, Acid Hydroksicitrik (HCA) nga ekstrakti i Garcinia kamboxhia dhe Epigalokatekin galate (EGCG) nga Ekstrakti i Çajit të Gjelbër dhe kontribuonë në kontrollin e peshës trupore dhe urisë. SHREDEX përmban Kromin që kontribuon në metabolizmin normal makronutrient dhe në ruajtjen e niveleve normale të glukozës në gjak. * * Këto deklarata janë vërtetuar shkencërisht nga Autoriteti Evropian i Sigurisë Ushqimore (EFSA) dhe autorizuar nga Komisioni Evropian (KE)."
+    },
+    {
+      "id": 35,
+      "name": "Thermo x",
+      "price": "75",
+      "image": "/assets/images/scitec-thermo-x.jpg",
+      "stock": 12,
+      "type": "weight-burner",
+      "date": "2021/10/15",
+      "quantity": 0,
+      "description": "THERMO-X është një stimulues kompleks i menaxhimit të peshës së trupit pa efedrinë si dhe i butë në kafeinë. Ai siguron disa përbërës, duke përfshirë Acidin Hidroksicitrik (HCA) nga Ekstrakti Garcinia Kamboxhia, që kontribuon në kontrollin e peshës trupore dhe ndjenjës së urisë."
+    },
+    {
+      "id": 36,
+      "name": "Scitec Turbo Ripper",
+      "price": "25",
+      "image": "/assets/images/scitec-turbo-ripper.jpg",
+      "stock": 2,
+      "type": "weight-burner",
+      "date": "2021/10/18",
+      "quantity": 0,
+      "description": "High doses of sustained release caffeine, acetyl l-carnitine, green tea, synephrine & more! TURBO RIPPER gives you many of the ingredients you know and love – in significant doses! We have L-Carnitine and not just ordinary L-Carnitine, but the more complex Acetyl L-Carnitine (ALC) in a whopping dose – you probably won’t want to take Carnitine separately!"
+    },
+    {
+      "id": 37,
+      "name": "Scitec Tyrosine",
+      "price": "12",
+      "image": "/assets/images/scitec-tyrosine.jpg",
+      "stock": 13,
+      "type": "aminoacids",
+      "date": "2019/12/19",
+      "quantity": 0,
+      "description": "L-Tyrosine is a conditionally essential amino acid, which occurs naturally in foods, mainly as part of proteins. It is one of the 22 amino acids that are used by cells to synthesize proteins. Dietary L-Tyrosine is provided by mixed dietary protein intakes from different sources and it can also be consumed in the form of supplements. It’s popular among athletes to take pure L-Tyrosine before workouts, especially with Caffeine."
+    },
+    {
+      "id": 38,
+      "name": "Selenium",
+      "price": "8",
+      "image": "/assets/images/selenium.jpg",
+      "stock": 4,
+      "type": "aminoacids",
+      "date": "2020/10/9",
+      "quantity": 0,
+      "description": "Selenium is an essential micronutrient for humans and it contributes to normal spermatogenesis, the maintenance of normal hair and nails, normal function of the immune system and normal thyroid function, and also to the protection of cells from oxidative stress*. *These statements have been scientifically proven by the European Food Safety Authority (EFSA) and authorized by the European Commission (EC)."
+    },
+    {
+      "id": 39,
+      "name": "Shark Cartilage",
+      "price": "15",
+      "image": "/assets/images/kërce-peshkaqeni.jpg",
+      "stock": 1,
+      "type": "aminoacids",
+      "date": "2022/02/9",
+      "quantity": 0,
+      "description": "This formula contains shark cartilage powder. It is a natural source of Chondroitin Sulfate. Each serving delivers 2960 mg shark cartilage powder. Manganese contributes to the maintenance of normal bones and to the normal formation of connective tissue. These statements have been scientifically proven by the European Food Safety Authority (EFSA) and authorized by the European Commission (EC)."
+    },
+    {
+      "id": 40,
+      "name": "Shaker 750 ml",
+      "price": "5",
+      "image": "/assets/images/shaker.jpg",
+      "stock": 25,
+      "type": "proteins",
+      "date": "2019/01/01",
+      "quantity": 0,
+      "description": "Shake is a product made by our company"
+    },
+    {
+      "id": 41,
+      "name": "Ashwagandha Premium",
+      "price": "35",
+      "image": "/assets/images/09.jpg",
+      "stock": 10,
+      "type": "aminoacids",
+      "date": "2020/05/07",
+      "quantity": 0,
+      "description": "Ashwagandha Premium  është një suplement dietik në kapsula, që përmban ekstrakte të rrënjës Ashwagandha (Withania somnifera L.). Ashwagandha ka një efekt të dobishëm në ndërtimin e rezistencës së trupit ndaj faktorëve të stresit."
+    },
+    {
+      "id": 42,
+      "name": "Super Guarana",
+      "price": "12",
+      "image": "/assets/images/super-guarana.jpg",
+      "stock": 5,
+      "type": "aminoacids",
+      "date": "2022/02/15",
+      "quantity": 0,
+      "description": "Guarana is a natural, herbal source of Caffeine and other phytochemicals. It’s seeds contain about twice the concentration of Caffeine found in coffee beans. Guarana contains widely varying mixtures of xanthine alkaloids other than Caffeine, including Theophylline and Theobromine and other substances such as polyphenols. It has traditionally been used as a refresher. Our SUPER GUARANA also provides Calcium that contributes to normal energy-yielding metabolism, normal muscle function and neurotransmission, the maintenance of normal bones and teeth"
+    },
+    {
+      "id": 43,
+      "name": "Scitec Intra Edge",
+      "price": "45",
+      "image": "/assets/images/edge.jpg",
+      "stock": 7,
+      "type": "proteins",
+      "date": "2021/03/04",
+      "quantity": 0,
+      "description": "Our INTRA EDGE intra-workout formula is based on pure Cluster Dextrin® branded highly branched cyclic dextrin carbohydrate, which is a new type of dextrin that is produced from amylopectin. Cluster Dextrin® is highly soluble in water and the solution is highly stable during storage. Cluster Dextrin® contributes little to osmotic pressure meaning that it is absorbed very fast without negative intestinal problems."
+    },
+    {
+      "id": 44,
+      "name": "Scitec Jumbo",
+      "price": "55",
+      "image": "/assets/images/scitec-jumbo-4400g-500x500.jpg",
+      "stock": 20,
+      "type": "proteins",
+      "date": "2021/03/04",
+      "quantity": 0,
+      "description": "It’s been shown that people tend to overestimate their actual nutrient consumption when trying to gain muscle and brawn. In other words, they eat less than they think and they need for steady and significant progress!"
+    },
+    {
+      "id": 45,
+      "name": "Scitec Liquid Carni-X 100 000",
+      "price": "25",
+      "image": "/assets/images/scitec-liquid-carni-x-100-000.jpg",
+      "stock": 1,
+      "type": "creatine",
+      "date": "2022/01/95",
+      "quantity": 0,
+      "description": "LIQUID CARNI-X 100 000 provides 2500 mg of L-carnitine per serving in a popular liquid form. Being a source of Vitamin C, it provides 225% of the official Nutrient Reference Value. Vitamin C contributes to normal energy-yielding metabolism."
+    },
+    {
+      "id": 46,
+      "name": "Scitec Mega Arginine 120 Caps",
+      "price": "25",
+      "image": "/assets/images/scitec-mega-arginine-120-caps.jpg",
+      "stock": 4,
+      "type": "aminoacids",
+      "date": "2021/08/23",
+      "quantity": 0,
+      "description": "L-arginine is a conditionally essential amino acid, that is, under normal circumstances the human body can synthesize it to satisfy their needs. In the case of poor nutrition or intense physical exercise, the biosynthetic pathway can not produce sufficient amounts of arginine, therefore, a part must be supplemented with diet or supplements."
+    },
+    {
+      "id": 47,
+      "name": "Scitec Lysine",
+      "price": "10",
+      "image": "/assets/images/scitec-lysine.jpg",
+      "stock": 7,
+      "type": "aminoacids",
+      "date": "2022/12/23",
+      "quantity": 0,
+      "description": "L-Lysine is an essential amino acid that’s a physiological building block for the proteins in the body and it is found in large amounts in muscle tissue. The 9 essential amino acids the body cannot synthesize and must be supplied by the diet, including sport supplements."
+    },
+    {
+      "id": 48,
+      "name": "Scitec 100% Hydrolyzed Whey Protein",
+      "price": "35",
+      "image": "/assets/images/scitec-100-hydrolyzed-whey-protein.jpg",
+      "stock": 5,
+      "type": "proteins",
+      "date": "2021/08/22",
+      "quantity": 0,
+      "description": "Whey protein is generally considered the best sports nutrition protein type. Whey concentrates and isolates represent varying degrees of processing and quality, but the protein remains intact, while hydrolyzation breaks intact protein into smaller parts, therefore the speed of digestion, absorption and utilization is the highest among all protein types! This ultra fast absorption makes hydrolyzed whey protein the best after training (or in between multiple daily sessions) and first thing in the morning"
+    },
+    {
+      "id": 49,
+      "name": "Scitec 100% L-Glutamine",
+      "price": "30",
+      "image": "/assets/images/l-glutamine-scitec.jpg",
+      "stock": 7,
+      "type": "creatine",
+      "date": "2021/09/09",
+      "quantity": 0,
+      "description": "Glutamine is the most abundant amino acid in the human blood. Glutamine may become conditionally essential in certain situations, including intensive physical training, when the body cannot meet its needs by synthesizing glutamine. This conditionally essential amino acid can be provided by dietary protein intake, including by food supplements."
+    },
+    {
+      "id": 50,
+      "name": "Scitec 100% Plant Protein",
+      "price": "22",
+      "image": "/assets/images/scitec-100-plant-protein.jpg",
+      "stock": 25,
+      "type": "proteins",
+      "date": "2022/02/01",
+      "quantity": 0,
+      "description": "Pea protein is among the top plant proteins regarding nutritional value. According to scientifi­c fi­ndings the essential amino acid profi­le makes it ideal for human consumption. The occurrence of special aminos relevant to sports nutrition is exceptional. With great Glutamine, Lysine and BCAA content it’s comparable even to whey protein, while in Arginine it is outstanding, much better than whey! Digestive retention of pea protein is very high, human studies revealed around 98% digestibility rate. As a plus, this protein suppresses hunger e‑fficiently by its slow digestion and by acting directly on satiety factors"
     }
   ],
   "users": [
