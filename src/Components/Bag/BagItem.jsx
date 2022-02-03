@@ -24,15 +24,16 @@ function BagItem(props) {
                     width="90"
                 />
 
-                <p>{}</p>
+                <p>{product.name}</p>
 
                 <p>
-                    Quantity:
+                    <span>Quantity: </span>
 
                     <select name = "total-options" defaultValue = {product.quantity} onChange={function(e) {
                         handleOnChangeSelect(e.target.value, product)
                     }}>
                             
+
                         <option value="0">
                             0
                         </option>
@@ -47,6 +48,34 @@ function BagItem(props) {
 
                         <option value="3">
                             3
+                        </option>
+
+                        <option value="4">
+                            4
+                        </option>
+
+                        <option value="5">
+                            5
+                        </option>
+
+                        <option value="6">
+                            6
+                        </option>
+
+                        <option value="7">
+                            7
+                        </option>
+
+                        <option value="8">
+                            8
+                        </option>
+
+                        <option value="9">
+                            9
+                        </option>
+
+                        <option value="10">
+                            10
                         </option>
 
                     </select>

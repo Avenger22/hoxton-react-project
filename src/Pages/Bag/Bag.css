@@ -38,18 +38,26 @@
     text-align: right;
   }
   
+  .basket-container__item select {
+    border: none;
+    padding: 10px 10px;
+    color: #1b1818;
+    background-color: #d65050;
+  }
+
   .basket-container__item {
     display: grid;
     align-items: center;
-    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
-    column-gap: 0.5rem;
+    justify-items: center;
+    grid-template-columns: 40px 120px 130px 120px 20px;
+    grid-gap: 15px;
   }
 
   .basket-container__item button {
     font-size: 14px;
     color: rgb(15, 14, 14);
     background-color: rgb(235, 54, 54);
-    padding: 5px 30px;
+    padding: 5px 10px;
     border: none;
     font-weight: 700;
     border-radius: 20px;
@@ -58,6 +66,7 @@
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
     cursor: pointer;
+    margin-right: 70px;
 }
 
 .basket-container button {
