@@ -2,7 +2,7 @@ import HeaderCommon from "../../Common/HeaderCommon/HeaderCommon"
 import '../HomeContainer1/HomeContainer1.css'
 import { Navigate, useNavigate } from "react-router"
 
-export default function HomeContainer1() {
+export default function HomeContainer1({signInStatus, setSignInStatus, signInUserName}) {
 
     const navigate = useNavigate()
 
@@ -16,7 +16,11 @@ export default function HomeContainer1() {
         
             <section className="home-container-1" id="home-container-1">
 
-                <HeaderCommon />
+                <HeaderCommon 
+                    signInStatus = {signInStatus}
+                    setSignInStatus = {setSignInStatus}
+                    signInUserName = {signInUserName}
+                />
 
                 <main className="main">
 

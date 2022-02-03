@@ -4,13 +4,14 @@ import HeaderCommon from '../../Components/Common/HeaderCommon/HeaderCommon'
 
 import './SignIn.css'
 
-export default function SignInPage({signInData, setSignInData, signInStatus, setSignInStatus}) {
+export default function SignInPage({signInData, setSignInData, signInStatus, setSignInStatus, signInUserName, setSignInUserName}) {
     
     const [password, setPassword] = useState('')
-    const [email, setEmail] = useState('')
+    const [userName, setUserName] = useState('')
 
-    function handleEmailChange(e) {
-        setEmail(e.target.value)
+    function handleUserNameChange(e) {
+        setUserName(e.target.value)
+        setSignInUserName(e.target.value)
     }
 
     function handlePasswordChange(e) {
@@ -21,7 +22,7 @@ export default function SignInPage({signInData, setSignInData, signInStatus, set
 
         const array = [
             {
-                email: email, 
+                userName: userName, 
                 password: password
             }
         ]
@@ -37,7 +38,11 @@ export default function SignInPage({signInData, setSignInData, signInStatus, set
 
         <>
 
-            <HeaderCommon />
+            <HeaderCommon 
+                signInStatus={signInStatus}
+                setSignInStatus={setSignInStatus}
+                signInUserName={signInUserName}
+            />
         
             <section className="container-login">
 
@@ -56,13 +61,13 @@ export default function SignInPage({signInData, setSignInData, signInStatus, set
 
                             <span>Email : </span>
                             <input 
-                                defaultValue = {email} 
+                                defaultValue = {userName} 
                                 required 
-                                name="email" 
-                                type="email" 
-                                placeholder="Enter your email adress: " 
+                                name="username" 
+                                type="text" 
+                                placeholder="Enter your username: " 
                                 onChange={function (e) {
-                                    handleEmailChange(e)
+                                    handleUserNameChange(e)
                                 }}
                             />
 

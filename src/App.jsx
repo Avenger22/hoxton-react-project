@@ -21,6 +21,7 @@ import BagPage from './Pages/Bag/BagPage'
 import FavoritesPage from './Pages/Favorites/FavoritesPage'
 import PaymentPage from "./Pages/Payment/PaymentPage"
 import { useEffect, useState } from 'react/cjs/react.development'
+import HeaderCommon from './Components/Common/HeaderCommon/HeaderCommon'
 // #endregion
 
 // #region 'App'
@@ -30,6 +31,7 @@ function App() {
 
   const [signInStatus, setSignInStatus] = useState(false)
   const [signInData, setSignInData] = useState([])
+  const [signInUserName, setSignInUserName] = useState('')
 
   const [signUpStatus, setSignUpStatus] = useState(false)
   const [signUpData, setSignUpData] = useState([])
@@ -58,6 +60,12 @@ function App() {
         //#region 'Routes' 
       }
   
+      <HeaderCommon 
+        signInStatus={signInStatus}
+        signInUserName={signInUserName}
+        setSignInStatus={setSignInStatus}
+      />
+
       <Routes>
 
         <Route 
@@ -67,7 +75,12 @@ function App() {
 
         <Route 
           path = "/home" 
-          element = {<HomePage />}>
+          element = {<HomePage 
+            signInStatus = {signInStatus}
+            setSignInStatus = {setSignInStatus}
+
+            signInUserName = {signInUserName}
+          />}>
         </Route>
 
         <Route 
@@ -143,6 +156,10 @@ function App() {
           element = {<SignInPage 
             signInData = {signInData}
             setSignInData = {setSignInData}
+
+            signInUserName = {signInUserName}
+            setSignInUserName = {setSignInUserName}
+
             setSignInStatus = {setSignInStatus}
             signInStatus = {signInStatus}
           />}>
@@ -153,6 +170,7 @@ function App() {
           element = {<SignUpPage 
             signUpData = {signUpData}
             setSignUpData = {setSignUpData}
+
             setSignUpStatus = {setSignUpStatus}
             signUpStatus = {signUpStatus}
           />}>

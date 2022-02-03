@@ -1,7 +1,7 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import '../HeaderCommon/HeaderCommon.css'
 
-export default function HeaderCommon() {
+export default function HeaderCommon({signInStatus, setSignInStatus, signInUserName}) {
 
     const navigate = useNavigate()
 
@@ -61,8 +61,41 @@ export default function HeaderCommon() {
 
                     <ul className="ul-header-2">
 
-                        <li className = "sign-links"><Link to = "/sign-in">Sign In</Link></li>
-                        <li className = "sign-links"><Link to = "/sign-up">Sign Up</Link></li>
+                        {signInStatus === false ? (
+
+                            <>
+                                <li className = "sign-links"><Link to = "/sign-in">Sign In</Link></li>
+                                <li className = "sign-links"><Link to = "/sign-up">Sign Up</Link></li>
+                            </>
+
+                        ): (
+
+                                <>
+
+                                    <div className="dropdown">
+
+                                        <li className="dropbtn">{signInUserName}</li>
+
+                                        <div className="dropdown-content">
+
+                                            <button className="log-out" onClick={function () {
+                                                setSignInStatus(!signInStatus)
+                                            }}>
+
+                                                <i className="fas fa-user"></i>
+                                                <span>Log Out</span>
+                                                
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+                                </>
+
+                            )
+                            
+                        }
 
                     </ul>
 
