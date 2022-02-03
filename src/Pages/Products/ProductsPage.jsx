@@ -11,7 +11,8 @@ import ReactPaginate from 'react-paginate'
 // #endregion
 
 
-function Products({signInUserName, signInStatus, setSignInStatus}) {
+function Products({signInUserName, signInStatus, setSignInStatus, 
+    handleButtonAddBasket, active, setActive, handleButtonAddFavorite}) {
 
     let globalItemsToDisplay = []
 
@@ -1372,6 +1373,11 @@ function Products({signInUserName, signInStatus, setSignInStatus}) {
                     pageCount = {pageCount}
                     pagesVisited = {pagesVisited}
                     itemsPerPage = {itemsPerPage}
+
+                    handleButtonAddBasket = {handleButtonAddBasket}
+                    active = {active}
+                    setActive = {setActive}
+                    handleButtonAddFavorite = {handleButtonAddFavorite}
                 />
                     
                 <ProductsFooter />

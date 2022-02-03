@@ -1,16 +1,16 @@
 import { useNavigate } from "react-router"
 import "../StoreItem/StoreItem.css"
+import Heart from "react-heart"
 
-function StoreItem({item}) {
+function StoreItem({item, handleButtonAddBasket, 
+    active, setActive, handleButtonAddFavorite}) {
 
     const navigate = useNavigate()
 
-    function handleLiClickItem() {
+    function handleLiClickItem(e) {
+        e.preventDefault()
+        e.stopPropagation()
         navigate(`/products/${item.id}`)
-    }
-
-    function handleRedirectTobag() {
-        navigate('/bag')
     }
 
     const date1 = Date.parse('2021/10/1')
@@ -23,7 +23,8 @@ function StoreItem({item}) {
         
             <li 
                 className = {checkingDate ? "store-item" : "store-item-no-date"} 
-                onClick={handleLiClickItem}
+                onClick={function (e) {
+                    handleLiClickItem(e)}}
             >
 
                 {checkingDate ? (
@@ -61,9 +62,22 @@ function StoreItem({item}) {
                 
                 </div>
 
-                <button onClick={handleRedirectTobag}>
+                <button onClick={function (e) {
+                    e.stopPropagation()
+                    handleButtonAddBasket(item)
+                }}>
                     Add to cart
                 </button>
+
+                <Heart 
+                    isActive={active}
+                    style = {{height: 25, width: 35}} 
+                    onClick={function (e) {
+                        e.stopPropagation() 
+                        setActive(!active)
+                        handleButtonAddFavorite(item)
+                    }}
+                />
                 
             </li>
             

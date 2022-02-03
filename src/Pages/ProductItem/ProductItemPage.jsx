@@ -15,7 +15,7 @@ const randColour = ["green", "red", "blue", "yellow"][
     Math.floor(Math.random() * 4)
 ];
 
-export default function ProductItemPage({items, setItems, signInUserName, setSignInStatus, signInStatus}) {
+export default function ProductItemPage({handleButtonAddBasket, items, setItems, signInUserName, setSignInStatus, signInStatus}) {
 
     const params = useParams()
     const [item, setItem] = useState(null) //important for fetching only 1 item
@@ -23,29 +23,6 @@ export default function ProductItemPage({items, setItems, signInUserName, setSig
     const [initialRelatedItems, setInitialRelatedItems] = useState([])
     const navigate = useNavigate()
     
-    function handleButtonAddBasket(product) {
-
-        let itemsCopy = JSON.parse(JSON.stringify(items))
-        const index = itemsCopy.findIndex(target => target.id === product.id)
-
-        const item = itemsCopy[index]
-        console.log("Item", item)
-
-        const newItem = {
-            ...item,
-            quantity: item.quantity ? item.quantity + 1 : 1
-        }
-
-        console.log("NewItem", newItem)
-        itemsCopy[index] = newItem
-
-        console.log("Items Copy", itemsCopy)
-
-        setItems(itemsCopy)
-        navigate('/bag')
-
-    }
-
     function filterCategory() {
         return initialRelatedItems.filter(item => item.type === type && item.name !== name)
     }
@@ -129,7 +106,8 @@ export default function ProductItemPage({items, setItems, signInUserName, setSig
                                 </span> : {item.stock}
                             </p>
 
-                            <button onClick={function () {
+                            <button onClick={function (e) {
+                                e.stopPropagation()
                                 handleButtonAddBasket(item)
                             }}>
                                 Add to bag

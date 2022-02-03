@@ -14,7 +14,8 @@ function ProductsMain(props) {
 
     const {items, setItems, initialItems, setInitialItems,
         selectType, setSelectType, category, setCategory, showItems, 
-        changePage, pageCount, pagesVisited, itemsPerPage} = props
+        changePage, pageCount, pagesVisited, itemsPerPage, handleButtonAddBasket,
+        active, setActive, handleButtonAddFavorite} = props
 
     // #region 'Returning Html'
     return (
@@ -42,6 +43,11 @@ function ProductsMain(props) {
                                     <StoreItem 
                                         key = {item.id}
                                         item = {item}
+
+                                        handleButtonAddBasket = {handleButtonAddBasket}
+                                        active = {active}
+                                        setActive = {setActive}
+                                        handleButtonAddFavorite = {handleButtonAddFavorite}
                                     />
                                     
                                 )

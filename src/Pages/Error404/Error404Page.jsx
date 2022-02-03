@@ -12,7 +12,11 @@ function Error404({signInStatus, setSignInStatus, signInUserName}) {
 
             <ButtonTop />
             
-            <Error404Container1 />
+            <Error404Container1 
+                signInStatus = {signInStatus} 
+                setSignInStatus = {setSignInStatus}
+                signInUserName = {signInUserName}
+            />
 
             <FooterCommon />
             

@@ -1,5 +1,5 @@
 // #region 'Importing'
-import {Routes, Route, Navigate} from 'react-router-dom'
+import {Routes, Route, Navigate, useNavigate} from 'react-router-dom'
 
 import './App.css'
 
@@ -40,6 +40,8 @@ function App() {
 
   const [paymentStatus, setPaymentStatus] = useState(false)
   const [paymentData, setPaymentData] = useState([])
+
+  const [active, setActive] = useState(false)
   // #endregion
 
   // #region 'Server Functions'
@@ -66,6 +68,54 @@ function App() {
   useEffect(getUsersFromServer, [])
   useEffect(getItemsFromServer, [])
   // #endregion
+
+  const navigate = useNavigate()
+  
+  function handleButtonAddBasket(product) {
+    
+    let itemsCopy = JSON.parse(JSON.stringify(items))
+    const index = itemsCopy.findIndex(target => target.id === product.id)
+
+    const item = itemsCopy[index]
+    console.log("Item", item)
+
+    const newItem = {
+        ...item,
+        quantity: item.quantity ? item.quantity + 1 : 1
+    }
+
+    console.log("NewItem", newItem)
+    itemsCopy[index] = newItem
+
+    console.log("Items Copy", itemsCopy)
+
+    setItems(itemsCopy)
+    navigate('/bag')
+
+  }
+
+  function handleButtonAddFavorite(product) {
+    
+    let itemsCopy = JSON.parse(JSON.stringify(items))
+    const index = itemsCopy.findIndex(target => target.id === product.id)
+
+    const item = itemsCopy[index]
+    console.log("Item", item)
+
+    const newItem = {
+        ...item,
+        favorite: !item.favorite
+    }
+
+    console.log("NewItem", newItem)
+    itemsCopy[index] = newItem
+
+    console.log("Items Copy", itemsCopy)
+
+    setItems(itemsCopy)
+    navigate('/favorites')
+
+  }
 
   // #region 'Return Html'
   return (
@@ -107,9 +157,14 @@ function App() {
         <Route 
           path = "/favorites" 
           element = {<FavoritesPage 
+            items = {items}
             signInStatus={signInStatus}
             setSignInStatus={setSignInStatus}
             signInUserName={signInUserName}
+
+            handleButtonAddFavorite = {handleButtonAddFavorite}
+            active = {active}
+            setActive = {setActive}
           />}>
         </Route>
 
@@ -126,16 +181,6 @@ function App() {
         <Route 
           path = "/blog" 
           element = {<BlogPage 
-            signInStatus={signInStatus}
-            setSignInStatus={setSignInStatus}
-            signInUserName={signInUserName}
-          />}>
-        </Route>
-
-        <Route 
-          path = "/favorites" 
-          element = {<FavoritesPage 
-            items = {items}
             signInStatus={signInStatus}
             setSignInStatus={setSignInStatus}
             signInUserName={signInUserName}
@@ -168,6 +213,11 @@ function App() {
             signInStatus={signInStatus}
             setSignInStatus={setSignInStatus}
             signInUserName={signInUserName}
+            
+            handleButtonAddBasket = {handleButtonAddBasket}
+            active = {active}
+            setActive = {setActive}
+            handleButtonAddFavorite = {handleButtonAddFavorite}
           />}>
         </Route>
 
@@ -180,6 +230,8 @@ function App() {
             signInStatus={signInStatus}
             setSignInStatus={setSignInStatus}
             signInUserName={signInUserName}
+
+            handleButtonAddBasket = {handleButtonAddBasket}
           />}>
         </Route>
 

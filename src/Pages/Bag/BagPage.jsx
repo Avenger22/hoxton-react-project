@@ -8,6 +8,7 @@ import "./Bag.css"
 export default function BagPage(props) {
 
     const { items, setItems, signInStatus, setSignInStatus, signInUserName } = props
+    
     const bagItemsFiltered = items.filter(item => item?.quantity > 0)
 
     function calculateTotalBasket(baskedProductsParam) {

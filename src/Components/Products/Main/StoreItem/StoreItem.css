@@ -16,18 +16,18 @@ section.container-menus .store-item-no-date {
 
 section.container-menus .store-item:hover {
     border: 1px solid #d40a0a;
-    margin-right: 2%;
-    margin-left: 2%;
-    transform: scale(1.1);
+    margin-right: 1%;
+    margin-left: 1%;
+    transform: scale(1.02);
     transition: 1s;
-    -webkit-transition: 1s;
+    -webkit-transition: 0.5s;
     -moz-transition: 1s;
     -ms-transition: 1s;
     -o-transition: 1s;
-    -webkit-transform: scale(1.1);
-    -moz-transform: scale(1.1);
-    -ms-transform: scale(1.1);
-    -o-transform: scale(1.1);
+    -webkit-transform: scale(1.02);
+    -moz-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -o-transform: scale(1.02);
 }
 
 section.container-menus .store-item-no-date:hover {
