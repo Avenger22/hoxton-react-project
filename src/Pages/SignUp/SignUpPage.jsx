@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon";
 import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon";
 import "./SignUp.css"
@@ -12,6 +12,8 @@ export default function SignUpPage({signUpData, setSignUpData, signUpStatus, set
     const [password, setPassword] = useState('')
     const [email, setEmail] = useState('')
 
+    const navigate = useNavigate()
+    
     function handleEmailChange(e) {
         setEmail(e.target.value)
     }
@@ -56,6 +58,7 @@ export default function SignUpPage({signUpData, setSignUpData, signUpStatus, set
 
         setSignUpStatus(!signUpStatus)
         setSignUpData(newArray)
+        navigate('/sign-in')
 
     }
     

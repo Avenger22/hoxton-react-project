@@ -5,10 +5,19 @@ import HeaderCommon from '../../Components/Common/HeaderCommon/HeaderCommon'
 
 import './SignIn.css'
 
-export default function SignInPage({signInData, setSignInData, signInStatus, setSignInStatus, signInUserName, setSignInUserName}) {
+export default function SignInPage({signInData, setSignInData, signInStatus, 
+    setSignInStatus, signInUserName, setSignInUserName, users, setUsers}) {
     
     const [password, setPassword] = useState('')
     const [userName, setUserName] = useState('')
+
+    // function checkUserRegistered(object) {
+    //     return users.filter(user => user.includes(object.userName))
+    // } 
+
+    function getUser(userNameParam, passwordParam) {
+        return users.filter(user => user.userName === userNameParam && user.password === passwordParam)
+    }
 
     function handleUserNameChange(e) {
 
@@ -24,26 +33,36 @@ export default function SignInPage({signInData, setSignInData, signInStatus, set
 
     function handleFormSubmit(e) {
 
-        const array = [
-            {
-                userName: userName, 
-                password: password
-            }
-        ]
+        // const checkingUser = checkUserRegistered(object)
+        const gettingUser = getUser(userName)
+
+        // const object = {
+        //     id: gettingUser.id,
+        //     userName: userName, 
+        //     password: password
+        // }
         
-        const newArray = [...signInData, array]
+        // const newObject = {...signInData, object}
 
-        // update the server
-        fetch(`http://localhost:8000/users/${signInUserName.id}`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ signedIn: !signInStatus })
-        })
+        if(gettingUser.id !== undefined) {
 
-        setSignInStatus(!signInStatus)
-        setSignInData(newArray)
+            // update the server
+            fetch(`http://localhost:8000/users/${gettingUser.id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ signedIn: !signInStatus })
+            })
+
+            setSignInStatus(!signInStatus)
+            // setSignInData(newObject)
+
+        }
+
+        else {
+            alert("User is not registered, please try again")
+        }
 
     }
 

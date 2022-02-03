@@ -340,7 +340,14 @@
     }
   ],
   "users": [
-    
+    {
+      "email": "jurgenhasmeta@yahoo.com",
+      "password": "eoeeojejoojpe",
+      "userName": "jurgenhasmeta12",
+      "fullName": "jurgen",
+      "signedIn": false,
+      "id": 1
+    }
   ],
   "subscribe": [
     {
