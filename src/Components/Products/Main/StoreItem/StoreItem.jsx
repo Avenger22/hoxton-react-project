@@ -66,10 +66,21 @@ function StoreItem({item, handleButtonAddBasket,
                     e.stopPropagation()
                     handleButtonAddBasket(item)
                 }}>
-                    Add to cart
+
+                    <i className="fas fa-shopping-bag"></i>
+                    <span>Add to cart</span>
                 </button>
 
-                <Heart 
+                <button onClick={function (e) {
+                    e.stopPropagation()
+                    handleButtonAddFavorite(item)
+                }}>
+
+                    <i className="far fa-heart"></i>
+                    <span>Add to Wishlist</span>
+                </button>
+
+                {/* <Heart 
                     isActive={active}
                     style = {{height: 25, width: 35}} 
                     onClick={function (e) {
@@ -77,7 +88,7 @@ function StoreItem({item, handleButtonAddBasket,
                         setActive(!active)
                         handleButtonAddFavorite(item)
                     }}
-                />
+                /> */}
                 
             </li>
             

@@ -76,24 +76,38 @@ section.container-menus .store-item button {
     padding: 15px 15px;
     border: none;
     outline: none;
-    color: #000;
-    background-color: #d40a0a;
+    color: #fff;
+    background-color: #0d2335;
     cursor: pointer;
-    border-radius: 10px;
+    border-radius: 5px;
     font-size: 14px;
     font-weight: 700;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    display: grid;
+    grid-template-columns: 0.2fr 0.8fr;
+    grid-gap: 10px;
+    place-items: center;
 }
+
+section.container-menus .store-item button i {
+   color: #fff;
+   font-size: 16px;
+}
+
+section.container-menus .store--no-date-item button i {
+    color: #fff;
+    font-size: 16px;
+ }
 
 section.container-menus .store-item-no-date button {
     padding: 15px 15px;
     border: none;
     outline: none;
-    color: #000;
-    background-color: #d40a0a;
+    color: #fff;
+    background-color: #0d2335;
     cursor: pointer;
     border-radius: 10px;
     font-size: 14px;
@@ -102,11 +116,15 @@ section.container-menus .store-item-no-date button {
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
+    display: grid;
+    grid-template-columns: 0.2fr 0.8fr;
+    grid-gap: 10px;
+    place-items: center;
 }
 
 section.container-menus .store-item button:hover {
     color: #fff;
-    background-color: #022335;
+    background-color: #3d4549;
     transition: 1s;
     -webkit-transition: 1s;
     -moz-transition: 1s;
@@ -116,7 +134,7 @@ section.container-menus .store-item button:hover {
 
 section.container-menus .store-item-no-date button:hover {
     color: #fff;
-    background-color: #022335;
+    background-color: #3d4549;
     transition: 1s;
     -webkit-transition: 1s;
     -moz-transition: 1s;

@@ -29,7 +29,8 @@ export default function FavoritesPage(props) {
 
             <section className="favorites-container">
 
-                <h2>Your favorites item list</h2>
+                <h2>Your favorites items list</h2>
+                <h2>Your Wishlist</h2>
 
                 <ul>
 

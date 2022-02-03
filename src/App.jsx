@@ -96,24 +96,33 @@ function App() {
 
   function handleButtonAddFavorite(product) {
     
-    let itemsCopy = JSON.parse(JSON.stringify(items))
-    const index = itemsCopy.findIndex(target => target.id === product.id)
+    // if (product.favorite === false) {
+      let itemsCopy = JSON.parse(JSON.stringify(items))
+      const index = itemsCopy.findIndex(target => target.id === product.id)
 
-    const item = itemsCopy[index]
-    console.log("Item", item)
+      const item = itemsCopy[index]
+      console.log("Item", item)
 
-    const newItem = {
-        ...item,
-        favorite: !item.favorite
+      if (item.favorite === false) {
+        
+        const newItem = {
+            ...item,
+            favorite: !item.favorite
+        }
+
+        console.log("NewItem", newItem)
+        itemsCopy[index] = newItem
+
+        console.log("Items Copy", itemsCopy)
+
+        setItems(itemsCopy)
+        navigate('/favorites')
+
+      }
+
+    else {
+      alert("You cannot add this item to Wishlist when it is already there")
     }
-
-    console.log("NewItem", newItem)
-    itemsCopy[index] = newItem
-
-    console.log("Items Copy", itemsCopy)
-
-    setItems(itemsCopy)
-    navigate('/favorites')
 
   }
 

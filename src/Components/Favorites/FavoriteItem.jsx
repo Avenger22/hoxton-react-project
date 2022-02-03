@@ -28,17 +28,18 @@ function FavoriteItem(props) {
                 <p>{product.name}</p>
 
                 <button onClick={handleRedirectBack}>Go to products</button>
+                {/* <button onClick={handleRedirectBack}>Remove from Wishlist</button> */}
 
                 {/* <i className="icon-heart-empty"></i> */}
 
-                <Heart 
+                {/* <Heart 
                     isActive={active}
                     style = {{height: 25, width: 35}} 
                     onClick={function () { 
                         setActive(!active)
                         handleButtonAddFavorite(product)
                     }}
-                />
+                /> */}
 
             </article>
 
