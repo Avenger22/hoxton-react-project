@@ -54,15 +54,21 @@ function ProductsMain(props) {
                     
                 {/* React paginate custom components from npm, also has hooks and props custom*/}
                 <ReactPaginate
-                    previousLabel={"Previous"}
-                    nextLabel={"Next"}
+                    previousLabel={"< Previous"}
+                    // breakLabel={"..."}
+                    nextLabel={"Next >"}
                     pageCount={pageCount}
                     onPageChange={changePage}
+                    // forcePage={0}
+                    // initialPage={0}
+                    // pageRangeDisplayed={3}
                     containerClassName={"paginationBttns"}
                     previousLinkClassName={"previousBttn"}
+                    // breakLinkClassName={"breakBtn"}
                     nextLinkClassName={"nextBttn"}
                     disabledClassName={"paginationDisabled"}
                     activeClassName={"paginationActive"}
+                    // renderOnZeroPageCount={null}
                 />
                     
                 <div className="aside-wrapper">

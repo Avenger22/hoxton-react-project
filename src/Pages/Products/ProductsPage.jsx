@@ -1303,14 +1303,24 @@ function Products({signInUserName, signInStatus, setSignInStatus}) {
 
     // #region 'Pagination feature'
     const [pageNumber, setPageNumber] = useState(0)
-    const itemsPerPage = 10
+    const itemsPerPage = 8
 
-    const pagesVisited = pageNumber * itemsPerPage
+    let pagesVisited = pageNumber * itemsPerPage
     const pageCount = Math.ceil(showItems().length / itemsPerPage)
 
     const changePage = ({ selected }) => {
-        setPageNumber(selected)
+
+        if (pagesVisited > 30) {
+            setPageNumber(0)
+        }
+
+        else {
+            setPageNumber(selected)
+        }
+        
     }
+
+    
     // #endregion
 
 
