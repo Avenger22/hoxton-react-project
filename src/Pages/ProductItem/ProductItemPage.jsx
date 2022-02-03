@@ -19,6 +19,7 @@ export default function ProductItemPage({items, setItems, signInUserName, setSig
 
     const params = useParams()
     const [item, setItem] = useState(null) //important for fetching only 1 item
+    
     const [initialRelatedItems, setInitialRelatedItems] = useState([])
     const navigate = useNavigate()
     
@@ -39,6 +40,7 @@ export default function ProductItemPage({items, setItems, signInUserName, setSig
         itemsCopy[index] = newItem
 
         console.log("Items Copy", itemsCopy)
+
         setItems(itemsCopy)
         navigate('/bag')
 

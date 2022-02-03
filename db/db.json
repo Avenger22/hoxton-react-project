@@ -345,8 +345,24 @@
       "password": "eoeeojejoojpe",
       "userName": "jurgenhasmeta12",
       "fullName": "jurgen",
-      "signedIn": false,
+      "signedIn": true,
       "id": 1
+    },
+    {
+      "email": "jurgenhasmeta222@yahoo.com",
+      "password": "interi",
+      "userName": "jurgenhasmeta1222",
+      "fullName": "jurgenhaha",
+      "signedIn": false,
+      "id": 2
+    },
+    {
+      "email": "jurgenhasmeta11@yahoo.com",
+      "password": "huehuehuieiueuhi",
+      "userName": "jurgenhasmeta122",
+      "fullName": "jurgen22",
+      "signedIn": true,
+      "id": 3
     }
   ],
   "subscribe": [

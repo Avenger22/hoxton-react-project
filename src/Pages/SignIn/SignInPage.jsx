@@ -16,14 +16,13 @@ export default function SignInPage({signInData, setSignInData, signInStatus,
     // } 
 
     function getUser(userNameParam, passwordParam) {
-        return users.filter(user => user.userName === userNameParam && user.password === passwordParam)
+        return users.find(user => user.userName === userNameParam && user.password === passwordParam)
     }
 
     function handleUserNameChange(e) {
 
-        const newObject = {name: e.target.value}
         setUserName(e.target.value)
-        setSignInUserName(newObject)
+        setSignInUserName(e.target.value)
         
     }
 
@@ -33,18 +32,9 @@ export default function SignInPage({signInData, setSignInData, signInStatus,
 
     function handleFormSubmit(e) {
 
-        // const checkingUser = checkUserRegistered(object)
-        const gettingUser = getUser(userName)
+        const gettingUser = getUser(userName, password)
 
-        // const object = {
-        //     id: gettingUser.id,
-        //     userName: userName, 
-        //     password: password
-        // }
-        
-        // const newObject = {...signInData, object}
-
-        if(gettingUser.id !== undefined) {
+        if(gettingUser) {
 
             // update the server
             fetch(`http://localhost:8000/users/${gettingUser.id}`, {
@@ -52,11 +42,10 @@ export default function SignInPage({signInData, setSignInData, signInStatus,
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ signedIn: !signInStatus })
+                body: JSON.stringify({ signedIn: true })
             })
 
-            setSignInStatus(!signInStatus)
-            // setSignInData(newObject)
+            setSignInStatus(true)
 
         }
 

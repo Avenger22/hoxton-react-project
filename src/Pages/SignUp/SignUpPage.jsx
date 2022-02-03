@@ -40,7 +40,7 @@ export default function SignUpPage({signUpData, setSignUpData, signUpStatus, set
             signedIn: false
         }
 
-        const newArray = {...signUpData, object}
+        // const newObject = {...signUpData, object}
 
         fetch(`http://localhost:8000/users/`, {
             method: 'POST',
@@ -57,7 +57,7 @@ export default function SignUpPage({signUpData, setSignUpData, signUpStatus, set
       
 
         setSignUpStatus(!signUpStatus)
-        setSignUpData(newArray)
+        // setSignUpData(newObject)
         navigate('/sign-in')
 
     }
