@@ -9,8 +9,6 @@ export default function ContactContainer1() {
         
             <section className="contact-container-1" id="contact-container-1">
 
-                <HeaderCommon />
-
                 <main className="main">
 
                     <div className="main-post">

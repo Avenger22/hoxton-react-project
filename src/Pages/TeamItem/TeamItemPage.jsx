@@ -29,8 +29,6 @@ export default function TeamItemPage() {
 
         <>
 
-            <HeaderCommon />
-
             <section className="coach-bio-wrapper">
 
                 <div className="img-box">
@@ -42,8 +40,6 @@ export default function TeamItemPage() {
                 </div>
 
             </section>
-
-            <FooterCommon />
         
         </>
 

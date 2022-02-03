@@ -1,9 +1,6 @@
 // #region 'Importing'
 import "./Products.css"
-
-import ProductsHeader from "../../Components/Products/Header/ProductsHeader/ProductsHeader"
 import ProductsMain from "../../Components/Products/Main/ProductsMain/ProductsMain"
-import ProductsFooter from '../../Components/Products/Footer/ProductsFooter'
 
 import { useState } from "react"
 import { useEffect } from "react"
@@ -11,7 +8,9 @@ import ReactPaginate from 'react-paginate'
 // #endregion
 
 
-function Products() {
+function Products({selectedModal, setSelectedModal, searchTerm, setSearchTerm, 
+    searchOnCategory, setSearchOnCategory, userName, setUserName, 
+    userCatcher, setUserCatcher, setCategory, category}) {
 
     let globalItemsToDisplay = []
 
@@ -23,15 +22,7 @@ function Products() {
     const [bagItems, setBagItems] = useState([])
     const [bagItemQuantity, setBagItemQuantity] = useState([])
     
-    const [userCatcher, setUserCatcher] = useState([])
-    const [userName, setUserName] = useState('')
-    
     const [selectType, setSelectType] = useState('Default')
-    const [category, setCategory] = useState('Default')
-    const [searchTerm, setSearchTerm] = useState('')
-    
-    const [searchOnCategory, setSearchOnCategory] = useState('Default')
-    const [selectedModal, setSelectedModal] = useState('')
     // #endregion
 
 
@@ -1332,25 +1323,6 @@ function Products() {
         <>
 
             <section className="container-menus">
-
-                <ProductsHeader 
-                    selectedModal = {selectedModal}
-                    setSelectedModal = {setSelectedModal}
-
-                    searchTerm = {searchTerm}
-                    setSearchTerm = {setSearchTerm}
-
-                    searchOnCategory = {searchOnCategory}
-                    setSearchOnCategory = {setSearchOnCategory}
-
-                    userName = {userName}
-                    setUserName = {setUserName}
-
-                    userCatcher = {userCatcher}
-                    setUserCatcher = {setUserCatcher}
-
-                    setCategory = {setCategory}
-                />
                 
                 <ProductsMain 
                     items = {items}
@@ -1371,9 +1343,7 @@ function Products() {
                     pagesVisited = {pagesVisited}
                     itemsPerPage = {itemsPerPage}
                 />
-                    
-                <ProductsFooter />
-                    
+                                        
             </section>
                                                 
         </>

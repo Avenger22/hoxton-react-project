@@ -21,15 +21,9 @@ function Home({signInStatus, setSignInStatus, signInUserName}) {
 
         <>
 
-            <ButtonTop />
-
             <HomeModalPop />
 
-            <HomeContainer1 
-                signInStatus={signInStatus}
-                setSignInStatus={setSignInStatus}
-                signInUserName = {signInUserName}
-            />
+            <HomeContainer1 />
 
             <HomeContainer2 />
         
@@ -46,8 +40,6 @@ function Home({signInStatus, setSignInStatus, signInUserName}) {
             <HomeContainer8 />
 
             <HomeContainer10 />
-
-            <FooterCommon />
 
         </>
 

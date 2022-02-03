@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import FooterCommon from '../../Components/Common/FooterCommon/FooterCommon'
 import HeaderCommon from '../../Components/Common/HeaderCommon/HeaderCommon'
 
@@ -37,12 +38,6 @@ export default function SignInPage({signInData, setSignInData, signInStatus, set
     return (
 
         <>
-
-            <HeaderCommon 
-                signInStatus={signInStatus}
-                setSignInStatus={setSignInStatus}
-                signInUserName={signInUserName}
-            />
         
             <section className="container-login">
 
@@ -59,7 +54,7 @@ export default function SignInPage({signInData, setSignInData, signInStatus, set
 
                         <label>
 
-                            <span>Email : </span>
+                            <span>UserName : </span>
                             <input 
                                 defaultValue = {userName} 
                                 required 
@@ -93,15 +88,13 @@ export default function SignInPage({signInData, setSignInData, signInStatus, set
                             Sign In
                         </button>
 
-                        <p>If you don't have an account, sign up here !</p>
+                        <p>If you don't have an account, <Link to = '/signUp'>sign up here</Link> !</p>
 
                     </div>
 
                 </form>
 
             </section>
-
-            <FooterCommon />
             
         </>
 

@@ -7,16 +7,13 @@ section.blog-container-1 {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    grid-area: blog-container-1;
     display: grid;
-    grid-template: 
-    "header" 70px
+    grid-template:
     "main" 1fr /
     1fr;
 }
 
-section.blog-container-1 header.header {
-    grid-area: header;
-}
 
 section.blog-container-1 main.main {
     grid-area: main;

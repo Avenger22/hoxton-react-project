@@ -20,8 +20,6 @@ export default function ServicesPage() {
     return (
 
         <>
-
-            <HeaderCommon />
                 
             <section className="boxes-wrapper">
 
@@ -47,8 +45,6 @@ export default function ServicesPage() {
                 </div>
 
             </section>
-
-            <FooterCommon />
 
         </>
 

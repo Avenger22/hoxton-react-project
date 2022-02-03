@@ -17,8 +17,6 @@ export default function FavoritesPage(props) {
 
         <>
 
-            <HeaderCommon />
-
             <section className="basket-container">
 
                 <h2>Your favorites item list</h2>
@@ -43,8 +41,6 @@ export default function FavoritesPage(props) {
                 </ul>
 
             </section>
-
-            <FooterCommon />
         
         </>
 

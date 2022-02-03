@@ -12,8 +12,6 @@ export default function BlogItemContainer1({blogItem, setBlogItem}) {
 
             <section className="blog-item-container-1" id="blog-item-container-1">
 
-                <HeaderCommon />
-
                 <div className="ribbon-blog">
 
                     <div className="ribbon-1">

@@ -8,8 +8,6 @@ export default function Error404Container1() {
         
             <section className="error-container-1" id="error-container-1">
 
-                <HeaderCommon />
-
                 <main className="main">
 
                     <div className="main-post">

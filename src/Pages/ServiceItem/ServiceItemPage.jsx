@@ -30,8 +30,6 @@ export default function ServiceItemPage() {
 
         <>
 
-            <HeaderCommon />
-
             <section className="service-bio-wrapper">
 
                 <div className="img-box">
@@ -43,8 +41,6 @@ export default function ServiceItemPage() {
                 </div>
 
             </section>
-
-            <FooterCommon />
         
         </>
 

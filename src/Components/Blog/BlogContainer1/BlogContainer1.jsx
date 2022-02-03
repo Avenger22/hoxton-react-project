@@ -9,8 +9,6 @@ export default function BlogContainer1() {
         
             <section className="blog-container-1" id="blog-container-1">
 
-                <HeaderCommon />
-
                 <main className="main">
 
                     <div className="main-post">

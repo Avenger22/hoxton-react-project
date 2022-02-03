@@ -9,16 +9,9 @@ function Blog() {
 
     return (
 
-        <>
-
-            <ButtonTop />
-            
+        <>            
             <BlogContainer1 />
-
             <BlogContainer2 />
-
-            <FooterCommon />
-
         </>
 
     )

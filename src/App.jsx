@@ -1,5 +1,5 @@
 // #region 'Importing'
-import {Routes, Route, Navigate} from 'react-router-dom'
+import {Routes, Route, Navigate, useLocation} from 'react-router-dom'
 
 import './App.css'
 
@@ -22,11 +22,16 @@ import FavoritesPage from './Pages/Favorites/FavoritesPage'
 import PaymentPage from "./Pages/Payment/PaymentPage"
 import { useEffect, useState } from 'react/cjs/react.development'
 import HeaderCommon from './Components/Common/HeaderCommon/HeaderCommon'
+import FooterCommon from './Components/Common/FooterCommon/FooterCommon'
+import ButtonTop from './Components/Common/ButtonTop/ButtonTop'
+import ProductsHeader from './Components/Products/Header/ProductsHeader/ProductsHeader'
+import ProductsFooter from './Components/Products/Footer/ProductsFooter'
 // #endregion
 
 // #region 'App'
 function App() {
 
+  // #region 'State Object'
   const [items, setItems] = useState([])
 
   const [signInStatus, setSignInStatus] = useState(false)
@@ -39,6 +44,20 @@ function App() {
   const [paymentStatus, setPaymentStatus] = useState(false)
   const [paymentData, setPaymentData] = useState([])
 
+  // #region 'STATE FOR PRODUCTS'
+  const [userCatcher, setUserCatcher] = useState([])
+  const [userName, setUserName] = useState('')
+
+  const [category, setCategory] = useState('Default')
+  const [searchTerm, setSearchTerm] = useState('')
+
+  const [searchOnCategory, setSearchOnCategory] = useState('Default')
+  const [selectedModal, setSelectedModal] = useState('')
+  // #endregion
+
+  // #endregion
+
+  // #region 'Server Functions'
   function getItemsFromServer() {
 
     fetch('http://localhost:8000/items')
@@ -50,6 +69,15 @@ function App() {
   }
 
   useEffect(getItemsFromServer, [])
+  // #endregion
+
+  const sampleLocation = useLocation() //custom hook to get location of router URL
+
+  // function randomInteger(min, max) {
+  //   return Math.floor(Math.random() * (max - min + 1)) + min;
+  // }
+
+  // const randomValue = randomInteger(1,30)
 
   // #region 'Return Html'
   return (
@@ -57,15 +85,58 @@ function App() {
     <>
 
       { 
-        //#region 'Routes' 
+        //#region 'Conditional rendering' 
       }
   
-      <HeaderCommon 
-        signInStatus={signInStatus}
-        signInUserName={signInUserName}
-        setSignInStatus={setSignInStatus}
-      />
+      {
 
+        sampleLocation.pathname === '/products'
+        || sampleLocation.pathname === '/bag' 
+        || sampleLocation.pathname === '/favorites'  ? (
+          
+          <ProductsHeader 
+              selectedModal = {selectedModal}
+              setSelectedModal = {setSelectedModal}
+
+              searchTerm = {searchTerm}
+              setSearchTerm = {setSearchTerm}
+
+              searchOnCategory = {searchOnCategory}
+              setSearchOnCategory = {setSearchOnCategory}
+
+              userName = {userName}
+              setUserName = {setUserName}
+
+              userCatcher = {userCatcher}
+              setUserCatcher = {setUserCatcher}
+              setCategory = {setCategory}
+              />
+
+          ) : (
+
+                <>
+
+                  <HeaderCommon 
+                    signInStatus={signInStatus}
+                    signInUserName={signInUserName}
+                    setSignInStatus={setSignInStatus}
+                  />
+          
+                  <ButtonTop />
+
+                </>
+
+              )
+      }
+      
+      { 
+        // #endregion
+      }
+
+      { 
+        //#region 'Routes' 
+      }
+      
       <Routes>
 
         <Route 
@@ -128,7 +199,25 @@ function App() {
 
         <Route 
           path = "/products" 
-          element = {<ProductsPage />}>
+          element = {<ProductsPage 
+            selectedModal = {selectedModal}
+            setSelectedModal = {setSelectedModal}
+
+            searchTerm = {searchTerm}
+            setSearchTerm = {setSearchTerm}
+
+            searchOnCategory = {searchOnCategory}
+            setSearchOnCategory = {setSearchOnCategory}
+
+            userName = {userName}
+            setUserName = {setUserName}
+
+            userCatcher = {userCatcher}
+            setUserCatcher = {setUserCatcher}
+
+            category={category}
+            setCategory = {setCategory}
+          />}>
         </Route>
 
         <Route 
@@ -204,7 +293,30 @@ function App() {
         </Route>
         
       </Routes>
-      
+
+      { 
+        // #endregion 
+      }
+
+      { 
+        //#region 'Conditional Rendering' 
+      }
+
+      {
+
+        sampleLocation.pathname === '/products' 
+        || sampleLocation.pathname === '/bag' 
+        || sampleLocation.pathname === '/favorites'  ? (
+
+          <ProductsFooter />
+        ) : (
+
+          <FooterCommon />
+
+        )
+
+      }
+
       { 
         // #endregion 
       }

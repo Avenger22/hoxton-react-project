@@ -1,3 +1,6 @@
+div#root 
+
+
 @media screen and (max-width: 1200px) { 
     section.blog-container-2 .blog-wrapper .row .blog-post p {
         width: 55ch;

@@ -10,18 +10,10 @@ function Contact() {
 
     return (
 
-        <>
-
-            <ButtonTop />
-            
+        <>            
             <ContactContainer1 />
-
             <ContactContainer2 />
-        
             <ContactContainer3 />
-
-            <FooterCommon />
-
         </>
 
     )

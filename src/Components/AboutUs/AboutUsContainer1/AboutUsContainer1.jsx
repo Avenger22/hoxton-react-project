@@ -9,8 +9,6 @@ export default function AboutUsContainer1() {
         
             <section className="about-container-1" id="about-container-1">
 
-                <HeaderCommon />
-
                 <main className="main">
 
                     <div className="main-post">
