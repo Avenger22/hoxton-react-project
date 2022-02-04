@@ -96,8 +96,12 @@ header.products-header-menu .dropbtn-user-signed i {
 header.products-header-menu .dropbtn-user-signed:hover {
   color: #3684f1;
   transition: 1s;
-  border-bottom: 1px solid #ec8251;
+  /* border-bottom: 1px solid #ec8251; */
   cursor: pointer;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
 }
 
 header.products-header-menu .dropdown-user-signed {
@@ -117,25 +121,24 @@ header.products-header-menu .dropdown-content-user-signed {
  /* Links inside the dropdown */
  header.products-header-menu .dropdown-content-user-signed span {
   color: black;
-  padding: 25px 15px;
+  padding: 10px 15px;
   text-decoration: none;
   display: block;
   width: 100%;
   border: none;
-  font-size: 16px;
-  font-weight: 700;
-  background-color: #d40a0a;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #f07a7a;
   cursor: pointer;
   border: none;
   outline: none;
-
 }
 
 /* Change color of dropdown links on hover */
 header.products-header-menu .dropdown-content-user-signed span:hover {background-color: rgb(226, 155, 155);}
 
 /* Show the dropdown menu on hover */
-header.products-header-menu .dropdown-user-signed:hover .dropdown-content-user-signed {display: grid; grid-template-rows: 30px 30px; grid-gap: 10px;}
+header.products-header-menu .dropdown-user-signed:hover .dropdown-content-user-signed {display: grid; grid-template-rows: 10px 10px; grid-gap: 5px;}
 
   header.products-header-menu .header-products-sub-2 {
     grid-template-rows: 1fr;

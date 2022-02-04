@@ -86,6 +86,7 @@ function App() {
   function handleButtonAddBasket(product) {
     
     if (signInStatus === true) {
+
       let itemsCopy = JSON.parse(JSON.stringify(items))
       const index = itemsCopy.findIndex(target => target.id === product.id)
 
@@ -94,7 +95,8 @@ function App() {
 
       const newItem = {
           ...item,
-          quantity: item.quantity ? item.quantity + 1 : 1
+          quantity: item.quantity ? item.quantity + 1 : 1,
+          stock: item.stock - 1
       }
 
       // console.log("NewItem", newItem)
@@ -106,6 +108,7 @@ function App() {
       setItems(itemsCopy)
 
       navigate('/bag')
+
     }
 
     else {

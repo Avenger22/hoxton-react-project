@@ -1294,7 +1294,7 @@ function Products({signInUserName, signInStatus, setSignInStatus,
 
     // #region 'Pagination feature'
     const [pageNumber, setPageNumber] = useState(0)
-    const itemsPerPage = 8
+    const [itemsPerPage, setItemsPerPage] = useState(8)
 
     let pagesVisited = pageNumber * itemsPerPage
     const pageCount = Math.ceil(showItems().length / itemsPerPage)
@@ -1351,6 +1351,8 @@ function Products({signInUserName, signInStatus, setSignInStatus,
                 <ProductsMain 
                     items = {items}
                     setItems = {setItems}
+
+                    setItemsPerPage = {setItemsPerPage}
 
                     initialItems = {initialItems}
                     setInitialItems = {setInitialItems}

@@ -31,7 +31,10 @@ function BagItem(props) {
                 <p>
                     <span>Quantity: </span>
 
-                    <select name = "total-options" defaultValue = {product.quantity} onChange={function(e) {
+                    <select 
+                    name = "total-options" 
+                    defaultValue = {product.quantity} 
+                    onChange={function(e) {
                         handleOnChangeSelect(e.target.value, product)
                     }}>
                             
@@ -84,6 +87,7 @@ function BagItem(props) {
 
                 </p>
                 
+                <span>Stock: {product.stock}</span>
                 <p>Item total: {calculateTotalBasket(totalIndividualArray)}</p>
                 
                 <button 

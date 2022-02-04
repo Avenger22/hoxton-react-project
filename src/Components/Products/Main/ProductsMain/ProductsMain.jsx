@@ -15,7 +15,7 @@ function ProductsMain(props) {
     const {items, setItems, initialItems, setInitialItems,
         selectType, setSelectType, category, setCategory, showItems, 
         changePage, pageCount, pagesVisited, itemsPerPage, handleButtonAddBasket,
-        handleButtonAddFavorite, setBagClickSpan, setFavoriteClickSpan,} = props
+        handleButtonAddFavorite, setBagClickSpan, setFavoriteClickSpan, setItemsPerPage} = props
 
     // #region 'Returning Html'
     return (
@@ -30,6 +30,8 @@ function ProductsMain(props) {
                     selectType = {selectType}
                     setSelectType = {setSelectType}
                     showItems = {showItems}
+
+                    setItemsPerPage = {setItemsPerPage}
                 />
                 
                 <div className="items-container">

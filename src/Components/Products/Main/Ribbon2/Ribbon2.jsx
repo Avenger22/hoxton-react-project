@@ -1,9 +1,13 @@
 import "../Ribbon2/Ribbon2.css"
 
-function Ribbon2({selectType, setSelectType, showItems}) {
+function Ribbon2({selectType, setSelectType, showItems, setItemsPerPage}) {
 
     function handleOnChangeSelect(selectValue) {
         setSelectType(selectValue)
+    }
+
+    function handleOnChangeSelectPerPage(selectValue) {
+        setItemsPerPage(parseInt(selectValue))
     }
 
     return (
@@ -19,7 +23,7 @@ function Ribbon2({selectType, setSelectType, showItems}) {
                     
                 </div>
 
-                <form id="filter-by-sort" autoComplete="off">
+                <form id="filter-by-sort">
 
                     <label htmlFor="filter-by-type">
                         <h3>Sorting Options:</h3>
@@ -40,6 +44,26 @@ function Ribbon2({selectType, setSelectType, showItems}) {
 
                     </select>
                     
+                </form>
+
+                <form className="new-select-page">
+
+                    <label htmlFor="filter-by-pageNum">
+                        <h3>Show item per page :</h3>
+                    </label>
+
+                    <select name="filter-by-pageNum" id="filter-by-pageNum" 
+                    onChange={function (e) {
+                        handleOnChangeSelectPerPage(e.target.value)
+                    }}>
+
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                        <option value="15">15</option>
+                        <option value="5">5</option>
+
+                    </select>
+
                 </form>
 
             </div>

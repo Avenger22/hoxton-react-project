@@ -56,8 +56,8 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    grid-template-columns: 40px 120px 130px 120px 120px 30px;
-    grid-gap: 10px;
+    grid-template-columns: 50px 110px 120px 50px 80px 70px 30px;
+    grid-gap: 15px;
   }
 
   .basket-container__item button {
@@ -111,4 +111,9 @@
 .basket-container__item p {
   font-size: 14px;
   font-weight: 600;
+}
+
+.basket-container__item span {
+  font-size: 12px;
+  font-weight: 700;
 }

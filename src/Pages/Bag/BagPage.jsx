@@ -38,10 +38,29 @@ export default function BagPage(props) {
         const index = productsCopy.findIndex(target => target.id === objectBasket.id)
 
         const item = productsCopy[index]
-        const newItem = { ...item, quantity: parseInt(value) }
 
-        productsCopy[index] = newItem
-        setItems(productsCopy)
+        if (parseInt(value) <= item.stock) {
+            
+            // stock: item.stock - item.quantity
+
+            const newItem = { ...item, quantity: parseInt(value) }
+            productsCopy[index] = newItem
+            setItems(productsCopy)
+
+        }
+
+        else {
+
+            alert("You cannot have more than the stock of the item")
+
+            // value = "1"
+            // stock: item.stock - item.quantity
+            
+            const newItem = { ...item, quantity: 1 }
+            productsCopy[index] = newItem
+            setItems(productsCopy)
+
+        }
 
     }
 
