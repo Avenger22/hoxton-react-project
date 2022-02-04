@@ -9,7 +9,8 @@ function ProductsHeader(props) {
     const {selectedModal,
     setSelectedModal, searchTerm, setSearchTerm, searchOnCategory,
     setSearchOnCategory, userName, setUserName, userCatcher, 
-    setUserCatcher, setCategory, signInStatus, setSignInStatus, signInUserName} = props
+    setUserCatcher, setCategory, signInStatus, setSignInStatus, signInUserName,
+    bagClickSpan, favoriteClickSpan} = props
 
     const ulSub2 = ['Home', 'Products', 'About-Us', 'Blog', 'Contact']
 
@@ -53,14 +54,14 @@ function ProductsHeader(props) {
 
                                 {signInStatus === false ? (
 
-                                    <div className="dropdown">
+                                    <div className="dropdown-user">
 
                                         <button className="button-image">
                                             <img src="/assets/icons/user.png" alt=""/>
                                             <span className="span-user-login null"></span>
                                         </button>
 
-                                        <div className="dropdown-content">
+                                        <div className="dropdown-content-user">
                                             <Link to ="/sign-in">Sign In</Link>
                                             <Link to ="/sign-up">Sign Up</Link>
                                         </div>
@@ -73,14 +74,14 @@ function ProductsHeader(props) {
 
                                     <>
 
-                                        <div className="dropdown">
+                                        <div className="dropdown-user">
 
-                                            <li className="dropbtn">
+                                            <li className="dropbtn-user">
                                                 <i className="fas fa-user"></i>
                                                 {signInUserName}
                                             </li>
 
-                                            <div className="dropdown-content">
+                                            <div className="dropdown-content-user">
 
                                                 <button className="log-out" onClick={function () {
                                                     setSignInStatus(!signInStatus)
@@ -100,14 +101,24 @@ function ProductsHeader(props) {
 
                             </>
 
-                            <button className="button-image" onClick={handleRedirectToFavorite}>
+                            <button className="button-image-things" onClick={handleRedirectToFavorite}>
+                                
                                 <img src="/assets/icons/favorite.png" alt=""/>
-                                <span className="span-fav-number null"></span>
+
+                                {favoriteClickSpan > 0 ? (
+                                    <span className="span-fav-number">{favoriteClickSpan}</span>
+                                ) : null}
+
                             </button>
 
-                            <button className="button-image" onClick={handleRedirectToBag}>
+                            <button className="button-image-things" onClick={handleRedirectToBag}>
+                                
                                 <img src="/assets/icons/shopping-bag.png" alt=""/>
-                                <span className="span-bag-stock null"></span>
+                                
+                                {bagClickSpan > 0 ? (
+                                    <span className="span-bag-stock">{bagClickSpan}</span>
+                                ) : null }
+
                             </button>   
                             
                         </ul>

@@ -40,6 +40,9 @@ function App() {
 
   const [paymentStatus, setPaymentStatus] = useState(false)
   const [paymentData, setPaymentData] = useState([])
+
+  const [favoriteClickSpan, setFavoriteClickSpan] = useState(0)
+  const [bagClickSpan, setBagClickSpan] = useState(0)
   // #endregion
 
   // #region 'Server Functions'
@@ -88,7 +91,9 @@ function App() {
 
     // console.log("Items Copy", itemsCopy)
 
+    setBagClickSpan(bagClickSpan + 1)
     setItems(itemsCopy)
+
     navigate('/bag')
 
   }
@@ -106,6 +111,8 @@ function App() {
     }
 
     itemsCopy[index] = newItem
+
+    setBagClickSpan(bagClickSpan - 1)
     setItems(itemsCopy)
 
   }
@@ -123,6 +130,8 @@ function App() {
     }
 
     itemsCopy[index] = newItem
+
+    setFavoriteClickSpan(favoriteClickSpan - 1)
     setItems(itemsCopy)
 
     // updatedFavorite = updatedFavorite.filter(item => item.id !== product.id)
@@ -150,7 +159,9 @@ function App() {
 
         // console.log("Items Copy", itemsCopy)
 
+        setFavoriteClickSpan(favoriteClickSpan + 1)
         setItems(itemsCopy)
+
         navigate('/favorites')
 
       }
@@ -180,6 +191,8 @@ function App() {
 
     // console.log("Items Copy", itemsCopy)
 
+    setBagClickSpan(bagClickSpan + 1)
+    setFavoriteClickSpan(favoriteClickSpan - 1)
     setItems(itemsCopy)
     // navigate('/bag')
 
@@ -221,6 +234,7 @@ function App() {
             setSignInStatus={setSignInStatus}
             signInUserName={signInUserName}
 
+            setBagClickSpan = {setBagClickSpan}
             handleButtonRemoveBasket = {handleButtonRemoveBasket}
           />}>
         </Route>
@@ -233,6 +247,7 @@ function App() {
             setSignInStatus={setSignInStatus}
             signInUserName={signInUserName}
 
+            setFavoriteClickSpan = {setFavoriteClickSpan}
             handleButtonRemoveFavorite = {handleButtonRemoveFavorite}
             handleButtonAddBagRemoveFavorite = {handleButtonAddBagRemoveFavorite}
           />}>
@@ -284,6 +299,11 @@ function App() {
             setSignInStatus={setSignInStatus}
             signInUserName={signInUserName}
             
+            setBagClickSpan = {setBagClickSpan}
+            setFavoriteClickSpan = {setFavoriteClickSpan}
+            bagClickSpan = {bagClickSpan}
+            favoriteClickSpan = {favoriteClickSpan}
+
             handleButtonAddBasket = {handleButtonAddBasket}
             handleButtonAddFavorite = {handleButtonAddFavorite}
           />}>

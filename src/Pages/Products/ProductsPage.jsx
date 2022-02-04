@@ -12,7 +12,8 @@ import ReactPaginate from 'react-paginate'
 
 
 function Products({signInUserName, signInStatus, setSignInStatus, 
-    handleButtonAddBasket, handleButtonAddFavorite}) {
+    handleButtonAddBasket, handleButtonAddFavorite, 
+    setBagClickSpan, setFavoriteClickSpan, bagClickSpan, favoriteClickSpan}) {
 
     let globalItemsToDisplay = []
 
@@ -1353,6 +1354,9 @@ function Products({signInUserName, signInStatus, setSignInStatus,
                     signInUserName = {signInUserName}
                     signInStatus = {signInStatus}
                     setSignInStatus = {setSignInStatus}
+
+                    bagClickSpan = {bagClickSpan}
+                    favoriteClickSpan = {favoriteClickSpan}
                 />
                 
                 <ProductsMain 
@@ -1376,6 +1380,9 @@ function Products({signInUserName, signInStatus, setSignInStatus,
 
                     handleButtonAddBasket = {handleButtonAddBasket}
                     handleButtonAddFavorite = {handleButtonAddFavorite}
+
+                    setBagClickSpan = {setBagClickSpan}
+                    setFavoriteClickSpan = {setFavoriteClickSpan}
                 />
                     
                 <ProductsFooter />

@@ -3,7 +3,7 @@ import "../StoreItem/StoreItem.css"
 import Heart from "react-heart"
 
 function StoreItem({item, handleButtonAddBasket, 
-    handleButtonAddFavorite}) {
+    handleButtonAddFavorite, setBagClickSpan, setFavoriteClickSpan}) {
 
     const navigate = useNavigate()
 
