@@ -12,6 +12,11 @@ section.container-product-item {
   grid-gap: 20px;
 }
 
+.button-wish-wrapper {
+  display: grid;
+  grid-template-columns: 250px 250px;
+}
+
 section.container-product-item header.products-header-menu {
   grid-area: header-product;
 }
@@ -105,11 +110,11 @@ section.container-product-item .main-container .product-ribbon span {
   .product-detail__side button {
     max-width: 33%;
     padding: 1rem;
-    border: 3px solid rgb(219, 34, 34);
+    border: 1px solid rgb(219, 34, 34);
     justify-self: end;
-    margin-top: 5rem;
+    margin-top: 2rem;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
   }
   
   .product-detail__side button:hover {

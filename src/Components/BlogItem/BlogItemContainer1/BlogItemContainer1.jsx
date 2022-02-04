@@ -4,7 +4,7 @@ import HeaderCommon from "../../Common/HeaderCommon/HeaderCommon"
 
 import "../BlogItemContainer1/BlogItemContainer1.css"
 
-export default function BlogItemContainer1({blogItem, setBlogItem}) {
+export default function BlogItemContainer1({blogItem, setBlogItem, signInStatus, setSignInStatus, signInUserName}) {
 
     return (
 
@@ -15,7 +15,7 @@ export default function BlogItemContainer1({blogItem, setBlogItem}) {
                 <HeaderCommon 
                     signInStatus={signInStatus}
                     setSignInStatus={setSignInStatus}
-                    signInUserName={signInUsername}
+                    signInUserName={signInUserName}
                 />
 
                 <div className="ribbon-blog">

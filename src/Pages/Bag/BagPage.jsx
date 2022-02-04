@@ -1,13 +1,16 @@
-import { Navigate, useNavigate } from "react-router"
+import {useNavigate } from "react-router"
 import BagItem from "../../Components/Bag/BagItem"
-import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
-import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon"
-
+import ProductsFooter from "../../Components/Products/Footer/ProductsFooter"
+import ProductsHeader from "../../Components/Products/Header/ProductsHeader/ProductsHeader"
 import "./Bag.css"
 
 export default function BagPage(props) {
 
-    const { items, setItems, signInStatus, setSignInStatus, signInUserName, handleButtonRemoveBasket } = props
+    const { items, setItems, signInStatus, setSignInStatus, 
+        signInUserName, handleButtonRemoveBasket, 
+        selectedModal, searchTerm, setSearchTerm, searchOnCategory,
+        setSearchOnCategory, userName, setUserName, userCatcher, setUserCatcher,
+        setCategory, setSelectedModal, bagClickSpan, favoriteClickSpan} = props
     
     const bagItemsFiltered = items.filter(item => item?.quantity > 0)
 
@@ -56,49 +59,73 @@ export default function BagPage(props) {
 
         <>
 
-            <HeaderCommon 
-                signInStatus={signInStatus}
-                setSignInStatus={setSignInStatus}
-                signInUserName={signInUserName}
-            />
+            <div className="bag-menus-wrapper">
 
-            <section className="basket-container">
+                <ProductsHeader 
+                    selectedModal = {selectedModal}
+                    setSelectedModal = {setSelectedModal}
 
-                <h2>Your Shopping Bag</h2>
+                    searchTerm = {searchTerm}
+                    setSearchTerm = {setSearchTerm}
 
-                <ul>
+                    searchOnCategory = {searchOnCategory}
+                    setSearchOnCategory = {setSearchOnCategory}
 
-                    {
+                    userName = {userName}
+                    setUserName = {setUserName}
 
-                        bagItemsFiltered.map(product =>
+                    userCatcher = {userCatcher}
+                    setUserCatcher = {setUserCatcher}
 
-                            <BagItem
-                                key={product.id}
-                               
-                                product={product}
-                                calculateTotalBasket={calculateTotalBasket}
+                    setCategory = {setCategory}
+
+                    signInUserName = {signInUserName}
+                    signInStatus = {signInStatus}
+                    setSignInStatus = {setSignInStatus}
+
+                    bagClickSpan = {bagClickSpan}
+                    favoriteClickSpan = {favoriteClickSpan}
+                />
+
+                <section className="basket-container">
+
+                    <h2>Your Shopping Bag</h2>
+
+                    <ul>
+
+                        {
+
+                            bagItemsFiltered.map(product =>
+
+                                <BagItem
+                                    key={product.id}
                                 
-                                filterTotalIndividual={filterTotalIndividual}
-                                handleOnChangeSelect={handleOnChangeSelect}
-                                handleButtonRemoveBasket = {handleButtonRemoveBasket}
-                            />
+                                    product={product}
+                                    calculateTotalBasket={calculateTotalBasket}
+                                    
+                                    filterTotalIndividual={filterTotalIndividual}
+                                    handleOnChangeSelect={handleOnChangeSelect}
+                                    handleButtonRemoveBasket = {handleButtonRemoveBasket}
+                                />
 
-                        )
+                            )
 
-                    }
+                        }
 
-                </ul>
+                    </ul>
 
-                <h3>Your total: {calculateTotalBasket(bagItemsFiltered)}</h3>
+                    <h3>Your total: {calculateTotalBasket(bagItemsFiltered)}</h3>
 
-                <button className="button-proceed-payment" 
-                    onClick={handlePaymentRedirect}>
-                        Proceed to payment
-                </button>
+                    <button className="button-proceed-payment" 
+                        onClick={handlePaymentRedirect}>
+                            Proceed to payment
+                    </button>
 
-            </section>
+                </section>
 
-            <FooterCommon />
+                <ProductsFooter />
+
+            </div>
       
         </>
 

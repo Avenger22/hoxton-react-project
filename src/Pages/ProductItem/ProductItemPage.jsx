@@ -16,7 +16,9 @@ const randColour = ["green", "red", "blue", "yellow"][
 ];
 
 export default function ProductItemPage({handleButtonAddBasket, items, 
-    setItems, signInUserName, setSignInStatus, signInStatus, handleButtonAddFavorite}) {
+    setItems, signInUserName, setSignInStatus, signInStatus, handleButtonAddFavorite,
+    bagClickSpan,
+    favoriteClickSpan}) {
 
     const params = useParams()
     const [item, setItem] = useState(null) //important for fetching only 1 item
@@ -62,6 +64,9 @@ export default function ProductItemPage({handleButtonAddBasket, items,
                     signInStatus={signInStatus}
                     setSignInStatus={setSignInStatus}
                     signInUserName={signInUserName}
+
+                    bagClickSpan = {bagClickSpan}
+                    favoriteClickSpan = {favoriteClickSpan}
                 />
 
                 <main className='main-container'>
@@ -107,19 +112,23 @@ export default function ProductItemPage({handleButtonAddBasket, items,
                                 </span> : {item.stock}
                             </p>
 
-                            <button onClick={function (e) {
-                                e.stopPropagation()
-                                handleButtonAddBasket(item)
-                            }}>
-                                Add to Bag
-                            </button>
+                            <div className='button-wish-wrapper'>
+                                
+                                <button onClick={function (e) {
+                                    e.stopPropagation()
+                                    handleButtonAddBasket(item)
+                                }}>
+                                    Add to Bag
+                                </button>
 
-                            <button onClick={function (e) {
-                                e.stopPropagation()
-                                handleButtonAddFavorite(item)
-                            }}>
-                                Add to Favorites
-                            </button>
+                                <button onClick={function (e) {
+                                    e.stopPropagation()
+                                    handleButtonAddFavorite(item)
+                                }}>
+                                    Add to Wishlist
+                                </button>
+
+                            </div>
 
                         </div>
 

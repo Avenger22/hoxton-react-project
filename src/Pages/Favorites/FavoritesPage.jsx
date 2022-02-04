@@ -1,13 +1,16 @@
-import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon"
-import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
 import FavoriteItem from "../../Components/Favorites/FavoriteItem"
-
 import "./Favorites.css"
+
+import ProductsFooter from "../../Components/Products/Footer/ProductsFooter"
+import ProductsHeader from "../../Components/Products/Header/ProductsHeader/ProductsHeader"
 
 export default function FavoritesPage(props) {
 
     const { items, setItems, signInStatus, signInUserName, 
-        setSignInStatus, handleButtonRemoveFavorite, handleButtonAddBagRemoveFavorite} = props
+        setSignInStatus, handleButtonRemoveFavorite, handleButtonAddBagRemoveFavorite,
+        selectedModal, setSelectedModal, searchTerm, setSearchTerm, searchOnCategory,
+        setSearchOnCategory, userName, setUserName, userCatcher,
+        setUserCatcher, setCategory, bagClickSpan, favoriteClickSpan} = props
 
     console.log(items)
     const favoriteItemsFiltered = items.filter(item => item?.favorite === true)
@@ -21,41 +24,64 @@ export default function FavoritesPage(props) {
 
         <>
 
-            <HeaderCommon 
-                signInStatus={signInStatus}
-                signInUserName={signInUserName}
-                setSignInStatus={setSignInStatus}
-            />
+            <div className="fav-menus-wrapper">
 
-            <section className="favorites-container">
+                <ProductsHeader 
+                    selectedModal = {selectedModal}
+                    setSelectedModal = {setSelectedModal}
 
-                <h2>Your favorites items list</h2>
-                <h2>Your Wishlist</h2>
+                    searchTerm = {searchTerm}
+                    setSearchTerm = {setSearchTerm}
 
-                <ul>
+                    searchOnCategory = {searchOnCategory}
+                    setSearchOnCategory = {setSearchOnCategory}
 
-                    {
+                    userName = {userName}
+                    setUserName = {setUserName}
 
-                        favoriteItemsFiltered.map(product =>
+                    userCatcher = {userCatcher}
+                    setUserCatcher = {setUserCatcher}
+                    setCategory = {setCategory}
 
-                            <FavoriteItem
-                                key={product.id}
-                                product={product}
-                                filterTotalIndividual={filterTotalIndividual}
-                                
-                                handleButtonRemoveFavorite = {handleButtonRemoveFavorite}
-                                handleButtonAddBagRemoveFavorite = {handleButtonAddBagRemoveFavorite}
-                            />
+                    signInUserName = {signInUserName}
+                    signInStatus = {signInStatus}
+                    setSignInStatus = {setSignInStatus}
 
-                        )
+                    bagClickSpan = {bagClickSpan}
+                    favoriteClickSpan = {favoriteClickSpan}
+                />
 
-                    }
+                <section className="favorites-container">
 
-                </ul>
+                    <h2>Your favorites items list</h2>
+                    <h2>Your Wishlist</h2>
 
-            </section>
+                    <ul>
 
-            <FooterCommon />
+                        {
+
+                            favoriteItemsFiltered.map(product =>
+
+                                <FavoriteItem
+                                    key={product.id}
+                                    product={product}
+                                    filterTotalIndividual={filterTotalIndividual}
+                                    
+                                    handleButtonRemoveFavorite = {handleButtonRemoveFavorite}
+                                    handleButtonAddBagRemoveFavorite = {handleButtonAddBagRemoveFavorite}
+                                />
+
+                            )
+
+                        }
+
+                    </ul>
+
+                </section>
+
+                <ProductsFooter />
+
+            </div>
         
         </>
 

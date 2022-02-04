@@ -5,6 +5,13 @@
     padding-top: 100px;
     padding-bottom: 50px;
   }
+
+  .fav-menus-wrapper {
+    display: grid;
+    grid-template-rows: 160px 0.95fr 120px;
+    height: auto;
+    grid-gap: 30px;
+  }
   
   .favorites-container > h2 {
     margin: 2rem 0;

@@ -7,32 +7,21 @@ import ProductsFooter from '../../Components/Products/Footer/ProductsFooter'
 
 import { useState } from "react"
 import { useEffect } from "react"
-import ReactPaginate from 'react-paginate'
 // #endregion
 
 
 function Products({signInUserName, signInStatus, setSignInStatus, 
     handleButtonAddBasket, handleButtonAddFavorite, 
-    setBagClickSpan, setFavoriteClickSpan, bagClickSpan, favoriteClickSpan}) {
+    setBagClickSpan, setFavoriteClickSpan, bagClickSpan, favoriteClickSpan,
+    selectedModal, searchTerm, setSearchTerm, searchOnCategory, setSearchOnCategory, userName,
+    setUserName, userCatcher, setUserCatcher, setCategory, selectType,
+    setSelectType, category, setSelectedModal}) {
 
     let globalItemsToDisplay = []
 
     // #region 'State Object'
     const [items, setItems] = useState([])
     const [initialItems, setInitialItems] = useState([])
-    
-    const [bagItems, setBagItems] = useState([])
-    const [bagItemQuantity, setBagItemQuantity] = useState([])
-    
-    const [userCatcher, setUserCatcher] = useState([])
-    const [userName, setUserName] = useState('')
-    
-    const [selectType, setSelectType] = useState('Default')
-    const [category, setCategory] = useState('Default')
-    const [searchTerm, setSearchTerm] = useState('')
-    
-    const [searchOnCategory, setSearchOnCategory] = useState('Default')
-    const [selectedModal, setSelectedModal] = useState('')
     // #endregion
 
 
@@ -1368,9 +1357,9 @@ function Products({signInUserName, signInStatus, setSignInStatus,
 
                     selectType = {selectType}
                     setSelectType = {setSelectType}
-
                     category = {category}
                     setCategory = {setCategory}
+
                     showItems = {showItems}
 
                     changePage = {changePage}

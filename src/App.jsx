@@ -43,6 +43,16 @@ function App() {
 
   const [favoriteClickSpan, setFavoriteClickSpan] = useState(0)
   const [bagClickSpan, setBagClickSpan] = useState(0)
+
+  const [userCatcher, setUserCatcher] = useState([])
+  const [userName, setUserName] = useState('')
+  
+  const [selectType, setSelectType] = useState('Default')
+  const [category, setCategory] = useState('Default')
+  const [searchTerm, setSearchTerm] = useState('')
+  
+  const [searchOnCategory, setSearchOnCategory] = useState('Default')
+  const [selectedModal, setSelectedModal] = useState('')
   // #endregion
 
   // #region 'Server Functions'
@@ -248,7 +258,20 @@ function App() {
             setSignInStatus={setSignInStatus}
             signInUserName={signInUserName}
 
+            selectedModal = {selectedModal}
+            searchTerm = {searchTerm}
+            setSearchTerm = {setSearchTerm}
+            searchOnCategory = {searchOnCategory}
+            setSearchOnCategory = {setSearchOnCategory}
+            userName = {userName}
+            setUserName = {setUserName}
+            userCatcher = {userCatcher}
+            setUserCatcher = {setUserCatcher}
+            setCategory = {setCategory}
+
             setBagClickSpan = {setBagClickSpan}
+            bagClickSpan = {bagClickSpan}
+            favoriteClickSpan = {favoriteClickSpan}
             handleButtonRemoveBasket = {handleButtonRemoveBasket}
           />}>
         </Route>
@@ -264,6 +287,9 @@ function App() {
             setFavoriteClickSpan = {setFavoriteClickSpan}
             handleButtonRemoveFavorite = {handleButtonRemoveFavorite}
             handleButtonAddBagRemoveFavorite = {handleButtonAddBagRemoveFavorite}
+
+            bagClickSpan = {bagClickSpan}
+            favoriteClickSpan = {favoriteClickSpan}
           />}>
         </Route>
 
@@ -320,6 +346,21 @@ function App() {
 
             handleButtonAddBasket = {handleButtonAddBasket}
             handleButtonAddFavorite = {handleButtonAddFavorite}
+
+            selectType = {selectType}
+            setSelectType = {setSelectType}
+            category = {category}
+            selectedModal = {selectedModal}
+            setSelectedModal = {setSelectedModal}
+            searchTerm = {searchTerm}
+            setSearchTerm = {setSearchTerm}
+            searchOnCategory = {searchOnCategory}
+            setSearchOnCategory = {setSearchOnCategory}
+            userName = {userName}
+            setUserName = {setUserName}
+            userCatcher = {userCatcher}
+            setUserCatcher = {setUserCatcher}
+            setCategory = {setCategory}
           />}>
         </Route>
 
@@ -335,6 +376,9 @@ function App() {
 
             handleButtonAddBasket = {handleButtonAddBasket}
             handleButtonAddFavorite = {handleButtonAddFavorite}
+
+            bagClickSpan = {bagClickSpan}
+            favoriteClickSpan = {favoriteClickSpan}
           />}>
         </Route>
 

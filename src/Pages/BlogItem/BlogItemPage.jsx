@@ -36,6 +36,10 @@ function BlogItem({signInStatus, setSignInStatus, signInUserName}) {
             <BlogItemContainer1 
                 blogItem = {blogItem}
                 setBlogItem = {setBlogItem}
+
+                signInStatus = {signInStatus}
+                setSignInStatus = {setSignInStatus}
+                signInUserName = {signInUserName}
             />
 
             <BlogItemContainer2 />

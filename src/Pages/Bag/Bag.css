@@ -1,4 +1,11 @@
 /* Basket */
+.bag-menus-wrapper {
+  display: grid;
+  grid-template-rows: 160px 0.95fr 120px;
+  height: auto;
+  grid-gap: 30px;
+}
+
 .basket-container {
     width: 50vw;
     margin: 0 auto;
