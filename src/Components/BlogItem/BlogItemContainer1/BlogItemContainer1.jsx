@@ -1,22 +1,21 @@
 import { Link } from "react-router-dom"
+import { useStore } from "../../../Store/store"
 
 import HeaderCommon from "../../Common/HeaderCommon/HeaderCommon"
 
 import "../BlogItemContainer1/BlogItemContainer1.css"
 
-export default function BlogItemContainer1({blogItem, setBlogItem, signInStatus, setSignInStatus, signInUserName}) {
+export default function BlogItemContainer1() {
 
+    const {blogItem} = useStore()
+    
     return (
 
         <>
 
             <section className="blog-item-container-1" id="blog-item-container-1">
 
-                <HeaderCommon 
-                    signInStatus={signInStatus}
-                    setSignInStatus={setSignInStatus}
-                    signInUserName={signInUserName}
-                />
+                <HeaderCommon />
 
                 <div className="ribbon-blog">
 

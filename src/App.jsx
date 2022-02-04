@@ -266,248 +266,94 @@ function App() {
 
         <Route 
           path = "/home" 
-          element = {<HomePage 
-            signInStatus = {signInStatus}
-            setSignInStatus = {setSignInStatus}
-            signInUserName = {signInUserName}
-          />}>
+          element = {<HomePage />}>
         </Route>
 
         <Route 
           path = "/bag" 
-          element = {<BagPage 
-            items = {items}
-            setItems = {setItems}
-
-            signInStatus={signInStatus}
-            setSignInStatus={setSignInStatus}
-            signInUserName={signInUserName}
-
-            selectedModal = {selectedModal}
-            searchTerm = {searchTerm}
-            setSearchTerm = {setSearchTerm}
-            searchOnCategory = {searchOnCategory}
-            setSearchOnCategory = {setSearchOnCategory}
-            userName = {userName}
-            setUserName = {setUserName}
-            userCatcher = {userCatcher}
-            setUserCatcher = {setUserCatcher}
-            setCategory = {setCategory}
-
-            setBagClickSpan = {setBagClickSpan}
-            bagClickSpan = {bagClickSpan}
-            favoriteClickSpan = {favoriteClickSpan}
-            handleButtonRemoveBasket = {handleButtonRemoveBasket}
-          />}>
+          element = {<BagPage />}>
         </Route>
 
         <Route 
           path = "/favorites" 
-          element = {<FavoritesPage 
-            items = {items}
-            signInStatus={signInStatus}
-            setSignInStatus={setSignInStatus}
-            signInUserName={signInUserName}
-
-            setFavoriteClickSpan = {setFavoriteClickSpan}
-            handleButtonRemoveFavorite = {handleButtonRemoveFavorite}
-            handleButtonAddBagRemoveFavorite = {handleButtonAddBagRemoveFavorite}
-
-            bagClickSpan = {bagClickSpan}
-            favoriteClickSpan = {favoriteClickSpan}
-          />}>
+          element = {<FavoritesPage />}>
         </Route>
 
         <Route 
           path = "/contact" 
-          element = {<ContactPage
-            signInStatus={signInStatus}
-            setSignInStatus={setSignInStatus}
-            signInUserName={signInUserName} 
-          />}>
+          element = {<ContactPage />}>
         </Route>
 
 
         <Route 
           path = "/blog" 
-          element = {<BlogPage 
-            signInStatus={signInStatus}
-            setSignInStatus={setSignInStatus}
-            signInUserName={signInUserName}
-          />}>
+          element = {<BlogPage />}>
         </Route>
 
         <Route 
           path = "/blog/:id" 
-          element = {<BlogItemPage 
-            signInStatus={signInStatus}
-            setSignInStatus={setSignInStatus}
-            signInUserName={signInUserName}
-          />}>
+          element = {<BlogItemPage />}>
         </Route>
 
 
         <Route 
           path = "/about-us" 
-          element = {<AboutUsPage 
-            signInStatus={signInStatus}
-            setSignInStatus={setSignInStatus}
-            signInUserName={signInUserName}
-          />}>
+          element = {<AboutUsPage />}>
         </Route>
 
 
         <Route 
           path = "/products" 
-          element = {<ProductsPage 
-            signInStatus={signInStatus}
-            setSignInStatus={setSignInStatus}
-            signInUserName={signInUserName}
-            
-            setBagClickSpan = {setBagClickSpan}
-            setFavoriteClickSpan = {setFavoriteClickSpan}
-            bagClickSpan = {bagClickSpan}
-            favoriteClickSpan = {favoriteClickSpan}
-
-            handleButtonAddBasket = {handleButtonAddBasket}
-            handleButtonAddFavorite = {handleButtonAddFavorite}
-
-            selectType = {selectType}
-            setSelectType = {setSelectType}
-            category = {category}
-            selectedModal = {selectedModal}
-            setSelectedModal = {setSelectedModal}
-            searchTerm = {searchTerm}
-            setSearchTerm = {setSearchTerm}
-            searchOnCategory = {searchOnCategory}
-            setSearchOnCategory = {setSearchOnCategory}
-            userName = {userName}
-            setUserName = {setUserName}
-            userCatcher = {userCatcher}
-            setUserCatcher = {setUserCatcher}
-            setCategory = {setCategory}
-
-            items = {items}
-            setItems = {setItems}
-            initialItems = {initialItems}
-            setInitalItems = {setInitialItems}
-          />}>
+          element = {<ProductsPage />}>
         </Route>
 
         <Route 
           path = "/products/:id" 
-          element = {<ProductItemPage 
-            items = {items}
-            setItems = {setItems}
-
-            signInStatus={signInStatus}
-            setSignInStatus={setSignInStatus}
-            signInUserName={signInUserName}
-
-            handleButtonAddBasket = {handleButtonAddBasket}
-            handleButtonAddFavorite = {handleButtonAddFavorite}
-
-            bagClickSpan = {bagClickSpan}
-            favoriteClickSpan = {favoriteClickSpan}
-          />}>
+          element = {<ProductItemPage />}>
         </Route>
 
 
         <Route 
           path = "/services" 
-          element = {<ServicesPage 
-            signInStatus={signInStatus}
-            setSignInStatus={setSignInStatus}
-            signInUserName={signInUserName}
-          />}>
+          element = {<ServicesPage />}>
         </Route>
 
         <Route 
           path = "/services/:id" 
-          element = {<ServiceItemPage 
-            signInStatus={signInStatus}
-            setSignInStatus={setSignInStatus}
-            signInUserName={signInUserName}
-          />}>
+          element = {<ServiceItemPage />}>
         </Route>
 
 
         <Route 
           path = "/sign-in" 
-          element = {<SignInPage 
-            signInData = {signInData}
-            setSignInData = {setSignInData}
-
-            signInUserName = {signInUserName}
-            setSignInUserName = {setSignInUserName}
-
-            setSignInStatus = {setSignInStatus}
-            signInStatus = {signInStatus}
-
-            users = {users}
-            setUsers={setUsers}
-          />}>
+          element = {<SignInPage />}>
         </Route>
 
         <Route 
           path = "/sign-up" 
-          element = {<SignUpPage 
-            signUpData = {signUpData}
-            setSignUpData = {setSignUpData}
-
-            setSignUpStatus = {setSignUpStatus}
-            signUpStatus = {signUpStatus}
-
-            signInStatus={signInStatus}
-            setSignInStatus={setSignInStatus}
-            signInUserName={signInUserName}
-
-            users={users}
-            setUsers={setUsers}
-          />}>
+          element = {<SignUpPage />}>
         </Route>
 
         <Route 
           path = "/payment" 
-          element = {<PaymentPage 
-            paymentData = {paymentData}
-            setPaymentData = {setPaymentData}
-            setPaymentStatus = {setPaymentStatus}
-            paymentStatus = {paymentStatus}
-
-            signInStatus={signInStatus}
-            setSignInStatus={setSignInStatus}
-            signInUserName={signInUserName}
-          />}>
+          element = {<PaymentPage />}>
         </Route>
 
 
         <Route 
           path = "/teams" 
-          element = {<TeamsPage 
-            signInStatus={signInStatus}
-            setSignInStatus={setSignInStatus}
-            signInUserName={signInUserName}
-          />}>
+          element = {<TeamsPage />}>
         </Route>
 
         <Route 
           path = "/teams/:id" 
-          element = {<TeamItemPage 
-            signInStatus={signInStatus}
-            setSignInStatus={setSignInStatus}
-            signInUserName={signInUserName}
-          />}>
+          element = {<TeamItemPage />}>
         </Route>
 
 
         <Route 
           path = "*" 
-          element = {<Error404Page 
-            signInStatus={signInStatus}
-            setSignInStatus={setSignInStatus}
-            signInUserName={signInUserName}
-          />}>
+          element = {<Error404Page />}>
         </Route>
         
       </Routes>

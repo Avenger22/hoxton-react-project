@@ -1,7 +1,7 @@
 import HeaderCommon from "../../Common/HeaderCommon/HeaderCommon"
 import "../AboutUsContainer1/AboutUsContainer1.css"
 
-export default function AboutUsContainer1({signInStatus, setSignInStatus, signInUserName}) {
+export default function AboutUsContainer1() {
 
     return (
 
@@ -9,11 +9,7 @@ export default function AboutUsContainer1({signInStatus, setSignInStatus, signIn
         
             <section className="about-container-1" id="about-container-1">
 
-                <HeaderCommon 
-                    signInStatus={signInStatus}
-                    setSignInStatus={setSignInStatus}
-                    signInUserName={signInUserName}
-                />
+                <HeaderCommon />
 
                 <main className="main">
 

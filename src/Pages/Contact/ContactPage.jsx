@@ -6,7 +6,7 @@ import ContactContainer2 from "../../Components/Contact/ContactContainer2/Contac
 import ContactContainer3 from "../../Components/Contact/ContactContainer3/ContactContainer3"
 import ButtonTop from '../../Components/Common/ButtonTop/ButtonTop'
 
-function Contact({signInStatus, setSignInStatus, signInUserName}) {
+function Contact() {
 
     return (
 
@@ -14,11 +14,7 @@ function Contact({signInStatus, setSignInStatus, signInUserName}) {
 
             <ButtonTop />
             
-            <ContactContainer1 
-                signInStatus={signInStatus}
-                signInUserName={signInUserName}
-                setSignInStatus={setSignInStatus}
-            />
+            <ContactContainer1 />
 
             <ContactContainer2 />
         

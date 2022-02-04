@@ -1,7 +1,11 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import '../HeaderCommon/HeaderCommon.css'
 
-export default function HeaderCommon({signInStatus, setSignInStatus, signInUserName}) {
+import {useStore} from "../../../Store/store"
+
+export default function HeaderCommon() {
+
+    const {signInStatus, signInUserName, setSignInStatus} = useStore()
 
     const navigate = useNavigate()
 
@@ -81,9 +85,7 @@ export default function HeaderCommon({signInStatus, setSignInStatus, signInUserN
 
                                         <div className="dropdown-content">
 
-                                            <button className="log-out" onClick={function () {
-                                                setSignInStatus(!signInStatus)
-                                            }}>
+                                            <button className="log-out" onClick={setSignInStatus}>
 
                                                 <span>Log Out</span>
                                                 

@@ -1,22 +1,14 @@
 // #region 'Importing'
 import "./Products.css"
-
 import ProductsHeader from "../../Components/Products/Header/ProductsHeader/ProductsHeader"
 import ProductsMain from "../../Components/Products/Main/ProductsMain/ProductsMain"
 import ProductsFooter from '../../Components/Products/Footer/ProductsFooter'
-
 import { useState } from "react"
-import { useEffect } from "react"
+import { useStore } from "../../Store/store"
 // #endregion
 
 
-function Products({signInUserName, signInStatus, setSignInStatus, 
-    handleButtonAddBasket, handleButtonAddFavorite, 
-    setBagClickSpan, setFavoriteClickSpan, bagClickSpan, favoriteClickSpan,
-    selectedModal, searchTerm, setSearchTerm, searchOnCategory, setSearchOnCategory, userName,
-    setUserName, userCatcher, setUserCatcher, setCategory, selectType,
-    setSelectType, category, setSelectedModal,
-    items, setItems, initialItems, setInitialItems}) {
+function Products() {
 
     let globalItemsToDisplay = []
 
@@ -1259,7 +1251,6 @@ function Products({signInUserName, signInStatus, setSignInStatus,
     
     // #endregion
 
-
     // #region 'Pagination feature'
     const [pageNumber, setPageNumber] = useState(0)
     const [itemsPerPage, setItemsPerPage] = useState(8)
@@ -1282,7 +1273,8 @@ function Products({signInUserName, signInStatus, setSignInStatus,
     
     // #endregion
 
-
+    const {items, selectType, category, searchTerm, searchOnCategory} = useStore()
+    
     // #region 'Returning Html of the page'
     return (
 
@@ -1290,58 +1282,10 @@ function Products({signInUserName, signInStatus, setSignInStatus,
 
             <section className="container-menus">
 
-                <ProductsHeader 
-                    selectedModal = {selectedModal}
-                    setSelectedModal = {setSelectedModal}
-
-                    searchTerm = {searchTerm}
-                    setSearchTerm = {setSearchTerm}
-
-                    searchOnCategory = {searchOnCategory}
-                    setSearchOnCategory = {setSearchOnCategory}
-
-                    userName = {userName}
-                    setUserName = {setUserName}
-
-                    userCatcher = {userCatcher}
-                    setUserCatcher = {setUserCatcher}
-
-                    setCategory = {setCategory}
-
-                    signInUserName = {signInUserName}
-                    signInStatus = {signInStatus}
-                    setSignInStatus = {setSignInStatus}
-
-                    bagClickSpan = {bagClickSpan}
-                    favoriteClickSpan = {favoriteClickSpan}
-                />
+                <ProductsHeader />
                 
                 <ProductsMain 
-                    items = {items}
-                    setItems = {setItems}
-
-                    setItemsPerPage = {setItemsPerPage}
-
-                    initialItems = {initialItems}
-                    setInitialItems = {setInitialItems}
-
-                    selectType = {selectType}
-                    setSelectType = {setSelectType}
-                    category = {category}
-                    setCategory = {setCategory}
-
                     showItems = {showItems}
-
-                    changePage = {changePage}
-                    pageCount = {pageCount}
-                    pagesVisited = {pagesVisited}
-                    itemsPerPage = {itemsPerPage}
-
-                    handleButtonAddBasket = {handleButtonAddBasket}
-                    handleButtonAddFavorite = {handleButtonAddFavorite}
-
-                    setBagClickSpan = {setBagClickSpan}
-                    setFavoriteClickSpan = {setFavoriteClickSpan}
                 />
                     
                 <ProductsFooter />

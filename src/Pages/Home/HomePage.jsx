@@ -15,7 +15,7 @@ import ButtonTop from '../../Components/Common/ButtonTop/ButtonTop'
 import HomeModalPop from '../../Components/Home/HomeModalPop'
 // #endregion
 
-function Home({signInStatus, setSignInStatus, signInUserName}) {
+function Home() {
 
     return (
 
@@ -25,11 +25,7 @@ function Home({signInStatus, setSignInStatus, signInUserName}) {
 
             <HomeModalPop />
 
-            <HomeContainer1 
-                signInStatus={signInStatus}
-                setSignInStatus={setSignInStatus}
-                signInUserName = {signInUserName}
-            />
+            <HomeContainer1 />
 
             <HomeContainer2 />
         

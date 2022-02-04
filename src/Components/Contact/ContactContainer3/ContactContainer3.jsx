@@ -1,54 +1,12 @@
 import { useState } from "react/cjs/react.development"
+import { useStore } from "../../../Store/store"
 import "../ContactContainer3/ContactContainer3.css"
 
 export default function ContactContainer3() {
 
-    const [contact, setContact] = useState([])
-
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [subject, setSubject] = useState('')
-    const [phone, setPhone] = useState('')
-    const [textArea, setTextArea] = useState('')
-
-    function handleTextAreaChange(e) {
-        setTextArea(e.target.value)
-    }
-
-    function handleNameChange(e) {
-        setName(e.target.value)
-    }
-
-    function handleEmailChange(e) {
-        setEmail(e.target.value)
-    }
-
-    function handleSubjectChange(e) {
-        setSubject(e.target.value)
-    }
-
-    function handlePhoneChange(e) {
-        setPhone(e.target.value)
-    }
-
-    function handleContactSubmit(e) {
-
-        const array = [
-            {
-                email: email, 
-                subject: subject,
-                textArea: textArea,
-                fullName: name,
-                phone: phone
-            }
-        ]
-
-        const newArray = [...contact, array]
-
-        e.target.reset()
-        setContact(newArray)
-
-    }
+    const {nameContactUs, emailContactUs, phoneContactUs,
+        handleContactSubmit, subjectContactUs, textAreaContactUs,
+        handleTextAreaChange, handleNameChange, handleEmailChange, handlePhoneChange, handleSubjectChange} = useStore()
 
     return (
 
@@ -74,27 +32,27 @@ export default function ContactContainer3() {
                         handleContactSubmit(e)
                     }}>
 
-                        <input defaultValue = {name} name="fullname" type="text" placeholder="Name: " required onChange={function (e) {
+                        <input defaultValue = {nameContactUs} name="fullname" type="text" placeholder="Name: " required onChange={function (e) {
                             e.preventDefault()
                             handleNameChange(e)
                         }}/>
 
-                        <input defaultValue = {email} name="email" type="email" placeholder="Email: " required onChange={function (e) {
+                        <input defaultValue = {emailContactUs} name="email" type="email" placeholder="Email: " required onChange={function (e) {
                             e.preventDefault()
                             handleEmailChange(e)
                         }}/>
                         
-                        <input defaultValue = {subject} name="subject" type="text" placeholder="Subject: " required onChange={function (e) {
+                        <input defaultValue = {subjectContactUs} name="subject" type="text" placeholder="Subject: " required onChange={function (e) {
                             e.preventDefault()
                             handleSubjectChange(e)
                         }}/>
 
-                        <input defaultValue = {phone} name="phone" type="tel" placeholder="Phone: " required onChange={function (e) {
+                        <input defaultValue = {phoneContactUs} name="phone" type="tel" placeholder="Phone: " required onChange={function (e) {
                             e.preventDefault()
                             handlePhoneChange(e)
                         }}/>
                         
-                        <textarea defaultValue = {textArea} name="textarea-contact" id="" cols={50} rows={20} placeholder="How can we help ?" onChange={function (e) {
+                        <textarea defaultValue = {textAreaContactUs} name="textarea-contact" id="" cols={50} rows={20} placeholder="How can we help ?" onChange={function (e) {
                             e.preventDefault()
                             handleTextAreaChange(e)
                         }}></textarea>

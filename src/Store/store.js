@@ -77,6 +77,12 @@ export const useStore = create((set, get) => ({
 
   },
 
+  setSignInStatus : function () {
+    
+    const {signInStatus} = get()
+    set(signInStatus, !signInStatus)
+  },
+
   bagItemsFiltered : function () {
 
     const {items} = get()
@@ -667,6 +673,13 @@ export const useStore = create((set, get) => ({
       .then(productFromServer => set(initialRelatedItems, productFromServer))
     
   },
+
+  filterCategory : function (type, name) {
+
+    const {initialRelatedItems} = get()
+    return initialRelatedItems.filter(item => item.type === type && item.name !== name)
+  
+  },
   // #endregion
 
   // #endregion
@@ -712,7 +725,5 @@ export const useStore = create((set, get) => ({
   // #endregion
 
   // #endregion
-
-
 
 }))

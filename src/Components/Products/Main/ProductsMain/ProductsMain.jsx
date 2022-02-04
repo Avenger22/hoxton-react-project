@@ -5,18 +5,14 @@ import StoreItem from "../StoreItem/StoreItem"
 import Ribbon1 from '../Ribbon1/Ribbon1'
 import Ribbon2 from '../Ribbon2/Ribbon2'
 import ReactPaginate from 'react-paginate'
-
 import "../ProductsMain/ProductsMain.css"
 import "../Pagination/Pagination.css"
 // #endregion
 
 function ProductsMain(props) {
 
-    const {items, setItems, initialItems, setInitialItems,
-        selectType, setSelectType, category, setCategory, showItems, 
-        changePage, pageCount, pagesVisited, itemsPerPage, handleButtonAddBasket,
-        handleButtonAddFavorite, setBagClickSpan, setFavoriteClickSpan, setItemsPerPage} = props
-
+    const {showItems} = props
+    
     // #region 'Returning Html'
     return (
 
@@ -26,13 +22,7 @@ function ProductsMain(props) {
 
                 <Ribbon1 />
                 
-                <Ribbon2 
-                    selectType = {selectType}
-                    setSelectType = {setSelectType}
-                    showItems = {showItems}
-
-                    setItemsPerPage = {setItemsPerPage}
-                />
+                <Ribbon2 />
                 
                 <div className="items-container">
                             
@@ -45,12 +35,6 @@ function ProductsMain(props) {
                                     <StoreItem 
                                         key = {item.id}
                                         item = {item}
-
-                                        setBagClickSpan = {setBagClickSpan}
-                                        setFavoriteClickSpan = {setFavoriteClickSpan}
-
-                                        handleButtonAddBasket = {handleButtonAddBasket}
-                                        handleButtonAddFavorite = {handleButtonAddFavorite}
                                     />
                                     
                                 )
@@ -64,28 +48,19 @@ function ProductsMain(props) {
                 {/* React paginate custom components from npm, also has hooks and props custom*/}
                 <ReactPaginate
                     previousLabel={"< Previous"}
-                    // breakLabel={"..."}
                     nextLabel={"Next >"}
                     pageCount={pageCount}
-                    onPageChange={changePage}
-                    // forcePage={0}
-                    // initialPage={0}
-                    // pageRangeDisplayed={3}
+                    onPageChange={changePage}}
                     containerClassName={"paginationBttns"}
                     previousLinkClassName={"previousBttn"}
-                    // breakLinkClassName={"breakBtn"}
                     nextLinkClassName={"nextBttn"}
                     disabledClassName={"paginationDisabled"}
                     activeClassName={"paginationActive"}
-                    // renderOnZeroPageCount={null}
                 />
                     
                 <div className="aside-wrapper">
                         
-                    <Aside 
-                        category = {category}
-                        setCategory = {setCategory}
-                    />
+                    <Aside />
                         
                 </div>
                     

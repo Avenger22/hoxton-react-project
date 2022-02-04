@@ -1,6 +1,6 @@
 import HeaderCommon from "../Common/HeaderCommon/HeaderCommon";
 
-export default function Error404Container1({signInStatus, setSignInStatus, signInUserName}) {
+export default function Error404Container1() {
 
     return (
 
@@ -8,11 +8,7 @@ export default function Error404Container1({signInStatus, setSignInStatus, signI
         
             <section className="error-container-1" id="error-container-1">
 
-                <HeaderCommon 
-                    signInStatus={signInStatus}
-                    setSignInStatus={setSignInStatus}
-                    signInUserName={signInUserName}
-                />
+                <HeaderCommon />
 
                 <main className="main">
 

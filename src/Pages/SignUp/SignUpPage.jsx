@@ -2,79 +2,19 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon";
 import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon";
+import { useStore } from "../../Store/store";
 import "./SignUp.css"
 
-export default function SignUpPage({signUpData, setSignUpData, signUpStatus, setSignUpStatus, 
-    setSignInStatus, signInStatus, signInUserName, users, setUsers}) {
-
-    const [userName, setUserName] = useState('')
-    const [fullName, setFullName] = useState('')
-    const [password, setPassword] = useState('')
-    const [email, setEmail] = useState('')
-
-    const navigate = useNavigate()
+export default function SignUpPage() {
     
-    function handleEmailChange(e) {
-        setEmail(e.target.value)
-    }
-
-    function handlePasswordChange(e) {
-        setPassword(e.target.value)
-    }
-
-    function handleUserNameChange(e) {
-        setUserName(e.target.value)
-    }
-
-    function handleFullNameChange(e) {
-        setFullName(e.target.value)
-    }
-
-    function handleFormSubmit(e) {
-
-        const object = {
-            email: email, 
-            password: password,
-            userName: userName,
-            fullName: fullName,
-            signedIn: false
-        }
-
-        // const newObject = {...signUpData, object}
-
-        fetch(`http://localhost:8000/users/`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(object)
-        })
-        .then(responseItem => responseItem.json())
-        .then(responseJsonArray => {
-
-            const updatedUsers = [...users, responseJsonArray]
-            alert("User is registered successfully")
-            setUsers(updatedUsers)
-      
-          })
-      
-
-        setSignUpStatus(!signUpStatus)
-        e.target.reset()
-        // setSignUpData(newObject)
-        navigate('/sign-in')
-
-    }
+    const {handleFormSubmitSignUp, handleFullNameChangeSignUp, handleEmailChangeSignUp, 
+        handleUserNameChangeSignUp, handlePasswordChangeSignUp} = useStore()
     
-    return (
+        return (
 
         <>
 
-            <HeaderCommon 
-                signInStatus={signInStatus}
-                setSignInStatus={setSignInStatus}
-                signInUserName={signInUserName}
-            />
+            <HeaderCommon />
         
             <section className="container-register">
 
@@ -82,7 +22,7 @@ export default function SignUpPage({signUpData, setSignUpData, signUpStatus, set
                     className="form-register"
                     onSubmit={function (e) {
                         e.preventDefault()
-                        handleFormSubmit(e)
+                        handleFormSubmitSignUp(e)
                     }}
                 >
 
@@ -99,7 +39,7 @@ export default function SignUpPage({signUpData, setSignUpData, signUpStatus, set
                                 type="text" 
                                 placeholder="Enter your full name : " 
                                 onChange={function (e) {
-                                    handleFullNameChange(e)
+                                    handleFullNameChangeSignUp(e)
                                 }}
                             />
                         
@@ -114,7 +54,7 @@ export default function SignUpPage({signUpData, setSignUpData, signUpStatus, set
                                 type="text" 
                                 placeholder="Enter your username: " 
                                 onChange={function (e) {
-                                    handleUserNameChange(e)
+                                    handleUserNameChangeSignUp(e)
                                 }}
                             />
                         
@@ -129,7 +69,7 @@ export default function SignUpPage({signUpData, setSignUpData, signUpStatus, set
                                 type="email" 
                                 placeholder="Enter your email adress: " 
                                 onChange={function (e) {
-                                    handleEmailChange(e)
+                                    handleEmailChangeSignUp(e)
                                 }}
                             />
                         
@@ -144,7 +84,7 @@ export default function SignUpPage({signUpData, setSignUpData, signUpStatus, set
                                 type="password" 
                                 placeholder="Enter your password: " 
                                 onChange={function (e) {
-                                    handlePasswordChange(e)
+                                    handlePasswordChangeSignUp(e)
                                 }}
                             />
                         
