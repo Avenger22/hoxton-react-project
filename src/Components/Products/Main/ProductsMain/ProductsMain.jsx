@@ -1,18 +1,18 @@
 // #region 'Importing'
 import Aside from "../Aside/Aside"
 import StoreItem from "../StoreItem/StoreItem"
-
 import Ribbon1 from '../Ribbon1/Ribbon1'
 import Ribbon2 from '../Ribbon2/Ribbon2'
 import ReactPaginate from 'react-paginate'
 import "../ProductsMain/ProductsMain.css"
 import "../Pagination/Pagination.css"
+import { useStore } from "../../../../Store/store"
 // #endregion
 
-function ProductsMain(props) {
+function ProductsMain({showItems, pagesVisited, pageCount, changePage}) {
 
-    const {showItems} = props
-    
+    const {itemsPerPage} = useStore()
+
     // #region 'Returning Html'
     return (
 
@@ -22,7 +22,9 @@ function ProductsMain(props) {
 
                 <Ribbon1 />
                 
-                <Ribbon2 />
+                <Ribbon2 
+                    showItems={showItems}
+                />
                 
                 <div className="items-container">
                             
@@ -50,7 +52,7 @@ function ProductsMain(props) {
                     previousLabel={"< Previous"}
                     nextLabel={"Next >"}
                     pageCount={pageCount}
-                    onPageChange={changePage}}
+                    onPageChange={changePage}
                     containerClassName={"paginationBttns"}
                     previousLinkClassName={"previousBttn"}
                     nextLinkClassName={"nextBttn"}

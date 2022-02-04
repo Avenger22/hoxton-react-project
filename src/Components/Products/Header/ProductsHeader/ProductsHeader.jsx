@@ -2,19 +2,19 @@ import Form from '../Form/Form'
 import {Link, useNavigate} from 'react-router-dom'
 import UlSub2li from '../UlSubLi/UlSub2Li'
 import "../ProductsHeader/ProductsHeader.css"
+import { useStore } from '../../../../Store/store'
 
 function ProductsHeader(props) {
 
     const ulSub2 = ['Home', 'Products', 'About-Us', 'Blog', 'Contact']
 
+    const {signInStatus, signInUserName, handleOffersEvent, handleSignInStatus,
+    favoriteClickSpan, bagClickSpan} = useStore()
+
     const navigate = useNavigate()
     
     function handleRedirectToBag() {
         navigate(`/bag`)
-    }
-
-    function handleOffersEvent() {
-        setCategory('offers')
     }
 
     function handleRedirectToFavorite() {
@@ -70,9 +70,7 @@ function ProductsHeader(props) {
 
                                             <div className="dropdown-content-user-signed">
 
-                                                <button className="log-out" onClick={function () {
-                                                    setSignInStatus(!signInStatus)
-                                                }}>
+                                                <button className="log-out" onClick={handleSignInStatus}>
 
                                                     <span>Log Out</span>
                                                     

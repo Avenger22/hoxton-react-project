@@ -1,19 +1,13 @@
 import HomeContainer10Company from "./HomeContainer10Company"
 import './HomeContainer10.css'
-
-import { useState } from "react"
 import { useEffect } from "react"
 import { useNavigate } from "react-router"
+import { useStore } from "../../../Store/store"
 
 export default function HomeContainer10() {
 
-    const [companies, setCompanies] = useState([])
-
-    useEffect(() => {
-        fetch(`http://localhost:8000/companies`)
-            .then(resp => resp.json())
-            .then(companiesFromServer => setCompanies(companiesFromServer))
-    }, [])
+    const {companies, getCompaniesFromServer} = useStore()
+    useEffect(getCompaniesFromServer, [])
 
     const navigate = useNavigate()
 

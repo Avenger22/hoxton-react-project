@@ -1,18 +1,22 @@
-import { useNavigate, useParams } from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import create from 'zustand'
 
-const params = useParams()
 const navigate = useNavigate()
 
 export const useStore = create((set, get) => ({
 
-  // #region 'GENERAL STATE'
+  // #region 'GENERAL STATE
 
   // #region 'General state most important'
   items: [],
   initialItems: [],
   users: [],
 
+  companies: [],
+  newsLetterEmail: '',
+  pageNumber: 0,
+  itemsPerPage: 8,
+  
   signInStatus: false,
   signInData: [],
   signInUserName: '',
@@ -74,6 +78,57 @@ export const useStore = create((set, get) => ({
     else {
       alert('You need to be signed in to add to bag')
     }
+
+  },
+
+  handleOnClickCategory : function (liValue) {
+    
+    const {category} = get()
+    set(category, liValue)
+
+  },
+
+  handleChangingPageNumber : function (selected) {
+    
+    const {pageNumber} = get()
+    set(pageNumber, selected)
+
+  },
+
+  handleOnChangeSelect : function(selectValue) {
+    
+    const {selectType} = get()
+    set(selectType, selectValue)
+
+  },
+
+  handleOnChangeSelectPerPage : function(selectValue) {
+    
+    const {itemsPerPage} = get()
+    set(itemsPerPage, parseInt(selectValue))
+  
+  },
+
+  handleOffersEvent : function() {
+
+    const {category} = get()
+    set(category, 'offers')
+
+  },
+
+  handleSignInStatus : function() {
+
+    const {signInStatus} = get()
+    set(signInStatus, !signInStatus)
+  
+  },
+
+  handleFormNewsletter : function (e) {
+
+    const {newsLetterEmail} = get()
+    
+    const valueForm = e.target.newsLetter.value
+    set(newsLetterEmail, valueForm)
 
   },
 
@@ -217,6 +272,18 @@ export const useStore = create((set, get) => ({
 
   },
 
+  getCompaniesFromServer: function () {
+
+    const {companies} = get()
+
+    fetch('http://localhost:8000/companies')
+        .then(resp => resp.json())
+        .then(companiesFromServer => {
+        set(companies, companiesFromServer)
+    })
+
+  },
+
   getInitialItemsFromServer : function() {
 
     const{initialItems} = get()
@@ -241,7 +308,7 @@ export const useStore = create((set, get) => ({
 
   },
 
-  handleOnChangeSelect : function (value, objectBasket) {
+  handleOnChangeBasketSelect : function (value, objectBasket) {
         
     const {items, bagClickSpan} = get()
 
@@ -632,7 +699,7 @@ export const useStore = create((set, get) => ({
   // #endregion
 
   // #region 'blog item functions'
-  getIndividualBlogFromServer : function () {
+  getIndividualBlogFromServer : function (params) {
 
     const {blogItem} = get()
 
@@ -654,7 +721,7 @@ export const useStore = create((set, get) => ({
   // #endregion
 
   // #region 'product item functions'
-  getIndividualProductFromServer : function () {
+  getIndividualProductFromServer : function (params) {
 
     const {productItem} = get()
 
@@ -664,7 +731,7 @@ export const useStore = create((set, get) => ({
     
   },
 
-  getInitialRelatedItemsFromServer : function () {
+  getInitialRelatedItemsFromServer : function (params) {
 
     const {initialRelatedItems} = get()
 
@@ -692,7 +759,7 @@ export const useStore = create((set, get) => ({
   // #endregion
 
   // #region 'service item functions'
-  getIndividualServiceFromServer : function () {
+  getIndividualServiceFromServer : function (params) {
 
     const {serviceItem} = get()
 
@@ -713,7 +780,7 @@ export const useStore = create((set, get) => ({
   // #endregion
 
   // #region 'team item functions'
-  getIndividualTeamFromServer : function () {
+  getIndividualTeamFromServer : function (params) {
 
     const {teamItem} = get()
 

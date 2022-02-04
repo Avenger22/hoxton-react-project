@@ -1,15 +1,14 @@
 import Category from '../Category/Category'
 import "../Aside/Aside.css"
+import { useStore } from '../../../../Store/store'
 
-function Aside({category, setCategory}) {
+function Aside() {
+
+    const {handleOnClickCategory} = useStore()
 
     const categories = ['Default', 'Multivitamins',
     'Pre-Workouts', 'Creatine', 'Testosterone-Boosters', 
     'Aminoacids', 'Weight-Burner', 'Weight-Gainers', 'Proteins' ]
-    
-    function handleOnClickCategory(liValue) {
-        setCategory(liValue)
-    }
 
     return (
 

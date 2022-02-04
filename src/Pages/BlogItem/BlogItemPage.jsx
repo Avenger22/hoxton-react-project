@@ -6,11 +6,14 @@ import ButtonTop from '../../Components/Common/ButtonTop/ButtonTop'
 import BlogItemContainer1 from '../../Components/BlogItem/BlogItemContainer1/BlogItemContainer1'
 import BlogItemContainer2 from '../../Components/BlogItem/BlogItemContainer2/BlogItemContainer2'
 import { useStore } from "../../Store/store"
+import { useParams } from "react-router"
 
 function BlogItem() {
 
+    const params = useParams()
+
     const {blogItem, getIndividualBlogFromServer} = useStore()
-    useEffect(getIndividualBlogFromServer, [])
+    useEffect(getIndividualBlogFromServer(params), [])
 
     if (blogItem === null) {
         return <main>Loading...</main>

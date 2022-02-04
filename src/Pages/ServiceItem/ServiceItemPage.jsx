@@ -3,11 +3,14 @@ import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon"
 import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
 import { useStore } from "../../Store/store"
 import { useEffect } from "react"
+import { useParams } from "react-router"
 
 export default function ServiceItemPage() {
 
+    const params = useParams()
+
     const {serviceItem, getIndividualServiceFromServer} = useStore()
-    useEffect(getIndividualServiceFromServer, [])
+    useEffect(getIndividualServiceFromServer(params), [])
 
     if (serviceItem === null) {
         return <main>Loading...</main>

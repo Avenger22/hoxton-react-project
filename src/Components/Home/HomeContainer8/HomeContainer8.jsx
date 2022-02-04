@@ -1,19 +1,13 @@
 import HomeContainer8Article from "./HomeContainer8Article"
 import './HomeContainer8.css'
-
-import { useState } from "react"
 import { useEffect } from "react"
+import { useStore } from "../../../Store/store"
 
 export default function HomeContainer8() {
 
-    const [articles, setArticles] = useState([])
-
-    useEffect(() => {
-        fetch(`http://localhost:8000/articles`)
-            .then(resp => resp.json())
-            .then(articlesFromServer => setArticles(articlesFromServer))
-    }, [])
-
+    const {articles, getArticlesFromServer} = useStore()
+    useEffect(getArticlesFromServer, [])
+    
     return (
 
         <>

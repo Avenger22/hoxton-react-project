@@ -3,7 +3,6 @@ import "./Products.css"
 import ProductsHeader from "../../Components/Products/Header/ProductsHeader/ProductsHeader"
 import ProductsMain from "../../Components/Products/Main/ProductsMain/ProductsMain"
 import ProductsFooter from '../../Components/Products/Footer/ProductsFooter'
-import { useState } from "react"
 import { useStore } from "../../Store/store"
 // #endregion
 
@@ -11,6 +10,8 @@ import { useStore } from "../../Store/store"
 function Products() {
 
     let globalItemsToDisplay = []
+
+    const {pageNumber, itemsPerPage, handleChangingPageNumber} = useStore()
 
     // #region 'Helper Functions'
 
@@ -1252,8 +1253,6 @@ function Products() {
     // #endregion
 
     // #region 'Pagination feature'
-    const [pageNumber, setPageNumber] = useState(0)
-    const [itemsPerPage, setItemsPerPage] = useState(8)
 
     let pagesVisited = pageNumber * itemsPerPage
     const pageCount = Math.ceil(showItems().length / itemsPerPage)
@@ -1261,11 +1260,11 @@ function Products() {
     const changePage = ({ selected }) => {
 
         if (pagesVisited > 20) {
-            setPageNumber(0)
+            handleChangingPageNumber(0)
         }
 
         else {
-            setPageNumber(selected)
+            handleChangingPageNumber(selected)
         }
         
     }
@@ -1273,7 +1272,8 @@ function Products() {
     
     // #endregion
 
-    const {items, selectType, category, searchTerm, searchOnCategory} = useStore()
+    const {items, selectType, category, searchTerm, 
+        searchOnCategory, initialItems} = useStore()
     
     // #region 'Returning Html of the page'
     return (
@@ -1286,6 +1286,9 @@ function Products() {
                 
                 <ProductsMain 
                     showItems = {showItems}
+                    pagesVisited = {pagesVisited}
+                    changePage={changePage}
+                    pageCount={pageCount}
                 />
                     
                 <ProductsFooter />

@@ -1,14 +1,9 @@
-import { useState } from 'react/cjs/react.development'
+import { useStore } from '../../../Store/store'
 import './HomeContainer7.css'
 
 export default function HomeContainer7() {
 
-    const [newsLetterEmail, setNewsLetterEmail] = useState('')
-
-    function handleFormNewsletter(e) {
-        const valueForm = e.target.newsLetter.value
-        setNewsLetterEmail(valueForm)
-    }
+    const {handleFormNewsletter} = useStore()
 
     return (
 

@@ -5,6 +5,7 @@ import RelatedItem from "../../Components/ProductItem/RelatedItem"
 import ProductsHeader from '../../Components/Products/Header/ProductsHeader/ProductsHeader'
 import { useStore } from "../../Store/store";
 import { useEffect } from "react";
+import { useParams } from "react-router";
 // #endregion
 
 const randColour = ["green", "red", "blue", "yellow"][
@@ -13,10 +14,13 @@ const randColour = ["green", "red", "blue", "yellow"][
 
 export default function ProductItemPage() {
 
+    const params = useParams()
+
     const {productItem, getIndividualProductFromServer, 
         filterCategory, handleButtonAddBasket, handleButtonAddFavorite} = useStore()
     
-        useEffect(getIndividualProductFromServer, [])
+        useEffect(getIndividualProductFromServer(params), [])
+
 
     if (productItem === null) {
         return <main>Loading...</main>
