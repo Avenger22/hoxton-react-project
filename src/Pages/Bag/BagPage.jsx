@@ -10,7 +10,7 @@ export default function BagPage(props) {
         signInUserName, handleButtonRemoveBasket, 
         selectedModal, searchTerm, setSearchTerm, searchOnCategory,
         setSearchOnCategory, userName, setUserName, userCatcher, setUserCatcher,
-        setCategory, setSelectedModal, bagClickSpan, favoriteClickSpan} = props
+        setCategory, setSelectedModal, bagClickSpan, favoriteClickSpan, setBagClickSpan} = props
     
     const bagItemsFiltered = items.filter(item => item?.quantity > 0)
 
@@ -44,7 +44,14 @@ export default function BagPage(props) {
             // stock: item.stock - item.quantity
 
             const newItem = { ...item, quantity: parseInt(value) }
+
+            if (newItem.quantity === 0) {
+                setBagClickSpan(0)
+            }
+            
             productsCopy[index] = newItem
+
+            // setBagClickSpan(bagClickSpan + newItem.quantity)
             setItems(productsCopy)
 
         }

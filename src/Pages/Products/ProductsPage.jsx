@@ -15,43 +15,11 @@ function Products({signInUserName, signInStatus, setSignInStatus,
     setBagClickSpan, setFavoriteClickSpan, bagClickSpan, favoriteClickSpan,
     selectedModal, searchTerm, setSearchTerm, searchOnCategory, setSearchOnCategory, userName,
     setUserName, userCatcher, setUserCatcher, setCategory, selectType,
-    setSelectType, category, setSelectedModal}) {
+    setSelectType, category, setSelectedModal,
+    items, setItems, initialItems, setInitialItems}) {
 
     let globalItemsToDisplay = []
 
-    // #region 'State Object'
-    const [items, setItems] = useState([])
-    const [initialItems, setInitialItems] = useState([])
-    // #endregion
-
-
-    // #region 'Server Functions'
-
-    function getItemsFromServer() {
-
-        fetch('http://localhost:8000/items')
-            .then(resp => resp.json())
-            .then(itemsFromServer1 => {
-            setItems(itemsFromServer1)
-        })
-
-    }
-
-    function getInitialItemsFromServer() {
-
-        fetch('http://localhost:8000/items')
-            .then(resp => resp.json())
-            .then(itemsFromServer2 => {
-            setInitialItems(itemsFromServer2)
-        })
-
-    }
-
-    useEffect(getInitialItemsFromServer, [])
-    useEffect(getItemsFromServer, [])
-    // #endregion
-
-    
     // #region 'Helper Functions'
 
     // #region 'Filter Functions'
@@ -1301,7 +1269,7 @@ function Products({signInUserName, signInStatus, setSignInStatus,
 
     const changePage = ({ selected }) => {
 
-        if (pagesVisited > 30) {
+        if (pagesVisited > 20) {
             setPageNumber(0)
         }
 

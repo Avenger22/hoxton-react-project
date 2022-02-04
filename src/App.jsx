@@ -29,6 +29,7 @@ function App() {
 
   // #region 'State Object'
   const [items, setItems] = useState([])
+  const [initialItems, setInitialItems] = useState([])
   const [users, setUsers] = useState([])
 
   const [signInStatus, setSignInStatus] = useState(false)
@@ -66,6 +67,16 @@ function App() {
 
   }
 
+  function getInitialItemsFromServer() {
+
+    fetch('http://localhost:8000/items')
+        .then(resp => resp.json())
+        .then(itemsFromServer2 => {
+        setInitialItems(itemsFromServer2)
+    })
+
+  }
+
   function getUsersFromServer() {
 
     fetch('http://localhost:8000/users')
@@ -77,6 +88,7 @@ function App() {
   }
 
   useEffect(getUsersFromServer, [])
+  useEffect(getInitialItemsFromServer, [])
   useEffect(getItemsFromServer, [])
   // #endregion
 
@@ -93,21 +105,29 @@ function App() {
       const item = itemsCopy[index]
       // console.log("Item", item)
 
-      const newItem = {
-          ...item,
-          quantity: item.quantity ? item.quantity + 1 : 1,
-          stock: item.stock - 1
+      if (item.stock > 0) {
+
+        const newItem = {
+            ...item,
+            quantity: item.quantity ? item.quantity + 1 : 1,
+            stock: item.stock - 1
+        }
+
+        // console.log("NewItem", newItem)
+        itemsCopy[index] = newItem
+
+        // console.log("Items Copy", itemsCopy)
+
+        setBagClickSpan(bagClickSpan + 1)
+        setItems(itemsCopy)
+
+        navigate('/bag')
+
       }
 
-      // console.log("NewItem", newItem)
-      itemsCopy[index] = newItem
-
-      // console.log("Items Copy", itemsCopy)
-
-      setBagClickSpan(bagClickSpan + 1)
-      setItems(itemsCopy)
-
-      navigate('/bag')
+      else {
+        alert('You cannot add an item in the bag with no stock')
+      }
 
     }
 
@@ -124,14 +144,16 @@ function App() {
 
     const item = itemsCopy[index]
 
+    setBagClickSpan(bagClickSpan - item.quantity)
+
     const newItem = {
       ...item,
-      quantity: 0
+      quantity: 0,
+      stock: item.stock + 1
     }
 
     itemsCopy[index] = newItem
 
-    setBagClickSpan(bagClickSpan - 1)
     setItems(itemsCopy)
 
   }
@@ -364,6 +386,11 @@ function App() {
             userCatcher = {userCatcher}
             setUserCatcher = {setUserCatcher}
             setCategory = {setCategory}
+
+            items = {items}
+            setItems = {setItems}
+            initialItems = {initialItems}
+            setInitalItems = {setInitialItems}
           />}>
         </Route>
 

@@ -49,18 +49,22 @@ function Ribbon2({selectType, setSelectType, showItems, setItemsPerPage}) {
                 <form className="new-select-page">
 
                     <label htmlFor="filter-by-pageNum">
-                        <h3>Show item per page :</h3>
+                        <h3>Show items per page :</h3>
                     </label>
 
-                    <select name="filter-by-pageNum" id="filter-by-pageNum" 
+                    <select 
+                    name="filter-by-pageNum" 
+                    id="filter-by-pageNum" 
+                    defaultValue= "8"
                     onChange={function (e) {
                         handleOnChangeSelectPerPage(e.target.value)
                     }}>
 
+                        <option value="5">5</option>
                         <option value="8">8</option>
                         <option value="10">10</option>
                         <option value="15">15</option>
-                        <option value="5">5</option>
+                        <option value="20">20</option>
 
                     </select>
 
