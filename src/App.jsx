@@ -75,26 +75,32 @@ function App() {
   // #region 'Bag and Favorite adding and removing functions'
   function handleButtonAddBasket(product) {
     
-    let itemsCopy = JSON.parse(JSON.stringify(items))
-    const index = itemsCopy.findIndex(target => target.id === product.id)
+    if (signInStatus === true) {
+      let itemsCopy = JSON.parse(JSON.stringify(items))
+      const index = itemsCopy.findIndex(target => target.id === product.id)
 
-    const item = itemsCopy[index]
-    // console.log("Item", item)
+      const item = itemsCopy[index]
+      // console.log("Item", item)
 
-    const newItem = {
-        ...item,
-        quantity: item.quantity ? item.quantity + 1 : 1
+      const newItem = {
+          ...item,
+          quantity: item.quantity ? item.quantity + 1 : 1
+      }
+
+      // console.log("NewItem", newItem)
+      itemsCopy[index] = newItem
+
+      // console.log("Items Copy", itemsCopy)
+
+      setBagClickSpan(bagClickSpan + 1)
+      setItems(itemsCopy)
+
+      navigate('/bag')
     }
 
-    // console.log("NewItem", newItem)
-    itemsCopy[index] = newItem
-
-    // console.log("Items Copy", itemsCopy)
-
-    setBagClickSpan(bagClickSpan + 1)
-    setItems(itemsCopy)
-
-    navigate('/bag')
+    else {
+      alert('You need to be signed in to add to bag')
+    }
 
   }
 
@@ -141,33 +147,41 @@ function App() {
 
   function handleButtonAddFavorite(product) {
     
-      let itemsCopy = JSON.parse(JSON.stringify(items))
-      const index = itemsCopy.findIndex(target => target.id === product.id)
+    if (signInStatus === true) {
 
-      const item = itemsCopy[index]
-      // console.log("Item", item)
+        let itemsCopy = JSON.parse(JSON.stringify(items))
+        const index = itemsCopy.findIndex(target => target.id === product.id)
 
-      if (item.favorite === false) {
-        
-        const newItem = {
-            ...item,
-            favorite: !item.favorite
+        const item = itemsCopy[index]
+        // console.log("Item", item)
+
+        if (item.favorite === false) {
+          
+          const newItem = {
+              ...item,
+              favorite: !item.favorite
+          }
+
+          // console.log("NewItem", newItem)
+          itemsCopy[index] = newItem
+
+          // console.log("Items Copy", itemsCopy)
+
+          setFavoriteClickSpan(favoriteClickSpan + 1)
+          setItems(itemsCopy)
+
+          navigate('/favorites')
+
         }
 
-        // console.log("NewItem", newItem)
-        itemsCopy[index] = newItem
-
-        // console.log("Items Copy", itemsCopy)
-
-        setFavoriteClickSpan(favoriteClickSpan + 1)
-        setItems(itemsCopy)
-
-        navigate('/favorites')
-
+      else {
+        alert("You cannot add this item to Wishlist when it is already there")
       }
 
+    }
+
     else {
-      alert("You cannot add this item to Wishlist when it is already there")
+      alert('You need to be signed in to add to wishlist')
     }
 
   }

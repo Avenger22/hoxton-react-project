@@ -66,24 +66,76 @@ header.products-header-menu .dropbtn-user {
     font-size: 14px;
     background-color: #d40a0a;
   }
-
-   /* Links inside the dropdown */
-   header.products-header-menu .dropdown-content-user span {
-    color: black;
-    padding: 15px 15px;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    border: none;
-    font-size: 16px;
-    background-color: #d40a0a;
-  }
   
   /* Change color of dropdown links on hover */
   header.products-header-menu .dropdown-content-user span:hover {background-color: rgb(226, 155, 155);}
   
   /* Show the dropdown menu on hover */
   header.products-header-menu .dropdown-user:hover .dropdown-content-user {display: grid; grid-template-rows: 50px 50px; grid-gap: 10px;}
+
+  /* Dropdown Button */
+header.products-header-menu .dropbtn-user-signed {
+  background-color: transparent;
+  color: white;
+  font-size: 16px;
+  font-family: sans-serif;
+  font-weight: 600;
+  letter-spacing: normal;
+  border: none;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: 50px 50px;
+  grid-gap: 15px;
+  place-items: center;
+}
+
+header.products-header-menu .dropbtn-user-signed i {
+  font-size: 20px;
+}
+
+header.products-header-menu .dropbtn-user-signed:hover {
+  color: #3684f1;
+  transition: 1s;
+  border-bottom: 1px solid #ec8251;
+  cursor: pointer;
+}
+
+header.products-header-menu .dropdown-user-signed {
+  position: relative;
+  display: inline-block;
+}
+
+header.products-header-menu .dropdown-content-user-signed {
+  display: none;
+  position: absolute;
+  background-color: #eb2b2b;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  cursor: pointer;
+}
+
+ /* Links inside the dropdown */
+ header.products-header-menu .dropdown-content-user-signed span {
+  color: black;
+  padding: 25px 15px;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  border: none;
+  font-size: 16px;
+  font-weight: 700;
+  background-color: #d40a0a;
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+}
+
+/* Change color of dropdown links on hover */
+header.products-header-menu .dropdown-content-user-signed span:hover {background-color: rgb(226, 155, 155);}
+
+/* Show the dropdown menu on hover */
+header.products-header-menu .dropdown-user-signed:hover .dropdown-content-user-signed {display: grid; grid-template-rows: 30px 30px; grid-gap: 10px;}
 
   header.products-header-menu .header-products-sub-2 {
     grid-template-rows: 1fr;

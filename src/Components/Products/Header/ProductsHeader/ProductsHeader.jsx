@@ -74,14 +74,14 @@ function ProductsHeader(props) {
 
                                     <>
 
-                                        <div className="dropdown-user">
+                                        <div className="dropdown-user-signed">
 
-                                            <li className="dropbtn-user">
+                                            <li className="dropbtn-user-signed">
                                                 <i className="fas fa-user"></i>
                                                 {signInUserName}
                                             </li>
 
-                                            <div className="dropdown-content-user">
+                                            <div className="dropdown-content-user-signed">
 
                                                 <button className="log-out" onClick={function () {
                                                     setSignInStatus(!signInStatus)

@@ -42,8 +42,11 @@ export default function SignInPage({signInData, setSignInData, signInStatus,
                 body: JSON.stringify({ signedIn: true })
             })
 
+            alert("Sign in succesfully !")
+
             setSignInStatus(true)
             setSignInUserName(gettingUser.userName)
+            e.target.reset()
 
         }
 
@@ -79,8 +82,9 @@ export default function SignInPage({signInData, setSignInData, signInStatus,
                         <label>
 
                             <span>UserName : </span>
+                            
                             <input 
-                                defaultValue = {userName} 
+                                // defaultValue = {userName} 
                                 required 
                                 name="username" 
                                 type="text" 
@@ -95,8 +99,9 @@ export default function SignInPage({signInData, setSignInData, signInStatus,
                         <label>
 
                             <span>Password</span>
+
                             <input
-                                defaultValue={password} 
+                                // defaultValue={password} 
                                 required 
                                 name="password" 
                                 type="password" 
@@ -108,7 +113,7 @@ export default function SignInPage({signInData, setSignInData, signInStatus,
                         
                         </label>
 
-                        <button type="submit" value="Submit">
+                        <button type="submit">
                             Sign In
                         </button>
 

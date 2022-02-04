@@ -48,15 +48,19 @@ export default function SignUpPage({signUpData, setSignUpData, signUpStatus, set
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(object)
-        }).then(responseItem => responseItem.json()).then(responseJsonArray => {
+        })
+        .then(responseItem => responseItem.json())
+        .then(responseJsonArray => {
 
             const updatedUsers = [...users, responseJsonArray]
+            alert("User is registered successfully")
             setUsers(updatedUsers)
       
           })
       
 
         setSignUpStatus(!signUpStatus)
+        e.target.reset()
         // setSignUpData(newObject)
         navigate('/sign-in')
 
@@ -146,7 +150,7 @@ export default function SignUpPage({signUpData, setSignUpData, signUpStatus, set
                         
                         </label>
 
-                        <button type="submit" value="Submit">
+                        <button type="submit">
                             Sign Up
                         </button>
 
