@@ -7,7 +7,7 @@ import "./Bag.css"
 
 export default function BagPage(props) {
 
-    const { items, setItems, signInStatus, setSignInStatus, signInUserName } = props
+    const { items, setItems, signInStatus, setSignInStatus, signInUserName, handleButtonRemoveBasket } = props
     
     const bagItemsFiltered = items.filter(item => item?.quantity > 0)
 
@@ -80,6 +80,7 @@ export default function BagPage(props) {
                                 
                                 filterTotalIndividual={filterTotalIndividual}
                                 handleOnChangeSelect={handleOnChangeSelect}
+                                handleButtonRemoveBasket = {handleButtonRemoveBasket}
                             />
 
                         )
@@ -89,7 +90,11 @@ export default function BagPage(props) {
                 </ul>
 
                 <h3>Your total: {calculateTotalBasket(bagItemsFiltered)}</h3>
-                <button onClick={handlePaymentRedirect}>Proceed to payment</button>
+
+                <button className="button-proceed-payment" 
+                    onClick={handlePaymentRedirect}>
+                        Proceed to payment
+                </button>
 
             </section>
 

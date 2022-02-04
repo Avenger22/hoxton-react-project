@@ -12,7 +12,7 @@ import ReactPaginate from 'react-paginate'
 
 
 function Products({signInUserName, signInStatus, setSignInStatus, 
-    handleButtonAddBasket, active, setActive, handleButtonAddFavorite}) {
+    handleButtonAddBasket, handleButtonAddFavorite}) {
 
     let globalItemsToDisplay = []
 
@@ -1375,8 +1375,6 @@ function Products({signInUserName, signInStatus, setSignInStatus,
                     itemsPerPage = {itemsPerPage}
 
                     handleButtonAddBasket = {handleButtonAddBasket}
-                    active = {active}
-                    setActive = {setActive}
                     handleButtonAddFavorite = {handleButtonAddFavorite}
                 />
                     

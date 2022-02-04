@@ -49,27 +49,27 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    grid-template-columns: 40px 120px 130px 120px 20px;
-    grid-gap: 15px;
+    grid-template-columns: 50px 100px 120px 120px 120px;
+    grid-gap: 10px;
   }
 
   .favorites-container__item button {
     font-size: 14px;
     color: rgb(15, 14, 14);
     background-color: rgb(235, 54, 54);
-    padding: 5px 10px;
+    padding: 5px 25px;
     border: none;
-    font-weight: 700;
+    font-weight: 600;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
     cursor: pointer;
-    margin-right: 70px;
+    /* margin-right: 70px; */
 }
 
-.favorites-container button {
+/* .favorites-container button {
   padding: 15px 20px;
   border: none;
   color: rgb(240, 218, 218);
@@ -82,8 +82,7 @@
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   cursor: pointer;
-  margin-left: 200px;
-}
+  /* margin-left: 200px; */
 
 .favorites-container i {
   color: #d65050;

@@ -4,7 +4,7 @@ import Heart from "react-heart"
 
 function FavoriteItem(props) {
 
-    const {product, filterTotalIndividual, handleButtonAddFavorite, active, setActive} = props 
+    const {product, filterTotalIndividual, handleButtonRemoveFavorite, handleButtonAddBagRemoveFavorite} = props 
     const totalIndividualArray = filterTotalIndividual(product.id)
 
     const navigate = useNavigate()
@@ -27,19 +27,23 @@ function FavoriteItem(props) {
 
                 <p>{product.name}</p>
 
-                <button onClick={handleRedirectBack}>Go to products</button>
-                {/* <button onClick={handleRedirectBack}>Remove from Wishlist</button> */}
+                <button 
+                    onClick={handleRedirectBack}>
+                    Go to products
+                </button>
 
-                {/* <i className="icon-heart-empty"></i> */}
+                <button onClick={function () {
+                    handleButtonAddBagRemoveFavorite(product)
+                }}>
+                    Add this to Bag
+                </button>
 
-                {/* <Heart 
-                    isActive={active}
-                    style = {{height: 25, width: 35}} 
-                    onClick={function () { 
-                        setActive(!active)
-                        handleButtonAddFavorite(product)
-                    }}
-                /> */}
+                <button onClick={function () {
+                    handleButtonRemoveFavorite(product)
+                }}>
+                    X
+                </button>
+
 
             </article>
 

@@ -49,33 +49,43 @@
     display: grid;
     align-items: center;
     justify-items: center;
-    grid-template-columns: 40px 120px 130px 120px 20px;
-    grid-gap: 15px;
+    grid-template-columns: 40px 120px 130px 120px 120px 30px;
+    grid-gap: 10px;
   }
 
   .basket-container__item button {
     font-size: 14px;
     color: rgb(15, 14, 14);
     background-color: rgb(235, 54, 54);
-    padding: 5px 10px;
+    padding: 10px 10px;
     border: none;
-    font-weight: 700;
+    font-weight: 600;
     border-radius: 20px;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
     -ms-border-radius: 20px;
     -o-border-radius: 20px;
     cursor: pointer;
-    margin-right: 70px;
+    /* margin-right: 80px; */
 }
 
-.basket-container button {
+.basket-container__item button:hover {
+  transition: 1s;
+  color: rgb(65, 56, 56);
+  background-color: rgb(93, 200, 233);
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+.basket-container button.button-proceed-payment {
   padding: 15px 20px;
   border: none;
   color: rgb(240, 218, 218);
   background-color: rgb(214, 87, 28);
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 500;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -83,6 +93,12 @@
   -o-border-radius: 10px;
   cursor: pointer;
   margin-left: 200px;
+}
+
+.basket-container button.button-proceed-payment:hover {
+  transition: 1s;
+  color: rgb(65, 56, 56);
+  background-color: rgb(93, 200, 233);
 }
 
 .basket-container__item p {

@@ -3,7 +3,7 @@ import "../StoreItem/StoreItem.css"
 import Heart from "react-heart"
 
 function StoreItem({item, handleButtonAddBasket, 
-    active, setActive, handleButtonAddFavorite}) {
+    handleButtonAddFavorite}) {
 
     const navigate = useNavigate()
 
@@ -79,16 +79,6 @@ function StoreItem({item, handleButtonAddBasket,
                     <i className="far fa-heart"></i>
                     <span>Add to Wishlist</span>
                 </button>
-
-                {/* <Heart 
-                    isActive={active}
-                    style = {{height: 25, width: 35}} 
-                    onClick={function (e) {
-                        e.stopPropagation() 
-                        setActive(!active)
-                        handleButtonAddFavorite(item)
-                    }}
-                /> */}
                 
             </li>
             

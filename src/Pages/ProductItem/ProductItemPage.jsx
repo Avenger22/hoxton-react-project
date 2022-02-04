@@ -15,7 +15,8 @@ const randColour = ["green", "red", "blue", "yellow"][
     Math.floor(Math.random() * 4)
 ];
 
-export default function ProductItemPage({handleButtonAddBasket, items, setItems, signInUserName, setSignInStatus, signInStatus}) {
+export default function ProductItemPage({handleButtonAddBasket, items, 
+    setItems, signInUserName, setSignInStatus, signInStatus, handleButtonAddFavorite}) {
 
     const params = useParams()
     const [item, setItem] = useState(null) //important for fetching only 1 item
@@ -110,7 +111,14 @@ export default function ProductItemPage({handleButtonAddBasket, items, setItems,
                                 e.stopPropagation()
                                 handleButtonAddBasket(item)
                             }}>
-                                Add to bag
+                                Add to Bag
+                            </button>
+
+                            <button onClick={function (e) {
+                                e.stopPropagation()
+                                handleButtonAddFavorite(item)
+                            }}>
+                                Add to Favorites
                             </button>
 
                         </div>

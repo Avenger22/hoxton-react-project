@@ -40,8 +40,6 @@ function App() {
 
   const [paymentStatus, setPaymentStatus] = useState(false)
   const [paymentData, setPaymentData] = useState([])
-
-  const [active, setActive] = useState(false)
   // #endregion
 
   // #region 'Server Functions'
@@ -71,37 +69,74 @@ function App() {
 
   const navigate = useNavigate()
   
+  // #region 'Bag and Favorite adding and removing functions'
   function handleButtonAddBasket(product) {
     
     let itemsCopy = JSON.parse(JSON.stringify(items))
     const index = itemsCopy.findIndex(target => target.id === product.id)
 
     const item = itemsCopy[index]
-    console.log("Item", item)
+    // console.log("Item", item)
 
     const newItem = {
         ...item,
         quantity: item.quantity ? item.quantity + 1 : 1
     }
 
-    console.log("NewItem", newItem)
+    // console.log("NewItem", newItem)
     itemsCopy[index] = newItem
 
-    console.log("Items Copy", itemsCopy)
+    // console.log("Items Copy", itemsCopy)
 
     setItems(itemsCopy)
     navigate('/bag')
 
   }
 
+  function handleButtonRemoveBasket(product) {
+    
+    let itemsCopy = JSON.parse(JSON.stringify(items));
+    const index = itemsCopy.findIndex(target => target.id === product.id)
+
+    const item = itemsCopy[index]
+
+    const newItem = {
+      ...item,
+      quantity: 0
+    }
+
+    itemsCopy[index] = newItem
+    setItems(itemsCopy)
+
+  }
+
+  function handleButtonRemoveFavorite(product) {
+    
+    let itemsCopy = JSON.parse(JSON.stringify(items));
+    const index = itemsCopy.findIndex(target => target.id === product.id)
+
+    const item = itemsCopy[index]
+
+    const newItem = {
+      ...item,
+      favorite: false
+    }
+
+    itemsCopy[index] = newItem
+    setItems(itemsCopy)
+
+    // updatedFavorite = updatedFavorite.filter(item => item.id !== product.id)
+    // setPosts(updatedPosts);
+
+  }
+
   function handleButtonAddFavorite(product) {
     
-    // if (product.favorite === false) {
       let itemsCopy = JSON.parse(JSON.stringify(items))
       const index = itemsCopy.findIndex(target => target.id === product.id)
 
       const item = itemsCopy[index]
-      console.log("Item", item)
+      // console.log("Item", item)
 
       if (item.favorite === false) {
         
@@ -110,10 +145,10 @@ function App() {
             favorite: !item.favorite
         }
 
-        console.log("NewItem", newItem)
+        // console.log("NewItem", newItem)
         itemsCopy[index] = newItem
 
-        console.log("Items Copy", itemsCopy)
+        // console.log("Items Copy", itemsCopy)
 
         setItems(itemsCopy)
         navigate('/favorites')
@@ -125,6 +160,31 @@ function App() {
     }
 
   }
+
+  function handleButtonAddBagRemoveFavorite(product) {
+
+    let itemsCopy = JSON.parse(JSON.stringify(items))
+    const index = itemsCopy.findIndex(target => target.id === product.id)
+
+    const item = itemsCopy[index]
+    // console.log("Item", item)
+
+    const newItem = {
+        ...item,
+        quantity: item.quantity ? item.quantity + 1 : 1,
+        favorite: false
+    }
+
+    // console.log("NewItem", newItem)
+    itemsCopy[index] = newItem
+
+    // console.log("Items Copy", itemsCopy)
+
+    setItems(itemsCopy)
+    // navigate('/bag')
+
+  }
+  // #endregion
 
   // #region 'Return Html'
   return (
@@ -160,6 +220,8 @@ function App() {
             signInStatus={signInStatus}
             setSignInStatus={setSignInStatus}
             signInUserName={signInUserName}
+
+            handleButtonRemoveBasket = {handleButtonRemoveBasket}
           />}>
         </Route>
 
@@ -171,9 +233,8 @@ function App() {
             setSignInStatus={setSignInStatus}
             signInUserName={signInUserName}
 
-            handleButtonAddFavorite = {handleButtonAddFavorite}
-            active = {active}
-            setActive = {setActive}
+            handleButtonRemoveFavorite = {handleButtonRemoveFavorite}
+            handleButtonAddBagRemoveFavorite = {handleButtonAddBagRemoveFavorite}
           />}>
         </Route>
 
@@ -224,8 +285,6 @@ function App() {
             signInUserName={signInUserName}
             
             handleButtonAddBasket = {handleButtonAddBasket}
-            active = {active}
-            setActive = {setActive}
             handleButtonAddFavorite = {handleButtonAddFavorite}
           />}>
         </Route>
@@ -241,6 +300,7 @@ function App() {
             signInUserName={signInUserName}
 
             handleButtonAddBasket = {handleButtonAddBasket}
+            handleButtonAddFavorite = {handleButtonAddFavorite}
           />}>
         </Route>
 

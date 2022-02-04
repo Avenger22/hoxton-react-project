@@ -3,7 +3,9 @@ import { useNavigate } from "react-router"
 
 function BagItem(props) {
 
-    const {product, calculateTotalBasket, filterTotalIndividual, handleOnChangeSelect} = props 
+    const {product, calculateTotalBasket, filterTotalIndividual, 
+        handleOnChangeSelect, handleButtonRemoveBasket} = props
+
     const totalIndividualArray = filterTotalIndividual(product.id)
 
     const navigate = useNavigate()
@@ -83,7 +85,15 @@ function BagItem(props) {
                 </p>
                 
                 <p>Item total: {calculateTotalBasket(totalIndividualArray)}</p>
-                <button onClick={handleRedirectBack}>Go to product</button>
+                
+                <button 
+                onClick={handleRedirectBack}>
+                    Go to product
+                </button>
+                
+                <button onClick={function () {
+                    handleButtonRemoveBasket(product)
+                }}>X</button>
 
             </article>
 

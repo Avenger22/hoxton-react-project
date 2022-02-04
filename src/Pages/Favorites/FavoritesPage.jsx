@@ -7,7 +7,7 @@ import "./Favorites.css"
 export default function FavoritesPage(props) {
 
     const { items, setItems, signInStatus, signInUserName, 
-        setSignInStatus, handleButtonAddFavorite, active, setActive} = props
+        setSignInStatus, handleButtonRemoveFavorite, handleButtonAddBagRemoveFavorite} = props
 
     console.log(items)
     const favoriteItemsFiltered = items.filter(item => item?.favorite === true)
@@ -42,11 +42,9 @@ export default function FavoritesPage(props) {
                                 key={product.id}
                                 product={product}
                                 filterTotalIndividual={filterTotalIndividual}
-
-                                handleButtonAddFavorite = {handleButtonAddFavorite}
-                                active = {active}
-                                setActive = {setActive}
                                 
+                                handleButtonRemoveFavorite = {handleButtonRemoveFavorite}
+                                handleButtonAddBagRemoveFavorite = {handleButtonAddBagRemoveFavorite}
                             />
 
                         )
