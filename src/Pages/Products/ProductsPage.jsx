@@ -1290,7 +1290,7 @@ function Products() {
 
     const changePage = ({ selected }) => {
 
-        if (pagesVisited > 20) {
+        if (pagesVisited > 15) {
             handleChangingPageNumber(0)
         }
 

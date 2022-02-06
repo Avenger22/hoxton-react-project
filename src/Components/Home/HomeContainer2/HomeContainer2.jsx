@@ -1,9 +1,10 @@
 import { useState } from 'react/cjs/react.development'
+import { useStore } from '../../../Store/store'
 import '../HomeContainer2/HomeContainer2.css'
 
 export default function HomeContainer2() {
 
-    const [formTouch, setFormTouch] = useState([])
+    const {formTouch, setFormTouch} = useStore()
 
     function handleGetSubmit(e) {
 

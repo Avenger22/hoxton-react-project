@@ -1,19 +1,20 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { useStore } from '../../../Store/store'
 import '../BlogItemContainer2/BlogItemContainer2.css'
 import BlogItemRelatedImg from './BlogItemRelatedImg'
 
 export default function BlogItemContainer2() {
 
-    const [posts, setPosts] = useState([])
+    const {postsFooter, setPostsFooter} = useStore()
 
     useEffect(() => {
         fetch(`http://localhost:8000/articles`)
             .then(resp => resp.json())
-            .then(postsFromServer => setPosts(postsFromServer))
+            .then(postsFromServer => setPostsFooter(postsFromServer))
     }, [])
     
-    const newPosts = posts.slice(0,3)
+    const newPosts = postsFooter.slice(0,3)
 
     return (
 

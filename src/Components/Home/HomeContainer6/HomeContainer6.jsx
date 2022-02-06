@@ -6,7 +6,7 @@ import { useStore } from "../../../Store/store"
 
 export default function HomeContainer6() {
 
-    const [coaches, setCoaches] = useState([])
+    const {coaches, setCoaches} = useStore()
 
     function getCoachesFromServer() {
 

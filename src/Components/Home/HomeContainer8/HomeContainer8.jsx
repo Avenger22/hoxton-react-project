@@ -5,7 +5,7 @@ import { useStore } from "../../../Store/store"
 
 export default function HomeContainer8() {
 
-    const [articles, setArticles] = useState([])
+    const {articles, setArticles} = useStore()
     
     function getArticlesFromServer() {
 

@@ -1,14 +1,21 @@
 import BlogContainer2Article from "./BlogContainer2Article"
 import "../BlogContainer2/BlogContainer2.css"
 import { Link } from "react-router-dom"
-
 import {useStore} from "../../../Store/store"
 import { useEffect } from "react"
 
 export default function BlogContainer2() {
 
-    const {articles, getArticlesFromServer} = useStore()
+    const {articles, setArticles} = useStore()
     
+    function getArticlesFromServer() {
+
+        fetch(`http://localhost:8000/articles`)
+          .then(resp => resp.json())
+          .then(articlesFromServer => setArticles(articlesFromServer))
+
+    }
+
     useEffect(getArticlesFromServer, [])
     
     return (

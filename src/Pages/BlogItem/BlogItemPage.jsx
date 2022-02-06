@@ -5,11 +5,13 @@ import ButtonTop from '../../Components/Common/ButtonTop/ButtonTop'
 import BlogItemContainer1 from '../../Components/BlogItem/BlogItemContainer1/BlogItemContainer1'
 import BlogItemContainer2 from '../../Components/BlogItem/BlogItemContainer2/BlogItemContainer2'
 import { useParams } from "react-router-dom"
+import { useStore } from "../../Store/store"
 
 function BlogItem() {
 
     const params = useParams()
-    const [blogItem, setBlogItem] = useState(null)
+
+    const {blogItem, setBlogItem} = useStore()
 
     function getIndividualBlogFromServer () {
 

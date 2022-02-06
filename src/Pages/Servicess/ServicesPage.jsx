@@ -8,7 +8,7 @@ import { useStore } from "../../Store/store"
 
 export default function ServicesPage() {
 
-    const [services, setServices] = useState([])
+    const {services, setServices} = useStore()
 
     function getServicesFromServer () {
 

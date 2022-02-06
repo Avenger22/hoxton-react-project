@@ -4,7 +4,7 @@ import UlSub2li from '../UlSubLi/UlSub2Li'
 import "../ProductsHeader/ProductsHeader.css"
 import { useStore } from '../../../../Store/store'
 
-function ProductsHeader(props) {
+function ProductsHeader() {
 
     const {
         signInStatus, signInUserName, handleOffersEvent, handleSignInStatus,

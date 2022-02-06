@@ -76,6 +76,28 @@ export const useStore = create((set, get) => ({
 
   },
 
+  handleOnSubmitForm: function (formValue) {
+    set({searchTerm: formValue}) 
+  },
+
+  handleOnChangeSearchSelect: function (e) {
+
+    if (get().searchTerm === '') {
+        alert('you cant select based on categories without a search string')
+        const value = 'Default'
+        set({searchOnCategory: value})
+    }
+
+    else {
+        set({searchOnCategory: e.target.value})
+    }
+
+  },
+
+  handleOnChangeSearchTerm: function(e) {
+    set({searchTerm: e.target.value})
+  },
+
   handleOnClickCategory : function (liValue) {
     set({category: liValue})
   },
@@ -527,14 +549,96 @@ export const useStore = create((set, get) => ({
 
   
   // #region 'BLOG STATE'
-
-  // #region 'blog state general'
   articles: [],
+
+  setArticles: function (array) {
+    set({articles: array})
+  },
   // #endregion
 
+
+  // #region 'COACHES OR TEAMS STATE'
+  coaches: [],
+
+  setCoaches: function (array) {
+    set({coaches: array})
+  },
   // #endregion
 
 
+  // #region 'SERVICES STATE'
+  services: [],
+
+  setServices: function (array) {
+    set({services: array})
+  },
+  // #endregion
+
+
+  // #region 'TEAM ITEM STATE'
+  teamItem: {},
+
+  setTeamItem: function (object) {
+    set({teamItem: object})
+  },
+  // #endregion
+
+
+  // #region 'BLOG ITEM STATE'
+  blogItem: {},
+
+  setBlogItem: function (object) {
+    set({blogItem: object})
+  },
+  // #endregion
+
+
+  // #region 'SERVICE ITEM STATE'
+  serviceItem: {},
+
+  setServiceItem: function (object) {
+    set({serviceItem: object})
+  },
+  // #endregion
+
+
+  // #region 'COMPANY ITEM STATE'
+  companyItem: {},
+
+  setCompanyItem: function (object) {
+    set({companyItem: object})
+  },
+  // #endregion
+
+
+  // #region 'COMPANIES STATE'
+  setCompanies: function (array) {
+    set({companies: array})
+  },
+  // #endregion
+
+
+  // #region 'OTHER STATA'
+  postsFooter: [],
+
+  setPostsFooter: function (array) {
+    set({postsFooter: array})
+  },
+
+  formTouch: [],
+
+  setFormTouch: function (array) {
+    set({formTouch: array})
+  },
+
+  categoryClicked: false,
+
+  setCategoryClicked: function() {
+    set({categoryClicked: !get().categoryClicked})
+  },
+  // #endregion
+
+  
   // #region 'PRODUCT ITEM STATE'
   initialRelatedItems: [],
   productItem: null,
