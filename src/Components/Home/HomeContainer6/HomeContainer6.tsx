@@ -1,6 +1,6 @@
 import HomeContainer6Card from "./HomeContainer6Card"
 import './HomeContainer6.css'
-import { useEffect, useState} from "react"
+import { useEffect } from "react"
 import { useNavigate } from "react-router"
 import { useStore } from "../../../Store/store"
 

@@ -1,5 +1,5 @@
 import "./BlogItem.css"
-import { useEffect, useState} from 'react'
+import { useEffect } from 'react'
 import FooterCommon from '../../Components/Common/FooterCommon/FooterCommon'
 import ButtonTop from '../../Components/Common/ButtonTop/ButtonTop'
 import BlogItemContainer1 from '../../Components/BlogItem/BlogItemContainer1/BlogItemContainer1'
