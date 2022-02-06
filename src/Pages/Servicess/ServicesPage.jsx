@@ -8,7 +8,16 @@ import { useStore } from "../../Store/store"
 
 export default function ServicesPage() {
 
-    const {services, getServicesFromServer} = useStore()
+    const [services, setServices] = useState([])
+
+    function getServicesFromServer () {
+
+        fetch(`http://localhost:8000/services`)
+          .then(resp => resp.json())
+          .then(coachesFromServer => setServices(coachesFromServer))
+        
+    }
+
     useEffect(getServicesFromServer, [])
 
     return (

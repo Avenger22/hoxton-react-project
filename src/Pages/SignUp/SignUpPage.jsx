@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon";
 import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon";
@@ -8,8 +8,20 @@ import "./SignUp.css"
 export default function SignUpPage() {
     
     const {handleFormSubmitSignUp, handleFullNameChangeSignUp, handleEmailChangeSignUp, 
-        handleUserNameChangeSignUp, handlePasswordChangeSignUp} = useStore()
+        handleUserNameChangeSignUp, handlePasswordChangeSignUp, users, setUsers} = useStore()
     
+        function getUsersFromServer() {
+        
+            fetch('http://localhost:8000/users')
+                .then(resp => resp.json())
+                .then(usersFromServer => {
+                setUsers(usersFromServer)
+            })
+        
+        }
+
+        useEffect(getUsersFromServer, [])
+
         return (
 
         <>

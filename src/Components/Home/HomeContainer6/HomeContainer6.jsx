@@ -1,12 +1,21 @@
 import HomeContainer6Card from "./HomeContainer6Card"
 import './HomeContainer6.css'
-import { useEffect} from "react"
+import { useEffect, useState} from "react"
 import { useNavigate } from "react-router"
 import { useStore } from "../../../Store/store"
 
 export default function HomeContainer6() {
 
-    const {coaches, getCoachesFromServer} = useStore()
+    const [coaches, setCoaches] = useState([])
+
+    function getCoachesFromServer() {
+
+        fetch(`http://localhost:8000/coaches`)
+          .then(resp => resp.json())
+          .then(coachesFromServer => setCoaches(coachesFromServer))
+        
+    }
+
     useEffect(getCoachesFromServer, [])
     
     const navigate = useNavigate()

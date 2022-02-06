@@ -3,14 +3,22 @@ import { useParams } from "react-router-dom"
 import "./TeamItem.css"
 import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon"
 import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
-import { useStore } from "../../Store/store"
 
 export default function TeamItemPage() {
 
+    const [teamItem, setTeamitem] = useState(null)
     const params = useParams()
 
-    const {teamItem, getIndividualTeamFromServer} = useStore()
-    useEffect(getIndividualTeamFromServer(params), [])
+    function getIndividualTeamFromServer () {
+
+        fetch(`http://localhost:8000/coaches/${params.id}`)
+          .then(resp => resp.json())
+          .then(teamFromServer => setTeamitem(teamFromServer))
+        
+      }
+
+      
+    useEffect(getIndividualTeamFromServer, [])
 
     if (teamItem === null) {
         return <main>Loading...</main>

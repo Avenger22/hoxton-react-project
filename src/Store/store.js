@@ -1,8 +1,6 @@
 import {useNavigate} from 'react-router-dom'
 import create from 'zustand'
 
-const navigate = useNavigate()
-
 export const useStore = create((set, get) => ({
 
   // #region 'GENERAL STATE
@@ -43,6 +41,7 @@ export const useStore = create((set, get) => ({
   // #region 'General Functions for state'
   handleButtonAddBasket: function(product) {
 
+    const navigate = useNavigate()
     const { items, signInStatus, bagClickSpan } = get()
 
     if (signInStatus === true) {
@@ -198,6 +197,7 @@ export const useStore = create((set, get) => ({
 
   handleButtonAddFavorite : function (product) {
     
+    const navigate = useNavigate()
     const { signInStatus, items, favoriteClickSpan } = get()
 
     if (signInStatus === true) {
@@ -237,6 +237,7 @@ export const useStore = create((set, get) => ({
 
   handleButtonAddBagRemoveFavorite : function (product) {
 
+    const navigate = useNavigate()
     const {items, bagClickSpan, favoriteClickSpan} = get()
 
     let itemsCopy = JSON.parse(JSON.stringify(items))
@@ -260,51 +261,24 @@ export const useStore = create((set, get) => ({
 
   },
 
-  getUsersFromServer: function () {
+  setUsers: function(array)  {
 
     const {users} = get()
-
-    fetch('http://localhost:8000/users')
-        .then(resp => resp.json())
-        .then(usersFromServer => {
-        set(users, usersFromServer)
-    })
+    set(users, array)
 
   },
 
-  getCompaniesFromServer: function () {
-
-    const {companies} = get()
-
-    fetch('http://localhost:8000/companies')
-        .then(resp => resp.json())
-        .then(companiesFromServer => {
-        set(companies, companiesFromServer)
-    })
-
-  },
-
-  getInitialItemsFromServer : function() {
-
-    const{initialItems} = get()
-
-    fetch('http://localhost:8000/items')
-        .then(resp => resp.json())
-        .then(itemsFromServer2 => {
-        set(initialItems, itemsFromServer2)
-    })
-
-  },
-
-  getItemsFromServer : function() {
+  setItems: function(array)  {
 
     const {items} = get()
+    set(items, array)
 
-    fetch('http://localhost:8000/items')
-      .then(resp => resp.json())
-      .then(itemsFromServer1 => {
-      set(items, itemsFromServer1)
-    })
+  },
+
+  setInitialItems: function(array)  {
+
+    const {initialItems} = get()
+    set(initialItems, array)
 
   },
 
@@ -451,6 +425,7 @@ export const useStore = create((set, get) => ({
 
   handleFormSubmitSignIn : function (e) {
 
+    const navigate = useNavigate()
     const {getUser, signInStatus, signInUserName, userNameSignIn, passwordSignIn} = get()
     
     const gettingUser = getUser(userNameSignIn, passwordSignIn)
@@ -526,6 +501,7 @@ export const useStore = create((set, get) => ({
 
   handleFormSubmitSignUp : function (e) {
 
+    const navigate = useNavigate()
     const {emailSignUp, passwordSignUp, 
       userNameSignUp, fullNameSignUp, users, signUpStatus} = get()
     
@@ -628,49 +604,7 @@ export const useStore = create((set, get) => ({
 
   // #endregion
 
-
-  // #region 'TEAMS STATE'
-
-  // #region 'teams state general'
-  coaches: [],
-  // #endregion
-
-  // #region 'teams state functions'
-  getCoachesFromServer : function () {
-
-    const {coaches} = get()
-
-    fetch(`http://localhost:8000/coaches`)
-      .then(resp => resp.json())
-      .then(coachesFromServer => set(coaches, coachesFromServer))
-    
-  },
-  // #endregion
-
-  // #endregion
-
-
-  // #region 'SERVICES STATE'
-
-  // #region 'services state general'
-  services: [],
-  // #endregion
-
-  // #region 'services state functions'
-  getServicesFromServer : function () {
-
-    const {services} = get()
-
-    fetch(`http://localhost:8000/services`)
-      .then(resp => resp.json())
-      .then(coachesFromServer => set(services, coachesFromServer))
-    
-  },
-  // #endregion
-
-  // #endregion
-
-
+  
   // #region 'BLOG STATE'
 
   // #region 'blog state general'
@@ -692,102 +626,14 @@ export const useStore = create((set, get) => ({
   // #endregion
 
 
-  // #region 'BLOG ITEM STATE'
-  
-  // #region 'blog item general state'
-  blogItem: null,
-  // #endregion
-
-  // #region 'blog item functions'
-  getIndividualBlogFromServer : function (params) {
-
-    const {blogItem} = get()
-
-    fetch(`http://localhost:8000/articles/${params.id}`)
-      .then(resp => resp.json())
-      .then(blogFromServer => set(blogItem, blogFromServer))
-    
-  },
-  // #endregion
-
-  // #endregion
-
-
   // #region 'PRODUCT ITEM STATE'
   
-  // #region 'product item general state'
-  productItem: null,
-  initialRelatedItems: [],
-  // #endregion
-
   // #region 'product item functions'
-  getIndividualProductFromServer : function (params) {
-
-    const {productItem} = get()
-
-    fetch(`http://localhost:8000/items/${params.id}`)
-      .then(resp => resp.json())
-      .then(productFromServer => set(productItem, productFromServer))
-    
-  },
-
-  getInitialRelatedItemsFromServer : function (params) {
-
-    const {initialRelatedItems} = get()
-
-    fetch(`http://localhost:8000/items/${params.id}`)
-      .then(resp => resp.json())
-      .then(productFromServer => set(initialRelatedItems, productFromServer))
-    
-  },
-
   filterCategory : function (type, name) {
 
     const {initialRelatedItems} = get()
     return initialRelatedItems.filter(item => item.type === type && item.name !== name)
   
-  },
-  // #endregion
-
-  // #endregion
-
-
-  // #region 'SERVICE ITEM STATE'
-  
-  // #region 'service item general state'
-  serviceItem: null,
-  // #endregion
-
-  // #region 'service item functions'
-  getIndividualServiceFromServer : function (params) {
-
-    const {serviceItem} = get()
-
-    fetch(`http://localhost:8000/services/${params.id}`)
-      .then(resp => resp.json())
-      .then(serviceFromServer => set(serviceItem, serviceFromServer))
-    
-  },
-  // #endregion
-
-  // #endregion
-
-
-  // #region 'TEAM ITEM STATE'
-  
-  // #region 'team item general state'
-  teamItem: null,
-  // #endregion
-
-  // #region 'team item functions'
-  getIndividualTeamFromServer : function (params) {
-
-    const {teamItem} = get()
-
-    fetch(`http://localhost:8000/coaches/${params.id}`)
-      .then(resp => resp.json())
-      .then(teamFromServer => set(teamItem, teamFromServer))
-    
   },
   // #endregion
 

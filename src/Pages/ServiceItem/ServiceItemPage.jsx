@@ -1,16 +1,23 @@
 import "./ServiceItem.css"
 import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon"
 import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
-import { useStore } from "../../Store/store"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useParams } from "react-router"
 
 export default function ServiceItemPage() {
 
     const params = useParams()
+    const [serviceItem, setServiceItem] = useState(null)
 
-    const {serviceItem, getIndividualServiceFromServer} = useStore()
-    useEffect(getIndividualServiceFromServer(params), [])
+    function getIndividualServiceFromServer () {
+
+        fetch(`http://localhost:8000/services/${params.id}`)
+          .then(resp => resp.json())
+          .then(serviceFromServer => setServiceItem(serviceFromServer))
+        
+    }
+
+    useEffect(getIndividualServiceFromServer, [])
 
     if (serviceItem === null) {
         return <main>Loading...</main>

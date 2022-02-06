@@ -4,14 +4,41 @@ import ProductsHeader from "../../Components/Products/Header/ProductsHeader/Prod
 import ProductsMain from "../../Components/Products/Main/ProductsMain/ProductsMain"
 import ProductsFooter from '../../Components/Products/Footer/ProductsFooter'
 import { useStore } from "../../Store/store"
+import { useEffect, useState } from "react"
 // #endregion
-
 
 function Products() {
 
-    let globalItemsToDisplay = []
+    const {selectType, category, searchTerm, searchOnCategory,
+        pageNumber, itemsPerPage, handleChangingPageNumber} = useStore()
 
-    const {pageNumber, itemsPerPage, handleChangingPageNumber} = useStore()
+    const [initialItems, setInitialItems] = useState([])
+    const [items, setItems] = useState([])
+    
+    function getInitialItemsFromServer() {
+
+        fetch('http://localhost:8000/items')
+            .then(resp => resp.json())
+            .then(itemsFromServer2 => {
+            setInitialItems(itemsFromServer2)
+        })
+    
+    }
+
+    function getItemsFromServer() {
+    
+        fetch('http://localhost:8000/items')
+          .then(resp => resp.json())
+          .then(itemsFromServer1 => {
+          setItems(itemsFromServer1)
+        })
+    
+    }
+
+    useEffect(getInitialItemsFromServer, [])
+    useEffect(getItemsFromServer, [])
+
+    let globalItemsToDisplay = []
 
     // #region 'Helper Functions'
 
@@ -1268,12 +1295,7 @@ function Products() {
         }
         
     }
-
-    
     // #endregion
-
-    const {items, selectType, category, searchTerm, 
-        searchOnCategory, initialItems} = useStore()
     
     // #region 'Returning Html of the page'
     return (

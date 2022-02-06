@@ -4,7 +4,7 @@ import ProductsFooter from "../../Components/Products/Footer/ProductsFooter"
 import RelatedItem from "../../Components/ProductItem/RelatedItem"
 import ProductsHeader from '../../Components/Products/Header/ProductsHeader/ProductsHeader'
 import { useStore } from "../../Store/store";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 // #endregion
 
@@ -15,12 +15,31 @@ const randColour = ["green", "red", "blue", "yellow"][
 export default function ProductItemPage() {
 
     const params = useParams()
-
-    const {productItem, getIndividualProductFromServer, 
-        filterCategory, handleButtonAddBasket, handleButtonAddFavorite} = useStore()
     
-        useEffect(getIndividualProductFromServer(params), [])
+    const [productItem, setProductItem] = useState(null)
+    const [initialRelatedItems, setInitialRelatedItems] = useState([])
+    
+    const {filterCategory, handleButtonAddBasket, handleButtonAddFavorite} = useStore()
+    
+    function getIndividualProductFromServer () {
 
+        fetch(`http://localhost:8000/items/${params.id}`)
+            .then(resp => resp.json())
+            .then(productFromServer => setProductItem(productFromServer))
+    
+    }
+
+    useEffect(getIndividualProductFromServer, [])
+
+
+    function getInitialRelatedItemsFromServer () {
+    
+        fetch(`http://localhost:8000/items/${params.id}`)
+            .then(resp => resp.json())
+            .then(productFromServer => setInitialRelatedItems(productFromServer))
+    }
+
+    useEffect(getInitialRelatedItemsFromServer, [])
 
     if (productItem === null) {
         return <main>Loading...</main>
@@ -32,7 +51,7 @@ export default function ProductItemPage() {
 
     const type = productItem.type
     const name = productItem.name
-    const itemsCategory = filterCategory()
+    const itemsCategory = filterCategory(type, name)
 
     return (
 

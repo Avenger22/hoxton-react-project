@@ -1,12 +1,22 @@
 import HomeContainer4Card from "./HomeContainer4Card"
 import './HomeContainer4.css'
 import { useNavigate } from "react-router"
-import { useEffect} from "react"
+import { useEffect, useState} from "react"
 import { useStore } from "../../../Store/store"
 
 export default function HomeContainer4() {
 
-    const {services, getServicesFromServer} = useStore()
+    const [services, setServices] = useState([])
+
+    function getServicesFromServer () {
+
+    
+        fetch(`http://localhost:8000/services`)
+          .then(resp => resp.json())
+          .then(servicesFromServer => setServices(servicesFromServer))
+        
+    }
+    
     useEffect(getServicesFromServer, [])
 
     const navigate = useNavigate()

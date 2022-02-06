@@ -1,19 +1,25 @@
 import "./BlogItem.css"
-import { useEffect, useState } from 'react'
-
+import { useEffect, useState} from 'react'
 import FooterCommon from '../../Components/Common/FooterCommon/FooterCommon'
 import ButtonTop from '../../Components/Common/ButtonTop/ButtonTop'
 import BlogItemContainer1 from '../../Components/BlogItem/BlogItemContainer1/BlogItemContainer1'
 import BlogItemContainer2 from '../../Components/BlogItem/BlogItemContainer2/BlogItemContainer2'
-import { useStore } from "../../Store/store"
-import { useParams } from "react-router"
+import { useParams } from "react-router-dom"
 
 function BlogItem() {
 
     const params = useParams()
+    const [blogItem, setBlogItem] = useState(null)
 
-    const {blogItem, getIndividualBlogFromServer} = useStore()
-    useEffect(getIndividualBlogFromServer(params), [])
+    function getIndividualBlogFromServer () {
+
+        fetch(`http://localhost:8000/articles/${params.id}`)
+          .then(resp => resp.json())
+          .then(blogFromServer => setBlogItem(blogFromServer))
+        
+    }
+    
+    useEffect(getIndividualBlogFromServer, [])
 
     if (blogItem === null) {
         return <main>Loading...</main>
