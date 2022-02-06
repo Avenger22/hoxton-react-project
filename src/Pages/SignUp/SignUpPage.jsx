@@ -7,6 +7,8 @@ import "./SignUp.css"
 
 export default function SignUpPage() {
     
+    const navigate = useNavigate()
+
     const {handleFormSubmitSignUp, handleFullNameChangeSignUp, handleEmailChangeSignUp, 
         handleUserNameChangeSignUp, handlePasswordChangeSignUp, users, setUsers} = useStore()
     
@@ -35,6 +37,7 @@ export default function SignUpPage() {
                     onSubmit={function (e) {
                         e.preventDefault()
                         handleFormSubmitSignUp(e)
+                        navigate(`/sign-in`)
                     }}
                 >
 

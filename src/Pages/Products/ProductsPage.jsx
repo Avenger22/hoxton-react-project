@@ -4,17 +4,20 @@ import ProductsHeader from "../../Components/Products/Header/ProductsHeader/Prod
 import ProductsMain from "../../Components/Products/Main/ProductsMain/ProductsMain"
 import ProductsFooter from '../../Components/Products/Footer/ProductsFooter'
 import { useStore } from "../../Store/store"
-import { useEffect, useState } from "react"
+import { useEffect} from "react"
 // #endregion
 
 function Products() {
 
-    const {selectType, category, searchTerm, searchOnCategory,
-        pageNumber, itemsPerPage, handleChangingPageNumber} = useStore()
-
-    const [initialItems, setInitialItems] = useState([])
-    const [items, setItems] = useState([])
+    // #region 'Use Store calling and state'
+    const {
+        selectType, category, searchTerm, searchOnCategory,
+        pageNumber, itemsPerPage, handleChangingPageNumber, 
+        initialItems, setInitialItems, items, setItems
+    } = useStore()
+    // #endregion
     
+    // #region 'Server functions'
     function getInitialItemsFromServer() {
 
         fetch('http://localhost:8000/items')
@@ -37,6 +40,7 @@ function Products() {
 
     useEffect(getInitialItemsFromServer, [])
     useEffect(getItemsFromServer, [])
+    // #endregion
 
     let globalItemsToDisplay = []
 

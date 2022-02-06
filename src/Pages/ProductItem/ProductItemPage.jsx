@@ -4,8 +4,9 @@ import ProductsFooter from "../../Components/Products/Footer/ProductsFooter"
 import RelatedItem from "../../Components/ProductItem/RelatedItem"
 import ProductsHeader from '../../Components/Products/Header/ProductsHeader/ProductsHeader'
 import { useStore } from "../../Store/store";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router";
+import { useNavigate } from "react-router-dom";
 // #endregion
 
 const randColour = ["green", "red", "blue", "yellow"][
@@ -15,12 +16,13 @@ const randColour = ["green", "red", "blue", "yellow"][
 export default function ProductItemPage() {
 
     const params = useParams()
-    
-    const [productItem, setProductItem] = useState(null)
-    const [initialRelatedItems, setInitialRelatedItems] = useState([])
-    
-    const {filterCategory, handleButtonAddBasket, handleButtonAddFavorite} = useStore()
-    
+    const navigate = useNavigate()
+
+    const {
+        handleButtonAddBasket, handleButtonAddFavorite, initialRelatedItems, 
+        productItem, setInitialRelatedItems, setProductItem
+    } = useStore()
+
     function getIndividualProductFromServer () {
 
         fetch(`http://localhost:8000/items/${params.id}`)
@@ -29,16 +31,14 @@ export default function ProductItemPage() {
     
     }
 
-    useEffect(getIndividualProductFromServer, [])
-
-
     function getInitialRelatedItemsFromServer () {
     
-        fetch(`http://localhost:8000/items/${params.id}`)
+        fetch(`http://localhost:8000/items`)
             .then(resp => resp.json())
-            .then(productFromServer => setInitialRelatedItems(productFromServer))
+            .then(itemsFromServer => setInitialRelatedItems(itemsFromServer))
     }
 
+    useEffect(getIndividualProductFromServer, [])
     useEffect(getInitialRelatedItemsFromServer, [])
 
     if (productItem === null) {
@@ -51,7 +51,12 @@ export default function ProductItemPage() {
 
     const type = productItem.type
     const name = productItem.name
-    const itemsCategory = filterCategory(type, name)
+
+    function filterCategory() {
+        return initialRelatedItems.filter(item => item.type === type && item.name !== name)
+    }
+    
+    const itemsCategory = filterCategory()
 
     return (
 
@@ -109,6 +114,7 @@ export default function ProductItemPage() {
                                 <button onClick={function (e) {
                                     e.stopPropagation()
                                     handleButtonAddBasket(productItem)
+                                    navigate(`/bag`)
                                 }}>
                                     Add to Bag
                                 </button>
@@ -116,6 +122,7 @@ export default function ProductItemPage() {
                                 <button onClick={function (e) {
                                     e.stopPropagation()
                                     handleButtonAddFavorite(productItem)
+                                    navigate(`/favorites`)
                                 }}>
                                     Add to Wishlist
                                 </button>

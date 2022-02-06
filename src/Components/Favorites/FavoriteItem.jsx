@@ -6,6 +6,7 @@ function FavoriteItem(props) {
     const {handleButtonAddBagRemoveFavorite, handleButtonRemoveFavorite} = useStore()
     
     const {product, filterTotalIndividual} = props 
+    
     const totalIndividualArray = filterTotalIndividual(product.id)
 
     const navigate = useNavigate()
@@ -35,6 +36,7 @@ function FavoriteItem(props) {
 
                 <button onClick={function () {
                     handleButtonAddBagRemoveFavorite(product)
+                    navigate('/bag')
                 }}>
                     Add this to Bag
                 </button>

@@ -6,11 +6,12 @@ import { useStore } from '../../../../Store/store'
 
 function ProductsHeader(props) {
 
+    const {
+        signInStatus, signInUserName, handleOffersEvent, handleSignInStatus,
+        favoriteClickSpan, bagClickSpan
+    } = useStore()
+
     const ulSub2 = ['Home', 'Products', 'About-Us', 'Blog', 'Contact']
-
-    const {signInStatus, signInUserName, handleOffersEvent, handleSignInStatus,
-    favoriteClickSpan, bagClickSpan} = useStore()
-
     const navigate = useNavigate()
     
     function handleRedirectToBag() {

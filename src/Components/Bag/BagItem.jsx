@@ -1,13 +1,14 @@
 import { useState } from "react"
 import { useNavigate } from "react-router"
+import { useStore } from "../../Store/store"
 
-function BagItem(props) {
+function BagItem({product, calculateTotalBasket, filterTotalIndividual}) {
 
-    const {product, calculateTotalBasket, filterTotalIndividual, 
-        handleOnChangeSelect, handleButtonRemoveBasket} = props
+    const {
+       handleOnChangeBasketSelect, handleButtonRemoveBasket
+    } = useStore()
 
     const totalIndividualArray = filterTotalIndividual(product.id)
-
     const navigate = useNavigate()
 
     function handleRedirectBack() {
@@ -35,7 +36,7 @@ function BagItem(props) {
                     name = "total-options" 
                     defaultValue = {product.quantity} 
                     onChange={function(e) {
-                        handleOnChangeSelect(e.target.value, product)
+                        handleOnChangeBasketSelect(e.target.value, product)
                     }}>
                             
 
