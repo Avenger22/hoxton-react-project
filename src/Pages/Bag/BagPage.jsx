@@ -2,16 +2,16 @@ import {useNavigate } from "react-router"
 import BagItem from "../../Components/Bag/BagItem"
 import ProductsFooter from "../../Components/Products/Footer/ProductsFooter"
 import ProductsHeader from "../../Components/Products/Header/ProductsHeader/ProductsHeader"
+import { useStore } from "../../Store/store"
 import "./Bag.css"
 
-export default function BagPage(props) {
+export default function BagPage() {
 
-    const { items, setItems, signInStatus, setSignInStatus, 
-        signInUserName, handleButtonRemoveBasket, 
-        selectedModal, searchTerm, setSearchTerm, searchOnCategory,
-        setSearchOnCategory, userName, setUserName, userCatcher, setUserCatcher,
-        setCategory, setSelectedModal, bagClickSpan, favoriteClickSpan, setBagClickSpan} = props
+    const {
+        items
+    } = useStore()
     
+    const navigate = useNavigate()
     const bagItemsFiltered = items.filter(item => item?.quantity > 0)
 
     function calculateTotalBasket(baskedProductsParam) {
@@ -26,49 +26,8 @@ export default function BagPage(props) {
 
     }
 
-    const navigate = useNavigate()
-
     function handlePaymentRedirect() {
         navigate('/payment')
-    }
-
-    function handleOnChangeSelect(value, objectBasket) {
-        
-        let productsCopy = JSON.parse(JSON.stringify(items))
-        const index = productsCopy.findIndex(target => target.id === objectBasket.id)
-
-        const item = productsCopy[index]
-
-        if (parseInt(value) <= item.stock) {
-            
-            // stock: item.stock - item.quantity
-
-            const newItem = { ...item, quantity: parseInt(value) }
-
-            if (newItem.quantity === 0) {
-                setBagClickSpan(0)
-            }
-            
-            productsCopy[index] = newItem
-
-            // setBagClickSpan(bagClickSpan + newItem.quantity)
-            setItems(productsCopy)
-
-        }
-
-        else {
-
-            alert("You cannot have more than the stock of the item")
-
-            // value = "1"
-            // stock: item.stock - item.quantity
-            
-            const newItem = { ...item, quantity: 1 }
-            productsCopy[index] = newItem
-            setItems(productsCopy)
-
-        }
-
     }
 
     function filterTotalIndividual(productId) {
@@ -87,31 +46,7 @@ export default function BagPage(props) {
 
             <div className="bag-menus-wrapper">
 
-                <ProductsHeader 
-                    selectedModal = {selectedModal}
-                    setSelectedModal = {setSelectedModal}
-
-                    searchTerm = {searchTerm}
-                    setSearchTerm = {setSearchTerm}
-
-                    searchOnCategory = {searchOnCategory}
-                    setSearchOnCategory = {setSearchOnCategory}
-
-                    userName = {userName}
-                    setUserName = {setUserName}
-
-                    userCatcher = {userCatcher}
-                    setUserCatcher = {setUserCatcher}
-
-                    setCategory = {setCategory}
-
-                    signInUserName = {signInUserName}
-                    signInStatus = {signInStatus}
-                    setSignInStatus = {setSignInStatus}
-
-                    bagClickSpan = {bagClickSpan}
-                    favoriteClickSpan = {favoriteClickSpan}
-                />
+                <ProductsHeader />
 
                 <section className="basket-container">
 
@@ -125,13 +60,9 @@ export default function BagPage(props) {
 
                                 <BagItem
                                     key={product.id}
-                                
                                     product={product}
                                     calculateTotalBasket={calculateTotalBasket}
-                                    
                                     filterTotalIndividual={filterTotalIndividual}
-                                    handleOnChangeSelect={handleOnChangeSelect}
-                                    handleButtonRemoveBasket = {handleButtonRemoveBasket}
                                 />
 
                             )

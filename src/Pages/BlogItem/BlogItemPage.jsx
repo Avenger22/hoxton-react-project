@@ -1,23 +1,27 @@
 import "./BlogItem.css"
-import { useEffect, useState } from 'react'
-
+import { useEffect, useState} from 'react'
 import FooterCommon from '../../Components/Common/FooterCommon/FooterCommon'
 import ButtonTop from '../../Components/Common/ButtonTop/ButtonTop'
 import BlogItemContainer1 from '../../Components/BlogItem/BlogItemContainer1/BlogItemContainer1'
 import BlogItemContainer2 from '../../Components/BlogItem/BlogItemContainer2/BlogItemContainer2'
-
 import { useParams } from "react-router-dom"
+import { useStore } from "../../Store/store"
 
-function BlogItem({signInStatus, setSignInStatus, signInUserName}) {
+function BlogItem() {
 
     const params = useParams()
-    const [blogItem, setBlogItem] = useState(null)
 
-    useEffect(() => {
+    const {blogItem, setBlogItem} = useStore()
+
+    function getIndividualBlogFromServer () {
+
         fetch(`http://localhost:8000/articles/${params.id}`)
-            .then(resp => resp.json())
-            .then(productFromServer => setBlogItem(productFromServer))
-    }, [])
+          .then(resp => resp.json())
+          .then(blogFromServer => setBlogItem(blogFromServer))
+        
+    }
+    
+    useEffect(getIndividualBlogFromServer, [])
 
     if (blogItem === null) {
         return <main>Loading...</main>
@@ -33,14 +37,7 @@ function BlogItem({signInStatus, setSignInStatus, signInUserName}) {
 
             <ButtonTop />
 
-            <BlogItemContainer1 
-                blogItem = {blogItem}
-                setBlogItem = {setBlogItem}
-
-                signInStatus = {signInStatus}
-                setSignInStatus = {setSignInStatus}
-                signInUserName = {signInUserName}
-            />
+            <BlogItemContainer1 />
 
             <BlogItemContainer2 />
         

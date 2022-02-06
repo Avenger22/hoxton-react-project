@@ -1,27 +1,21 @@
 import Form from '../Form/Form'
 import {Link, useNavigate} from 'react-router-dom'
 import UlSub2li from '../UlSubLi/UlSub2Li'
-
 import "../ProductsHeader/ProductsHeader.css"
+import { useStore } from '../../../../Store/store'
 
-function ProductsHeader(props) {
+function ProductsHeader() {
 
-    const {selectedModal,
-    setSelectedModal, searchTerm, setSearchTerm, searchOnCategory,
-    setSearchOnCategory, userName, setUserName, userCatcher, 
-    setUserCatcher, setCategory, signInStatus, setSignInStatus, signInUserName,
-    bagClickSpan, favoriteClickSpan} = props
+    const {
+        signInStatus, signInUserName, handleOffersEvent, handleSignInStatus,
+        favoriteClickSpan, bagClickSpan
+    } = useStore()
 
     const ulSub2 = ['Home', 'Products', 'About-Us', 'Blog', 'Contact']
-
     const navigate = useNavigate()
     
     function handleRedirectToBag() {
         navigate(`/bag`)
-    }
-
-    function handleOffersEvent() {
-        setCategory('offers')
     }
 
     function handleRedirectToFavorite() {
@@ -42,13 +36,7 @@ function ProductsHeader(props) {
                                 <Link to="/products">AlbVitaFitness</Link>
                             </li>
                             
-                            <Form 
-                                searchTerm = {searchTerm}
-                                setSearchTerm = {setSearchTerm}
-
-                                searchOnCategory = {searchOnCategory}
-                                setSearchOnCategory = {setSearchOnCategory}
-                            />
+                            <Form />
 
                             <>
 
@@ -83,9 +71,7 @@ function ProductsHeader(props) {
 
                                             <div className="dropdown-content-user-signed">
 
-                                                <button className="log-out" onClick={function () {
-                                                    setSignInStatus(!signInStatus)
-                                                }}>
+                                                <button className="log-out" onClick={handleSignInStatus}>
 
                                                     <span>Log Out</span>
                                                     

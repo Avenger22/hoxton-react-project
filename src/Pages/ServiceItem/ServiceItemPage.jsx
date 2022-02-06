@@ -1,22 +1,25 @@
-import { useEffect } from "react"
-import { useState } from "react"
-import { useParams } from "react-router-dom"
-
 import "./ServiceItem.css"
-
 import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon"
 import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
+import { useEffect, useState } from "react"
+import { useParams } from "react-router"
+import { useStore } from "../../Store/store"
 
-export default function ServiceItemPage({signInStatus, setSignInStatus, signInUserName}) {
+export default function ServiceItemPage() {
 
+    const {serviceItem, setServiceItem} = useStore()
+    
     const params = useParams()
-    const [serviceItem, setServiceItem] = useState(null)
 
-    useEffect(() => {
+    function getIndividualServiceFromServer () {
+
         fetch(`http://localhost:8000/services/${params.id}`)
-            .then(resp => resp.json())
-            .then(servicesFromServer => setServiceItem(servicesFromServer))
-    }, [])
+          .then(resp => resp.json())
+          .then(serviceFromServer => setServiceItem(serviceFromServer))
+        
+    }
+
+    useEffect(getIndividualServiceFromServer, [])
 
     if (serviceItem === null) {
         return <main>Loading...</main>
@@ -30,11 +33,7 @@ export default function ServiceItemPage({signInStatus, setSignInStatus, signInUs
 
         <>
 
-            <HeaderCommon 
-                signInStatus={signInStatus}
-                setSignInStatus={setSignInStatus}
-                signInUserName={signInUserName}
-            />
+            <HeaderCommon />
 
             <section className="service-bio-wrapper">
 

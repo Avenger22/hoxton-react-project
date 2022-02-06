@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router"
 import "../StoreItem/StoreItem.css"
-import Heart from "react-heart"
+import { useStore } from "../../../../Store/store"
 
-function StoreItem({item, handleButtonAddBasket, 
-    handleButtonAddFavorite, setBagClickSpan, setFavoriteClickSpan}) {
+function StoreItem({item}) {
+
+    const {handleButtonAddBasket, handleButtonAddFavorite} = useStore()
 
     const navigate = useNavigate()
 

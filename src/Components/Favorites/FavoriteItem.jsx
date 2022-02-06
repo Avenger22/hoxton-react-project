@@ -1,10 +1,12 @@
-import { useState } from "react"
 import { useNavigate } from "react-router"
-import Heart from "react-heart"
+import { useStore } from "../../Store/store"
 
 function FavoriteItem(props) {
 
-    const {product, filterTotalIndividual, handleButtonRemoveFavorite, handleButtonAddBagRemoveFavorite} = props 
+    const {handleButtonAddBagRemoveFavorite, handleButtonRemoveFavorite} = useStore()
+    
+    const {product, filterTotalIndividual} = props 
+    
     const totalIndividualArray = filterTotalIndividual(product.id)
 
     const navigate = useNavigate()
@@ -34,6 +36,7 @@ function FavoriteItem(props) {
 
                 <button onClick={function () {
                     handleButtonAddBagRemoveFavorite(product)
+                    navigate('/bag')
                 }}>
                     Add this to Bag
                 </button>

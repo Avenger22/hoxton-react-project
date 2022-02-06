@@ -1,6 +1,5 @@
 // #region 'Importing'
 import "../Home/Home.css"
-
 import FooterCommon from '../../Components/Common/FooterCommon/FooterCommon'
 import HomeContainer1 from "../../Components/Home/HomeContainer1/HomeContainer1"
 import HomeContainer2 from "../../Components/Home/HomeContainer2/HomeContainer2"
@@ -15,7 +14,7 @@ import ButtonTop from '../../Components/Common/ButtonTop/ButtonTop'
 import HomeModalPop from '../../Components/Home/HomeModalPop'
 // #endregion
 
-function Home({signInStatus, setSignInStatus, signInUserName}) {
+function Home() {
 
     return (
 
@@ -25,11 +24,7 @@ function Home({signInStatus, setSignInStatus, signInUserName}) {
 
             <HomeModalPop />
 
-            <HomeContainer1 
-                signInStatus={signInStatus}
-                setSignInStatus={setSignInStatus}
-                signInUserName = {signInUserName}
-            />
+            <HomeContainer1 />
 
             <HomeContainer2 />
         

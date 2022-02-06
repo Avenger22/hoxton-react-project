@@ -4,7 +4,7 @@ import FooterCommon from '../../Components/Common/FooterCommon/FooterCommon'
 import Error404Container1 from "../../Components/Error404/Error404Container1"
 import ButtonTop from '../../Components/Common/ButtonTop/ButtonTop'
 
-function Error404({signInStatus, setSignInStatus, signInUserName}) {
+function Error404() {
 
     return (
 
@@ -12,11 +12,7 @@ function Error404({signInStatus, setSignInStatus, signInUserName}) {
 
             <ButtonTop />
             
-            <Error404Container1 
-                signInStatus = {signInStatus} 
-                setSignInStatus = {setSignInStatus}
-                signInUserName = {signInUserName}
-            />
+            <Error404Container1 />
 
             <FooterCommon />
             

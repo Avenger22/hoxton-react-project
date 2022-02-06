@@ -1,62 +1,17 @@
 import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon";
 import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
-
 import "./Payment.css"
-import { useState } from "react";
+import { useStore } from "../../Store/store";
 
-export default function PaymentPage(
-    {paymentData, setPaymentData, paymentStatus, setPaymentStatus,
-        signInStatus, setSignInStatus, signInUserName}
-    ) {
+export default function PaymentPage() {
 
-    const [address, setAddress] = useState('')
-    const [fullName, setFullName] = useState('')
-    const [zipCode, setZipCode] = useState('')
-    const [email, setEmail] = useState('')
-
-    function handleEmailChange(e) {
-        setEmail(e.target.value)
-    }
-
-    function handleZipCodeChange(e) {
-        setZipCode(e.target.value)
-    }
-
-    function handleAddressChange(e) {
-        setAddress(e.target.value)
-    }
-
-    function handleFullNameChange(e) {
-        setFullName(e.target.value)
-    }
-
-    function handleFormSubmit(e) {
-
-        const array = [
-            {
-                email: email, 
-                zipCode: zipCode,
-                address: address,
-                fullName: fullName
-            }
-        ]
-
-        const newArray = [...paymentData, array]
-
-        setPaymentStatus(!paymentStatus)
-        setPaymentData(newArray)
-
-    }
+    const {handleFormSubmitPayment, handleFullNameChangePayment, handleZipCodeChangePayment, handleEmailChangePayment, handleAddressChangePayment} = useStore()
 
     return (
 
         <>
 
-        <HeaderCommon 
-                signInStatus={signInStatus}
-                signInUserName={signInUserName}
-                setSignInStatus={setSignInStatus}
-        />
+        <HeaderCommon />
         
             <section className="container-payment">
 
@@ -64,7 +19,7 @@ export default function PaymentPage(
                     className="form-payment"
                     onSubmit={function (e) {
                         e.preventDefault()
-                        handleFormSubmit(e)
+                        handleFormSubmitPayment(e)
                     }}
                 >
 
@@ -81,7 +36,7 @@ export default function PaymentPage(
                                 type="text" 
                                 placeholder="Enter your full name : " 
                                 onChange={function (e) {
-                                    handleFullNameChange(e)
+                                    handleFullNameChangePayment(e)
                                 }}
                             />
                         
@@ -96,7 +51,7 @@ export default function PaymentPage(
                                 type="text" 
                                 placeholder="Enter your address: "
                                 onChange={function (e) {
-                                    handleAddressChange(e)
+                                    handleAddressChangePayment(e)
                                 }} 
                             />
                         
@@ -111,7 +66,7 @@ export default function PaymentPage(
                                 type="email" 
                                 placeholder="Enter your email: " 
                                 onChange={function (e) {
-                                    handleEmailChange(e)
+                                    handleEmailChangePayment(e)
                                 }}
                             />
 
@@ -126,7 +81,7 @@ export default function PaymentPage(
                                 type="text"
                                 placeholder="Enter your zip code: " 
                                 onChange={function (e) {
-                                    handleZipCodeChange(e)
+                                    handleZipCodeChangePayment(e)
                                 }}
                             />
 

@@ -1,31 +1,13 @@
+import { useStore } from "../../../../Store/store"
 import "../Form/Form.css"
 
 function Form(props) {
 
-    const {searchTerm, setSearchTerm, searchOnCategory, 
-    setSearchOnCategory} = props
+    const {
+        searchTerm, handleOnSubmitForm, searchOnCategory,
+        handleOnChangeSearchSelect, handleOnChangeSearchTerm
+    } = useStore()
 
-    function handleOnChangeSearchSelect(e) {
-
-        if (searchTerm === '') {
-            alert('you cant select based on categories without a search string')
-            const value = 'Default'
-            setSearchOnCategory(value)
-        }
-
-        else {
-            setSearchOnCategory(e.target.value)
-        }
-
-    }
-
-    function handleOnSubmitForm(formValue) {
-        setSearchTerm(formValue) 
-    }
-
-    function handleOnChangeSearchTerm(e) {
-        setSearchTerm(e.target.value)
-    }
 
     return (
 

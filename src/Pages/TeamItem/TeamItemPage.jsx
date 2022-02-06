@@ -1,21 +1,25 @@
-import { useEffect, useState } from "react"
+import { useEffect} from "react"
 import { useParams } from "react-router-dom"
-
 import "./TeamItem.css"
-
 import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon"
 import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
+import { useStore } from "../../Store/store"
 
-export default function TeamItemPage({signInStatus, setSignInStatus, signInUserName}) {
+export default function TeamItemPage() {
+
+    const {teamItem, setTeamItem} = useStore()
 
     const params = useParams()
-    const [teamItem, setTeamItem] = useState(null)
 
-    useEffect(() => {
+    function getIndividualTeamFromServer () {
+
         fetch(`http://localhost:8000/coaches/${params.id}`)
-            .then(resp => resp.json())
-            .then(coachesFromServer => setTeamItem(coachesFromServer))
-    }, [])
+          .then(resp => resp.json())
+          .then(teamFromServer => setTeamItem(teamFromServer))
+        
+    }
+
+    useEffect(getIndividualTeamFromServer, [])
 
     if (teamItem === null) {
         return <main>Loading...</main>
@@ -29,11 +33,7 @@ export default function TeamItemPage({signInStatus, setSignInStatus, signInUserN
 
         <>
 
-            <HeaderCommon 
-                signInStatus={signInStatus}
-                setSignInStatus={setSignInStatus}
-                signInUserName={signInUserName}
-            />
+            <HeaderCommon />
 
             <section className="coach-bio-wrapper">
 

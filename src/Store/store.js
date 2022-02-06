@@ -1,18 +1,19 @@
-import { useNavigate, useParams } from 'react-router-dom'
 import create from 'zustand'
-
-const params = useParams()
-const navigate = useNavigate()
 
 export const useStore = create((set, get) => ({
 
-  // #region 'GENERAL STATE'
+  // #region 'GENERAL STATE
 
   // #region 'General state most important'
   items: [],
   initialItems: [],
   users: [],
 
+  companies: [],
+  newsLetterEmail: '',
+  pageNumber: 0,
+  itemsPerPage: 8,
+  
   signInStatus: false,
   signInData: [],
   signInUserName: '',
@@ -39,7 +40,7 @@ export const useStore = create((set, get) => ({
   // #region 'General Functions for state'
   handleButtonAddBasket: function(product) {
 
-    const { items, signInStatus, bagClickSpan } = get()
+    const {signInStatus, bagClickSpan} = get()
 
     if (signInStatus === true) {
 
@@ -58,10 +59,8 @@ export const useStore = create((set, get) => ({
 
         itemsCopy[index] = newItem
 
-        set(bagClickSpan, bagClickSpan + 1 )
-        set(items, itemsCopy)
-
-        navigate('/bag')
+        set({bagClickSpan: bagClickSpan + 1})
+        set({items: itemsCopy})
 
       }
 
@@ -77,18 +76,73 @@ export const useStore = create((set, get) => ({
 
   },
 
-  bagItemsFiltered : function () {
+  handleOnSubmitForm: function (formValue) {
+    set({searchTerm: formValue}) 
+  },
 
-    const {items} = get()
-    return items.filter(item => item?.quantity > 0)
+  handleOnChangeSearchSelect: function (e) {
+
+    if (get().searchTerm === '') {
+        alert('you cant select based on categories without a search string')
+        const value = 'Default'
+        set({searchOnCategory: value})
+    }
+
+    else {
+        set({searchOnCategory: e.target.value})
+    }
+
+  },
+
+  handleOnChangeSearchTerm: function(e) {
+    set({searchTerm: e.target.value})
+  },
+
+  handleOnClickCategory : function (liValue) {
+    set({category: liValue})
+  },
+
+  handleChangingPageNumber : function (selected) {
+    set({pageNumber: selected})
+  },
+
+  handleOnChangeSelect : function(selectValue) {
+    set({selectType: selectValue})
+  },
+
+  handleOnChangeSelectPerPage : function(selectValue) {
+      set({itemsPerPage: parseInt(selectValue)})
+  },
+
+  handleOffersEvent : function() {
+    set({category: 'offers'})
+  },
+
+  handleSignInStatus : function() {
+
+    const {signInStatus} = get()
+    set({signInStatus: !signInStatus})
   
   },
 
-  favoriteItemsFiltered : function () {
+  handleFormNewsletter : function (e) {    
+    const valueForm = e.target.newsLetter.value
+    set({newsLetterEmail: valueForm})
+  },
 
+  setSignInStatus : function () {
+    const {signInStatus} = get()
+    set({signInStatus: !signInStatus})
+  },
+
+  bagItemsFiltered : function () {
+    const {items} = get()
+    return items.filter(item => item?.quantity > 0)
+  },
+
+  favoriteItemsFiltered : function () {
     const {items} = get()
     items.filter(item => item?.favorite === true)
-  
   },
 
   handleButtonRemoveBasket : function (product) {
@@ -110,7 +164,7 @@ export const useStore = create((set, get) => ({
 
     itemsCopy[index] = newItem
 
-    set(items, itemsCopy)
+    set({items: itemsCopy})
 
   },
 
@@ -130,13 +184,13 @@ export const useStore = create((set, get) => ({
 
     itemsCopy[index] = newItem
 
-    set(favoriteClickSpan, favoriteClickSpan - 1)
-    set(items, itemsCopy)
+    set({favoriteClickSpan: favoriteClickSpan - 1})
+    set({items: itemsCopy})
 
   },
 
   handleButtonAddFavorite : function (product) {
-    
+  
     const { signInStatus, items, favoriteClickSpan } = get()
 
     if (signInStatus === true) {
@@ -155,10 +209,8 @@ export const useStore = create((set, get) => ({
 
           itemsCopy[index] = newItem
 
-          set(favoriteClickSpan, favoriteClickSpan + 1)
-          set(items, itemsCopy)
-
-          navigate('/favorites')
+          set({favoriteClickSpan: favoriteClickSpan + 1})
+          set({items: itemsCopy})
 
         }
 
@@ -191,51 +243,25 @@ export const useStore = create((set, get) => ({
 
     itemsCopy[index] = newItem
 
-    set(bagClickSpan, bagClickSpan + 1)
-    set(favoriteClickSpan, favoriteClickSpan - 1)
-    set(items, itemsCopy)
-
-    navigate('/bag')
+    set({bagClickSpan: bagClickSpan + 1})
+    set({favoriteClickSpan: favoriteClickSpan - 1})
+    set({items: itemsCopy})
 
   },
 
-  getUsersFromServer: function () {
-
-    const {users} = get()
-
-    fetch('http://localhost:8000/users')
-        .then(resp => resp.json())
-        .then(usersFromServer => {
-        set(users, usersFromServer)
-    })
-
+  setUsers: function(array)  {
+    set({users: array})
   },
 
-  getInitialItemsFromServer : function() {
-
-    const{initialItems} = get()
-
-    fetch('http://localhost:8000/items')
-        .then(resp => resp.json())
-        .then(itemsFromServer2 => {
-        set(initialItems, itemsFromServer2)
-    })
-
+  setItems: function(array)  {
+    set({items: array})
   },
 
-  getItemsFromServer : function() {
-
-    const {items} = get()
-
-    fetch('http://localhost:8000/items')
-      .then(resp => resp.json())
-      .then(itemsFromServer1 => {
-      set(items, itemsFromServer1)
-    })
-
+  setInitialItems: function(array)  {
+    set({initialItems: array})
   },
 
-  handleOnChangeSelect : function (value, objectBasket) {
+  handleOnChangeBasketSelect : function (value, objectBasket) {
         
     const {items, bagClickSpan} = get()
 
@@ -253,7 +279,7 @@ export const useStore = create((set, get) => ({
         }
         
         productsCopy[index] = newItem
-        set(items, productsCopy)
+        set({items: productsCopy})
 
       }
 
@@ -286,38 +312,23 @@ export const useStore = create((set, get) => ({
 
   // #region 'Functions for Contact us State'
   handleTextAreaChange: function (e) {
-
-    const {textArea} = get()
-    set(textArea, e.target.value)
-
+    set({textArea: e.target.value})
   },
 
   handleNameChange : function (e) {
-
-    const {nameContactUs} = get()
-    set(nameContactUs, e.target.value)
-
+    set({nameContactUs: e.target.value})
   },
 
   handleEmailChange : function (e) {
-
-    const {emailContactUs} = get()
-    set(emailContactUs, e.target.value)
-
+    set({emailContactUs: e.target.value})
   },
 
   handleSubjectChange : function (e) {
-
-    const {subjectContactUs} = get()
-    set(subjectContactUs, e.target.value)
-
+    set({subjectContactUs: e.target.value})
   },
 
   handlePhoneChange : function (e) {
-
-    const {phoneContactUs} = get()
-    set(phoneContactUs, e.target.value)
-
+    set({phoneContactUs: e.target.value})
   },
 
   handleContactSubmit : function(e) {
@@ -337,7 +348,7 @@ export const useStore = create((set, get) => ({
     const newArray = [...formContactUs, array]
 
     e.target.reset()
-    set(formContactUs, newArray)
+    set({formContactUs: newArray})
 
   },
   // #endregion
@@ -361,19 +372,14 @@ export const useStore = create((set, get) => ({
   },
 
   handleUserNameChangeSignIn : function (e) {
-
-    const {userNameSignIn, signInUserName} = get()
     
-    set(userNameSignIn, e.target.value)
-    set(signInUserName, e.target.value)
+    set({userNameSignIn: e.target.value})
+    set({signInUserName: e.target.value})
     
   },
 
   handlePasswordChangeSignIn : function (e) {
-
-    const {passwordSignIn} = get()
-    set(passwordSignIn, e.target.value)
-
+    set({passwordSignIn: e.target.value})
   },
 
   handleFormSubmitSignIn : function (e) {
@@ -395,11 +401,10 @@ export const useStore = create((set, get) => ({
 
       alert("Sign in succesfully !")
 
-      set(signInStatus, true)
-      set(signInUserName, gettingUser.userName)
+      set({signInStatus: true})
+      set({signInUserName: gettingUser.userName})
       
       e.target.reset()
-      navigate('/home')
 
     }
 
@@ -485,7 +490,6 @@ export const useStore = create((set, get) => ({
     set(signUpStatus, !signUpStatus)
 
     e.target.reset()
-    navigate('/sign-in')
 
   },
   // #endregion
@@ -504,31 +508,19 @@ export const useStore = create((set, get) => ({
 
   // #region 'payment general functions'
   handleEmailChangePayment : function (e) {
-
-    const {emailPayment} = get()
-    set(emailPayment, e.target.value)
-
+    set({emailPayment: e.target.value})
   },
 
   handleZipCodeChangePayment : function (e) {
-
-    const {zipCodePayment} = get()
-    set(zipCodePayment, e.target.value)
-
+    set({zipCodePayment: e.target.value})
   },
 
   handleAddressChangePayment : function (e) {
-
-    const {addressPayment} = get()
-    set(addressPayment, e.target.value)
-
+    set({addressPayment: e.target.value})
   },
 
   handleFullNameChangePayment : function (e) {
-
-    const {fullNamePayment} = get()
-    set(fullNamePayment, e.target.value)
-    
+    set({fullNamePayment: e.target.value})
   },
 
   handleFormSubmitPayment : function (e) {
@@ -547,172 +539,117 @@ export const useStore = create((set, get) => ({
 
     const newArray = [...paymentData, array]
 
-    set(paymentStatus, !paymentStatus)
-    set(paymentData, newArray)
+    set({paymentStatus: !paymentStatus})
+    set({paymentData: newArray})
 
   },
   // #endregion
 
   // #endregion
 
+  
+  // #region 'BLOG STATE'
+  articles: [],
 
-  // #region 'TEAMS STATE'
+  setArticles: function (array) {
+    set({articles: array})
+  },
+  // #endregion
 
-  // #region 'teams state general'
+
+  // #region 'COACHES OR TEAMS STATE'
   coaches: [],
-  // #endregion
 
-  // #region 'teams state functions'
-  getCoachesFromServer : function () {
-
-    const {coaches} = get()
-
-    fetch(`http://localhost:8000/coaches`)
-      .then(resp => resp.json())
-      .then(coachesFromServer => set(coaches, coachesFromServer))
-    
+  setCoaches: function (array) {
+    set({coaches: array})
   },
-  // #endregion
-
   // #endregion
 
 
   // #region 'SERVICES STATE'
-
-  // #region 'services state general'
   services: [],
-  // #endregion
 
-  // #region 'services state functions'
-  getServicesFromServer : function () {
-
-    const {services} = get()
-
-    fetch(`http://localhost:8000/services`)
-      .then(resp => resp.json())
-      .then(coachesFromServer => set(services, coachesFromServer))
-    
+  setServices: function (array) {
+    set({services: array})
   },
-  // #endregion
-
-  // #endregion
-
-
-  // #region 'BLOG STATE'
-
-  // #region 'blog state general'
-  articles: [],
-  // #endregion
-
-  // #region 'blog state functions'
-  getArticlesFromServer : function () {
-
-    const {articles} = get()
-
-    fetch(`http://localhost:8000/articles`)
-      .then(resp => resp.json())
-      .then(coachesFromServer => set(articles, coachesFromServer))
-    
-  },
-  // #endregion
-
-  // #endregion
-
-
-  // #region 'BLOG ITEM STATE'
-  
-  // #region 'blog item general state'
-  blogItem: null,
-  // #endregion
-
-  // #region 'blog item functions'
-  getIndividualBlogFromServer : function () {
-
-    const {blogItem} = get()
-
-    fetch(`http://localhost:8000/articles/${params.id}`)
-      .then(resp => resp.json())
-      .then(blogFromServer => set(blogItem, blogFromServer))
-    
-  },
-  // #endregion
-
-  // #endregion
-
-
-  // #region 'PRODUCT ITEM STATE'
-  
-  // #region 'product item general state'
-  productItem: null,
-  initialRelatedItems: [],
-  // #endregion
-
-  // #region 'product item functions'
-  getIndividualProductFromServer : function () {
-
-    const {productItem} = get()
-
-    fetch(`http://localhost:8000/items/${params.id}`)
-      .then(resp => resp.json())
-      .then(productFromServer => set(productItem, productFromServer))
-    
-  },
-
-  getInitialRelatedItemsFromServer : function () {
-
-    const {initialRelatedItems} = get()
-
-    fetch(`http://localhost:8000/items/${params.id}`)
-      .then(resp => resp.json())
-      .then(productFromServer => set(initialRelatedItems, productFromServer))
-    
-  },
-  // #endregion
-
-  // #endregion
-
-
-  // #region 'SERVICE ITEM STATE'
-  
-  // #region 'service item general state'
-  serviceItem: null,
-  // #endregion
-
-  // #region 'service item functions'
-  getIndividualServiceFromServer : function () {
-
-    const {serviceItem} = get()
-
-    fetch(`http://localhost:8000/services/${params.id}`)
-      .then(resp => resp.json())
-      .then(serviceFromServer => set(serviceItem, serviceFromServer))
-    
-  },
-  // #endregion
-
   // #endregion
 
 
   // #region 'TEAM ITEM STATE'
-  
-  // #region 'team item general state'
-  teamItem: null,
-  // #endregion
+  teamItem: {},
 
-  // #region 'team item functions'
-  getIndividualTeamFromServer : function () {
-
-    const {teamItem} = get()
-
-    fetch(`http://localhost:8000/coaches/${params.id}`)
-      .then(resp => resp.json())
-      .then(teamFromServer => set(teamItem, teamFromServer))
-    
+  setTeamItem: function (object) {
+    set({teamItem: object})
   },
   // #endregion
 
+
+  // #region 'BLOG ITEM STATE'
+  blogItem: {},
+
+  setBlogItem: function (object) {
+    set({blogItem: object})
+  },
   // #endregion
 
 
+  // #region 'SERVICE ITEM STATE'
+  serviceItem: {},
+
+  setServiceItem: function (object) {
+    set({serviceItem: object})
+  },
+  // #endregion
+
+
+  // #region 'COMPANY ITEM STATE'
+  companyItem: {},
+
+  setCompanyItem: function (object) {
+    set({companyItem: object})
+  },
+  // #endregion
+
+
+  // #region 'COMPANIES STATE'
+  setCompanies: function (array) {
+    set({companies: array})
+  },
+  // #endregion
+
+
+  // #region 'OTHER STATA'
+  postsFooter: [],
+
+  setPostsFooter: function (array) {
+    set({postsFooter: array})
+  },
+
+  formTouch: [],
+
+  setFormTouch: function (array) {
+    set({formTouch: array})
+  },
+
+  categoryClicked: false,
+
+  setCategoryClicked: function() {
+    set({categoryClicked: !get().categoryClicked})
+  },
+  // #endregion
+
+  
+  // #region 'PRODUCT ITEM STATE'
+  initialRelatedItems: [],
+  productItem: null,
+
+  setInitialRelatedItems: function(array) {
+    set({initialRelatedItems: array})
+  },
+
+  setProductItem: function(object) {
+    set({productItem: object})
+  }
+  // #endregion
 
 }))

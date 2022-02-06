@@ -1,18 +1,13 @@
 import FavoriteItem from "../../Components/Favorites/FavoriteItem"
 import "./Favorites.css"
-
 import ProductsFooter from "../../Components/Products/Footer/ProductsFooter"
 import ProductsHeader from "../../Components/Products/Header/ProductsHeader/ProductsHeader"
+import { useStore } from "../../Store/store"
 
 export default function FavoritesPage(props) {
 
-    const { items, setItems, signInStatus, signInUserName, 
-        setSignInStatus, handleButtonRemoveFavorite, handleButtonAddBagRemoveFavorite,
-        selectedModal, setSelectedModal, searchTerm, setSearchTerm, searchOnCategory,
-        setSearchOnCategory, userName, setUserName, userCatcher,
-        setUserCatcher, setCategory, bagClickSpan, favoriteClickSpan} = props
+    const {items} = useStore()
 
-    console.log(items)
     const favoriteItemsFiltered = items.filter(item => item?.favorite === true)
 
     function filterTotalIndividual(productId) {
@@ -26,30 +21,7 @@ export default function FavoritesPage(props) {
 
             <div className="fav-menus-wrapper">
 
-                <ProductsHeader 
-                    selectedModal = {selectedModal}
-                    setSelectedModal = {setSelectedModal}
-
-                    searchTerm = {searchTerm}
-                    setSearchTerm = {setSearchTerm}
-
-                    searchOnCategory = {searchOnCategory}
-                    setSearchOnCategory = {setSearchOnCategory}
-
-                    userName = {userName}
-                    setUserName = {setUserName}
-
-                    userCatcher = {userCatcher}
-                    setUserCatcher = {setUserCatcher}
-                    setCategory = {setCategory}
-
-                    signInUserName = {signInUserName}
-                    signInStatus = {signInStatus}
-                    setSignInStatus = {setSignInStatus}
-
-                    bagClickSpan = {bagClickSpan}
-                    favoriteClickSpan = {favoriteClickSpan}
-                />
+                <ProductsHeader />
 
                 <section className="favorites-container">
 
@@ -66,9 +38,6 @@ export default function FavoritesPage(props) {
                                     key={product.id}
                                     product={product}
                                     filterTotalIndividual={filterTotalIndividual}
-                                    
-                                    handleButtonRemoveFavorite = {handleButtonRemoveFavorite}
-                                    handleButtonAddBagRemoveFavorite = {handleButtonAddBagRemoveFavorite}
                                 />
 
                             )

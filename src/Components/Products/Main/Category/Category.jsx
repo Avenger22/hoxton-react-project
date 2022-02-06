@@ -1,12 +1,13 @@
 import { useState } from "react"
+import { useStore } from "../../../../Store/store"
 import "../Category/Category.css"
 
 export default function Category({item, handleOnClickCategory}) {
 
-    const [clicked, setClicked] = useState(false)
+    const {categoryClicked, setCategoryClicked} = useStore()
 
     function handleLinkActive() {
-        setClicked(!clicked)
+        setCategoryClicked()
     }
 
     return (
@@ -17,7 +18,7 @@ export default function Category({item, handleOnClickCategory}) {
                 handleOnClickCategory(item)
             }}>
                 
-                <a className = {clicked ? "active" : null} onClick={handleLinkActive}>{item}</a>
+                <a className = {categoryClicked === true ?  "active" : null} onClick={handleLinkActive}>{item}</a>
                 
             </li>
 

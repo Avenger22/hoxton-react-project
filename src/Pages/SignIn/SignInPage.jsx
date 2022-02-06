@@ -1,81 +1,26 @@
 import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-
 import FooterCommon from '../../Components/Common/FooterCommon/FooterCommon'
 import HeaderCommon from '../../Components/Common/HeaderCommon/HeaderCommon'
-
+import { useStore } from '../../Store/store'
 import './SignIn.css'
 
-export default function SignInPage({signInData, setSignInData, signInStatus, 
-    setSignInStatus, signInUserName, setSignInUserName, users, setUsers}) {
-    
-    const [password, setPassword] = useState('')
-    const [userName, setUserName] = useState('')
+export default function SignInPage() {
 
-    const navigate = useNavigate()
-    
-    function getUser(userNameParam, passwordParam) {
-        return users.find(user => user.userName === userNameParam && user.password === passwordParam)
-    }
-
-    function handleUserNameChange(e) {
-
-        setUserName(e.target.value)
-        setSignInUserName(e.target.value)
-        
-    }
-
-    function handlePasswordChange(e) {
-        setPassword(e.target.value)
-    }
-
-    function handleFormSubmit(e) {
-
-        const gettingUser = getUser(userName, password)
-
-        if(gettingUser) {
-
-            // update the server
-            fetch(`http://localhost:8000/users/${gettingUser.id}`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ signedIn: true })
-            })
-
-            alert("Sign in succesfully !")
-
-            setSignInStatus(true)
-            setSignInUserName(gettingUser.userName)
-            
-            e.target.reset()
-            navigate('/home')
-
-        }
-
-        else {
-            alert("User is not registered, please try again")
-        }
-
-    }
+    const {handleFormSubmitSignIn, handleUserNameChangeSignIn, handlePasswordChangeSignIn} = useStore()
 
     return (
 
         <>
 
-            <HeaderCommon 
-                signInStatus={signInStatus}
-                setSignInStatus={setSignInStatus}
-                signInUserName={signInUserName}
-            />
+            <HeaderCommon />
         
             <section className="container-login">
 
                 <form className="form-login" 
                     onSubmit={function (e) {
                         e.preventDefault()
-                        handleFormSubmit(e)
+                        handleFormSubmitSignIn(e)
                     }}
                 >
 
@@ -94,7 +39,7 @@ export default function SignInPage({signInData, setSignInData, signInStatus,
                                 type="text" 
                                 placeholder="Enter your username: " 
                                 onChange={function (e) {
-                                    handleUserNameChange(e)
+                                    handleUserNameChangeSignIn(e)
                                 }}
                             />
 
@@ -111,7 +56,7 @@ export default function SignInPage({signInData, setSignInData, signInStatus,
                                 type="password" 
                                 placeholder="Enter your password: "
                                 onChange={function (e) {
-                                    handlePasswordChange(e)
+                                    handlePasswordChangeSignIn(e)
                                 }} 
                             />
                         
