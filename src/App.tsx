@@ -18,7 +18,7 @@ import SignUpPage from './Pages/SignUp/SignUpPage'
 import BagPage from './Pages/Bag/BagPage'
 import FavoritesPage from './Pages/Favorites/FavoritesPage'
 import PaymentPage from "./Pages/Payment/PaymentPage"
-import { useEffect, useState } from 'react/cjs/react.development'
+import {useEffect} from 'react/cjs/react.development'
 import HeaderCommon from './Components/Common/HeaderCommon/HeaderCommon'
 // #endregion
 

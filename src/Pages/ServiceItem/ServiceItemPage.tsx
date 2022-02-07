@@ -1,7 +1,7 @@
 import "./ServiceItem.css"
 import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon"
 import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useParams } from "react-router"
 import { useStore } from "../../Store/store"
 

@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom"
 import "../FooterCommon/FooterCommon.css"
-import BlogMiniPost from '../FooterCommon/BlogMiniPost'
-import { useState } from "react"
+import BlogMiniPost from './BlogMiniPost'
+import {  } from "react"
 import { useEffect } from "react"
-import SocialMediaImg from "../FooterCommon/SocialMediaImg"
+import SocialMediaImg from "./SocialMediaImg"
 
 export default function FooterCommon() {
 
-    const [posts, setPosts] = useState([])
+    const [posts, setPosts] = ([])
 
     useEffect(() => {
         fetch(`http://localhost:8000/articles`)

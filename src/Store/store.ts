@@ -1,6 +1,189 @@
 import create from 'zustand'
+import React from 'react'
 
-export const useStore = create((set, get) => ({
+type items = {id: number, name: string, price: string, stock: number, type: string, date: string, quantity: number, description: string, favorite: boolean}
+type initialItems = {id: number, name: string, price: string, stock: number, type: string, date: string, quantity: number, description: string, favorite: boolean}
+type users = {id: number, fullName: string, password: string, email: string, userName: string, signedIn: boolean}
+type companies = {id: number, name: string, desc: string, image: string}
+type articles = {id: number, image: string, title: string, desc: string, user: string, category: string, date: string, paragraph: string, header1: string}
+type coaches = {id: number, image: string, title: string, desc: string, user: string, category: string, date: string, paragraph: string, header1: string}
+type services = {id: number, image: string, name: string, desc: string}
+
+interface AppStoreState {
+
+  // #region 'General State types'
+  items : items[]
+  initialItems: initialItems[]
+  users: users[]
+  companies: companies[]
+
+  newsLetterEmail: string
+  pageNumber: number
+  itemsPerPage: number
+
+  signInStatus: boolean
+  signInData: object[]
+  signInUserName: string
+  signUpStatus: boolean
+
+  paymentStatus: boolean
+  paymentData: object[]
+
+  favoriteClickSpan: number
+  bagClickSpan: number
+
+  userCatcher: object[]
+  userName: string
+
+  selectType: string
+  category: string
+  searchTerm: string
+  searchOnCategory: string
+
+  selectedModal: string
+  // #endregion
+
+  // #region 'General state functions types'
+  handleButtonAddBasket: (product: object) => void
+  handleOnSubmitForm: (formValue: string) => void
+  handleOnChangeSearchSelect: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleOnChangeSearchTerm: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleOnClickCategory : (liValue: string) => void
+  handleChangingPageNumber: (selected: number) => void
+  handleOnChangeSelect: (selectValue: string) => void
+  handleOnChangeSelectPerPage: (selectValue: string) => void
+  handleOffersEvent: () => void
+  handleSignInStatus: () => void
+  handleFormNewsletter: (e: React.FormEvent<HTMLInputElement>) => void
+  setSignInStatus: () => void
+  bagItemsFiltered: () => object[]
+  handleButtonRemoveBasket: (product: object) => void
+  handleButtonRemoveFavorite: (product: object) => void
+  handleButtonAddFavorite: (product: object) => void
+  handleButtonAddBagRemoveFavorite: (product: object) => void
+  setUsers: (array: object[]) => void
+  setItems: (array: object[]) => void 
+  setInitialItems: (array: object[]) => void
+  handleOnChangeBasketSelect: (value: string, objectBasket: object) => void
+  // #endregion
+
+  // #region 'Contact state general types'
+  nameContactUs: string
+  emailContactUs: string
+  subjectContactUs: string
+  phoneContactUs: string
+  textAreaContactUs: string
+  // #endregion
+
+  // #region Contact functions general types'
+  handleTextAreaChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleNameChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleEmailChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleSubjectChange: (e:React.ChangeEvent<HTMLInputElement>) => void
+  handlePhoneChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleContactSubmit: (e: React.FormEvent<HTMLInputElement>) => void
+  // #endregion
+
+  // #region 'Sign-in state general types'
+  passwordSignIn: string
+  userNameSignIn: string
+  // #endregion
+
+  // #region 'Sign-in functions general types'
+  getUser: (userNameParam: string, passwordParam: string) => object
+  handleUserNameChangeSignIn: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handlePasswordChangeSignIn: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleFormSubmitSignIn: (e: React.FormEvent<HTMLInputElement>) => void
+  // #endregion
+  
+  // #region 'Sign-up state general types'
+  userNameSignUp: string
+  fullNameSignUp: string
+  passwordSignUp: string
+  emailSignUp: string
+  // #endregion
+
+  // #region 'Sign-up functions general types'
+  handleEmailChangeSignUp: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handlePasswordChangeSignUp: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleUserNameChangeSignUp: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleFullNameChangeSignUp: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleFormSubmitSignUp: (e: React.FormEvent<HTMLInputElement>) => void
+  // #endregion
+
+  // #region 'payment state general types'
+  addressPayment: string
+  fullNamePayment: string
+  zipCodePayment: string
+  emailPayment: string
+  // #endregion
+
+  // #region 'payment functions general types'
+  handleEmailChangePayment: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleZipCodeChangePayment: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleAddressChangePayment: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleFullNameChangePayment: (e: React.ChangeEvent<HTMLInputElement>) => void
+  handleFormSubmitPayment: (e: React.FormEvent<HTMLInputElement>) => void
+  // #endregion
+
+  // #region 'blog functions general types'
+    articles: articles[]
+    setArticles: (array: articles[]) => void
+    // #endregion
+
+  // #region 'teams coaches functions general types'
+  coaches: coaches[]
+  setCoaches: (array: coaches[]) => void
+  // #endregion
+
+  // #region 'services functions general types'
+  services: services[]
+  setServices: (array: services[]) => void
+  // #endregion
+
+  // #region 'team-item functions general types'
+  teamItem: coaches
+  setTeamItem: (object: coaches) => void
+  // #endregion
+
+  // #region 'blog-item functions general types'
+  blogItem: articles
+  setBlogItem: (object: articles) => void
+  // #endregion
+
+  // #region 'service-item functions general types'
+  serviceItem: services
+  setServiceItem: (object: services) => void
+  // #endregion
+
+  // #region 'company-item functions general types'
+  companyItem: companies
+  setCompanyItem: (object: companies) => void
+  // #endregion
+
+  // #region 'companies functions general types'
+  setCompanies: (array: companies[]) => void
+  // #endregion
+
+  // #region 'product-item functions general types'
+  productItem: items
+  setProductItem: (object: items) => void
+  initialRelatedItems: initialItems[]
+  setInitialRelatedItems: (array: initialItems[]) => void
+  // #endregion
+
+  // #region 'other functions general types'
+  postsFooter: object[]
+  setPostsFooter: (array: object[]) => void
+  formTouch: []
+  setFormTouch: (array: []) => void
+  categoryClicked: boolean
+  setCategoryClicked: () => void
+  // #endregion
+
+}
+
+export const useStore = create<AppStoreState>((set, get) => ({
 
   // #region 'GENERAL STATE
 
@@ -98,44 +281,42 @@ export const useStore = create((set, get) => ({
     set({searchTerm: e.target.value})
   },
 
-  handleOnClickCategory : function (liValue) {
+  handleOnClickCategory: function (liValue) {
     set({category: liValue})
   },
 
-  handleChangingPageNumber : function (selected) {
+  handleChangingPageNumber: function (selected) {
     set({pageNumber: selected})
   },
 
-  handleOnChangeSelect : function(selectValue) {
+  handleOnChangeSelect: function(selectValue) {
     set({selectType: selectValue})
   },
 
-  handleOnChangeSelectPerPage : function(selectValue) {
+  handleOnChangeSelectPerPage: function(selectValue) {
       set({itemsPerPage: parseInt(selectValue)})
   },
 
-  handleOffersEvent : function() {
+  handleOffersEvent: function() {
     set({category: 'offers'})
   },
 
-  handleSignInStatus : function() {
-
+  handleSignInStatus: function() {
     const {signInStatus} = get()
     set({signInStatus: !signInStatus})
-  
   },
 
-  handleFormNewsletter : function (e) {    
+  handleFormNewsletter: function (e) {    
     const valueForm = e.target.newsLetter.value
     set({newsLetterEmail: valueForm})
   },
 
-  setSignInStatus : function () {
+  setSignInStatus: function () {
     const {signInStatus} = get()
     set({signInStatus: !signInStatus})
   },
 
-  bagItemsFiltered : function () {
+  bagItemsFiltered: function () {
     const {items} = get()
     return items.filter(item => item?.quantity > 0)
   },
@@ -145,7 +326,7 @@ export const useStore = create((set, get) => ({
     items.filter(item => item?.favorite === true)
   },
 
-  handleButtonRemoveBasket : function (product) {
+  handleButtonRemoveBasket: function (product) {
     
     const { items, bagClickSpan } = get()
 
@@ -154,7 +335,7 @@ export const useStore = create((set, get) => ({
 
     const item = itemsCopy[index]
 
-    set(bagClickSpan, bagClickSpan - item.quantity)
+    set({bagClickSpan: bagClickSpan - item.quantity})
 
     const newItem = {
       ...item,
@@ -168,7 +349,7 @@ export const useStore = create((set, get) => ({
 
   },
 
-  handleButtonRemoveFavorite : function (product) {
+  handleButtonRemoveFavorite: function (product) {
     
     const { items, favoriteClickSpan } = get()
 
@@ -189,7 +370,7 @@ export const useStore = create((set, get) => ({
 
   },
 
-  handleButtonAddFavorite : function (product) {
+  handleButtonAddFavorite: function (product) {
   
     const { signInStatus, items, favoriteClickSpan } = get()
 
@@ -226,7 +407,7 @@ export const useStore = create((set, get) => ({
 
   },
 
-  handleButtonAddBagRemoveFavorite : function (product) {
+  handleButtonAddBagRemoveFavorite: function (product) {
 
     const {items, bagClickSpan, favoriteClickSpan} = get()
 
@@ -261,7 +442,7 @@ export const useStore = create((set, get) => ({
     set({initialItems: array})
   },
 
-  handleOnChangeBasketSelect : function (value, objectBasket) {
+  handleOnChangeBasketSelect: function (value, objectBasket) {
         
     const {items, bagClickSpan} = get()
 
@@ -275,7 +456,7 @@ export const useStore = create((set, get) => ({
         const newItem = { ...item, quantity: parseInt(value) }
 
         if (newItem.quantity === 0) {
-            set(bagClickSpan, 0)
+            set({bagClickSpan: 0})
         }
         
         productsCopy[index] = newItem
@@ -289,7 +470,7 @@ export const useStore = create((set, get) => ({
       
       const newItem = { ...item, quantity: 1 }
       productsCopy[index] = newItem
-      set(items, productsCopy)
+      set({items: productsCopy})
 
     }
 
@@ -298,12 +479,11 @@ export const useStore = create((set, get) => ({
 
   // #endregion
 
-
   // #region 'CONTACT US STATE'
 
   // #region 'Contact Us page state'
-  nameContactUs : '',
-  emailContactUs : '',
+  nameContactUs: '',
+  emailContactUs: '',
   subjectContactUs: '',
   phoneContactUs: '',
   textAreaContactUs: '',
@@ -315,23 +495,23 @@ export const useStore = create((set, get) => ({
     set({textArea: e.target.value})
   },
 
-  handleNameChange : function (e) {
+  handleNameChange: function (e) {
     set({nameContactUs: e.target.value})
   },
 
-  handleEmailChange : function (e) {
+  handleEmailChange: function (e) {
     set({emailContactUs: e.target.value})
   },
 
-  handleSubjectChange : function (e) {
+  handleSubjectChange: function (e) {
     set({subjectContactUs: e.target.value})
   },
 
-  handlePhoneChange : function (e) {
+  handlePhoneChange: function (e) {
     set({phoneContactUs: e.target.value})
   },
 
-  handleContactSubmit : function(e) {
+  handleContactSubmit: function(e) {
 
     const {phoneContactUs, emailContactUs, subjectContactUs, textAreaContactUs, nameContactUs, formContactUs} = get()
     
@@ -355,7 +535,6 @@ export const useStore = create((set, get) => ({
   
   // #endregion
 
-
   // #region 'SIGN-IN STATE'
 
   // #region 'sign-in general state'
@@ -364,26 +543,22 @@ export const useStore = create((set, get) => ({
   // #endregion
 
   // #region 'sign-in general functions'
-  getUser : function (userNameParam, passwordParam) {
-    
+  getUser: function (userNameParam, passwordParam) {
     const {users} = get()
     return users.find(user => user.userName === userNameParam && user.password === passwordParam)
-  
   },
 
-  handleUserNameChangeSignIn : function (e) {
-    
+  handleUserNameChangeSignIn: function (e) {
     set({userNameSignIn: e.target.value})
     set({signInUserName: e.target.value})
-    
   },
 
-  handlePasswordChangeSignIn : function (e) {
+  handlePasswordChangeSignIn: function (e) {
     set({passwordSignIn: e.target.value})
   },
 
-  handleFormSubmitSignIn : function (e) {
-
+  handleFormSubmitSignIn: function (e) {
+    
     const {getUser, signInStatus, signInUserName, userNameSignIn, passwordSignIn} = get()
     
     const gettingUser = getUser(userNameSignIn, passwordSignIn)
@@ -417,7 +592,6 @@ export const useStore = create((set, get) => ({
 
   // #endregion
 
-
   // #region 'SIGN-UP STATE'
 
   // #region 'sign-up general state'
@@ -428,35 +602,23 @@ export const useStore = create((set, get) => ({
   // #endregion
 
   // #region 'sign-up general functions'
-  handleEmailChangeSignUp : function (e) {
-
-    const {emailSignUp} = get()
-    set(emailSignUp, e.target.value)
-
+  handleEmailChangeSignUp: function (e) {
+    set({emailSignUp: e.target.value})
   },
 
-  handlePasswordChangeSignUp : function (e) {
-
-    const {passwordSignUp} = get()
-    set(passwordSignUp, e.target.value)
-
+  handlePasswordChangeSignUp: function (e) {
+    set({passwordSignUp: e.target.value})
   },
 
-  handleUserNameChangeSignUp : function (e) {
-
-    const {userNameSignUp} = get()
-    set(userNameSignUp, e.target.value)
-
+  handleUserNameChangeSignUp: function (e) {
+    set({userNameSignUp: e.target.value})
   },
 
-  handleFullNameChangeSignUp : function (e) {
-
-    const {fullNameSignUp} = get()
-    set(fullNameSignUp, e.target.value)
-    
+  handleFullNameChangeSignUp: function (e) {
+    set({fullNameSignUp: e.target.value})
   },
 
-  handleFormSubmitSignUp : function (e) {
+  handleFormSubmitSignUp: function (e) {
 
     const {emailSignUp, passwordSignUp, 
       userNameSignUp, fullNameSignUp, users, signUpStatus} = get()
@@ -482,12 +644,12 @@ export const useStore = create((set, get) => ({
       const updatedUsers = [...users, responseJsonArray]
       alert("User is registered successfully")
       
-      set(users, updatedUsers)
+      set({users: updatedUsers})
 
     })
 
 
-    set(signUpStatus, !signUpStatus)
+    set({signUpStatus: !signUpStatus})
 
     e.target.reset()
 
@@ -495,7 +657,6 @@ export const useStore = create((set, get) => ({
   // #endregion
 
   // #endregion
-
 
   // #region 'PAYMENT STATE'
 
@@ -507,23 +668,23 @@ export const useStore = create((set, get) => ({
   // #endregion
 
   // #region 'payment general functions'
-  handleEmailChangePayment : function (e) {
+  handleEmailChangePayment: function (e) {
     set({emailPayment: e.target.value})
   },
 
-  handleZipCodeChangePayment : function (e) {
+  handleZipCodeChangePayment: function (e) {
     set({zipCodePayment: e.target.value})
   },
 
-  handleAddressChangePayment : function (e) {
+  handleAddressChangePayment: function (e) {
     set({addressPayment: e.target.value})
   },
 
-  handleFullNameChangePayment : function (e) {
+  handleFullNameChangePayment: function (e) {
     set({fullNamePayment: e.target.value})
   },
 
-  handleFormSubmitPayment : function (e) {
+  handleFormSubmitPayment: function (e) {
 
     const {emailPayment, addressPayment, zipCodePayment, fullNamePayment,
       paymentStatus, paymentData} = get()
@@ -547,7 +708,6 @@ export const useStore = create((set, get) => ({
 
   // #endregion
 
-  
   // #region 'BLOG STATE'
   articles: [],
 
@@ -555,7 +715,6 @@ export const useStore = create((set, get) => ({
     set({articles: array})
   },
   // #endregion
-
 
   // #region 'COACHES OR TEAMS STATE'
   coaches: [],
@@ -565,7 +724,6 @@ export const useStore = create((set, get) => ({
   },
   // #endregion
 
-
   // #region 'SERVICES STATE'
   services: [],
 
@@ -573,7 +731,6 @@ export const useStore = create((set, get) => ({
     set({services: array})
   },
   // #endregion
-
 
   // #region 'TEAM ITEM STATE'
   teamItem: {},
@@ -583,7 +740,6 @@ export const useStore = create((set, get) => ({
   },
   // #endregion
 
-
   // #region 'BLOG ITEM STATE'
   blogItem: {},
 
@@ -591,7 +747,6 @@ export const useStore = create((set, get) => ({
     set({blogItem: object})
   },
   // #endregion
-
 
   // #region 'SERVICE ITEM STATE'
   serviceItem: {},
@@ -601,7 +756,6 @@ export const useStore = create((set, get) => ({
   },
   // #endregion
 
-
   // #region 'COMPANY ITEM STATE'
   companyItem: {},
 
@@ -610,13 +764,11 @@ export const useStore = create((set, get) => ({
   },
   // #endregion
 
-
   // #region 'COMPANIES STATE'
   setCompanies: function (array) {
     set({companies: array})
   },
   // #endregion
-
 
   // #region 'OTHER STATA'
   postsFooter: [],
@@ -638,7 +790,6 @@ export const useStore = create((set, get) => ({
   },
   // #endregion
 
-  
   // #region 'PRODUCT ITEM STATE'
   initialRelatedItems: [],
   productItem: null,

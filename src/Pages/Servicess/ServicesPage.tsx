@@ -3,7 +3,7 @@ import "../../Components/Servicess/Service"
 import Service from "../../Components/Servicess/Service"
 import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon"
 import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useStore } from "../../Store/store"
 
 export default function ServicesPage() {
