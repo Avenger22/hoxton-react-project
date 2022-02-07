@@ -1,18 +1,26 @@
 import create from 'zustand'
+import React from 'react'
+
+type items = {id: number, name: string, price: string, stock: number, type: string, date: string, quantity: number, description: string, favorite: boolean}
+type initialItems = {id: number, name: string, price: string, stock: number, type: string, date: string, quantity: number, description: string, favorite: boolean}
+type users = {id: number, fullName: string, password: string, email: string, userName: string, signedIn: boolean}
+type companies = {id: number, name: string, desc: string, image: string}
+type articles = {id: number, image: string, title: string, desc: string, user: string, category: string, date: string, paragraph: string, header1: string}
+type coaches = {id: number, image: string, title: string, desc: string, user: string, category: string, date: string, paragraph: string, header1: string}
+type services = {id: number, image: string, name: string, desc: string}
 
 interface AppStoreState {
 
   // #region 'General State types'
-  items : object[]
-  initialItems: object[]
-  users: object[]
+  items : items[]
+  initialItems: initialItems[]
+  users: users[]
+  companies: companies[]
 
-  companies: object[]
   newsLetterEmail: string
-
   pageNumber: number
   itemsPerPage: number
-  
+
   signInStatus: boolean
   signInData: object[]
   signInUserName: string
@@ -119,49 +127,49 @@ interface AppStoreState {
   // #endregion
 
   // #region 'blog functions general types'
-    articles: object[]
-    setArticles: (array: object[]) => void
+    articles: articles[]
+    setArticles: (array: articles[]) => void
     // #endregion
 
   // #region 'teams coaches functions general types'
-  coaches: object[]
-  setCoaches: (array: object[]) => void
+  coaches: coaches[]
+  setCoaches: (array: coaches[]) => void
   // #endregion
 
   // #region 'services functions general types'
-  services: object[]
-  setServices: (array: object[]) => void
+  services: services[]
+  setServices: (array: services[]) => void
   // #endregion
 
   // #region 'team-item functions general types'
-  teamItem: object
-  setTeamItem: (object: object) => void
+  teamItem: coaches
+  setTeamItem: (object: coaches) => void
   // #endregion
 
   // #region 'blog-item functions general types'
-  blogItem: object
-  setBlogItem: (object: object) => void
+  blogItem: articles
+  setBlogItem: (object: articles) => void
   // #endregion
 
   // #region 'service-item functions general types'
-  serviceItem: object
-  setServiceItem: (object: object) => void
+  serviceItem: services
+  setServiceItem: (object: services) => void
   // #endregion
 
   // #region 'company-item functions general types'
-  companyItem: object
-  setCompanyItem: (object: object) => void
+  companyItem: companies
+  setCompanyItem: (object: companies) => void
   // #endregion
 
   // #region 'companies functions general types'
-  setCompanies: (array: object[]) => void
+  setCompanies: (array: companies[]) => void
   // #endregion
 
   // #region 'product-item functions general types'
-  productItem: object
-  setProductItem: (object: object) => void
-  initialRelatedItems: object[]
-  setInitialRelatedItems: (array: object[]) => void
+  productItem: items
+  setProductItem: (object: items) => void
+  initialRelatedItems: initialItems[]
+  setInitialRelatedItems: (array: initialItems[]) => void
   // #endregion
 
   // #region 'other functions general types'
@@ -327,7 +335,7 @@ export const useStore = create<AppStoreState>((set, get) => ({
 
     const item = itemsCopy[index]
 
-    set(bagClickSpan, bagClickSpan - item.quantity)
+    set({bagClickSpan: bagClickSpan - item.quantity})
 
     const newItem = {
       ...item,
@@ -448,7 +456,7 @@ export const useStore = create<AppStoreState>((set, get) => ({
         const newItem = { ...item, quantity: parseInt(value) }
 
         if (newItem.quantity === 0) {
-            set(bagClickSpan, 0)
+            set({bagClickSpan: 0})
         }
         
         productsCopy[index] = newItem
@@ -462,7 +470,7 @@ export const useStore = create<AppStoreState>((set, get) => ({
       
       const newItem = { ...item, quantity: 1 }
       productsCopy[index] = newItem
-      set(items, productsCopy)
+      set({items: productsCopy})
 
     }
 
@@ -595,23 +603,19 @@ export const useStore = create<AppStoreState>((set, get) => ({
 
   // #region 'sign-up general functions'
   handleEmailChangeSignUp: function (e) {
-    const {emailSignUp} = get()
-    set(emailSignUp, e.target.value)
+    set({emailSignUp: e.target.value})
   },
 
   handlePasswordChangeSignUp: function (e) {
-    const {passwordSignUp} = get()
-    set(passwordSignUp, e.target.value)
+    set({passwordSignUp: e.target.value})
   },
 
   handleUserNameChangeSignUp: function (e) {
-    const {userNameSignUp} = get()
-    set(userNameSignUp, e.target.value)
+    set({userNameSignUp: e.target.value})
   },
 
   handleFullNameChangeSignUp: function (e) {
-    const {fullNameSignUp} = get()
-    set(fullNameSignUp, e.target.value)
+    set({fullNameSignUp: e.target.value})
   },
 
   handleFormSubmitSignUp: function (e) {
@@ -640,12 +644,12 @@ export const useStore = create<AppStoreState>((set, get) => ({
       const updatedUsers = [...users, responseJsonArray]
       alert("User is registered successfully")
       
-      set(users, updatedUsers)
+      set({users: updatedUsers})
 
     })
 
 
-    set(signUpStatus, !signUpStatus)
+    set({signUpStatus: !signUpStatus})
 
     e.target.reset()
 
