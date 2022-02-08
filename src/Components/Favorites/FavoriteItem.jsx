@@ -1,13 +1,11 @@
 import { useNavigate } from "react-router"
 import { useStore } from "../../Store/store"
 
-function FavoriteItem(props) {
+function FavoriteItem({product}) {
 
     const {handleButtonAddBagRemoveFavorite, handleButtonRemoveFavorite} = useStore()
-    
-    const {product, filterTotalIndividual} = props 
-    
-    const totalIndividualArray = filterTotalIndividual(product.id)
+
+    // const totalIndividualArray = filterTotalIndividual(product.id)
 
     const navigate = useNavigate()
 

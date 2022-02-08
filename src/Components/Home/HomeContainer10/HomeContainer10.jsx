@@ -1,6 +1,6 @@
 import HomeContainer10Company from "./HomeContainer10Company"
 import './HomeContainer10.css'
-import { useEffect, useState } from "react"
+import { useEffect } from "react"
 import { useNavigate } from "react-router"
 import { useStore } from "../../../Store/store"
 

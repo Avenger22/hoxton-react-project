@@ -4,16 +4,16 @@ import ProductsFooter from "../../Components/Products/Footer/ProductsFooter"
 import ProductsHeader from "../../Components/Products/Header/ProductsHeader/ProductsHeader"
 import { useStore } from "../../Store/store"
 
-export default function FavoritesPage(props) {
+export default function FavoritesPage() {
 
     const {items} = useStore()
 
     const favoriteItemsFiltered = items.filter(item => item?.favorite === true)
 
-    function filterTotalIndividual(productId) {
-        const array = favoriteItemsFiltered.filter(item => item.id === productId)
-        return array
-    }
+    // function filterTotalIndividual(productId) {
+    //     const array = favoriteItemsFiltered.filter(item => item.id === productId)
+    //     return array
+    // }
 
     return (
 
@@ -37,7 +37,7 @@ export default function FavoritesPage(props) {
                                 <FavoriteItem
                                     key={product.id}
                                     product={product}
-                                    filterTotalIndividual={filterTotalIndividual}
+                                    // filterTotalIndividual={filterTotalIndividual}
                                 />
 
                             )

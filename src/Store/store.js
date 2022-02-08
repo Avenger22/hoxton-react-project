@@ -135,16 +135,6 @@ export const useStore = create((set, get) => ({
     set({signInStatus: !signInStatus})
   },
 
-  bagItemsFiltered : function () {
-    const {items} = get()
-    return items.filter(item => item?.quantity > 0)
-  },
-
-  favoriteItemsFiltered : function () {
-    const {items} = get()
-    items.filter(item => item?.favorite === true)
-  },
-
   handleButtonRemoveBasket : function (product) {
     
     const { items, bagClickSpan } = get()
@@ -154,7 +144,7 @@ export const useStore = create((set, get) => ({
 
     const item = itemsCopy[index]
 
-    set(bagClickSpan, bagClickSpan - item.quantity)
+    set({bagClickSpan: bagClickSpan - item.quantity})
 
     const newItem = {
       ...item,
@@ -275,7 +265,7 @@ export const useStore = create((set, get) => ({
         const newItem = { ...item, quantity: parseInt(value) }
 
         if (newItem.quantity === 0) {
-            set(bagClickSpan, 0)
+            set({bagClickSpan: 0})
         }
         
         productsCopy[index] = newItem
@@ -289,7 +279,7 @@ export const useStore = create((set, get) => ({
       
       const newItem = { ...item, quantity: 1 }
       productsCopy[index] = newItem
-      set(items, productsCopy)
+      set({items: productsCopy})
 
     }
 
@@ -431,28 +421,28 @@ export const useStore = create((set, get) => ({
   handleEmailChangeSignUp : function (e) {
 
     const {emailSignUp} = get()
-    set(emailSignUp, e.target.value)
+    set({emailSignUp: e.target.value})
 
   },
 
   handlePasswordChangeSignUp : function (e) {
 
     const {passwordSignUp} = get()
-    set(passwordSignUp, e.target.value)
+    set({passwordSignUp: e.target.value})
 
   },
 
   handleUserNameChangeSignUp : function (e) {
 
     const {userNameSignUp} = get()
-    set(userNameSignUp, e.target.value)
+    set({userNameSignUp: e.target.value})
 
   },
 
   handleFullNameChangeSignUp : function (e) {
 
     const {fullNameSignUp} = get()
-    set(fullNameSignUp, e.target.value)
+    set({fullNameSignUp: e.target.value})
     
   },
 
@@ -482,12 +472,12 @@ export const useStore = create((set, get) => ({
       const updatedUsers = [...users, responseJsonArray]
       alert("User is registered successfully")
       
-      set(users, updatedUsers)
+      set({users: updatedUsers})
 
     })
 
 
-    set(signUpStatus, !signUpStatus)
+    set({signUpStatus: !signUpStatus})
 
     e.target.reset()
 

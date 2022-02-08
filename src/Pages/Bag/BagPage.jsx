@@ -12,6 +12,7 @@ export default function BagPage() {
     } = useStore()
     
     const navigate = useNavigate()
+    
     const bagItemsFiltered = items.filter(item => item?.quantity > 0)
 
     function calculateTotalBasket(baskedProductsParam) {
