@@ -4,7 +4,7 @@ import ProductsHeader from "../../Components/Products/Header/ProductsHeader/Prod
 import ProductsMain from "../../Components/Products/Main/ProductsMain/ProductsMain"
 import ProductsFooter from '../../Components/Products/Footer/ProductsFooter'
 import { useStore } from "../../Store/store"
-import { useEffect} from "react"
+import { useEffect, useState} from "react"
 // #endregion
 
 function Products() {
@@ -12,7 +12,6 @@ function Products() {
     // #region 'Use Store calling and state'
     const {
         selectType, category, searchTerm, searchOnCategory,
-        pageNumber, itemsPerPage, handleChangingPageNumber, 
         initialItems, setInitialItems, items, setItems
     } = useStore()
     // #endregion
@@ -1284,14 +1283,28 @@ function Products() {
     // #endregion
 
     // #region 'Pagination feature'
+    const [pageNumber, setPageNumber] = useState(0)
+    const [itemsPerPage, setItemsPerPage] = useState(8)
 
     let pagesVisited = pageNumber * itemsPerPage
     const pageCount = Math.ceil(showItems().length / itemsPerPage)
 
+    function handleOnChangeSelectPerPage(selectValue) {
+        setItemsPerPage(parseInt(selectValue))
+    }
+
+    function handleChangingPageNumber(selected) {
+        setPageNumber(selected)
+    }
+    
+    function handleChangingPageNumberToZero(number) {
+        setPageNumber(number)
+    }
+
     const changePage = ({ selected }) => {
 
-        if (pagesVisited > 15) {
-            handleChangingPageNumber(0)
+        if (pagesVisited > 20) {
+            handleChangingPageNumberToZero(0)
         }
 
         else {
@@ -1311,10 +1324,12 @@ function Products() {
                 <ProductsHeader />
                 
                 <ProductsMain 
+                    itemsPerPage = {itemsPerPage}
                     showItems = {showItems}
                     pagesVisited = {pagesVisited}
                     changePage={changePage}
                     pageCount={pageCount}
+                    handleOnChangeSelectPerPage = {handleOnChangeSelectPerPage}
                 />
                     
                 <ProductsFooter />

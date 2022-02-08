@@ -1,9 +1,9 @@
 import { useStore } from "../../../../Store/store"
 import "../Ribbon2/Ribbon2.css"
 
-function Ribbon2({showItems}) {
+function Ribbon2({showItems, handleOnChangeSelectPerPage}) {
 
-    const {handleOnChangeSelect, handleOnChangeSelectPerPage} = useStore()
+    const {handleOnChangeSelect} = useStore()
 
     return (
 

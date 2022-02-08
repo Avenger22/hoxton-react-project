@@ -9,9 +9,8 @@ import "../Pagination/Pagination.css"
 import { useStore } from "../../../../Store/store"
 // #endregion
 
-function ProductsMain({showItems, pagesVisited, pageCount, changePage}) {
+function ProductsMain({itemsPerPage, showItems, pagesVisited, pageCount, changePage, handleOnChangeSelectPerPage}) {
 
-    const {itemsPerPage} = useStore()
 
     // #region 'Returning Html'
     return (
@@ -24,6 +23,7 @@ function ProductsMain({showItems, pagesVisited, pageCount, changePage}) {
                 
                 <Ribbon2 
                     showItems={showItems}
+                    handleOnChangeSelectPerPage = {handleOnChangeSelectPerPage}
                 />
                 
                 <div className="items-container">

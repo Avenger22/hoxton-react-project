@@ -11,8 +11,6 @@ export const useStore = create((set, get) => ({
 
   companies: [],
   newsLetterEmail: '',
-  pageNumber: 0,
-  itemsPerPage: 8,
   
   signInStatus: false,
   signInData: [],
@@ -102,16 +100,8 @@ export const useStore = create((set, get) => ({
     set({category: liValue})
   },
 
-  handleChangingPageNumber : function (selected) {
-    set({pageNumber: selected})
-  },
-
   handleOnChangeSelect : function(selectValue) {
     set({selectType: selectValue})
-  },
-
-  handleOnChangeSelectPerPage : function(selectValue) {
-      set({itemsPerPage: parseInt(selectValue)})
   },
 
   handleOffersEvent : function() {
