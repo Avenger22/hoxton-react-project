@@ -4,17 +4,21 @@ import Service from "../../Components/Servicess/Service"
 import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon"
 import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
 import { useEffect } from "react"
-import { useStore } from "../../Store/store"
+import { RootStateOrAny, useDispatch, useSelector } from "react-redux"
+import {setServices} from '../../Actions/actions'
 
 export default function ServicesPage() {
 
-    const {services, setServices} = useStore()
+    const dispatch = useDispatch()
+
+    const services = useSelector(
+        (state: RootStateOrAny) => state.services)
 
     function getServicesFromServer () {
 
         fetch(`http://localhost:8000/services`)
           .then(resp => resp.json())
-          .then(coachesFromServer => setServices(coachesFromServer))
+          .then(coachesFromServer => dispatch(setServices(coachesFromServer)))
         
     }
 

@@ -1,16 +1,16 @@
-let articles= []
-let coaches= []
-let services= []
-let serviceItem= {}
-let teamItem = {}
-let productItem = {}
-let blogItem = {}
-let footerPosts = []
-let companyItem = {}
-let companies = []
-let initialRelatedItems = []
-let formTouch = []
-let categoryClicked = false
+const articles= []
+const coaches= []
+const services= []
+const serviceItem= {}
+const teamItem = {}
+const productItem = {}
+const blogItem = {}
+const footerPosts = []
+const companyItem = {}
+const companies = []
+const initialRelatedItems = []
+const formTouch = []
+const categoryClicked = false
 
 
 export function setArticlesReducer(state = articles, action) {
@@ -174,7 +174,7 @@ export function setServicesReducer(state = services, action) {
     switch(action.type) {
 
         case 'SET_SERVICES': 
-            return action.payload
+            return [...state, action.payload]
         
         default: 
             return state
