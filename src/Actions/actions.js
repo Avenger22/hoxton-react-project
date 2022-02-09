@@ -221,3 +221,222 @@ export const handlePasswordChangeSignIn = (e) => {
 
 }
 // #endregion
+
+// #region 'Sign UP actions'
+export const handleEmailChangeSignUp = (e) => {
+
+    return {
+        type: 'HANDLE_EMAIL_CHANGE_SIGN_UP',
+        payload: e
+    }
+    
+}
+
+export const handlePasswordChangeSignUp = (e) => {
+
+    return {
+        type: 'HANDLE_PASSWORD_CHANGE_SIGN_UP',
+        payload: e
+    }
+    
+}
+
+export const handleUserNameChangeSignUp = (e) => {
+
+    return {
+        type: 'HANDLE_USER_NAME_CHANGE_SIGN_UP',
+        payload: e
+    }
+    
+}
+
+export const handleFullNameChangeSignUp = (e) => {
+
+    return {
+        type: 'HANDLE_FULL_NAME_CHANGE_SIGN_UP',
+        payload: e
+    }
+    
+}
+
+export const setSignUpStatus = () => {
+
+    return {
+        type: 'SET_SIGN_UP_STATUS'
+    }
+    
+}
+// #endregion
+
+// #region 'Payment actions'
+export const handleEmailChangePayment = (e) => {
+
+    return {
+        type: 'HANDLE_EMAIL_CHANGE_PAYMENT',
+        payload: e
+    }
+    
+}
+
+export const handleZipCodeChangePayment = (e) => {
+
+    return {
+        type: 'HANDLE_ZIP_CODE_CHANGE_PAYMENT',
+        payload: e
+    }
+    
+}
+
+export const handleAddressChangePayment = (e) => {
+
+    return {
+        type: 'HANDLE_ADDRESS_CHANGE_PAYMENT',
+        payload: e
+    }
+    
+}
+
+export const  handleFullNameChangePayment = (e) => {
+
+    return {
+        type: 'HANDLE_FULL_NAME_CHANGE_PAYMENT',
+        payload: e
+    }
+    
+}
+
+export const setPaymentData = (newArray) => {
+
+    return {
+        type: 'SET_PAYMENT_DATA',
+        payload: newArray
+    }
+    
+}
+
+export const setPaymentStatus= () => {
+
+    return {
+        type: 'SET_PAYMENT_STATUS'
+    }
+    
+}
+// #endregion
+
+// #region 'Other actionc'
+export const setArticles= (array) => {
+
+    return {
+        type: 'SET_ARTICLES',
+        payload: array
+    }
+    
+}
+
+export const setCoaches= (array) => {
+
+    return {
+        type: 'SET_COACHES',
+        payload: array
+    }
+    
+}
+
+export const setServices= (array) => {
+
+    return {
+        type: 'SET_SERVICES',
+        payload: array
+    }
+    
+}
+
+export const setTeamItem= (object) => {
+
+    return {
+        type: 'SET_TEAM_ITEM',
+        payload: object
+    }
+    
+}
+
+export const setBlogItem= (object) => {
+
+    return {
+        type: 'SET_BLOG_ITEM',
+        payload: object
+    }
+    
+}
+
+export const setServiceItem= (object) => {
+
+    return {
+        type: 'SET_SERVICE_ITEM',
+        payload: object
+    }
+    
+}
+
+export const setCompanyItem= (object) => {
+
+    return {
+        type: 'SET_COMPANY_ITEM',
+        payload: object
+    }
+    
+}
+
+export const setCompanies= (array) => {
+
+    return {
+        type: 'SET_COMPANIES',
+        payload: array
+    }
+    
+}
+
+export const setPostsFooter= (array) => {
+
+    return {
+        type: 'SET_POSTS_FOOTER',
+        payload: array
+    }
+    
+}
+
+export const setFormTouch= (array) => {
+
+    return {
+        type: 'SET_FORM_TOUCH',
+        payload: array
+    }
+    
+}
+
+export const setCategoryClicked= () => {
+
+    return {
+        type: 'SET_CATEGORY_CLICKED'
+    }
+    
+}
+
+export const setInitialRelatedItems = (array) => {
+
+    return {
+        type: 'SET_INITIAL_RELATED_ITEMS',
+        payload: array
+    }
+    
+}
+
+export const setProductItem= (object) => {
+
+    return {
+        type: 'SET_PRODUCT_ITEM',
+        payload: object
+    }
+    
+}
+// #endregion
