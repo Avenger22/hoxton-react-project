@@ -5,7 +5,7 @@ import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon"
 import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
 import { useEffect } from "react"
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux"
-import {setServices} from '../../reduxState/actions/actions'
+import {setServices} from '../../redux/actions/actions'
 import axios from "axios"
 
 export default function ServicesPage() {

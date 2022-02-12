@@ -3,7 +3,7 @@ import "./Products.css"
 import ProductsHeader from "../../Components/Products/Header/ProductsHeader/ProductsHeader"
 import ProductsMain from "../../Components/Products/Main/ProductsMain/ProductsMain"
 import ProductsFooter from '../../Components/Products/Footer/ProductsFooter'
-import { useStore } from "../../Store/store"
+import { useStore } from "../../zustand/store"
 import { useEffect, useState} from "react"
 // #endregion
 

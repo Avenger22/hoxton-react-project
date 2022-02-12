@@ -1,4 +1,4 @@
-import { useStore } from "../../../../Store/store"
+import { useStore } from "../../../../zustand/store"
 import "../Ribbon2/Ribbon2.css"
 
 function Ribbon2({showItems, handleOnChangeSelectPerPage}) {
