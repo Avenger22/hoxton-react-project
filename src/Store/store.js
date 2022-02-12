@@ -96,31 +96,31 @@ export const useStore = create((set, get) => ({
     set({searchTerm: e.target.value})
   },
 
-  handleOnClickCategory : function (liValue) {
+  handleOnClickCategory: function (liValue) {
     set({category: liValue})
   },
 
-  handleOnChangeSelect : function(selectValue) {
+  handleOnChangeSelect: function(selectValue) {
     set({selectType: selectValue})
   },
 
-  handleOffersEvent : function() {
+  handleOffersEvent: function() {
     set({category: 'offers'})
   },
 
-  handleSignInStatus : function() {
+  handleSignInStatus: function() {
 
     const {signInStatus} = get()
     set({signInStatus: !signInStatus})
   
   },
 
-  handleFormNewsletter : function (e) {    
+  handleFormNewsletter: function (e) {    
     const valueForm = e.target.newsLetter.value
     set({newsLetterEmail: valueForm})
   },
 
-  setSignInStatus : function () {
+  setSignInStatus: function () {
     const {signInStatus} = get()
     set({signInStatus: !signInStatus})
   },
@@ -278,7 +278,6 @@ export const useStore = create((set, get) => ({
 
   // #endregion
 
-
   // #region 'CONTACT US STATE'
 
   // #region 'Contact Us page state'
@@ -334,7 +333,6 @@ export const useStore = create((set, get) => ({
   // #endregion
   
   // #endregion
-
 
   // #region 'SIGN-IN STATE'
 
@@ -396,7 +394,6 @@ export const useStore = create((set, get) => ({
   // #endregion
 
   // #endregion
-
 
   // #region 'SIGN-UP STATE'
 
@@ -476,7 +473,6 @@ export const useStore = create((set, get) => ({
 
   // #endregion
 
-
   // #region 'PAYMENT STATE'
 
   // #region 'payment general state'
@@ -527,7 +523,6 @@ export const useStore = create((set, get) => ({
 
   // #endregion
 
-  
   // #region 'BLOG STATE'
   articles: [],
 
@@ -535,7 +530,6 @@ export const useStore = create((set, get) => ({
     set({articles: array})
   },
   // #endregion
-
 
   // #region 'COACHES OR TEAMS STATE'
   coaches: [],
@@ -545,7 +539,6 @@ export const useStore = create((set, get) => ({
   },
   // #endregion
 
-
   // #region 'SERVICES STATE'
   services: [],
 
@@ -553,7 +546,6 @@ export const useStore = create((set, get) => ({
     set({services: array})
   },
   // #endregion
-
 
   // #region 'TEAM ITEM STATE'
   teamItem: {},
@@ -563,7 +555,6 @@ export const useStore = create((set, get) => ({
   },
   // #endregion
 
-
   // #region 'BLOG ITEM STATE'
   blogItem: {},
 
@@ -571,7 +562,6 @@ export const useStore = create((set, get) => ({
     set({blogItem: object})
   },
   // #endregion
-
 
   // #region 'SERVICE ITEM STATE'
   serviceItem: {},
@@ -581,7 +571,6 @@ export const useStore = create((set, get) => ({
   },
   // #endregion
 
-
   // #region 'COMPANY ITEM STATE'
   companyItem: {},
 
@@ -590,13 +579,11 @@ export const useStore = create((set, get) => ({
   },
   // #endregion
 
-
   // #region 'COMPANIES STATE'
   setCompanies: function (array) {
     set({companies: array})
   },
   // #endregion
-
 
   // #region 'OTHER STATA'
   postsFooter: [],
@@ -618,7 +605,6 @@ export const useStore = create((set, get) => ({
   },
   // #endregion
 
-  
   // #region 'PRODUCT ITEM STATE'
   initialRelatedItems: [],
   productItem: null,
