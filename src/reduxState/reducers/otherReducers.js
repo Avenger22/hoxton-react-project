@@ -1,6 +1,10 @@
 const articles= []
 const coaches= []
-const services= []
+
+const initialState = {
+    services: []
+}
+
 const serviceItem= {}
 const teamItem = {}
 const productItem = {}
@@ -169,12 +173,12 @@ export function setCompaniesReducer(state = companies, action) {
 
 }
 
-export function setServicesReducer(state = services, action) {
+export function setServicesReducer(state = initialState, action) {
 
     switch(action.type) {
 
         case 'SET_SERVICES': 
-            return [...state, action.payload]
+            return {...state, services: action.payload}
         
         default: 
             return state

@@ -342,11 +342,13 @@ export const setCoaches= (array) => {
     
 }
 
-export const setServices= (array) => {
+export const setServices= servicesFromServer => {
 
     return {
+
         type: 'SET_SERVICES',
-        payload: array
+        payload:  servicesFromServer
+
     }
     
 }

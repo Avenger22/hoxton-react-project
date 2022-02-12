@@ -4,7 +4,7 @@ import { combineReducers } from "redux";
 import {
     textAreaContactReducer, nameConactReducer, emailContactReducer,
     subjectContactReducer, phoneContactReducer, formContactReducer
-} from "../Reducers/contactReducer"
+} from "./contactReducer"
 
 import {
     itemsReducer, initialItemsReducer, usersReducer,
