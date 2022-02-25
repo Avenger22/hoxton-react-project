@@ -1,1 +1,1 @@
-export const UrlPath = "https://albvitafitness.netlify.app/"
+export const UrlPath = "https://glitch.com/edit/#!/albvitafitness"
