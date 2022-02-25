@@ -3,6 +3,7 @@ import './HomeContainer10.css'
 import { useEffect } from "react"
 import { useNavigate } from "react-router"
 import { useStore } from "../../../zustand/store"
+import { UrlPath } from "../../../configUrl"
 
 export default function HomeContainer10() {
 
@@ -10,7 +11,7 @@ export default function HomeContainer10() {
 
     function getCompaniesFromServer() {
     
-        fetch(`http://localhost:8000/companies`)
+        fetch(UrlPath + "companies")
           .then(resp => resp.json())
           .then(companiesFromServer => setCompanies(companiesFromServer))
         

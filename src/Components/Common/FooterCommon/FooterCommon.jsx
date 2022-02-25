@@ -4,13 +4,14 @@ import BlogMiniPost from '../FooterCommon/BlogMiniPost'
 import { useState } from "react"
 import { useEffect } from "react"
 import SocialMediaImg from "../FooterCommon/SocialMediaImg"
+import { UrlPath } from "../../../configUrl"
 
 export default function FooterCommon() {
 
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:8000/articles`)
+        fetch(UrlPath + "articles")
             .then(resp => resp.json())
             .then(postsFromServer => setPosts(postsFromServer))
     }, [])

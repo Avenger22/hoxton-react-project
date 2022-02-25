@@ -3,6 +3,7 @@ import './HomeContainer4.css'
 import { useNavigate } from "react-router"
 import { useEffect} from "react"
 import { useStore } from "../../../zustand/store"
+import {UrlPath} from "../../../configUrl"
 
 export default function HomeContainer4() {
 
@@ -10,7 +11,7 @@ export default function HomeContainer4() {
 
     function getServicesFromServer () {
         
-        fetch(`http://localhost:8000/services`)
+        fetch(UrlPath + "services")
           .then(resp => resp.json())
           .then(servicesFromServer => setServices(servicesFromServer))
         

@@ -4,6 +4,7 @@ import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
 import { useEffect} from "react"
 import { useParams } from "react-router"
 import { useStore } from "../../zustand/store"
+import { UrlPath } from "../../configUrl"
 
 export default function ServiceItemPage() {
 
@@ -13,7 +14,7 @@ export default function ServiceItemPage() {
 
     function getIndividualServiceFromServer () {
 
-        fetch(`http://localhost:8000/services/${params.id}`)
+        fetch(UrlPath + "services" + "/" + params.id)
           .then(resp => resp.json())
           .then(serviceFromServer => setServiceItem(serviceFromServer))
         

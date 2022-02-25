@@ -6,6 +6,7 @@ import BlogItemContainer1 from '../../Components/BlogItem/BlogItemContainer1/Blo
 import BlogItemContainer2 from '../../Components/BlogItem/BlogItemContainer2/BlogItemContainer2'
 import { useParams } from "react-router-dom"
 import { useStore } from "../../zustand/store"
+import { UrlPath } from "../../configUrl"
 
 function BlogItem() {
 
@@ -15,7 +16,7 @@ function BlogItem() {
 
     function getIndividualBlogFromServer () {
 
-        fetch(`http://localhost:8000/articles/${params.id}`)
+        fetch(UrlPath + "articles/" + params.id)
           .then(resp => resp.json())
           .then(blogFromServer => setBlogItem(blogFromServer))
         

@@ -2,6 +2,7 @@ import HomeContainer8Article from "./HomeContainer8Article"
 import './HomeContainer8.css'
 import { useEffect } from "react"
 import { useStore } from "../../../zustand/store"
+import { UrlPath } from "../../../configUrl"
 
 export default function HomeContainer8() {
 
@@ -10,7 +11,7 @@ export default function HomeContainer8() {
     function getArticlesFromServer() {
 
     
-        fetch(`http://localhost:8000/articles`)
+        fetch(UrlPath + "articles")
           .then(resp => resp.json())
           .then(articlesFromServer => setArticles(articlesFromServer))
         

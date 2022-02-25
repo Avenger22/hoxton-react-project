@@ -4,6 +4,7 @@ import "./TeamItem.css"
 import HeaderCommon from "../../Components/Common/HeaderCommon/HeaderCommon"
 import FooterCommon from "../../Components/Common/FooterCommon/FooterCommon"
 import { useStore } from "../../zustand/store"
+import { UrlPath } from "../../configUrl"
 
 export default function TeamItemPage() {
 
@@ -13,7 +14,7 @@ export default function TeamItemPage() {
 
     function getIndividualTeamFromServer () {
 
-        fetch(`http://localhost:8000/coaches/${params.id}`)
+        fetch(UrlPath + "coaches/" + params.id)
           .then(resp => resp.json())
           .then(teamFromServer => setTeamItem(teamFromServer))
         

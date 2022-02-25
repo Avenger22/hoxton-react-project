@@ -5,6 +5,7 @@ import ProductsMain from "../../Components/Products/Main/ProductsMain/ProductsMa
 import ProductsFooter from '../../Components/Products/Footer/ProductsFooter'
 import { useStore } from "../../zustand/store"
 import { useEffect, useState} from "react"
+import { UrlPath } from "../../configUrl"
 // #endregion
 
 function Products() {
@@ -19,7 +20,7 @@ function Products() {
     // #region 'Server functions'
     function getInitialItemsFromServer() {
 
-        fetch('http://localhost:8000/items')
+        fetch(UrlPath + "items")
             .then(resp => resp.json())
             .then(itemsFromServer2 => {
             setInitialItems(itemsFromServer2)

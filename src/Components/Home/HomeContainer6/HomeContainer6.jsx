@@ -3,6 +3,7 @@ import './HomeContainer6.css'
 import { useEffect} from "react"
 import { useNavigate } from "react-router"
 import { useStore } from "../../../zustand/store"
+import { UrlPath } from "../../../configUrl"
 
 export default function HomeContainer6() {
 
@@ -10,7 +11,7 @@ export default function HomeContainer6() {
 
     function getCoachesFromServer() {
 
-        fetch(`http://localhost:8000/coaches`)
+        fetch(UrlPath + "coaches")
           .then(resp => resp.json())
           .then(coachesFromServer => setCoaches(coachesFromServer))
         

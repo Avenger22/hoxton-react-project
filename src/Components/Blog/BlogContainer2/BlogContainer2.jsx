@@ -3,6 +3,7 @@ import "../BlogContainer2/BlogContainer2.css"
 import { Link } from "react-router-dom"
 import {useStore} from "../../../zustand/store"
 import { useEffect } from "react"
+import { UrlPath } from "../../../configUrl"
 
 export default function BlogContainer2() {
 
@@ -10,7 +11,7 @@ export default function BlogContainer2() {
     
     function getArticlesFromServer() {
 
-        fetch(`http://localhost:8000/articles`)
+        fetch(UrlPath + "articles")
           .then(resp => resp.json())
           .then(articlesFromServer => setArticles(articlesFromServer))
 

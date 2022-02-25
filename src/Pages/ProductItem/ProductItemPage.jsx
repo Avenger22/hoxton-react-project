@@ -7,6 +7,7 @@ import { useStore } from "../../zustand/store";
 import { useEffect } from "react";
 import { useParams } from "react-router";
 import { useNavigate } from "react-router-dom";
+import { UrlPath } from "../../configUrl";
 // #endregion
 
 const randColour = ["green", "red", "blue", "yellow"][
@@ -25,7 +26,7 @@ export default function ProductItemPage() {
 
     function getIndividualProductFromServer () {
 
-        fetch(`http://localhost:8000/items/${params.id}`)
+        fetch(UrlPath + "items/" + params.id)
             .then(resp => resp.json())
             .then(productFromServer => setProductItem(productFromServer))
     
@@ -33,7 +34,7 @@ export default function ProductItemPage() {
 
     function getInitialRelatedItemsFromServer () {
     
-        fetch(`http://localhost:8000/items`)
+        fetch(UrlPath + "items")
             .then(resp => resp.json())
             .then(itemsFromServer => setInitialRelatedItems(itemsFromServer))
     }

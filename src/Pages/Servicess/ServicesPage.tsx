@@ -7,6 +7,7 @@ import { useEffect } from "react"
 import { RootStateOrAny, useDispatch, useSelector } from "react-redux"
 import {setServices} from '../../redux/actions/actions'
 import axios from "axios"
+import { UrlPath } from "../../configUrl"
 
 export default function ServicesPage() {
 
@@ -15,7 +16,7 @@ export default function ServicesPage() {
 
     // function getServicesFromServer () { BOTH VERSIONS WORKED WITH REDUX STATE
 
-    //     fetch(`http://localhost:8000/services`)
+    //     fetch(`${UrlPath}/services`)
     //       .then(resp => resp.json())
     //       .then(servicesFromServer => dispatch(setServices(servicesFromServer)))
     // }
@@ -24,7 +25,7 @@ export default function ServicesPage() {
 
         const response:any = await axios
 
-          .get(`http://localhost:8000/services`)
+          .get(UrlPath + "services")
           .catch((err) => {
             console.log("Err: ", err)
           })

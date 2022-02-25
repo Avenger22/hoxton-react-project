@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useState } from 'react'
+import { UrlPath } from '../../../configUrl'
 import { useStore } from '../../../zustand/store'
 import '../BlogItemContainer2/BlogItemContainer2.css'
 import BlogItemRelatedImg from './BlogItemRelatedImg'
@@ -9,7 +10,7 @@ export default function BlogItemContainer2() {
     const {postsFooter, setPostsFooter} = useStore()
 
     useEffect(() => {
-        fetch(`http://localhost:8000/articles`)
+        fetch(UrlPath  + "/articles")
             .then(resp => resp.json())
             .then(postsFromServer => setPostsFooter(postsFromServer))
     }, [])

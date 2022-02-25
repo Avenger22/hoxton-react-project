@@ -1,0 +1,1 @@
+export const UrlPath = "https://albvitafitness.netlify.app/"
