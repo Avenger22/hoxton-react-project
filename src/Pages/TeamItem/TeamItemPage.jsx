@@ -14,7 +14,7 @@ export default function TeamItemPage() {
 
     function getIndividualTeamFromServer () {
 
-        fetch(`https://albvitafitness.glitch.me/articles/${params.id}`)
+        fetch(`https://albvitafitness.glitch.me/coaches/${params.id}`)
           .then(resp => resp.json())
           .then(teamFromServer => setTeamItem(teamFromServer))
         
