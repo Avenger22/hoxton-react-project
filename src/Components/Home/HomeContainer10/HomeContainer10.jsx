@@ -11,7 +11,7 @@ export default function HomeContainer10() {
 
     function getCompaniesFromServer() {
     
-        fetch(UrlPath + "companies")
+        fetch("https://albvitafitness.glitch.me/companies")
           .then(resp => resp.json())
           .then(companiesFromServer => setCompanies(companiesFromServer))
         

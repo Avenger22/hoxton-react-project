@@ -16,7 +16,7 @@ function BlogItem() {
 
     function getIndividualBlogFromServer () {
 
-        fetch(UrlPath + "articles/" + params.id)
+        fetch(`https://albvitafitness.glitch.me/articles/${params.id}`)
           .then(resp => resp.json())
           .then(blogFromServer => setBlogItem(blogFromServer))
         

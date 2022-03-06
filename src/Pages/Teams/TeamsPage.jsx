@@ -11,7 +11,7 @@ export default function TeamsPage() {
 
     function getCoachesFromServer() {
     
-        fetch(`http://localhost:8000/coaches`)
+        fetch("https://albvitafitness.glitch.me/coaches")
           .then(resp => resp.json())
           .then(coachesFromServer => setCoaches(coachesFromServer))
         

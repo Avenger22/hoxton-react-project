@@ -11,7 +11,7 @@ export default function HomeContainer8() {
     function getArticlesFromServer() {
 
     
-        fetch(UrlPath + "articles")
+        fetch("https://albvitafitness.glitch.me/articles")
           .then(resp => resp.json())
           .then(articlesFromServer => setArticles(articlesFromServer))
         

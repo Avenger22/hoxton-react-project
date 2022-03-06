@@ -10,7 +10,7 @@ export default function BlogItemContainer2() {
     const {postsFooter, setPostsFooter} = useStore()
 
     useEffect(() => {
-        fetch(UrlPath  + "/articles")
+        fetch("https://albvitafitness.glitch.me/articles")
             .then(resp => resp.json())
             .then(postsFromServer => setPostsFooter(postsFromServer))
     }, [])

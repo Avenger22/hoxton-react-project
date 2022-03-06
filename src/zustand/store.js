@@ -369,7 +369,7 @@ export const useStore = create((set, get) => ({
     if(gettingUser) {
 
       // update the server
-      fetch(`http://localhost:8000/users/${gettingUser.id}`, {
+      fetch(`https://albvitafitness.glitch.me/users/${gettingUser.id}`, {
           method: 'PATCH',
           headers: {
               'Content-Type': 'application/json'
@@ -446,7 +446,7 @@ export const useStore = create((set, get) => ({
         signedIn: false
     }
 
-    fetch(`http://localhost:8000/users/`, {
+    fetch(`https://albvitafitness.glitch.me/users`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

@@ -14,7 +14,7 @@ export default function SignUpPage() {
     
         function getUsersFromServer() {
         
-            fetch('http://localhost:8000/users')
+            fetch("https://albvitafitness.glitch.me/users")
                 .then(resp => resp.json())
                 .then(usersFromServer => {
                 setUsers(usersFromServer)

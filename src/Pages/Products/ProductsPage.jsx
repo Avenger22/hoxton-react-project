@@ -20,7 +20,7 @@ function Products() {
     // #region 'Server functions'
     function getInitialItemsFromServer() {
 
-        fetch(UrlPath + "items")
+        fetch("https://albvitafitness.glitch.me/items")
             .then(resp => resp.json())
             .then(itemsFromServer2 => {
             setInitialItems(itemsFromServer2)
@@ -30,7 +30,7 @@ function Products() {
 
     function getItemsFromServer() {
     
-        fetch('http://localhost:8000/items')
+        fetch('"https://albvitafitness.glitch.me/items"')
           .then(resp => resp.json())
           .then(itemsFromServer1 => {
           setItems(itemsFromServer1)

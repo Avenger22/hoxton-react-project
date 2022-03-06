@@ -14,7 +14,7 @@ export default function ServiceItemPage() {
 
     function getIndividualServiceFromServer () {
 
-        fetch(UrlPath + "services" + "/" + params.id)
+        fetch(`https://albvitafitness.glitch.me/articles/${params.id}`)
           .then(resp => resp.json())
           .then(serviceFromServer => setServiceItem(serviceFromServer))
         

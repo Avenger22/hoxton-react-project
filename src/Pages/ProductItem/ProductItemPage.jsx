@@ -26,7 +26,7 @@ export default function ProductItemPage() {
 
     function getIndividualProductFromServer () {
 
-        fetch(UrlPath + "items/" + params.id)
+        fetch(`https://albvitafitness.glitch.me/items/${params.id}`)
             .then(resp => resp.json())
             .then(productFromServer => setProductItem(productFromServer))
     
@@ -34,7 +34,7 @@ export default function ProductItemPage() {
 
     function getInitialRelatedItemsFromServer () {
     
-        fetch(UrlPath + "items")
+        fetch("https://albvitafitness.glitch.me/items")
             .then(resp => resp.json())
             .then(itemsFromServer => setInitialRelatedItems(itemsFromServer))
     }

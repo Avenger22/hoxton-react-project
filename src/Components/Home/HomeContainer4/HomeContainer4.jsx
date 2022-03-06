@@ -11,7 +11,7 @@ export default function HomeContainer4() {
 
     function getServicesFromServer () {
         
-        fetch(UrlPath + "services")
+        fetch("https://albvitafitness.glitch.me/services")
           .then(resp => resp.json())
           .then(servicesFromServer => setServices(servicesFromServer))
         

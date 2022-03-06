@@ -25,7 +25,7 @@ export default function ServicesPage() {
 
         const response:any = await axios
 
-          .get(UrlPath + "services")
+          .get("https://albvitafitness.glitch.me/services")
           .catch((err) => {
             console.log("Err: ", err)
           })
